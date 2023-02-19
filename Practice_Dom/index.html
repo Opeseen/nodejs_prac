@@ -1,0 +1,96 @@
+<html>
+  <head>
+
+    <!-- General Settings -->
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="en-us">
+    <base href="" />
+
+    <!-- Meta Tags -->
+    <title>DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Static Assets -->
+    <!-- <link type="image/x-icon" rel="icon" href="favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="public/app.css" />
+
+  </head>
+  <body class="{body.class}">
+    <!-- Page Wrapper -->
+    <div class="wrapper">
+      <!-- Header -->
+      <div class="header">
+        <!-- Logo -->
+        <a class="logo" href="#">
+          <img src="public/logo.png" alt="Logo" />
+        </a>
+        <!-- Navigation -->
+        <ul class="menu">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li class="loggedOut">
+            <a href="#">Signup</a>
+          </li>
+          <li class="loggedOut">
+            <a href="#">Login</a>
+          </li>
+          <li class="loggedIn">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="loggedIn">
+            <a href="#">Account Settings</a>
+          </li>
+          <li class="loggedIn">
+            <a href="#" id="logoutButton">Logout</a>
+          </li>
+        </ul>
+
+        <div class="clear"></div>
+      </div>
+
+      <!-- Page-Specific Content -->
+      <div class="content">
+
+<h1>Create Your Account</h1>
+<h2>SignUP is easy and only takes a few seconds</h2>
+
+<div id="formWrapperID" class="formWrapper">
+    <form id="accountCreate" action="#" method="POST">
+        <div class="formError"></div>
+        <div class="inputWrapper">
+          <div class="inputLabel">First Name</div>
+          <input type="text" id="firstName" name="firstName" placeholder="John" />
+        </div>
+        <div class="inputWrapper">
+          <div class="inputLabel">Last Name</div>
+          <input type="text" id="lastName" name="lastName" placeholder="Smith" />
+        </div>
+        <div class="inputWrapper">
+          <div class="inputLabel">Phone Number</div>
+          <input type="text" id="phone" name="phone" placeholder="(415) 123-4567" />
+        </div>
+        <div class="inputWrapper">
+          <div class="inputLabel">Choose a Password</div>
+          <input type="password" id="password" name="password" placeholder="Make it a good one!" />
+        </div>
+        <div class="inputWrapper">
+          <div class="inputLabel">Do you agree to the terms and conditions?</div>
+          <input type="checkbox" id="tosAgreement" name="tosAgreement" value="agree">
+        </div>
+        <div class="inputWrapper ctaWrapper">
+          <button type="submit" class="cta blue">Get Started</button>
+        </div>
+    </form>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="copyright">Copyright 2023 | Better Guide Consulting Limited | All Rights Reserved</div>
+</div>
+</div>
+<script type="text/javascript" charset="utf-8" src="public/app.js"></script>
+</body>
+</html>
