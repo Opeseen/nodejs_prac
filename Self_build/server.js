@@ -1,8 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 app = express();
-const {postUser} = require('./model/postUser')
-const {getuser} = require('./model/getUser')
+const {postUser,loginUser} = require('./model/userModel')
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -16,7 +15,7 @@ PORT = 3000;
 
 app.post('/users',postUser);
 
-app.get('/users',getuser)
+app.get('/login',loginUser);
 
 app.listen(PORT, () => {
   console.log('App is listening on Port:',PORT);
