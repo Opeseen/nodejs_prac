@@ -23,7 +23,7 @@ pipeline{
     stage('Upload-to-ECR'){
         steps{
             script{
-                docker.withRegistry(nodejsRegistry,registryCredentials){
+                docker.withRegistry(nodejsRegistry,registryCredential){
                     dockerImage.push("$BUILD_NUMBER" + "latest")
                 }
             }
