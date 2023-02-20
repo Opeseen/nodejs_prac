@@ -1,24 +1,32 @@
 pipeline{
-    agent{
-        label "SLAVE"
+   agent any
+   environment{
+    registryCredential = 'ecr:us-east-1:awscreds'
+    appRegistry = "430776688613.dkr.ecr.us-east-1.amazonaws.com/nodejsapp"
+    nodejsRegistry = "https://430776688613.dkr.ecr.us-east-1.amazonaws.com"
+   }
+   stages{
+    stage(Fetch-Code){
+        steps{
+            git branch: 'docker-cicd', url: "https://github.com/Opeseen/nodejs_prac.git"
+        }
     }
-    stages{
-        stage("Fetch-Code"){
-            steps{
-                git branch: 'self-build', url: 'https://github.com/Opeseen/nodejs-prac.git'
-            }
-         
-        }
-        stage('Build-Job'){
-            steps{
-                sh 'cd Self_build && npm install'
-            }
-        }
-        stage('Run-Job'){
-            steps{
-                sh 'cd Self_build && npm run watch'
+
+    stage(Build-job){
+        steps{
+            script{
+                dockerImage = docker.build(appRegistry + ":$BUILD_NUMBER", "./Self_build/")
             }
         }
     }
 
+    stage('Final'){
+        steps{
+            sleep(3)
+            echo "Completed.."
+        }
+    }
+
+   }
+    
 }
