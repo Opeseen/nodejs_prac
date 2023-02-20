@@ -6,7 +6,7 @@ WORKDIR /home/Self_build
 
 COPY . .
 
-RUN npm install
+RUN npm installss
 
 EXPOSE 3000
 
