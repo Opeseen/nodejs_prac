@@ -4,7 +4,7 @@ RUN mkdir -p /home/Self_build
 
 WORKDIR /home/Self_build
 
-COPY ./Self_build /home/Self_build
+COPY . .
 
 RUN npm install
 
