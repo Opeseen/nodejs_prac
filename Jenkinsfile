@@ -1,9 +1,9 @@
 pipeline{
    agent any
    environment{
-    registryCredential = 'ecr:us-east-1:awscreds'
-    appRegistry = "430776688613.dkr.ecr.us-east-1.amazonaws.com/nodejsapp"
-    nodejsRegistry = "https://430776688613.dkr.ecr.us-east-1.amazonaws.com"
+    AWSregistryCredential = 'ecr:us-east-1:awscreds'
+    NodeJSappRegistry = "430776688613.dkr.ecr.us-east-1.amazonaws.com/nodejsapp"
+    nodejsRegistryUrl = "https://430776688613.dkr.ecr.us-east-1.amazonaws.com"
    }
    stages{
     stage("Fetch-Code"){
@@ -15,7 +15,7 @@ pipeline{
     stage("Build-job"){
         steps{
             script{
-                dockerImage = docker.build(appRegistry + ":$BUILD_NUMBER", "./Self_build/")
+                dockerImage = docker.build(NodeJSappRegistry + ":$BUILD_NUMBER", "./Self_build/")
             }
         }
     }
@@ -23,7 +23,7 @@ pipeline{
     stage('Upload-to-ECR'){
         steps{
             script{
-                docker.withRegistry(nodejsRegistry,registryCredential){
+                docker.withRegistry(nodejsRegistryUrl,AWSregistryCredential){
                     dockerImage.push("$BUILD_NUMBER" + "latest")
                 }
             }
@@ -33,7 +33,7 @@ pipeline{
 
     stage('Final'){
         steps{
-            sleep(3)
+            sleep(2)
             echo "Completed.."
         }
     }
