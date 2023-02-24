@@ -24,7 +24,7 @@ pipeline{
         steps{
             script{
                 docker.withRegistry(nodejsRegistryUrl,AWSregistryCredential){
-                    dockerImage.push("$BUILD_NUMBER" + "latest")
+                    dockerImage.push("opeyemiV"+"$BUILD_NUMBER")
                 }
             }
         }
