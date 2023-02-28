@@ -1,9 +1,9 @@
 pipeline{
    agent any
    environment{
-    AWSregistryCredential = 'ecr:us-east-1:awscreds'
-    NodeJSappRegistry = "430776688613.dkr.ecr.us-east-1.amazonaws.com/nodejsapp"
-    nodejsRegistryUrl = "https://430776688613.dkr.ecr.us-east-1.amazonaws.com"
+    AWS_ECR_Credential = 'ecr:us-east-1:awscreds'
+    NodeJS_ECR_Registry = "430776688613.dkr.ecr.us-east-1.amazonaws.com/nodejsapp"
+    NODEJS_ECR_RegistryUrl = "https://430776688613.dkr.ecr.us-east-1.amazonaws.com"
    }
    stages{
     stage("Fetch-Code"){
@@ -15,7 +15,7 @@ pipeline{
     stage("Build-job"){
         steps{
             script{
-                dockerImage = docker.build(NodeJSappRegistry + ":$BUILD_NUMBER", "./Self_build/")
+                dockerImage = docker.build(NodeJS_ECR_Registry + ":$BUILD_NUMBER", "./Self_build/")
             }
         }
     }
@@ -23,15 +23,15 @@ pipeline{
     stage('Upload-to-ECR'){
         steps{
             script{
-                docker.withRegistry(nodejsRegistryUrl,AWSregistryCredential){
-                    dockerImage.push("opeyemiV"+"$BUILD_NUMBER")
+                docker.withRegistry(NODEJS_ECR_RegistryUrl,AWS_ECR_Credential){
+                    dockerImage.push("opeyemi_V"+"$BUILD_NUMBER")
                 }
             }
         }
     }
 
 
-    stage('Final'){
+    stage('Completed'){
         steps{
             sleep(2)
             echo "Completed.."
