@@ -1,14 +1,6 @@
 pipeline{
-    agent{
-        label "SLAVE"
-    }
+    agent any
     stages{
-        stage("Fetch-Code"){
-            steps{
-                git branch: 'self-build', url: 'https://github.com/Opeseen/nodejs-prac.git'
-            }
-         
-        }
         stage('Build-Job'){
             steps{
                 sh 'cd Self_build && npm install'
