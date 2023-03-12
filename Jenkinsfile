@@ -11,6 +11,11 @@ pipeline{
                 sh 'cd Self_build && npm run watch'
             }
         }
+        stage('Completed'){
+            steps{
+                echo "Completed"
+            }
+        }
     }
 
 }
