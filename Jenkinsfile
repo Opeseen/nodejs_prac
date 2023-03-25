@@ -3,9 +3,7 @@ pipeline{
    environment{
     AWS_ECR_Credential = 'ecr:us-east-1:awscreds'
     NodeJS_ECR_Registry = "430776688613.dkr.ecr.us-east-1.amazonaws.com/nodejsapp"
-    NODEJS_ECR_RegistryUrl = "https://430776688613.dkr.ecr.us-east-1.amazonaws.com"
-    clusterName = "nodeJS"
-    serviceName = "nodejs-svc"
+    ECR_RegistryUrl = "https://430776688613.dkr.ecr.us-east-1.amazonaws.com"
    }
    stages{
     stage("Fetch-Code"){
@@ -25,21 +23,13 @@ pipeline{
     stage('Upload-to-ECR'){
         steps{
             script{
-                docker.withRegistry(NODEJS_ECR_RegistryUrl,AWS_ECR_Credential){
+                docker.withRegistry(ECR_RegistryUrl,AWS_ECR_Credential){
                     dockerImage.push("opeyemi_V"+"$BUILD_NUMBER")
-                    dockerImage.push("latest")
                 }
             }
         }
     }
 
-    stage('Deploy-to-ECS'){
-        steps{
-            withAWS(credentials: 'awscreds', region: 'us-east-1'){
-                sh "aws ecs update-service --cluster ${clusterName} --service ${serviceName} --force-new-deployment"
-            }
-        }
-    }
     stage('Completed'){
         steps{
             sleep(2)
