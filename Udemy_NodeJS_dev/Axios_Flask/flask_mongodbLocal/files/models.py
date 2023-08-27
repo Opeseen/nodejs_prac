@@ -1,10 +1,10 @@
-from . import invoice;
+from . import noteCollection;
 from bson.objectid import ObjectId
 
 # MongoDB find all note function
-def getNote():
+def getNote(pageNumber):
     try:
-        all_note = invoice.find()
+        all_note = noteCollection.find().skip((pageNumber - 1) * 10).limit(10)
         return list(all_note)
     except Exception as e:
         return False
@@ -12,7 +12,7 @@ def getNote():
 # MongoDB delete note function
 def deleteNote(id):
     try:
-        invoice.delete_one({"_id": ObjectId(id)})
+        noteCollection.delete_one({"_id": ObjectId(id)})
         return True
     except Exception as e:
         print(e)
@@ -21,7 +21,7 @@ def deleteNote(id):
 # MongoDB update note function
 def updateNote(id,notes,status):
     try:
-        invoice.update_one(
+        noteCollection.update_one(
             {
                 "_id":ObjectId(id)
             },

@@ -3,9 +3,10 @@ from pymongo import MongoClient, errors;
 from .config import connection
 
 try:
-    client = MongoClient(connection,27017)
-    db = client.bookstore
-    invoice = db.invoice
+    client = MongoClient(connection)
+    db = client.NotesDB
+    noteCollection = db.record
+    client.server_info()
 
     def create_app():
         app = Flask(__name__)

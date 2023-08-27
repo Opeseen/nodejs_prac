@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, make_response;
 from datetime import datetime;
-from . import invoice;
+from . import noteCollection;
 from pymongo import errors;
 from . import models
 
@@ -18,7 +18,7 @@ def create_note():
             try:
                 now = datetime.now()
                 date = now.strftime("%B %d, %Y %H:%M:%S")
-                invoice.insert_one({'note':NOTE, 'status':defaultNoteStatus , 'date':date})
+                noteCollection.insert_one({'note':NOTE, 'status':defaultNoteStatus , 'date':date})
                 flash(' Note Successfully Added',category='success')
                 response = make_response(render_template('create_note.html'), 201)
                 response.headers["Content-Type"] = "text/html"
