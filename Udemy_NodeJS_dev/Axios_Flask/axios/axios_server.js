@@ -28,6 +28,7 @@ app.get('/', async (req,res) => {
     })
 
     const launchDocs = response.data.docs;
+    const launchData = [];
     for(const launches of launchDocs){
       const payloads = launches['payloads'];
       const customers = payloads.flatMap((payload) => {
@@ -43,9 +44,11 @@ app.get('/', async (req,res) => {
         customers,
         payloads
       };
-      console.log(launch);
+      launchData.push(launch)
     }
-    res.status(200).send('Hello World')
+    console.log(launchData);
+    // res.status(200).send('Hello World')
+    res.status(200).json({Launch: launchData})
   }catch(error){
     console.log(error)
     res.status(500).json({Message: "Something went wrong"})

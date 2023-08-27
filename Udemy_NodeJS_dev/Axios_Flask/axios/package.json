@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon axios_server_flask.js"
+    "watch": "nodemon axios_server.js"
   },
   "author": "",
   "license": "ISC",
