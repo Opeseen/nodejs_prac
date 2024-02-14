@@ -7,70 +7,24 @@ AWS.config.update({
 });
 
 const dynamoClient = new AWS.DynamoDB.DocumentClient();
-const TABLE_NAME = "Employee_Records"
+const TABLE_NAME = "Student_Records"
 
-const getEmployees = async () => {
+const createStudentRecord = async (studentData) => {
   const params = {
     TableName: TABLE_NAME,
-  };
-  const record = await dynamoClient.scan(params).promise();
-  return record;
-};
-
-const addNewRecords = async (record) => {
-  const params = {
-    TableName: TABLE_NAME,
-    Item: record
+    Item: studentData
   };
   await dynamoClient.put(params).promise();
-  return "Employee Records Added Successfully!"
-
+  return "Student Records Added Successfully!"
 };
 
-const getEmployeeByID = async (Employee_Number) => {
-  const params = {
-    TableName: TABLE_NAME,
-    Key: {
-      Employee_Number
-    }
-  }
-  return await dynamoClient.get(params).promise();
-};
-
-const updateEmployee = async (record,Employee_Number) => {
-  for (const x in record){
-    const params = {
-      TableName: TABLE_NAME,
-      Key: {
-        Employee_Number: Employee_Number
-      },
-      UpdateExpression: `set ${x} = :X`,
-      ExpressionAttributeValues: {
-        ':X' : `${record[x]}`
-      }
-    }
-    await dynamoClient.update(params).promise();
-  }
-  
-  return "Employee Record Updated Successfully!"
-
-};
-
-const deleteEmployee = async (Employee_Number) => {
-  const params = {
-    TableName: TABLE_NAME,
-    Key: {
-      Employee_Number
-    }
-  }
-  await dynamoClient.delete(params).promise();
-  return "Employee Record Successfully Deleted!"
+const testStudentRecord = (studentData) => {
+  let testRecord = studentData
+  testRecord.id = "12"
+  return testRecord;
 };
 
 module.exports = {
-  getEmployees,
-  getEmployeeByID,
-  deleteEmployee,
-  addNewRecords,
-  updateEmployee
-}
+  createStudentRecord,
+  testStudentRecord
+};

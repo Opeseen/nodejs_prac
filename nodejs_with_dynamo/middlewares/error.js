@@ -1,6 +1,15 @@
 const ApiError = require('./../utils/ApiError');
 const httpStatus = require('http-status');
 
+const errorConverter = (err, req, res, next) => {
+  let error = err;
+  if(!(error instanceof ApiError)){
+    const statusCode = httpStatus.INTERNAL_SERVER_ERROR;
+    error = new ApiError(statusCode,error.message )
+  };
+  next(error);
+};
+
 const pathNotFoundErrorHandler = (req, res, next) => {
   const statusCode = httpStatus.NOT_FOUND;
   next(new ApiError(httpStatus.NOT_FOUND, `The requested url ${req.originalUrl} is ${httpStatus[statusCode]}`));
@@ -21,4 +30,5 @@ const errorHandler = (err, req, res, next) => {
 module.exports = {
   errorHandler,
   pathNotFoundErrorHandler,
+  errorConverter
 };

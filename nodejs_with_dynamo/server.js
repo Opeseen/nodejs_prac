@@ -2,7 +2,6 @@ require('dotenv').config();
 const http = require('http');
 const logger = require('./config/logger');
 
-
 const app = require('./app');
 
 const httpServer = http.createServer(app); 

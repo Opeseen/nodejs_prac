@@ -1,14 +1,13 @@
 const httpStatus = require('http-status');
-const ApiError = require('../utils/ApiError');
+const catchAsyncError = require('../utils/catchAsyncError');
+const {dynamoService} = require('../services');
 
-const postStudentRecord = (req, res, next) => {
-  console.log(req)
-  try {
-    res.status(httpStatus.OK).json({status: 'Success'});
-  } catch (error) {
-    next(new ApiError(httpStatus.BAD_REQUEST,error));
-  }
-};
+
+const postStudentRecord = catchAsyncError(async(req, res) => {
+  const data = req.body;
+  const result = dynamoService.testStudentRecord(data)
+  res.status(httpStatus.OK).json({status: 'Success', result});
+});
 
 module.exports = {
   postStudentRecord
