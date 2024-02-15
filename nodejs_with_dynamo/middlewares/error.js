@@ -3,6 +3,7 @@ const httpStatus = require('http-status');
 
 const errorConverter = (err, req, res, next) => {
   let error = err;
+  // console.log(error)
   if(!(error instanceof ApiError)){
     const statusCode = httpStatus.INTERNAL_SERVER_ERROR;
     error = new ApiError(statusCode,error.message )

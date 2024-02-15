@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+const {randomUUID} = require('crypto');
 
 AWS.config.update({
   region: process.env.AWS_DEFAULT_REGION,
@@ -10,21 +11,34 @@ const dynamoClient = new AWS.DynamoDB.DocumentClient();
 const TABLE_NAME = "Student_Records"
 
 const createStudentRecord = async (studentData) => {
+  let newStudentData = studentData;
+  newStudentData.id = randomUUID();
   const params = {
     TableName: TABLE_NAME,
-    Item: studentData
+    Item: newStudentData
   };
   await dynamoClient.put(params).promise();
   return "Student Records Added Successfully!"
 };
 
+const getStudentByEmail = async (email) => {
+  const params = {
+    TableName: TABLE_NAME,
+    Key: {
+      email
+    }
+  };
+  return await dynamoClient.get(params).promise();
+};
+
 const testStudentRecord = (studentData) => {
   let testRecord = studentData
-  testRecord.id = "12"
+  testRecord.id = randomUUID();
   return testRecord;
 };
 
 module.exports = {
   createStudentRecord,
+  getStudentByEmail,
   testStudentRecord
 };
