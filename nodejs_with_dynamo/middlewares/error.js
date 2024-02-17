@@ -1,12 +1,15 @@
-const ApiError = require('./../utils/ApiError');
+const ApiError = require('../utils/ApiError');
 const httpStatus = require('http-status');
 
 const errorConverter = (err, req, res, next) => {
   let error = err;
   // console.log(error)
   if(!(error instanceof ApiError)){
-    const statusCode = httpStatus.INTERNAL_SERVER_ERROR;
-    error = new ApiError(statusCode,error.message )
+    const statusCode = error.statusCode || httpStatus.INTERNAL_SERVER_ERROR;
+    if(error.code === "ConditionalCheckFailedException"){ return next(new ApiError(statusCode,"Error updating the requested resources due to a failed conditional expression")) };
+
+    error = new ApiError(statusCode,error.message );
+    
   };
   next(error);
 };

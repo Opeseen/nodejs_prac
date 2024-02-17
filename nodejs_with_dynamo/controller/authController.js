@@ -13,7 +13,7 @@ const createStudentRecord = catchAsyncError(async(req, res) => {
 const getStudentByEmail = catchAsyncError(async(req,res,next) => {
   const {email} = req.body; // get the email from the req.body
   // Check of the student email exists in the database
-  const result = await dynamoService.getStudentByEmail(email);
+  const result = await dynamoService.getStudentByEmail(email.toLowerCase());
   // Throw an Error if the email address already exists
   if(Object.keys(result).includes('Item')) { return next(new ApiError(httpStatus.BAD_REQUEST, "Email address is already taken")) };
 

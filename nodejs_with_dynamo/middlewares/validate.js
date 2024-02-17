@@ -1,5 +1,6 @@
 const joi = require('joi');
 const ApiError = require('./../utils/ApiError');
+const httpStatus = require('http-status');
 
 const validate = (schema) => (req, res, next) => {
   const keys = Object.keys(schema);
@@ -10,11 +11,9 @@ const validate = (schema) => (req, res, next) => {
     return obj;
   }, {});
   const {value, error} = joi.compile(schema).validate(object);
-  // console.log(object)
   if (error) {
-    // console.log(error)
     const errors = error.details.map((detail) => detail.message).join(',');
-    next(new ApiError(400, errors));
+    next(new ApiError(httpStatus.BAD_REQUEST, errors));
   };
   return next();
 };

@@ -1,0 +1,8 @@
+ POST /api/v1/records/student/ 400 1666.917 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 20:55:03 GMT - error-message: Email address is already taken
+ PUT /api/v1/records/student/opeyemi5055@yahoo.coms 400 2.583 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 20:57:03 GMT - error-message: Invalid email provided
+ PUT /api/v1/records/student/opeyemi5055@yahoohg.com 400 1123.025 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 20:57:13 GMT - error-message: Error updating the requested resources due to a failed conditional expression
+ PUT /api/v1/records/student/opeyemi5055@yahoo.com 200 2601.669 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 20:57:32 GMT
+ PUT /api/v1/records/student/opeyemi5055@yahoo.com 400 5.664 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 21:09:13 GMT - error-message: "body.email" is not allowed
+ PUT /api/v1/records/student/opeyemi5055@yahoo.com 400 5.472 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 21:10:02 GMT - error-message: "body.email" is not allowed
+ PUT /api/v1/records/student/opeyemi5055@yahoo.com 200 3279.590 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 21:10:15 GMT
+ PUT /api/v1/records/student/opeyemi5055@yahoo.com 400 1.275 ms PostmanRuntime/7.36.1 Sat, 17 Feb 2024 21:10:19 GMT - error-message: Invalid Grade Score Entered - Only [A, B, C, D] are allowed
