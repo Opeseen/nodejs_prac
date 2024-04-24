@@ -1,0 +1,16 @@
+ POST /api/v1/mundial/jobs 200 24.081 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:02:22 GMT
+ POST /api/v1/mundial/jobs 400 3.771 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:02:37 GMT - error-message: Jobs validation failed: jobtype: Job type must be either "Product" or "Services"
+ POST /api/v1/mundial/jobs 400 9.803 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:02:51 GMT - error-message: Jobs validation failed: jobtype: Job type must be either "Product" or "Services"
+ POST /api/v1/mundial/jobs 400 3.818 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:03:01 GMT - error-message: Jobs validation failed: jobid: The Id of the Job must not be less than 6 character
+ POST /api/v1/mundial/jobs 400 2.216 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:03:10 GMT - error-message: Jobs validation failed: jobid: A Job must must contain an ID
+ POST /api/v1/mundial/jobs 500 70.424 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:03:22 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: "GNPLC1" }
+ POST /api/v1/mundial/jobs 200 3.471 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:03:31 GMT
+ POST /api/v1/mundial/jobs 400 3.218 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:03:39 GMT - error-message: Jobs validation failed: jobtype: Job type must be either "Product" or "Services"
+ POST /api/v1/mundial/jobs 500 5.417 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:04:10 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: "GNPLC123" }
+ POST /api/v1/mundial/jobs 200 4.631 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:04:16 GMT
+ POST /api/v1/mundial/jobs 200 5.663 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:04:23 GMT
+ POST /api/v1/mundial/jobs 400 3.304 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:04:29 GMT - error-message: Jobs validation failed: jobid: The Id of the Job must not be more that 15 character
+ POST /api/v1/mundial/jobs 200 40.561 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:06:34 GMT
+ POST /api/v1/mundial/jobs 500 5.725 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:06:46 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: "GNPLC12345" }
+ POST /api/v1/mundial/jobs 400 2.770 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:07:35 GMT - error-message: Jobs validation failed: jobid: The Id of the Job must not be more that 15 character
+ POST /api/v1/mundial/jobs 500 8.181 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:07:41 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: "GNPLC12345" }
