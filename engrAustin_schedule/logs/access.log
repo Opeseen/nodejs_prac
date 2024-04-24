@@ -15,3 +15,4 @@
  POST /api/v1/mundial/jobs 400 2.770 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:07:35 GMT - error-message: Jobs validation failed: jobid: The Id of the Job must not be more that 15 character
  POST /api/v1/mundial/jobs 500 8.181 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:07:41 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: "GNPLC12345" }
  POST /api/v1/mundial/jobs 200 50.852 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:21:26 GMT
+ GET / 404 7.324 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0 Wed, 24 Apr 2024 16:43:24 GMT - error-message: The requested url / is Not Found
