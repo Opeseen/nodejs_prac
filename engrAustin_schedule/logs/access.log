@@ -16,3 +16,40 @@
  POST /api/v1/mundial/jobs 500 8.181 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:07:41 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: "GNPLC12345" }
  POST /api/v1/mundial/jobs 200 50.852 ms PostmanRuntime/7.37.3 Wed, 24 Apr 2024 16:21:26 GMT
  GET / 404 7.324 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0 Wed, 24 Apr 2024 16:43:24 GMT - error-message: The requested url / is Not Found
+ POST /api/v2/mundial/jobs 400 30.526 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:01:03 GMT - error-message: Jobs validation failed: jobClass: Job must belong to a class, jobType: Job type cannot be blank, jobID: A Job must must contain an ID
+ POST /api/v2/mundial/jobs 200 90.696 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:04:33 GMT
+ GET /api/v2/mundial/jobs 200 11.460 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:05:02 GMT
+ GET /api/v2/mundial/jobss 404 100.149 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:05:16 GMT - error-message: The requested url /api/v2/mundial/jobss is Not Found
+ GET /api/v2/mundial/jobs 200 4.004 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:05:22 GMT
+ PATCH /api/v2/mundial/jobs/ccc 400 108.497 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:05:34 GMT - error-message: Cast to ObjectId failed for value "ccc" (type string) at path "_id" for model "Jobs"
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 12.300 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:06:48 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 5.845 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:07:07 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 4.667 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:07:14 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 3.022 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:07:20 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 219.212 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:07:43 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 4.815 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:08:37 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc9a6b 500 3.617 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:08:46 GMT - error-message: next is not defined
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfca6b 400 1.939 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:08:53 GMT - error-message: Cast to ObjectId failed for value "662ae181e3acfb34dcfca6b" (type string) at path "_id" for model "Jobs"
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6bc 400 9.800 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:10:22 GMT - error-message: Cast to ObjectId failed for value "662ae181e3acfb34dcfc8a6bc" (type string) at path "_id" for model "Jobs"
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6c 404 14.785 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:10:27 GMT - error-message: No Job found to update
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 9.649 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:10:41 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 4.594 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:10:47 GMT
+ PATCH /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 34.938 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:11:08 GMT
+ GET /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 5.160 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:11:41 GMT
+ GET /api/v2/mundial/jobs/662ae181e3acfb34dcfc8c6b 404 3.071 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:11:50 GMT - error-message: No Job Found
+ GET /api/v2/mundial/jobs/662ae181e3acfb34dcfc86b 400 1.475 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:11:55 GMT - error-message: Cast to ObjectId failed for value "662ae181e3acfb34dcfc86b" (type string) at path "_id" for model "Jobs"
+ DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6r 400 1.590 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:12:05 GMT - error-message: Cast to ObjectId failed for value "662ae181e3acfb34dcfc8a6r" (type string) at path "_id" for model "Jobs"
+ DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6 400 1.823 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:12:10 GMT - error-message: Cast to ObjectId failed for value "662ae181e3acfb34dcfc8a6" (type string) at path "_id" for model "Jobs"
+ DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6c 500 85.738 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:12:21 GMT - error-message: next is not defined
+ DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6c 404 14.285 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:12:44 GMT - error-message: No Job found to delete
+ DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6 400 3.703 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:12:48 GMT - error-message: Cast to ObjectId failed for value "662ae181e3acfb34dcfc8a6" (type string) at path "_id" for model "Jobs"
+ DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 200 12.006 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:12:52 GMT
+ GET /api/v2/mundial/jobs 200 8.746 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:13:07 GMT
+ GET /api/v2/mundial/jobs 200 18.704 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:14:12 GMT
+ POST /api/v2/mundial/jobs 200 26.844 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:14:17 GMT
+ GET /api/v2/mundial/jobs/662ae3c93b235c2d7c2522d4 200 14.623 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:14:27 GMT
+ GET /api/v2/mundial/jobs/662ae3c93b235c2d7c2522d4 200 18.977 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:05 GMT
+ GET /api/v2/mundial/jobs/662ae3c93b235c2d7c2522d4 200 15.870 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:35 GMT
+ DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 404 10.876 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:41 GMT - error-message: No Job found to delete
+ DELETE /api/v2/mundial/jobs/662ae3c93b235c2d7c2522d4 204 3.248 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:46 GMT
+ GET /api/v2/mundial/jobs 200 6.612 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:51 GMT

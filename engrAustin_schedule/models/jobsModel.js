@@ -8,6 +8,7 @@ const jobSchema = new mongoose.Schema(
       required: [true, 'A Job must must contain an ID'],
       unique: true,
       trim: true,
+      uppercase: true,
       maxlength: [15, 'The Id of the Job must not be more that 15 character'],
       minlength: [6, 'The Id of the Job must not be less than 6 character']
     },

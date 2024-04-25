@@ -12,7 +12,7 @@ app.use(successLogHandler);
 app.use(errorLogHandler);
 
 // ROUTES
-app.use('/api/v1/mundial/jobs', jobRouter);
+app.use('/api/v2/mundial/jobs', jobRouter);
 
 // ERROR HANDLER
 app.use(pathNotFoundErrorHandler); // ERROR HANDLER FOR PATH NOT FOUND
