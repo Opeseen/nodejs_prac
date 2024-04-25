@@ -29,7 +29,10 @@ const invoiceSchema = new mongoose.Schema(
       type: Number,
       required: [true, 'A witholding tax percentage is required']
     },
-    spentOnProject: Number,
+    spentOnProject: {
+      type: Number,
+      default: 0
+    },
     profit:{
       type: Number,
       required: [true, 'Profit on invoice can not be blank']
