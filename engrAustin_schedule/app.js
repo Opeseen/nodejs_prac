@@ -2,6 +2,7 @@ const express = require('express');
 const {errorHandler, pathNotFoundErrorHandler, errorConverter} = require('./middlewares/error');
 const {successLogHandler, errorLogHandler} = require('./config/morgan');
 const jobRouter = require('./routes/jobRoutes');
+const invoiceRouter = require('./routes/invoiceRoutes');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(errorLogHandler);
 
 // ROUTES
 app.use('/api/v2/mundial/jobs', jobRouter);
+app.use('/api/v2/mundial/invoices', invoiceRouter);
 
 // ERROR HANDLER
 app.use(pathNotFoundErrorHandler); // ERROR HANDLER FOR PATH NOT FOUND

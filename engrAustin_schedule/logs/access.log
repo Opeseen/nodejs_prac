@@ -53,3 +53,106 @@
  DELETE /api/v2/mundial/jobs/662ae181e3acfb34dcfc8a6b 404 10.876 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:41 GMT - error-message: No Job found to delete
  DELETE /api/v2/mundial/jobs/662ae3c93b235c2d7c2522d4 204 3.248 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:46 GMT
  GET /api/v2/mundial/jobs 200 6.612 ms PostmanRuntime/7.37.3 Thu, 25 Apr 2024 23:15:51 GMT
+ POST /api/v2/mundial/jobs 200 63.673 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 12:57:25 GMT
+ POST /api/v2/mundial/invoice 404 1.328 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 12:57:59 GMT - error-message: The requested url /api/v2/mundial/invoice is Not Found
+ POST /api/v2/mundial/invoices 200 47.426 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 12:58:09 GMT
+ POST /api/v2/mundial/invoices 200 10.855 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 12:59:17 GMT
+ POST /api/v2/mundial/invoices 400 5.254 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 12:59:55 GMT - error-message: Invoices validation failed: jobID: Cast to ObjectId failed for value "hdhdh" (type string) at path "jobID"
+ POST /api/v2/mundial/invoices 500 202.119 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 13:00:14 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 5.625 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 13:00:42 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 200 45.838 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 13:01:30 GMT
+ POST /api/v2/mundial/jobs 500 39.244 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 13:54:48 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: null }
+ POST /api/v2/mundial/invoices 500 114.104 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:04:07 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 72.218 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:04:31 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 64.193 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:06:17 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 11.864 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:06:40 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 58.864 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:13:50 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 52.682 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:28:22 GMT - error-message: next is not defined
+ POST /api/v2/mundial/invoices 500 60.359 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:28:47 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/jobs 500 8.446 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:29:26 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: null }
+ POST /api/v2/mundial/jobs 500 4.518 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:30:01 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobid_1 dup key: { jobid: null }
+ POST /api/v2/mundial/jobs 200 5.406 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:31:06 GMT
+ POST /api/v2/mundial/invoices 500 14.987 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:32:27 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 9.488 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:33:04 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 8.809 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:33:40 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 200 11.053 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:34:00 GMT
+ POST /api/v2/mundial/invoices 500 9.748 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:34:30 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 15.960 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:34:59 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 100.635 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:40:58 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 18.133 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:41:53 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 157.962 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:43:19 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 500 14.248 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:43:32 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11924" }
+ POST /api/v2/mundial/invoices 200 15.414 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:43:45 GMT
+ POST /api/v2/mundial/invoices 400 3.910 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:44:14 GMT - error-message: Invoices validation failed: austinPayment: Share of payment is required
+ POST /api/v2/mundial/invoices 500 12.741 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:44:44 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11925" }
+ POST /api/v2/mundial/invoices 400 4.604 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:45:04 GMT - error-message: Invoices validation failed: austinPayment: Share of payment is required
+ POST /api/v2/mundial/invoices 500 49.024 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:45:30 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11925" }
+ POST /api/v2/mundial/invoices 500 15.621 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:45:37 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11925" }
+ POST /api/v2/mundial/invoices 500 16.638 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:46:01 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11925" }
+ POST /api/v2/mundial/invoices 200 10.958 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:46:09 GMT
+ POST /api/v2/mundial/invoices 500 13.025 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:48:24 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11927" }
+ POST /api/v2/mundial/invoices 400 100.666 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:51:01 GMT - error-message: Invoices validation failed: spentOnProject: Cast to Number failed for value "sjs" (type string) at path "spentOnProject"
+ POST /api/v2/mundial/invoices 400 7.904 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:51:11 GMT - error-message: Invoices validation failed: spentOnProject: Cast to Number failed for value "null" (type string) at path "spentOnProject"
+ POST /api/v2/mundial/invoices 500 27.387 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:51:17 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11927" }
+ POST /api/v2/mundial/invoices 200 9.560 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:52:15 GMT
+ POST /api/v2/mundial/invoices 500 65.486 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:56:08 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11928" }
+ POST /api/v2/mundial/invoices 500 12.202 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 14:56:20 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11928" }
+ POST /api/v2/mundial/invoices 500 21.034 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:01:08 GMT - error-message: invoiceAppliedToSalesValue is not defined
+ POST /api/v2/mundial/invoices 500 47.462 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:01:26 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11928" }
+ POST /api/v2/mundial/invoices 500 26.142 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:02:02 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11928" }
+ POST /api/v2/mundial/invoices 500 46.938 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:06:12 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11928" }
+ POST /api/v2/mundial/invoices 500 56.252 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:12:39 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11928" }
+ POST /api/v2/mundial/invoices 200 14.462 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:12:52 GMT
+ POST /api/v2/mundial/invoices 500 39.796 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:20:22 GMT - error-message: witholdingTaxAmount is not defined
+ POST /api/v2/mundial/invoices 500 61.870 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:23:15 GMT - error-message: witholdingTaxAmount is not defined
+ POST /api/v2/mundial/invoices 500 5.224 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:23:39 GMT - error-message: witholdingTaxAmount is not defined
+ POST /api/v2/mundial/invoices 500 35.889 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:23:57 GMT - error-message: witholdingTaxAmount is not defined
+ POST /api/v2/mundial/invoices 500 39.854 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:25:05 GMT - error-message: witholdingTaxAmount is not defined
+ POST /api/v2/mundial/invoices 200 51.027 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:25:51 GMT
+ POST /api/v2/mundial/invoices 500 57.549 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:27:02 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11920" }
+ POST /api/v2/mundial/invoices 500 53.885 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:27:56 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11920" }
+ POST /api/v2/mundial/invoices 500 15.974 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:28:07 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11920" }
+ POST /api/v2/mundial/invoices 500 46.453 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:28:35 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11920" }
+ POST /api/v2/mundial/invoices 200 19.002 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 15:37:50 GMT
+ POST /api/v2/mundial/invoices 500 60.852 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:06:24 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11921" }
+ POST /api/v2/mundial/invoices 200 14.454 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:07:02 GMT
+ POST /api/v2/mundial/invoices 500 53.043 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:10:50 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11921" }
+ POST /api/v2/mundial/invoices 500 13.295 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:11:15 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11921" }
+ POST /api/v2/mundial/invoices 500 53.060 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:12:45 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11921" }
+ POST /api/v2/mundial/invoices 500 50.960 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:14:03 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11921" }
+ POST /api/v2/mundial/invoices 200 76.879 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:14:25 GMT
+ POST /api/v2/mundial/invoices 200 50.952 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:15:38 GMT
+ POST /api/v2/mundial/invoices 400 4.776 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:26:14 GMT - error-message: Invoices validation failed: profit: Profit on invoice can not be blank
+ POST /api/v2/mundial/invoices 200 53.526 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:26:37 GMT
+ POST /api/v2/mundial/invoices 200 42.099 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:34:37 GMT
+ GET /api/v2/mundial/jobs 200 10.464 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:35:34 GMT
+ POST /api/v2/mundial/invoices 200 12.489 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:35:51 GMT
+ POST /api/v2/mundial/invoices 200 8.422 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:38:38 GMT
+ POST /api/v2/mundial/invoices 500 11.854 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:51:49 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11927" }
+ POST /api/v2/mundial/invoices 200 9.808 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 16:53:59 GMT
+ POST /api/v2/mundial/invoices 500 46.255 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:00:19 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11921" }
+ POST /api/v2/mundial/invoices 200 14.320 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:00:34 GMT
+ POST /api/v2/mundial/invoices 200 42.951 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:01:04 GMT
+ POST /api/v2/mundial/invoices 200 46.502 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:46:07 GMT
+ POST /api/v2/mundial/invoices 500 79.958 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:51:20 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11946" }
+ POST /api/v2/mundial/invoices 500 99.213 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:51:30 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11946" }
+ POST /api/v2/mundial/invoices 500 25.782 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:53:17 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11946" }
+ POST /api/v2/mundial/invoices 500 22.966 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 17:53:24 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: "B11946" }
+ GET /api/v2/mundial/invoices 500 7.427 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:14:35 GMT - error-message: invoice is not defined
+ GET /api/v2/mundial/invoices 200 23.877 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:15:25 GMT
+ GET /api/v2/mundial/invoices/id 400 6.564 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:15:42 GMT - error-message: Cast to ObjectId failed for value "id" (type string) at path "_id" for model "Invoices"
+ GET /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 38.463 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:16:07 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 109.824 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:17:51 GMT
+ GET /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 6.581 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:17:58 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 6.323 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:18:39 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 3.018 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:21:30 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 5.921 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:22:01 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 400 2.664 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:24:06 GMT - error-message: Validation failed: invoiceDescription: The details of an invoice must not be more that 60 character
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 400 2.873 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:24:17 GMT - error-message: Validation failed: invoiceDescription: The details of an invoice must not be more that 60 character
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 5.588 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:24:30 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 3.638 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:36:36 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 106.020 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:37:54 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 64.516 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:39:22 GMT
+ GET /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 70.779 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:41:15 GMT
+ GET /api/v2/mundial/invoices 200 7.572 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:41:34 GMT
+ PATCH /api/v2/mundial/invoices/662bddd0ad11c515b82e592e 200 25.191 ms PostmanRuntime/7.37.3 Fri, 26 Apr 2024 18:41:41 GMT
