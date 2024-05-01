@@ -4,7 +4,7 @@ const toJson = require('@meanie/mongoose-to-json');
 
 const invoiceSchema = new mongoose.Schema(
   {
-    invoiceNunber:{
+    invoiceNumber:{
       type: String,
       required: [true, 'An Invoice number is required'],
       unique: true,
@@ -38,14 +38,6 @@ const invoiceSchema = new mongoose.Schema(
     spentOnProject: {
       type: Number,
       default: 0
-    },
-    profit:{
-      type: Number,
-      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
-    },
-    partnerPayment: {
-      type: Number,
-      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
     }
   }
 
@@ -53,40 +45,71 @@ const invoiceSchema = new mongoose.Schema(
 
 invoiceSchema.plugin(toJson);
 
-// Set middleware on all "findOneAnd"
-invoiceSchema.pre(/^findOneAnd/, async function(next){
-  this.invoiceFetched = await this.findOne();
-  console.log(this.invoiceFetched);
-  next();
-});
+invoiceSchema.statics.calculateWithiolding = async function(invoice){
+  // THIS WILL CALCULATE THE WHT AMOUNT
+  const witholdingTaxDeduction = ((invoice.witholdingTaxPercent / 100) * invoice.invoiceAppliedToSalesValue);
+  invoice.witholdingTaxAmount = witholdingTaxDeduction;
+};
 
-// THIS MIDDLEWARE WILL CALCULATE THE WHT AMOUNT
-invoiceSchema.pre('save', async function(next){
-  const witholdingTaxDeduction = ((this.witholdingTaxPercent / 100) * this.invoiceAppliedToSalesValue);
-  this.witholdingTaxAmount = witholdingTaxDeduction;
-  return next();
-});
-
-// THIS MIDDLEWARE WILL CALCULATE THE JOB PROFIT
-invoiceSchema.pre('save', function(next) {
-  const caculatedProfit = (this.invoiceAppliedToSalesValue - (this.witholdingTaxAmount + this.spentOnProject));
-  this.profit = caculatedProfit;
-  next();
-});
-
-// THIS MIDDLEWARE WILL CALCULATE THE PARTNERS PAYMENT
-invoiceSchema.pre('save', async function(next) {
-  if(this.jobID){
-    const job = await Job.findById(this.jobID);
+invoiceSchema.statics.calcPartnersPayment = async function(invoiceID) {
+    // THIS WILL CALCULATE THE PROFITABILITY AND PARTNERS PROFIT
+  const stats = await Invoice.aggregate([
+    {
+      $match: {invoiceNumber : invoiceID}
+    },
+    {
+      $project: {
+        jobID: true,
+        witholdingTaxAmount: true,
+        spentOnProject: true,
+        invoiceAppliedToSalesValue: true,
+        _id: false
+      }
+    }
+  ]);
+  const jobID = stats[0].jobID;
+  const profitability = (stats[0].invoiceAppliedToSalesValue - (stats[0].witholdingTaxAmount + stats[0].spentOnProject));
+  if(jobID){
+    const job = await Job.findById(jobID);
     if(job){
-      const percentage = job.jobClass === 'Installation' ? 25 : 50;
-      this.partnerPayment = ((percentage / 100) * this.profit);
-      return next();
+      const percentage = job.jobClass ===  'Installation' ? 25 : 50;
+      const partnerPayment = ((percentage / 100) * profitability);
+      await Job.findByIdAndUpdate(jobID, {profitability,partnerPayment})
     };
-  }
+  };
+};
 
+// THIS WILL DELETE THE PARTNER PROFIT AND JOB PROFITABILITY ON THE JOB RECORD
+invoiceSchema.statics.modifyJobDetails = async function(jobID){
+  await Job.findByIdAndUpdate(jobID, {
+    partnerPayment: null,
+    profitability: null
+  });
+};
+
+
+// MIDDLEWARES EXECUTION
+
+invoiceSchema.pre('save', async function(next){
+  this.constructor.calculateWithiolding(this);
+  next();
 });
 
+invoiceSchema.post('save', async function(){
+  this.constructor.calcPartnersPayment(this.invoiceNumber);
+});
+
+// SET MIDDLEWARE ON FIND AND DELETE
+invoiceSchema.pre('findOneAndDelete', async function(next){
+  this.invoiceFetched = await this.findOne(); // await will work here because the query has not yet run
+  next();
+});
+
+invoiceSchema.post('findOneAndDelete', async function(){
+  if(this.invoiceFetched !== null){ // this will not run if the specified invoice is not found on the database
+    await this.invoiceFetched.constructor.modifyJobDetails(this.invoiceFetched.jobID);
+  };
+});
 
 const Invoice = mongoose.model('Invoices', invoiceSchema);
 

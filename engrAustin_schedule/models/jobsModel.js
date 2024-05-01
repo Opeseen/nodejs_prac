@@ -30,6 +30,20 @@ const jobSchema = new mongoose.Schema(
     },
     jobPO:{
       type: String,
+    },
+    invoice: [
+      {
+        type: String,
+        uppercase: true
+      }
+    ],
+    profitability:{
+      type: Number,
+      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
+    },
+    partnerPayment: {
+      type: Number,
+      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
     }
   }
 );

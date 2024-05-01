@@ -14,5 +14,8 @@ router
   .patch(invoiceController.updateInvoice)
   .delete(invoiceController.deleteInvoice);
 
+router
+  .route('/testing')
+  .post(invoiceController.testing);
 
 module.exports = router;

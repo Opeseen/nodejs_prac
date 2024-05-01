@@ -25,7 +25,6 @@ const deleteInvoice = async(invoiceId) => {
   return invoice;
 };
 
-
 module.exports = {
   createInvoice,
   getInvoice,
