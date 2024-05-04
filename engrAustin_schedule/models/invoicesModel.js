@@ -101,7 +101,7 @@ invoiceSchema.post('save', async function(){
 
 invoiceSchema.pre('findOneAndDelete', async function(next) {
   this.invoiceDetails = await this.findOne();
-  next()
+  next();
 });
 
 invoiceSchema.post('findOneAndDelete', async function(){
