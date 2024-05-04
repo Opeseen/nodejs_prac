@@ -19,7 +19,7 @@ const invoiceSchema = new mongoose.Schema(
       type: String,
       required: [true, 'An invoice must have a description'],
       trim: true,
-      maxlength: [60, 'The details of an invoice must not be more that 60 character'],
+      maxlength: [100, 'The details of an invoice must not be more that 100 character'],
       uppercase: true
     },
     invoiceClass:{
@@ -95,6 +95,14 @@ invoiceSchema.statics.addInvoiceToJob = async function(invoice, jobID){
   };
 };
 
+invoiceSchema.statics.deleteInvoiceFromJob = async function(invoice,jobID){
+  const job = await Job.findById(jobID);
+  if(job){
+    job.invoices.pull(invoice);
+    await job.save();
+  };
+};
+
 
 // MIDDLEWARES EXECUTION
 
@@ -106,6 +114,17 @@ invoiceSchema.pre('save', async function(next){
 invoiceSchema.post('save', async function(){
   if(this.jobID !== false){
     this.constructor.addInvoiceToJob(this._id, this.jobID)
+  };
+});
+
+invoiceSchema.pre('findOneAndDelete', async function(next) {
+  this.invoiceDetails = await this.findOne();
+  next()
+});
+
+invoiceSchema.post('findOneAndDelete', async function(){
+  if(this.invoiceDetails !== null){ // this will not run if the specified invoice is not found on the database
+    await this.invoiceDetails.constructor.deleteInvoiceFromJob(this.invoiceDetails._id,this.invoiceDetails.jobID);
   };
 });
 

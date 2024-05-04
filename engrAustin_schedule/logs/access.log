@@ -154,3 +154,69 @@ Use mongoose.model(name, schema)
  GET /api/v2/mundial/jobs/66355dacab98824564b44bf9 200 5.867 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 01:50:04 GMT
  POST /api/v2/mundial/invoices 500 69.741 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 01:50:47 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNumber_1 dup key: { invoiceNumber: "B11951" }
  GET /api/v2/mundial/invoices 200 5.105 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 01:51:03 GMT
+ GET /api/v2/mundial/invoices 200 45.734 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:08:33 GMT
+ GET /api/v2/mundial/jobs 200 34.616 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:09:04 GMT
+ POST /api/v2/mundial/invoices 200 60.952 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:09:59 GMT
+ GET /api/v2/mundial/jobs 200 12.428 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:10:11 GMT
+ GET /api/v2/mundial/jobs 200 9.404 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:10:30 GMT
+ GET /api/v2/mundial/invoices 200 9.558 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:12:55 GMT
+ DELETE /api/v2/mundial/invoices/66357818f98926274474813f 404 8.648 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:14:46 GMT - error-message: No Invoice found to delete
+ DELETE /api/v2/mundial/invoices/66366be70e48fa2a2cc15a74 204 9.720 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:15:03 GMT
+ POST /api/v2/mundial/invoices 200 284.218 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:16:09 GMT
+ POST /api/v2/mundial/invoices 500 18.339 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:16:16 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNumber_1 dup key: { invoiceNumber: "B11952" }
+ GET /api/v2/mundial/jobs 200 12.404 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:16:22 GMT
+ GET /api/v2/mundial/invoices 200 5.829 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:16:42 GMT
+ DELETE /api/v2/mundial/invoices/66366d590e48fa2a2cc15a80 204 12.196 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:17:08 GMT
+ GET /api/v2/mundial/jobs 200 6.313 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:17:18 GMT
+ GET /api/v2/mundial/jobs 200 7.215 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:17:55 GMT
+ GET /api/v2/mundial/jobs/66355dd3ab98824564b44bfc 200 10.719 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:18:09 GMT
+ GET /api/v2/mundial/jobs/66355dd3ab98824564b44bfc 200 6.716 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:18:10 GMT
+ GET /api/v2/mundial/jobs 200 78.940 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:52:02 GMT
+ GET /api/v2/mundial/invoices 200 29.346 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:52:16 GMT
+ POST /api/v2/mundial/invoices 200 38.231 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:52:25 GMT
+ GET /api/v2/mundial/jobs 200 11.054 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:52:32 GMT
+ DELETE /api/v2/mundial/invoices/663675d96e36fa5078aa1a86 500 8.927 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:53:09 GMT - error-message: this.invoiceDetails.constructor.deleteInvoiceFromJob is not a function
+ GET /api/v2/mundial/invoices 200 4.662 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:54:24 GMT
+ POST /api/v2/mundial/invoices 200 109.896 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:55:22 GMT
+ DELETE /api/v2/mundial/invoices/6636768ad042b3403434bb09 500 8.037 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:56:22 GMT - error-message: this.invoiceDetails.constructor.deleteInvoiceFromJob is not a function
+ GET /api/v2/mundial/jobs 200 63.418 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:57:56 GMT
+ POST /api/v2/mundial/invoices 200 32.416 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:58:07 GMT
+ DELETE /api/v2/mundial/invoices/6636768ad042b3403434bb09 404 13.052 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:58:15 GMT - error-message: No Invoice found to delete
+ DELETE /api/v2/mundial/invoices/6636772fb3199a4f38237b6d 204 79.942 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:58:25 GMT
+ GET /api/v2/mundial/jobs 200 15.578 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 17:59:13 GMT
+ GET /api/v2/mundial/jobs 200 34.773 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:03:54 GMT
+ POST /api/v2/mundial/invoices 200 14.729 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:04:02 GMT
+ DELETE /api/v2/mundial/invoices/66367892bafcad0da89076ac 204 19.109 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:04:27 GMT
+ POST /api/v2/mundial/invoices 200 77.154 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:05:51 GMT
+ DELETE /api/v2/mundial/invoices/663678ff1e91e83e9c77b14e 204 38.027 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:06:16 GMT
+ DELETE /api/v2/mundial/invoices/663678ff1e91e83e9c77b14e 404 8.878 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:08:02 GMT - error-message: No Invoice found to delete
+ GET /api/v2/mundial/jobs 200 20.386 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:08:07 GMT
+ POST /api/v2/mundial/invoices 200 73.295 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:12:51 GMT
+ DELETE /api/v2/mundial/invoices/66367aa38c6892344c7dde95 204 59.673 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:13:04 GMT
+ POST /api/v2/mundial/invoices 200 58.297 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:24:48 GMT
+ DELETE /api/v2/mundial/invoices/66367d70a41cce39c89d0d9a 500 34.873 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:25:07 GMT - error-message: save is not defined
+ POST /api/v2/mundial/invoices 200 70.451 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:25:43 GMT
+ DELETE /api/v2/mundial/invoices/66367da73adefc38cccaad38 204 33.814 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:26:00 GMT
+ GET /api/v2/mundial/jobs 200 66.353 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:33:18 GMT
+ DELETE /api/v2/mundial/invoices/66367da73adefc38cccaad38 404 11.334 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:33:30 GMT - error-message: No Invoice found to delete
+ POST /api/v2/mundial/invoices 200 18.289 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:33:34 GMT
+ GET /api/v2/mundial/jobs 200 9.780 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:33:46 GMT
+ DELETE /api/v2/mundial/invoices/66367f7e75512c1d5c478d2b 204 24.181 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:33:58 GMT
+ GET /api/v2/mundial/jobs 200 14.554 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:34:05 GMT
+ GET /api/v2/mundial/invoices 200 21.506 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:34:25 GMT
+ DELETE /api/v2/mundial/invoices/663578af948ddd0438f4e3ba 204 41.135 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:34:55 GMT
+ DELETE /api/v2/mundial/invoices/663579432359364ed82710a7 204 23.344 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:36:17 GMT
+ GET /api/v2/mundial/jobs 200 27.418 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:37:46 GMT
+ GET /api/v2/mundial/invoices 200 11.624 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:38:37 GMT
+ GET /api/v2/mundial/jobs 200 7.456 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:39:54 GMT
+ POST /api/v2/mundial/invoices 200 42.496 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:40:28 GMT
+ GET /api/v2/mundial/jobs 200 12.297 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:40:54 GMT
+ DELETE /api/v2/mundial/invoices/6636811c9fef8a40a42d07e7 204 58.950 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:41:25 GMT
+ GET /api/v2/mundial/jobs 200 7.867 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:41:29 GMT
+ GET /api/v2/mundial/invoices 200 5.122 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:41:38 GMT
+ POST /api/v2/mundial/jobs 200 29.438 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:50:53 GMT
+ GET /api/v2/mundial/invoices 200 28.508 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:52:18 GMT
+ POST /api/v2/mundial/invoices 200 18.564 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:52:35 GMT
+ DELETE /api/v2/mundial/invoices/663683f38af3fa48a4c22f89 204 28.941 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:53:20 GMT
+ POST /api/v2/mundial/invoices 200 41.164 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:53:38 GMT
+ GET /api/v2/mundial/jobs 200 8.004 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:53:42 GMT

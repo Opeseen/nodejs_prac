@@ -20,6 +20,11 @@ const jobSchema = new mongoose.Schema(
         message: 'Job type must be either "Product" or "Services"'
       }
     },
+    jobDescription: {
+      type: String,
+      uppercase: true,
+      maxlength: [60, 'The details of a job must not be more that 60 character']
+    },
     jobPO:{
       type: String,
     },
