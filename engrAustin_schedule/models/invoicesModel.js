@@ -69,24 +69,6 @@ invoiceSchema.statics.calculatePaymentDetails = async function(invoice){
   invoice.invoicePartnerPayment = ((percentage / 100) * invoice.profitOrLoss);
 };
 
-invoiceSchema.statics.calcPartnersPayment = async function(invoiceID) {
-    // THIS WILL CALCULATE THE PROFITABILITY AND PARTNERS PROFIT
-  const stats = await Invoice.aggregate([
-    {
-      $match: {invoiceNumber : invoiceID}
-    },
-    {
-      $project: {
-        jobID: true,
-        witholdingTaxAmount: true,
-        spentOnProject: true,
-        invoiceAppliedToSalesValue: true,
-        _id: false
-      }
-    }
-  ]);
-};
-
 invoiceSchema.statics.addInvoiceToJob = async function(invoice, jobID){
   const job = await Job.findById(jobID);
   if(job){
