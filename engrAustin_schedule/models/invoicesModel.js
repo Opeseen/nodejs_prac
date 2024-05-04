@@ -22,6 +22,14 @@ const invoiceSchema = new mongoose.Schema(
       maxlength: [60, 'The details of an invoice must not be more that 60 character'],
       uppercase: true
     },
+    invoiceClass:{
+      type: String,
+      required: [true, 'Invoice must belong to a class'],
+      enum: {
+        values: ['Installation', 'Maintenance'],
+        message: 'Invoice class must be either "Installation" or "Maintenance"'
+      }
+    },
     invoiceAppliedToSalesValue: {
       type: Number,
       required: [true, 'An invoice must have a value attached']
@@ -31,13 +39,21 @@ const invoiceSchema = new mongoose.Schema(
       required: [true, 'A witholding tax percentage is required'],
       default: 5,
     },
+    spentOnProject: {
+      type: Number,
+      default: 0
+    },
     witholdingTaxAmount: {
       type: Number,
       set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
     },
-    spentOnProject: {
+    profitOrLoss:{
       type: Number,
-      default: 0
+      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
+    },
+    invoicePartnerPayment:{
+      type: Number,
+      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
     }
   }
 
@@ -45,10 +61,12 @@ const invoiceSchema = new mongoose.Schema(
 
 invoiceSchema.plugin(toJson);
 
-invoiceSchema.statics.calculateWithiolding = async function(invoice){
-  // THIS WILL CALCULATE THE WHT AMOUNT
-  const witholdingTaxDeduction = ((invoice.witholdingTaxPercent / 100) * invoice.invoiceAppliedToSalesValue);
-  invoice.witholdingTaxAmount = witholdingTaxDeduction;
+invoiceSchema.statics.calculatePaymentDetails = async function(invoice){
+  // THIS WILL CALCULATE THE WHT, PROFITABILITY AND PARTNERS PAYMENT
+  invoice.witholdingTaxAmount = ((invoice.witholdingTaxPercent / 100) * invoice.invoiceAppliedToSalesValue);
+  invoice.profitOrLoss = (invoice.invoiceAppliedToSalesValue - (invoice.witholdingTaxAmount + invoice.spentOnProject));
+  const percentage = invoice.invoiceClass ===  'Installation' ? 25 : 50;
+  invoice.invoicePartnerPayment = ((percentage / 100) * invoice.profitOrLoss);
 };
 
 invoiceSchema.statics.calcPartnersPayment = async function(invoiceID) {
@@ -67,49 +85,30 @@ invoiceSchema.statics.calcPartnersPayment = async function(invoiceID) {
       }
     }
   ]);
-  const jobID = stats[0].jobID;
-  const profitability = (stats[0].invoiceAppliedToSalesValue - (stats[0].witholdingTaxAmount + stats[0].spentOnProject));
-  if(jobID){
-    const job = await Job.findById(jobID);
-    if(job){
-      const percentage = job.jobClass ===  'Installation' ? 25 : 50;
-      const partnerPayment = ((percentage / 100) * profitability);
-      await Job.findByIdAndUpdate(jobID, {profitability,partnerPayment})
-    };
-  };
 };
 
-// THIS WILL DELETE THE PARTNER PROFIT AND JOB PROFITABILITY ON THE JOB RECORD
-invoiceSchema.statics.modifyJobDetails = async function(jobID){
-  await Job.findByIdAndUpdate(jobID, {
-    partnerPayment: null,
-    profitability: null
-  });
+invoiceSchema.statics.addInvoiceToJob = async function(invoice, jobID){
+  const job = await Job.findById(jobID);
+  if(job){
+    job.invoices.addToSet(invoice);
+    await job.save();
+  };
 };
 
 
 // MIDDLEWARES EXECUTION
 
 invoiceSchema.pre('save', async function(next){
-  this.constructor.calculateWithiolding(this);
+  this.constructor.calculatePaymentDetails(this);
   next();
 });
 
 invoiceSchema.post('save', async function(){
-  this.constructor.calcPartnersPayment(this.invoiceNumber);
-});
-
-// SET MIDDLEWARE ON FIND AND DELETE
-invoiceSchema.pre('findOneAndDelete', async function(next){
-  this.invoiceFetched = await this.findOne(); // await will work here because the query has not yet run
-  next();
-});
-
-invoiceSchema.post('findOneAndDelete', async function(){
-  if(this.invoiceFetched !== null){ // this will not run if the specified invoice is not found on the database
-    await this.invoiceFetched.constructor.modifyJobDetails(this.invoiceFetched.jobID);
+  if(this.jobID !== false){
+    this.constructor.addInvoiceToJob(this._id, this.jobID)
   };
 });
+
 
 const Invoice = mongoose.model('Invoices', invoiceSchema);
 

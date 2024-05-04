@@ -18,37 +18,28 @@ const jobSchema = new mongoose.Schema(
       enum: {
         values: ['Product', 'Service'],
         message: 'Job type must be either "Product" or "Services"'
-      }   
-    },
-    jobClass:{
-      type: String,
-      required: [true, 'Job must belong to a class'],
-      enum: {
-        values: ['Installation', 'Maintenance'],
-        message: 'Job class must be either "Installation" or "Maintenance"'
-      }   
+      }
     },
     jobPO:{
       type: String,
     },
-    invoice: [
+    invoices: [
       {
-        type: String,
-        uppercase: true
+        type: mongoose.Schema.ObjectId,
+        ref: 'Invoices',
       }
-    ],
-    profitability:{
-      type: Number,
-      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
-    },
-    partnerPayment: {
-      type: Number,
-      set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
-    }
+    ]
   }
 );
 
 jobSchema.plugin(toJson);
+
+// QUERY MIDDLEWARE TO POPULATE INVOICE DATA
+jobSchema.pre(/^find/, function(next) {
+  this.populate({path: 'invoices'});
+  next();
+});
+
 
 const Job = mongoose.model('Jobs', jobSchema);
 

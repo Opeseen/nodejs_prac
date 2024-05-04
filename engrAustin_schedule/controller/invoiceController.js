@@ -41,10 +41,11 @@ const updateInvoice = catchAsyncError(async(req, res, next) => {
   };
   
   invoice.invoiceNumber = req.body.invoiceNumber;
-  invoice.spentOnProject = req.body.spentOnProject || 0;
   invoice.jobID = req.body.jobID;
-  invoice.witholdingTaxPercent = req.body.witholdingTaxPercent
   invoice.invoiceDescription = req.body.invoiceDescription;
+  invoice.invoiceClass = req.body.invoiceClass
+  invoice.spentOnProject = req.body.spentOnProject || 0;
+  invoice.witholdingTaxPercent = req.body.witholdingTaxPercent
   invoice.invoiceAppliedToSalesValue = req.body.invoiceAppliedToSalesValue;
   await invoice.save();
 
