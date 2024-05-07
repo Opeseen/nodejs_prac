@@ -14,5 +14,9 @@ router
   .patch(jobController.updateJob)
   .delete(jobController.deleteJob);
 
+router
+  .route('/:id/ledger')
+  .get(jobController.getJobLedger);
+
 
 module.exports = router;

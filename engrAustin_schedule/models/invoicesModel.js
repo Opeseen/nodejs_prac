@@ -69,21 +69,21 @@ invoiceSchema.statics.calculatePaymentDetails = async function(invoice){
   invoice.invoicePartnerPayment = ((percentage / 100) * invoice.profitOrLoss);
 };
 
-invoiceSchema.statics.addInvoiceToJob = async function(invoice, jobID){
-  const job = await Job.findById(jobID);
-  if(job){
-    job.invoices.addToSet(invoice);
-    await job.save();
-  };
-};
+// invoiceSchema.statics.addInvoiceToJob = async function(invoice, jobID){
+//   const job = await Job.findById(jobID);
+//   if(job){
+//     job.invoices.addToSet(invoice);
+//     await job.save();
+//   };
+// };
 
-invoiceSchema.statics.deleteInvoiceFromJob = async function(invoice,jobID){
-  const job = await Job.findById(jobID);
-  if(job){
-    job.invoices.pull(invoice);
-    await job.save();
-  };
-};
+// invoiceSchema.statics.deleteInvoiceFromJob = async function(invoice,jobID){
+//   const job = await Job.findById(jobID);
+//   if(job){
+//     job.invoices.pull(invoice);
+//     await job.save();
+//   };
+// };
 
 
 // MIDDLEWARES EXECUTION
@@ -91,23 +91,6 @@ invoiceSchema.statics.deleteInvoiceFromJob = async function(invoice,jobID){
 invoiceSchema.pre('save', async function(next){
   this.constructor.calculatePaymentDetails(this);
   next();
-});
-
-invoiceSchema.post('save', async function(){
-  if(this.jobID !== false){
-    this.constructor.addInvoiceToJob(this._id, this.jobID)
-  };
-});
-
-invoiceSchema.pre('findOneAndDelete', async function(next) {
-  this.invoiceDetails = await this.findOne();
-  next();
-});
-
-invoiceSchema.post('findOneAndDelete', async function(){
-  if(this.invoiceDetails !== null){ // this will not run if the specified invoice is not found on the database
-    await this.invoiceDetails.constructor.deleteInvoiceFromJob(this.invoiceDetails._id,this.invoiceDetails.jobID);
-  };
 });
 
 

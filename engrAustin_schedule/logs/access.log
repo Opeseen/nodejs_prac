@@ -220,3 +220,172 @@ Use mongoose.model(name, schema)
  DELETE /api/v2/mundial/invoices/663683f38af3fa48a4c22f89 204 28.941 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:53:20 GMT
  POST /api/v2/mundial/invoices 200 41.164 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:53:38 GMT
  GET /api/v2/mundial/jobs 200 8.004 ms PostmanRuntime/7.38.0 Sat, 04 May 2024 18:53:42 GMT
+ POST /api/v2/mundial/jobs 200 283.881 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:17:05 GMT
+ GET /api/v2/mundial/jobs 200 23.686 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:17:34 GMT
+ POST /api/v2/mundial/invoices 200 62.050 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:18:13 GMT
+ GET /api/v2/mundial/jobs 200 156.736 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:18:24 GMT
+ PATCH /api/v2/mundial/invoices/6639ffe59587b03b7438b60b 200 91.108 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:20:00 GMT
+ GET /api/v2/mundial/jobs 200 6.787 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:20:13 GMT
+ PATCH /api/v2/mundial/invoices/6639ffe59587b03b7438b60b 200 9.564 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:20:27 GMT
+ GET /api/v2/mundial/jobs 200 11.545 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:20:40 GMT
+ PATCH /api/v2/mundial/invoices/6639ffe59587b03b7438b60b 200 31.124 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:21:17 GMT
+ GET /api/v2/mundial/jobs 200 6.026 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:21:21 GMT
+ GET /api/v2/mundial/jobs 200 12.740 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:21:31 GMT
+ GET /api/v2/mundial/jobs 200 46.879 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 10:23:16 GMT
+ GET /api/v2/mundial/jobs 200 62.303 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:37:33 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 87.960 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:37:44 GMT
+ GET /api/v2/mundial/invoices 200 4.159 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:38:06 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 4.067 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:38:31 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledgers 404 3.777 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:39:26 GMT - error-message: The requested url /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledgers is Not Found
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 10.305 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:39:31 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 15.217 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:41:12 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 14.813 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:43:46 GMT
+ GET /api/v2/mundial/invoices 200 16.398 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:43:59 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 15.001 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:44:38 GMT
+ GET /api/v2/mundial/invoices 200 21.370 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:49:14 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 89.874 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:52:02 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 56.314 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:52:40 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 17.172 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:53:11 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 15.275 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:53:50 GMT
+ GET /api/v2/mundial/jobs 200 31.076 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:56:56 GMT
+ GET /api/v2/mundial/jobs 200 3.734 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:57:34 GMT
+ POST /api/v2/mundial/jobs 200 14.603 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:57:42 GMT
+ POST /api/v2/mundial/invoices 200 10.648 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:57:54 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 11.862 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 11:58:27 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 23.602 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:03:50 GMT
+ GET /api/v2/mundial/jobs/6639ffa19587b03b7438b608/ledger 200 13.813 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:04:15 GMT
+ GET /api/v2/mundial/jobs 200 33.627 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:04:55 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 5.646 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:05:17 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 2.964 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:05:19 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 15.477 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:07:27 GMT
+ GET /api/v2/mundial/invoices 200 21.231 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:08:37 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 4.424 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:08:43 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 11.351 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:10:53 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 13.015 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:12:12 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351e/ledger 500 2.746 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:12:41 GMT - error-message: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 3.934 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:12:53 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ed/ledger 200 2.985 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:12:59 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 2.351 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:13:05 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 2.178 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:14:56 GMT
+ POST /api/v2/mundial/invoices 500 104.727 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:15:11 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: null }
+ POST /api/v2/mundial/invoices 500 9.984 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:15:19 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: null }
+ POST /api/v2/mundial/invoices 500 7.469 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:15:43 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: null }
+ POST /api/v2/mundial/invoices 500 5.735 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:15:58 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNunber_1 dup key: { invoiceNunber: null }
+ POST /api/v2/mundial/invoices 200 17.568 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:16:42 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 3.429 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:16:51 GMT
+ POST /api/v2/mundial/invoices 200 5.945 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:17:16 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 2.483 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:17:21 GMT
+ POST /api/v2/mundial/jobs 500 30.618 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:17:42 GMT - error-message: E11000 duplicate key error collection: austinMundial.jobs index: jobID_1 dup key: { jobID: "NESTLE-151" }
+ POST /api/v2/mundial/jobs 200 4.867 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:17:48 GMT
+ POST /api/v2/mundial/invoices 400 7.718 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:18:17 GMT - error-message: Invoices validation failed: invoiceClass: Invoice class must be either "Installation" or "Maintenance"
+ POST /api/v2/mundial/invoices 200 6.256 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:18:30 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 3.407 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:18:35 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 200 2.602 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:18:42 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 500 11.951 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:19:50 GMT - error-message: length is not defined
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 200 19.730 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:20:07 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 200 14.486 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:20:33 GMT
+ GET /api/v2/mundial/jobs 200 41.510 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:20:39 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 200 5.122 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:21:21 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837da0f/ledger 200 9.655 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:21:29 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 200 7.983 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:21:34 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 200 12.642 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:21:53 GMT
+ GET /api/v2/mundial/jobs/663a1bece370e209a837dadf/ledger 200 11.983 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:22:14 GMT
+ GET /api/v2/mundial/invoices 200 18.310 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:22:51 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 3.838 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:23:20 GMT
+ GET /api/v2/mundial/invoices 200 9.435 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:23:32 GMT
+ DELETE /api/v2/mundial/invoices/663a1742cd803233286351ee 204 102.079 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:23:52 GMT
+ GET /api/v2/mundial/invoices 200 5.348 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:23:58 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 2.627 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:24:03 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 12.941 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:26:36 GMT
+ GET /api/v2/mundial/jobs 200 15.538 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:26:43 GMT
+ POST /api/v2/mundial/jobs 200 20.897 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:26:55 GMT
+ POST /api/v2/mundial/jobs 200 4.187 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:27:13 GMT
+ GET /api/v2/mundial/jobs 200 11.619 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:27:18 GMT
+ GET /api/v2/mundial/jobs 200 6.221 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:28:01 GMT
+ POST /api/v2/mundial/invoices 200 6.636 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:28:57 GMT
+ POST /api/v2/mundial/invoices 200 11.338 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:29:12 GMT
+ POST /api/v2/mundial/invoices 200 4.500 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:29:34 GMT
+ POST /api/v2/mundial/invoices 200 4.921 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:29:55 GMT
+ GET /api/v2/mundial/invoices 200 17.115 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:29:59 GMT
+ GET /api/v2/mundial/invoices 200 3.997 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:39:01 GMT
+ GET /api/v2/mundial/invoices 200 4.087 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:39:04 GMT
+ GET /api/v2/mundial/invoices 200 6.528 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:39:44 GMT
+ GET /api/v2/mundial/jobs/663a1736cd803233286351ec/ledger 200 2.601 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:39:48 GMT
+ GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 2.150 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:40:09 GMT
+ DELETE /api/v2/mundial/invoices/663a1742cd803233286351ee 404 5.893 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:40:26 GMT - error-message: No Invoice found to delete
+ DELETE /api/v2/mundial/invoices/663a1e8902ce522d8ca5c8d1 204 6.512 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:40:43 GMT
+ GET /api/v2/mundial/invoices 200 3.594 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:40:47 GMT
+ GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 3.528 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:40:53 GMT
+ GET /api/v2/mundial/jobs 200 39.865 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:41:36 GMT
+ GET /api/v2/mundial/invoices 200 26.261 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:42:50 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 6.811 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:43:27 GMT
+ PATCH /api/v2/mundial/invoices/663a1ec302ce522d8ca5c8d8 404 6.526 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:43:52 GMT - error-message: No Invoice found to update
+ PATCH /api/v2/mundial/invoices/663a1ec302ce522d8ca5c8d7 200 56.836 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:44:20 GMT
+ GET /api/v2/mundial/invoices 200 3.689 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:44:44 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 3.567 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 12:45:05 GMT
+ GET /api/v2/mundial/invoices 200 63.525 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:19:11 GMT
+ PATCH /api/v2/mundial/invoices/663a1ec302ce522d8ca5c8d7 400 20.540 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:20:11 GMT - error-message: Invoices validation failed: jobID: Cast to ObjectId failed for value "663a1e2102ce522d8ca5c8cdS" (type string) at path "jobID"
+ PATCH /api/v2/mundial/invoices/663a1ec302ce522d8ca5c8d7 200 47.266 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:20:36 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 4.409 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:20:46 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 2.503 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:21:43 GMT
+ POST /api/v2/mundial/invoices 200 9.373 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:30:56 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 3.307 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:31:02 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 11.306 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:32:42 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 565.787 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:54:05 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 18.069 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:55:02 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 9.292 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:55:43 GMT - error-message: Arguments must be aggregate pipeline operators
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 14.543 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:56:10 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 14.143 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:56:48 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 165.987 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:57:14 GMT - error-message: The field 'id' must be an accumulator object
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 13.791 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:57:27 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 17.886 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:57:44 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 85.035 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:59:12 GMT
+ GET /api/v2/mundial/jobs 200 29.384 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:59:31 GMT
+ GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 43.181 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:59:45 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 3.839 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:59:52 GMT
+ GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 4.199 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 13:59:58 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 3.242 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:00:03 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 103.279 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:13:13 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 15.531 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:13:38 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 11.560 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:16:38 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 13.440 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:17:12 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 13.273 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:20:53 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 78.680 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:23:50 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 14.783 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:24:56 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 40.149 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:26:16 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 4.969 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:26:23 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 6.234 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:29:41 GMT - error-message: Arguments must be aggregate pipeline operators
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 12.892 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 14:31:51 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 252.192 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:29:03 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 5.135 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:30:19 GMT - error-message: Arguments must be aggregate pipeline operators
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 9.498 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:31:19 GMT - error-message: Arguments must be aggregate pipeline operators
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 391.174 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:37:28 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 3.923 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:37:34 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 6.232 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:37:58 GMT - error-message: Arguments must be aggregate pipeline operators
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 19.699 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:39:42 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 4.795 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:43:51 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 90.308 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:45:10 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 17.106 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 15:53:05 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 13.710 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:00:45 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 133.846 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:01:43 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 7.288 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:11:09 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 5.671 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:17:44 GMT - error-message: $totalRevenue is not defined
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 6.912 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:19:02 GMT - error-message: $totalRevenue is not defined
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 15.875 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:19:26 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 6.099 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:20:18 GMT - error-message: totalRevenue is not defined
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 11.900 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:22:17 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 9.938 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:23:29 GMT - error-message: totalExpenses is not defined
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 9.800 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:24:08 GMT - error-message: totalExpenses is not defined
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 500 234.867 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:24:47 GMT - error-message: PlanExecutor error during aggregation :: caused by :: can't $subtract array from array
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 153.287 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:36:49 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 5.345 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:39:44 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 45.880 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:40:51 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 17.009 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:41:42 GMT
+ PATCH /api/v2/mundial/invoices/663a1ec302ce522d8ca5c8d7 200 190.147 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:43:28 GMT
+ PATCH /api/v2/mundial/invoices/663a1ec302ce522d8ca5c8d7 200 10.243 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:43:42 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 4.043 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:43:58 GMT
+ GET /api/v2/mundial/invoices 200 11.656 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:44:28 GMT
+ GET /api/v2/mundial/jobs 200 15.383 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:44:54 GMT
+ GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 4.011 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:45:09 GMT
+ GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 18.106 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:46:05 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 35.792 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:46:12 GMT

@@ -20,7 +20,7 @@ const getJob = catchAsyncError(async(req, res, next) => {
 
   res.status(httpStatus.OK).json({
     status: 'Success',
-    data: job
+    job
   })
 });
 
@@ -29,7 +29,7 @@ const getAllJobs = catchAsyncError(async(req, res) => {
   res.status(httpStatus.OK).json({
     status: 'Success',
     results: jobs.length,
-    data: jobs
+    jobs
   })
 });
 
@@ -58,12 +58,22 @@ const deleteJob = catchAsyncError(async(req, res, next) => {
   })
 });
 
+const getJobLedger = catchAsyncError(async(req, res,next) => {
+  const id = req.params.id;
+  const statics = await jobService.getJobLedger(id);
 
+  res.status(httpStatus.OK).json({
+    status: 'Success',
+    statics
+  });
+
+});
 
 module.exports = {
   createJob,
   getJob,
   getAllJobs,
   updateJob,
-  deleteJob
+  deleteJob,
+  getJobLedger
 };

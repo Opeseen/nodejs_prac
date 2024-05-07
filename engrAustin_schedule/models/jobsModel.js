@@ -28,12 +28,6 @@ const jobSchema = new mongoose.Schema(
     jobPO:{
       type: String,
     },
-    invoices: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Invoices',
-      }
-    ]
   }
 );
 
