@@ -389,3 +389,13 @@ Use mongoose.model(name, schema)
  GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 4.011 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:45:09 GMT
  GET /api/v2/mundial/jobs/663a1e0f02ce522d8ca5c8cb/ledger 200 18.106 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:46:05 GMT
  GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 35.792 ms PostmanRuntime/7.38.0 Tue, 07 May 2024 16:46:12 GMT
+ GET /api/v2/mundial/jobs 200 152.064 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:12:49 GMT
+ POST /api/v2/mundial/jobs 200 15.744 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:13:27 GMT
+ GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 135.235 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:13:39 GMT
+ POST /api/v2/mundial/invoices 200 9.244 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:14:11 GMT
+ GET /api/v2/mundial/jobs/663bc0c7ad73444a4c8f8ca1/ledger 200 3.726 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:14:20 GMT
+ DELETE /api/v2/mundial/jobs/663bc0c7ad73444a4c8f8ca1 204 9.231 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:14:49 GMT
+ GET /api/v2/mundial/jobs/663bc0c7ad73444a4c8f8ca1/ledger 200 3.640 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:14:54 GMT
+ GET /api/v2/mundial/jobs 200 21.326 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:15:12 GMT
+ GET /api/v2/mundial/jobs/663bc0c7ad73444a4c8f8ca1 404 6.361 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:15:21 GMT - error-message: No Job Found
+ POST /api/v2/mundial/invoices 500 53.720 ms PostmanRuntime/7.38.0 Wed, 08 May 2024 18:15:36 GMT - error-message: E11000 duplicate key error collection: austinMundial.invoices index: invoiceNumber_1 dup key: { invoiceNumber: "B11960" }

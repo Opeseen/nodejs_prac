@@ -28,17 +28,19 @@ const jobSchema = new mongoose.Schema(
     jobPO:{
       type: String,
     },
+    InvoicePaymentStatus: {
+      type: String,
+      enum: {
+        values: ['Paid', 'Unpaid'],
+        message: 'Payment status must be either "Paid" or "Unpaid"'
+      }
+    }
   }
 );
 
 jobSchema.plugin(toJson);
 
-// QUERY MIDDLEWARE TO POPULATE INVOICE DATA
-jobSchema.pre(/^find/, function(next) {
-  this.populate({path: 'invoices'});
-  next();
-});
-
+// CREATE A METHOD TO CONFIRM IF A JOB IS LINKED TO AN INVOICE BEFORE DELETION
 
 const Job = mongoose.model('Jobs', jobSchema);
 
