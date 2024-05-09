@@ -1,5 +1,8 @@
 const httpStatus = require('http-status');
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
 const {jobService} = require('../services');
+const {Invoice} = require('../models');
 const ApiError = require('../utils/ApiError');
 const catchAsyncError = require('../utils/catchAsyncError');
 
@@ -48,8 +51,10 @@ const updateJob = catchAsyncError(async(req, res, next) => {
 
 const deleteJob = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
-  const deletedJob = await jobService.deleteJob(id)
+  const job = await Invoice.find({jobID: ObjectId(id)});
+  if(job.length > 0){ return next(new ApiError('This Job cannot be deleted because it is used on an Invoice', httpStatus.BAD_REQUEST)) };
 
+  const deletedJob = await jobService.deleteJob(id);
   if(!deletedJob){
     return next(new ApiError("No Job found to delete", httpStatus.NOT_FOUND));
   };
@@ -64,6 +69,7 @@ const getJobLedger = catchAsyncError(async(req, res,next) => {
 
   res.status(httpStatus.OK).json({
     status: 'Success',
+    results: statics[0].details.length,
     statics
   });
 

@@ -67,12 +67,12 @@ const deleteInvoice = catchAsyncError(async(req, res, next) => {
 });
 
 const testing = catchAsyncError(async(req, res) => {
-  const invoiceDetails = req.body;
+  const id = req.params.id;
 
-  const newInvoice = await invoiceService.createInvoice(invoiceDetails);
+  const job = await Invoice.find({jobID: ObjectId(id)});
   res.status(httpStatus.OK).json({
     status: 'Success',
-    data: newInvoice
+    data: job
   });
 });
 

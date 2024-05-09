@@ -15,7 +15,7 @@ router
   .delete(invoiceController.deleteInvoice);
 
 router
-  .route('/testing')
-  .post(invoiceController.testing);
+  .route('/:id/testing')
+  .get(invoiceController.testing);
 
 module.exports = router;

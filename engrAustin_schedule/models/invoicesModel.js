@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Job = require('./jobsModel')
 const toJson = require('@meanie/mongoose-to-json');
 
 const invoiceSchema = new mongoose.Schema(

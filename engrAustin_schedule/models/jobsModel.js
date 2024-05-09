@@ -40,8 +40,6 @@ const jobSchema = new mongoose.Schema(
 
 jobSchema.plugin(toJson);
 
-// CREATE A METHOD TO CONFIRM IF A JOB IS LINKED TO AN INVOICE BEFORE DELETION
-
 const Job = mongoose.model('Jobs', jobSchema);
 
 module.exports = Job;
