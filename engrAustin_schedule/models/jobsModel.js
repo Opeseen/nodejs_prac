@@ -27,13 +27,6 @@ const jobSchema = new mongoose.Schema(
     },
     jobPO:{
       type: String,
-    },
-    InvoicePaymentStatus: {
-      type: String,
-      enum: {
-        values: ['Paid', 'Unpaid'],
-        message: 'Payment status must be either "Paid" or "Unpaid"'
-      }
     }
   }
 );

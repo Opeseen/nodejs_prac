@@ -53,7 +53,15 @@ const invoiceSchema = new mongoose.Schema(
     invoicePartnerPayment:{
       type: Number,
       set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
-    }
+    },
+    invoicePaymentStatus: {
+      type: String,
+      enum: {
+        values: ['Paid', 'Unpaid'],
+        message: 'Payment status must be either "Paid" or "Unpaid"'
+      }
+    },
+    paymentReferenceId: String
   }
 
 );
@@ -67,23 +75,6 @@ invoiceSchema.statics.calculatePaymentDetails = async function(invoice){
   const percentage = invoice.invoiceClass ===  'Installation' ? 25 : 50;
   invoice.invoicePartnerPayment = ((percentage / 100) * invoice.profitOrLoss);
 };
-
-// invoiceSchema.statics.addInvoiceToJob = async function(invoice, jobID){
-//   const job = await Job.findById(jobID);
-//   if(job){
-//     job.invoices.addToSet(invoice);
-//     await job.save();
-//   };
-// };
-
-// invoiceSchema.statics.deleteInvoiceFromJob = async function(invoice,jobID){
-//   const job = await Job.findById(jobID);
-//   if(job){
-//     job.invoices.pull(invoice);
-//     await job.save();
-//   };
-// };
-
 
 // MIDDLEWARES EXECUTION
 

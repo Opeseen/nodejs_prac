@@ -1,19 +1,26 @@
 const mongoose = require('mongoose');
+const {randomUUID} = require('crypto');
 const toJson = require('@meanie/mongoose-to-json');
 
 const paymentSchema = new mongoose.Schema(
   {
-    invoice: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Invoice',
-      required: [true, 'A payment must be attached to an invoice']
-    },
-    jobPO: String,
     paymentDetails: {
       type: String,
+      uppercase: true,
       required: [true, 'A payent must have a description attached']
     },
-    paymentDate: Date
+    paymentAmount: {
+      type: Number,
+      required: [true, 'Amount payable is required']
+    },
+    paymentDate: {
+      type: Date,
+      required: [true, 'A payment date is required']
+    },
+    paymentId:{
+      type: String,
+      default: randomUUID()
+    }
   }
 );
 
