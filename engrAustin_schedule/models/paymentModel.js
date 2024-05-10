@@ -17,10 +17,7 @@ const paymentSchema = new mongoose.Schema(
       type: Date,
       required: [true, 'A payment date is required']
     },
-    paymentId:{
-      type: String,
-      default: randomUUID()
-    }
+    paymentId: String
   }
 );
 

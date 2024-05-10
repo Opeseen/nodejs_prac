@@ -469,3 +469,34 @@ Use mongoose.model(name, schema)
  GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 5.157 ms PostmanRuntime/7.38.0 Thu, 09 May 2024 15:03:12 GMT
  GET /api/v2/mundial/invoices/663a1e2102ce522d8ca5c8cd/testing 500 6.107 ms PostmanRuntime/7.38.0 Thu, 09 May 2024 15:04:47 GMT - error-message: Invoice is not defined
  GET /api/v2/mundial/jobs/663a1e2102ce522d8ca5c8cd/ledger 200 10.535 ms PostmanRuntime/7.38.0 Thu, 09 May 2024 15:06:05 GMT
+ POST /api/v2/mundial/payments 500 3.359 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:15:08 GMT - error-message: invoiceService is not defined
+ POST /api/v2/mundial/payments 200 1071.833 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:15:43 GMT
+ POST /api/v2/mundial/payments 200 4.909 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:18:06 GMT
+ POST /api/v2/mundial/payments 200 26.185 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:18:52 GMT
+ POST /api/v2/mundial/payments 200 27.872 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:19:29 GMT
+ POST /api/v2/mundial/payments 200 4.800 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:19:31 GMT
+ POST /api/v2/mundial/payments 200 24.762 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:21:07 GMT
+ POST /api/v2/mundial/payments 500 67.418 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:21:11 GMT - error-message: E11000 duplicate key error collection: austinMundial.payments index: paymentId_1 dup key: { paymentId: "8bf7293d-e69a-42ba-9d86-7d1d8b37f389" }
+ POST /api/v2/mundial/payments 200 24.665 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:24:17 GMT
+ POST /api/v2/mundial/payments 200 9.970 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:24:21 GMT
+ POST /api/v2/mundial/payments 200 6.938 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:24:25 GMT
+ POST /api/v2/mundial/payments 200 5.644 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:24:32 GMT
+ POST /api/v2/mundial/payments 200 28.337 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:24:55 GMT
+ POST /api/v2/mundial/payments 200 5.013 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:25:02 GMT
+ POST /api/v2/mundial/payments 200 94.195 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:47:36 GMT
+ POST /api/v2/mundial/payments 200 41.577 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:48:05 GMT
+ GET /api/v2/mundial/invoices 200 26.647 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:52:13 GMT
+ POST /api/v2/mundial/payments 200 18.362 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:52:41 GMT
+ GET /api/v2/mundial/invoices 200 37.451 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 16:53:04 GMT
+ POST /api/v2/mundial/payments 200 161.698 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:14:08 GMT
+ POST /api/v2/mundial/payments 400 6.464 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:14:27 GMT - error-message: Payments validation failed: paymentAmount: Amount payable is required
+ POST /api/v2/mundial/payments 200 48.178 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:14:48 GMT
+ POST /api/v2/mundial/payments 200 42.029 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:15:07 GMT
+ POST /api/v2/mundial/payments 200 26.035 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:22:38 GMT
+ POST /api/v2/mundial/payments 200 6.569 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:29:44 GMT
+ POST /api/v2/mundial/payments 200 30.950 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:39:42 GMT
+ POST /api/v2/mundial/payments 200 28.858 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:40:32 GMT
+ POST /api/v2/mundial/payments 200 39.639 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:41:31 GMT
+ POST /api/v2/mundial/payments 200 6.393 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:42:07 GMT
+ POST /api/v2/mundial/payments 200 26.647 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:42:34 GMT
+ POST /api/v2/mundial/payments 200 35.124 ms PostmanRuntime/7.38.0 Fri, 10 May 2024 17:42:59 GMT

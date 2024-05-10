@@ -16,7 +16,7 @@ app.use(errorLogHandler);
 // ROUTES
 app.use('/api/v2/mundial/jobs', jobRouter);
 app.use('/api/v2/mundial/invoices', invoiceRouter);
-app.use('/api/v2/mundial/Payments', invoiceRouter);
+app.use('/api/v2/mundial/Payments', paymentRouter);
 
 // ERROR HANDLER
 app.use(pathNotFoundErrorHandler); // ERROR HANDLER FOR PATH NOT FOUND

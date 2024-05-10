@@ -61,7 +61,7 @@ const invoiceSchema = new mongoose.Schema(
         message: 'Payment status must be either "Paid" or "Unpaid"'
       }
     },
-    paymentReferenceId: String
+    paymentReferenceId: [String]
   }
 
 );
