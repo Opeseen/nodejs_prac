@@ -49,3 +49,14 @@ console.log(data.invoices.length);
 data.invoices.forEach(element => {
   console.log(element);
 });
+
+
+db.collection_name.aggregate({
+  "$match": {
+      "complist": {
+          "$elemMatch": {
+              "a": "a"
+          }
+      }
+  }
+});
