@@ -25,10 +25,15 @@ const deleteInvoice = async(invoiceId) => {
   return invoice;
 };
 
+const addPaymentIdToInvoice = async(invoiceId, paymentId) => {
+  await Invoice.findByIdAndUpdate(invoiceId, { $addToSet: {paymentReferenceId: paymentId} }, { new: true, runValidators: true } );
+};
+
 module.exports = {
   createInvoice,
   getInvoice,
   getAllInvoices,
   updateInvoice,
-  deleteInvoice
+  deleteInvoice,
+  addPaymentIdToInvoice
 };

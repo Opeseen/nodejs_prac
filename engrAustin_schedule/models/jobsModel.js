@@ -33,6 +33,6 @@ const jobSchema = new mongoose.Schema(
 
 jobSchema.plugin(toJson);
 
-const Job = mongoose.model('Jobs', jobSchema);
+const Job = mongoose.model('Job', jobSchema);
 
 module.exports = Job;

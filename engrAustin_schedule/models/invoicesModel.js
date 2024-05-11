@@ -61,7 +61,12 @@ const invoiceSchema = new mongoose.Schema(
         message: 'Payment status must be either "Paid" or "Unpaid"'
       }
     },
-    paymentReferenceId: [String]
+    paymentReferenceId: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Payment'
+      }
+    ]
   }
 
 );
@@ -84,6 +89,6 @@ invoiceSchema.pre('save', async function(next){
 });
 
 
-const Invoice = mongoose.model('Invoices', invoiceSchema);
+const Invoice = mongoose.model('Invoice', invoiceSchema);
 
 module.exports = Invoice;

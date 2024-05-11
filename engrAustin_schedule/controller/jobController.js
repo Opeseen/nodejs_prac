@@ -69,7 +69,7 @@ const getJobLedger = catchAsyncError(async(req, res,next) => {
 
   res.status(httpStatus.OK).json({
     status: 'Success',
-    results: statics[0].details.length,
+    results: statics.length > 0 ? statics[0].details.length : 0,
     statics
   });
 

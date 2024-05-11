@@ -14,8 +14,8 @@ router
   .patch(invoiceController.updateInvoice)
   .delete(invoiceController.deleteInvoice);
 
-router
-  .route('/:id/testing')
-  .get(invoiceController.testing);
+// router
+//   .route('/:id/testing')
+//   .get(invoiceController.testing);
 
 module.exports = router;

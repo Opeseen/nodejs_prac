@@ -14,6 +14,38 @@
 //   };
 // };
 
-const {randomUUID} = require('crypto');
 
-console.log(randomUUID())
+// const testing = catchAsyncError(async(req, res) => {
+//   const id = req.params.id;
+
+//   const job = await Invoice.find({jobID: ObjectId(id)});
+//   res.status(httpStatus.OK).json({
+//     status: 'Success',
+//     data: job
+//   });
+// });
+
+
+// const {randomUUID} = require('crypto');
+
+// console.log(randomUUID())
+
+// {
+//   paymentDetails: 'PAYMENT TO ENGR AUSTIN',
+//   paymentTag: 'n-153',
+//   paymentAmount: 300000,
+//   invoices: [ '1234', 'abcg', 'test' ],
+//   paymentDate: '2024-04-25',
+//   paymentId: 'e7472ce9-d518-456b-9d21-59ebcc776dde'
+// }
+
+const data = {
+  invoices: [ '1234', 'abcg', 'test' ]
+  // invoices: []
+};
+
+
+console.log(data.invoices.length);
+data.invoices.forEach(element => {
+  console.log(element);
+});

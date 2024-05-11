@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
-const {randomUUID} = require('crypto');
 const toJson = require('@meanie/mongoose-to-json');
 
 const paymentSchema = new mongoose.Schema(
   {
+    paymentTag: {
+      type: String,
+      uppercase: true,
+      required: [true, 'A payent must have a tag attached']
+    },
     paymentDetails: {
       type: String,
       uppercase: true,
@@ -23,6 +27,6 @@ const paymentSchema = new mongoose.Schema(
 
 paymentSchema.plugin(toJson);
 
-const Payment = mongoose.model('Payments', paymentSchema);
+const Payment = mongoose.model('Payment', paymentSchema);
 
 module.exports = Payment;

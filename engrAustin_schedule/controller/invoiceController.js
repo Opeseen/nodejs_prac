@@ -29,7 +29,7 @@ const getAllInvoices = catchAsyncError(async(req, res) => {
   res.status(httpStatus.OK).json({
     status: 'Success',
     results: invoices.length,
-    data: invoices
+    invoices
   })
 });
 
@@ -66,15 +66,6 @@ const deleteInvoice = catchAsyncError(async(req, res, next) => {
   });
 });
 
-const testing = catchAsyncError(async(req, res) => {
-  const id = req.params.id;
-
-  const job = await Invoice.find({jobID: ObjectId(id)});
-  res.status(httpStatus.OK).json({
-    status: 'Success',
-    data: job
-  });
-});
 
 module.exports = {
   createInvoice,
@@ -82,5 +73,4 @@ module.exports = {
   getAllInvoices,
   updateInvoice,
   deleteInvoice,
-  testing
 };
