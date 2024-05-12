@@ -14,4 +14,9 @@ router
   .get(paymentController.getPayment)
   .patch(paymentController.updatePayment);
 
+router
+  .route('/:id/ledger')
+  .get(paymentController.getPaymentLedger);
+
+
 module.exports = router;

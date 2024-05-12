@@ -57,9 +57,10 @@ const invoiceSchema = new mongoose.Schema(
     invoicePaymentStatus: {
       type: String,
       enum: {
-        values: ['Paid', 'Unpaid'],
-        message: 'Payment status must be either "Paid" or "Unpaid"'
-      }
+        values: ['Paid', 'Unpaid', 'Partially Paid'],
+        message: 'Payment status must be either "Paid" or "Unpaid or Partially Paid"'
+      },
+      default: "Unpaid"
     },
     paymentReferenceId: [
       {

@@ -6,7 +6,14 @@ const createInvoice = async(invoiceDetails) =>{
 };
 
 const getInvoice = async(invoiceId) => {
-  const invoice = await Invoice.findById(invoiceId);
+  const invoice = await Invoice.findById(invoiceId)
+    .populate({
+      path: 'paymentReferenceId',
+      select: {
+        _id: 0,
+        paymentId: 0
+      }
+    });
   return invoice;
 };
 
@@ -26,8 +33,16 @@ const deleteInvoice = async(invoiceId) => {
 };
 
 const addPaymentIdToInvoice = async(invoiceId, paymentId) => {
-  await Invoice.findByIdAndUpdate(invoiceId, { $addToSet: {paymentReferenceId: paymentId} }, { new: true, runValidators: true } );
+  await Invoice.findByIdAndUpdate(invoiceId, 
+    { 
+      $addToSet: {paymentReferenceId: paymentId},
+      $set: {invoicePaymentStatus: "Paid"}
+    },  
+    { new: true, runValidators: true }
+  );
 };
+
+
 
 module.exports = {
   createInvoice,

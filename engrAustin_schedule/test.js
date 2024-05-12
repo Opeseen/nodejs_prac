@@ -60,3 +60,12 @@ db.collection_name.aggregate({
       }
   }
 });
+
+
+// {
+//   $match: {
+//     paymentReferenceId: {
+//       $elemMatch: {"paymentReferenceId": ObjectId("66411c73088cc51ed8df5595")}
+//     }
+//   }
+// }

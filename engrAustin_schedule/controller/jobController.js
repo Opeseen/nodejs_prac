@@ -65,12 +65,12 @@ const deleteJob = catchAsyncError(async(req, res, next) => {
 
 const getJobLedger = catchAsyncError(async(req, res,next) => {
   const id = req.params.id;
-  const statics = await jobService.getJobLedger(id);
+  const jobStatics = await jobService.getJobLedger(id);
 
   res.status(httpStatus.OK).json({
     status: 'Success',
-    results: statics.length > 0 ? statics[0].details.length : 0,
-    statics
+    results: jobStatics.length > 0 ? jobStatics[0].details.length : 0,
+    jobStatics
   });
 
 });

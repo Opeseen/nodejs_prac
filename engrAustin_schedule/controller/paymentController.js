@@ -66,9 +66,24 @@ const deletePayment = catchAsyncError(async(req, res, next) => {
   })
 });
 
+const getPaymentLedger = catchAsyncError(async(req, res) => {
+  const id = req.params.id;
+  const paymentStatics = await paymentService.getPaymentLedger(id);
+
+  res.status(httpStatus.OK).json({
+    status: 'Success',
+    results: paymentStatics.length > 0 ? paymentStatics.length : 0,
+    paymentStatics
+  });
+});
+
+
+
 module.exports = {
   createPayment,
   getPayment,
   getAllPayment,
-  updatePayment
+  updatePayment,
+  deletePayment,
+  getPaymentLedger
 };

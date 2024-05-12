@@ -31,7 +31,7 @@ const deleteJob = async(jobId) => {
 
 
 const getJobLedger = async(Id) => {
-  const statics = await Invoice.aggregate([
+  const jobStatics = await Invoice.aggregate([
     {
       $match: {jobID: ObjectId(Id) }
     },
@@ -64,7 +64,7 @@ const getJobLedger = async(Id) => {
     }
   ]);
   
-  return statics;
+  return jobStatics;
 
 };
 
