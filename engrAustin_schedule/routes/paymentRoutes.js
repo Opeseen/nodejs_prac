@@ -12,7 +12,8 @@ router
 router
   .route('/:id')
   .get(paymentController.getPayment)
-  .patch(paymentController.updatePayment);
+  .patch(paymentController.updatePayment)
+  .delete(paymentController.deletePayment);
 
 router
   .route('/:id/ledger')

@@ -66,6 +66,17 @@ const deleteInvoice = catchAsyncError(async(req, res, next) => {
   });
 });
 
+const removePaymentIdFromInvoice = catchAsyncError(async(req, res) => {
+  const id = req.params.id;
+  const payid = req.params.payid;
+  await invoiceService.removePaymentIdFromInvoice(id, payid);
+
+  res.status(httpStatus.OK).json({
+    status: 'Success',
+    message: "Payment has been removed"
+  });
+});
+
 
 module.exports = {
   createInvoice,
@@ -73,4 +84,5 @@ module.exports = {
   getAllInvoices,
   updateInvoice,
   deleteInvoice,
+  removePaymentIdFromInvoice
 };

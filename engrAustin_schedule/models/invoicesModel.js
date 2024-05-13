@@ -62,7 +62,7 @@ const invoiceSchema = new mongoose.Schema(
       },
       default: "Unpaid"
     },
-    paymentReferenceId: [
+    paymentId: [
       {
         type: mongoose.Schema.ObjectId,
         ref: 'Payment'

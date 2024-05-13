@@ -1,15 +1,17 @@
 const httpStatus = require('http-status');
+const {randomUUID} = require('crypto');
 const {paymentService} = require('../services');
 const {invoiceService} = require('../services');
-const {randomUUID} = require('crypto');
+const {Invoice} = require('../models');
 const ApiError = require('../utils/ApiError');
 const catchAsyncError = require('../utils/catchAsyncError');
 
 
 const createPayment = catchAsyncError(async(req, res) => {
-  req.body.paymentId = randomUUID();
+  req.body.paymentRefId = randomUUID();
   const paymentDetails = req.body;
   const payment = await paymentService.createPayment(paymentDetails);
+
   // THIS STAGE WILL ATTACH THE PAYMENT-ID TO THE INVOICE IF AN INVOICE WAS SELECTED
   if (req.body.invoices && req.body.invoices.length > 0 && payment.id){
     req.body.invoices.forEach(invoiceId => {
@@ -57,6 +59,9 @@ const updatePayment = catchAsyncError(async(req, res, next) => {
 
 const deletePayment = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
+  const payment = await Invoice.find({paymentId: id});
+  if(payment.length > 0){ return next(new ApiError('This Payment cannot be deleted because it is used on an Invoice', httpStatus.BAD_REQUEST)) };
+
   const deletePayment = await paymentService.deletePayment(id);
   if(!deletePayment){
     return next(new ApiError("No Payment found to delete", httpStatus.NOT_FOUND));
@@ -67,8 +72,8 @@ const deletePayment = catchAsyncError(async(req, res, next) => {
 });
 
 const getPaymentLedger = catchAsyncError(async(req, res) => {
-  const id = req.params.id;
-  const paymentStatics = await paymentService.getPaymentLedger(id);
+  const PaymentId = req.params.id;
+  const paymentStatics = await paymentService.getPaymentLedger(PaymentId);
 
   res.status(httpStatus.OK).json({
     status: 'Success',

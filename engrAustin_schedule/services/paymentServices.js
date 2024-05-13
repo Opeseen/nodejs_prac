@@ -28,12 +28,12 @@ const deletePayment = async(paymentId) => {
   return payment;
 };
 
-const getPaymentLedger = async(Id) => {
+const getPaymentLedger = async(PaymentId) => {
   const paymentStatics = await Invoice.aggregate([
     {
       $match: {
-        paymentReferenceId: {
-          $elemMatch: {$in: [ObjectId(Id)]}
+        paymentId: {
+          $elemMatch: {$in: [ObjectId(PaymentId)]}
         }
       }    
     },

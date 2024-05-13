@@ -14,6 +14,10 @@ router
   .patch(invoiceController.updateInvoice)
   .delete(invoiceController.deleteInvoice);
 
+router
+  .route('/:id/payment/:payid/unlink')
+  .patch(invoiceController.removePaymentIdFromInvoice);
+
 // router
 //   .route('/:id/testing')
 //   .get(invoiceController.testing);
