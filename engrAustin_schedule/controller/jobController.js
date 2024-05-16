@@ -12,7 +12,7 @@ const createJob = catchAsyncError(async(req, res) => {
   const newJob = await jobService.createJob(jobDetails);
   res.status(httpStatus.OK).json({
     status: 'Success',
-    data: newJob
+    newJob
   });
 });
 
@@ -63,7 +63,7 @@ const deleteJob = catchAsyncError(async(req, res, next) => {
   })
 });
 
-const getJobLedger = catchAsyncError(async(req, res,next) => {
+const getJobLedger = catchAsyncError(async(req, res) => {
   const id = req.params.id;
   const jobStatics = await jobService.getJobLedger(id);
 

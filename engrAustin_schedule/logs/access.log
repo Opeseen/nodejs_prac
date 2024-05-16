@@ -63,3 +63,28 @@
  GET /api/v2/mundial/payments/66428804d51a1a0e34e13694/ledger 200 6.206 ms PostmanRuntime/7.38.0 Mon, 13 May 2024 21:53:47 GMT
  PATCH /api/v2/mundial/invoices/66427fc5a5486009688e47f4/payment/66428804d51a1a0e34e13694/unlink 400 10.434 ms PostmanRuntime/7.38.0 Mon, 13 May 2024 21:54:13 GMT - error-message: Validation failed: invoicePaymentStatus: Payment status must be either "Paid" or "Unpaid or Partially Paid"
  PATCH /api/v2/mundial/invoices/66427fc5a5486009688e47f4/payment/66428804d51a1a0e34e13694/unlink 200 30.506 ms PostmanRuntime/7.38.0 Mon, 13 May 2024 21:54:29 GMT
+ GET /api/v2/mundial/payments 200 65.577 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 11:56:06 GMT
+ GET /api/v2/mundial/invoices/66427fc5a5486009688e47f4 200 113.692 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 11:56:14 GMT
+ GET /api/v2/mundial/jobs 200 63.537 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 11:56:33 GMT
+ GET /api/v2/mundial/jobs/66411a26aec4bb5bc4affc62/ledger 200 725.333 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 11:56:40 GMT
+ GET /api/v2/mundial/jobs/66411aaeaec4bb5bc4affc64/ledger 200 327.291 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 11:57:00 GMT
+ POST /api/v2/mundial/invoices 200 219.473 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 11:59:52 GMT
+ GET /api/v2/mundial/jobs/66411aaeaec4bb5bc4affc64/ledger 200 22.602 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:00:49 GMT
+ POST /api/v2/mundial/payments 200 47.603 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:02:12 GMT
+ GET /api/v2/mundial/invoices/66427fc5a5486009688e47f4 200 7.100 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:02:40 GMT
+ GET /api/v2/mundial/invoices/6645f538bf280819b88d3e3f 200 148.599 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:02:49 GMT
+ GET /api/v2/mundial/invoices/66427fc5a5486009688e47f4 200 9.189 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:03:57 GMT
+ GET /api/v2/mundial/invoices/6645f538bf280819b88d3e3f 200 10.449 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:04:14 GMT
+ GET /api/v2/mundial/invoices/6645f538bf280819b88d3e3f 200 29.852 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:04:25 GMT
+ GET /api/v2/mundial/invoices 200 4.257 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:04:40 GMT
+ GET /api/v2/mundial/payments/66428804d51a1a0e34e13694/ledger 200 127.911 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:04:54 GMT
+ GET /api/v2/mundial/invoices 200 3.721 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:05:06 GMT
+ GET /api/v2/mundial/payments 200 2.451 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:05:24 GMT
+ GET /api/v2/mundial/payments/6645f5c4bf280819b88d3e42/ledger 200 3.446 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:05:44 GMT
+ DELETE /api/v2/mundial/payments/66427fdaa5486009688e47f6 404 10.694 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:06:02 GMT - error-message: No Payment found to delete
+ DELETE /api/v2/mundial/payments/6645f5c4bf280819b88d3e42 400 5.602 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:06:08 GMT - error-message: This Payment cannot be deleted because it is used on an Invoice
+ DELETE /api/v2/mundial/payments/6645f5c4bf280819b88d3e42 400 18.003 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:07:23 GMT - error-message: This Payment cannot be deleted because it is used on an Invoice
+ GET /api/v2/mundial/jobs 200 14.474 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:07:28 GMT
+ GET /api/v2/mundial/invoices 200 6.864 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:07:46 GMT
+ DELETE /api/v2/mundial/jobs/66411aaeaec4bb5bc4affc64 400 13.793 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:08:28 GMT - error-message: This Job cannot be deleted because it is used on an Invoice
+ DELETE /api/v2/mundial/jobs/66411aaeaec4bb5bc4affc64 400 6.621 ms PostmanRuntime/7.38.0 Thu, 16 May 2024 12:09:13 GMT - error-message: This Job cannot be deleted because it is used on an Invoice

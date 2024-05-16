@@ -10,7 +10,7 @@ const createInvoice = catchAsyncError(async(req, res) => {
   const newInvoice = await invoiceService.createInvoice(invoiceDetails);
   res.status(httpStatus.OK).json({
     status: 'Success',
-    data: newInvoice
+    newInvoice
   });
 });
 
@@ -20,7 +20,7 @@ const getInvoice = catchAsyncError(async(req, res, next) => {
   if(!invoice) { return next(new ApiError("No Invoice Found", httpStatus.NOT_FOUND)) }
   res.status(httpStatus.OK).json({
     status: 'Success',
-    data: invoice
+    invoice
   })
 });
 
