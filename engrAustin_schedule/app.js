@@ -4,6 +4,7 @@ const {successLogHandler, errorLogHandler} = require('./config/morgan');
 const jobRouter = require('./routes/jobRoutes');
 const invoiceRouter = require('./routes/invoiceRoutes');
 const paymentRouter = require('./routes/paymentRoutes');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
@@ -16,7 +17,8 @@ app.use(errorLogHandler);
 // ROUTES
 app.use('/api/v2/mundial/jobs', jobRouter);
 app.use('/api/v2/mundial/invoices', invoiceRouter);
-app.use('/api/v2/mundial/Payments', paymentRouter);
+app.use('/api/v2/mundial/payments', paymentRouter);
+app.use('/api/v2/mundial/users', userRouter);
 
 // ERROR HANDLER
 app.use(pathNotFoundErrorHandler); // ERROR HANDLER FOR PATH NOT FOUND

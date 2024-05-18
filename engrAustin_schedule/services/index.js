@@ -1,3 +1,6 @@
-module.exports.jobService = require('./jobServices');
-module.exports.invoiceService = require('./invoiceServices');
-module.exports.paymentService = require('./paymentServices');
+module.exports.jobService = require('./jobService');
+module.exports.invoiceService = require('./invoiceService');
+module.exports.paymentService = require('./paymentService');
+module.exports.userService = require('./userService');
+module.exports.tokenService = require('./tokenService');
+module.exports.authService = require('./authService');
