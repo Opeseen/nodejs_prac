@@ -15,8 +15,7 @@ const getuserByID = async(id) => {
 };
 
 const updateCurrentUserData = async (updatedUserDetails, userId) => {
-  const {email, firstname, lastname} = updatedUserDetails;
-  const updatedUser = await User.findByIdAndUpdate(userId, {email, firstname, lastname}, {
+  const updatedUser = await User.findByIdAndUpdate(userId, updatedUserDetails, {
     new: true,
     runValidators: true
   });

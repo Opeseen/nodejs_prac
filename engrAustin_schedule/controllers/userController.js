@@ -9,7 +9,7 @@ const updateCurrentUserData = catchAsyncError(async(req, res, next) => {
     return next(new ApiError('This route is not for password update. Please use the /updatePassword', httpStatus.BAD_REQUEST)); 
   };
   // This will update the user details
-  const updatedUserDetails = await userService.updateCurrentUserData(req.body, req.user.id);
+  const updatedUserDetails = await userService.updateCurrentUserData(req.body, req.params.id);
 
   return res.status(httpStatus.OK).json({
     status: "Success",
