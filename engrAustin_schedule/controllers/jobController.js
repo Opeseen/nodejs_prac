@@ -28,7 +28,7 @@ const getJob = catchAsyncError(async(req, res, next) => {
 });
 
 const getAllJobs = catchAsyncError(async(req, res) => {
-  const jobs = await jobService.getAllJobs()
+  const jobs = await jobService.getAllJobs();
   res.status(httpStatus.OK).json({
     status: 'Success',
     results: jobs.length,
