@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/',viewsController.displayHomePage);
 router.get('/jobs',viewsController.getAllJobs);
-
+router.get('/invoices', viewsController.getAllInvoices);
+router.get('/payments', viewsController.getAllPayment);
 
 module.exports = router;

@@ -36,7 +36,7 @@ const getPayment = catchAsyncError(async(req, res, next) => {
 });
 
 const getAllPayment = catchAsyncError(async(req, res) => {
-  const payment = await paymentService.getAllPayment()
+  const payment = await paymentService.getAllPayment();
   res.status(httpStatus.OK).json({
     status: 'Success',
     results: payment.length,

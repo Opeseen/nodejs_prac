@@ -258,3 +258,10 @@ h2{
 
 
 
+.updateNoteLink.red{
+  color: #fff;
+  text-transform: uppercase;
+  /* font-weight: bold; */
+  text-align: center;
+  /* font-style: italic */
+}

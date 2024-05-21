@@ -1,0 +1,18 @@
+extends base
+
+block content
+  main
+    h2 Payment Details
+    .table-wrapper
+      table.table-data
+        tr
+          th payment tag
+          th Description
+          th Amount
+          th Date
+        each payment in payments
+          tr
+            td= payment.paymentTag
+            td= payment.paymentDetails
+            td= payment.paymentAmount.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= payment.paymentDate.toLocaleString(en-us, {dateStyle: 'medium'})

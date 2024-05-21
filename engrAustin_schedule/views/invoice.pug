@@ -1,0 +1,26 @@
+extends base
+
+block content
+  main
+    h2 Invoice Details
+    .table-wrapper
+      table.table-data
+        tr
+          th
+            input#check_all(type='checkbox')
+          th Invoice No
+          th Description
+          th Applied to sales
+          th Spent on project
+          th payment status
+          th option
+        each invoice in invoices
+          tr
+            td(type='checkbox' name="row-check" value=`${invoice.id}`)
+            td= invoice.invoiceNumber
+            td= invoice.invoiceDescription
+            td= invoice.invoiceAppliedToSalesValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= invoice.spentOnProject.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= invoice.invoicePaymentStatus.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td
+              a.updateNoteLink.red(href=`#`) Details

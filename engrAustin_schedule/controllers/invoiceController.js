@@ -25,7 +25,7 @@ const getInvoice = catchAsyncError(async(req, res, next) => {
 });
 
 const getAllInvoices = catchAsyncError(async(req, res) => {
-  const invoices = await invoiceService.getAllInvoices()
+  const invoices = await invoiceService.getAllInvoices();
   res.status(httpStatus.OK).json({
     status: 'Success',
     results: invoices.length,
