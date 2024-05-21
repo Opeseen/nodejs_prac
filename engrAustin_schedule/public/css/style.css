@@ -256,12 +256,27 @@ h2{
 
 .table-data tr:hover {background-color: #ddd;}
 
-
-
-.updateNoteLink.red{
-  color: #fff;
-  text-transform: uppercase;
-  /* font-weight: bold; */
-  text-align: center;
-  /* font-style: italic */
+.table-data a{
+  display: block;
 }
+
+div .btn--green{
+  width: 100px;
+  margin: auto;
+  text-align: center;
+  background-color: #00ae14;
+  padding: 0.3rem 0.3rem;
+  border-radius: 5rem;
+  border: 1px solid currentColor !important;
+}
+
+div a {
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+
+

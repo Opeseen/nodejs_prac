@@ -16,11 +16,12 @@ block content
           th option
         each invoice in invoices
           tr
-            td(type='checkbox' name="row-check" value=`${invoice.id}`)
+            td(type='checkbox' name='row-check' value=`${invoice.id}`)
             td= invoice.invoiceNumber
             td= invoice.invoiceDescription
             td= invoice.invoiceAppliedToSalesValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
             td= invoice.spentOnProject.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
             td= invoice.invoicePaymentStatus.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
             td
-              a.updateNoteLink.red(href=`#`) Details
+             .btn--green
+              a(href=`#`) Details
