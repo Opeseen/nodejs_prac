@@ -211,8 +211,8 @@ html {
   }
 }
 
-/* Table Description */
-h2{
+/* Page Subject */
+.page__subject{
   text-align: center;
   font-size: 25px;
   text-transform: uppercase;
@@ -220,13 +220,30 @@ h2{
   padding: 30px 0;
 }
 
-/* Table Section */
+/* Notification Section */
+.empty__record{
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: red;
+  /* padding: 30px 0; */
+}
 
+/* Table Section */
 .table-wrapper{
   margin: 10px 70px 70px;
   box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
+.table__title{
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:#54585d;
+  font-weight: bold
+}
 .table-data {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -249,7 +266,7 @@ h2{
 
 .table-data td, .table-data th {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 6px;
 }
 
 .table-data tr:nth-child(even){background-color: #f2f2f2;}
