@@ -1,6 +1,7 @@
 const httpStatus = require('http-status');
 const catchAsyncError = require('../utils/catchAsyncError');
 const {jobService, invoiceService, paymentService, userService} = require('../services');
+const ApiError = require('../utils/ApiError');
 
 const displayHomePage = catchAsyncError(async(req, res) => {
   res.status(httpStatus.OK).render('base',{
@@ -10,7 +11,7 @@ const displayHomePage = catchAsyncError(async(req, res) => {
 
 const getAllJobs = catchAsyncError(async(req, res) => {
   const jobs = await jobService.getAllJobs();
-  res.status(httpStatus.OK).render('job',{
+  res.status(httpStatus.OK).render('jobOverview',{
     title: 'Jobs',
     jobs
   });
@@ -18,15 +19,25 @@ const getAllJobs = catchAsyncError(async(req, res) => {
 
 const getAllInvoices = catchAsyncError(async(req, res) => {
   const invoices = await invoiceService.getAllInvoices();
-  res.status(httpStatus.OK).render('invoice',{
+  res.status(httpStatus.OK).render('invoiceOverview',{
     title: 'Invoice',
     invoices
   });
 });
 
+const getInvoiceDetails = catchAsyncError(async(req, res, next) => {
+  const id = req.params.id;
+  const invoice = await invoiceService.getInvoice(id);
+  if(!invoice) { return next(new ApiError("No Invoice Found", httpStatus.NOT_FOUND)) }
+  res.status(httpStatus.OK).render('invoiceDetail',{
+    title: 'Invoice Details',
+    invoice
+  });
+});
+
 const getAllPayment = catchAsyncError(async(req, res) => {
   const payments = await paymentService.getAllPayment();
-  res.status(httpStatus.OK).render('payment',{
+  res.status(httpStatus.OK).render('paymentOverview',{
     title: 'Payment',
     payments
   });
@@ -37,5 +48,6 @@ module.exports = {
   displayHomePage,
   getAllJobs,
   getAllInvoices,
-  getAllPayment
+  getAllPayment,
+  getInvoiceDetails
 };

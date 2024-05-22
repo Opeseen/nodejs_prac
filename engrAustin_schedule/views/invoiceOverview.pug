@@ -2,12 +2,10 @@ extends base
 
 block content
   main
-    h2 Invoice Details
+    h2 Invoice Overview
     .table-wrapper
       table.table-data
         tr
-          th
-            input#check_all(type='checkbox')
           th Invoice No
           th Description
           th Applied to sales
@@ -16,7 +14,6 @@ block content
           th option
         each invoice in invoices
           tr
-            td(type='checkbox' name='row-check' value=`${invoice.id}`)
             td= invoice.invoiceNumber
             td= invoice.invoiceDescription
             td= invoice.invoiceAppliedToSalesValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
@@ -24,4 +21,4 @@ block content
             td= invoice.invoicePaymentStatus.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
             td
              .btn--green
-              a(href=`#`) Details
+              a(href=`/invoice/${invoice.id}`) Details

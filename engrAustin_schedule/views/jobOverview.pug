@@ -2,7 +2,7 @@ extends base
 
 block content
   main
-    h2 Job Details
+    h2 Job Overview
     .table-wrapper
       table.table-data
         tr
@@ -10,9 +10,13 @@ block content
           th Type
           th Description
           th PO
+          th option
         each job in jobs
           tr
             td= job.jobID
             td= job.jobType
             td= job.jobDescription
             td= job.jobPO
+            td
+             .btn--green
+              a(href=`#`) Details
