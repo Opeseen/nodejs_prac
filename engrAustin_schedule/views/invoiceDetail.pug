@@ -6,7 +6,7 @@ block content
     - const paymentCount = Number(invoice.paymentId.length)
     if paymentCount > 0
       .table-wrapper
-        .table__title Payment Info
+        .heading__title Payment Info
         table.table-data
           tr
             th payment tag
@@ -21,3 +21,21 @@ block content
                 td= payment.paymentDate.toLocaleString(en-us, {dateStyle: 'medium'})
     else
       p.empty__record no payment record exist on this invoice!
+
+    // Horizontal Line
+    .line &nbsp;
+    // User Resources Data Display
+    .resource-details
+      .heading__title.ma-bt-lg Invoice Info
+      .form-div
+        .form__group
+          label.label__item Invoice No
+            input#inv-no.form__input(type='text', required)
+        .form__group
+          label.label__item Description
+            input#inv-desc.form__input(type='text',required)
+        .form__group
+          label WHT
+            input#inv-desc.form__input(type='text',required)
+        //- .form__groups__cta
+        //-   button.btn.btn--green Login

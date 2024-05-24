@@ -236,7 +236,7 @@ html {
   box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
-.table__title{
+.heading__title{
   text-align: center;
   font-size: 15px;
   text-transform: uppercase;
@@ -294,6 +294,107 @@ div a {
   text-decoration: none;
 }
 
+/* Horizontal Line Display */
+.line {
+  margin: 6rem 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0;
+}
 
+/* Items Data Display */
+.resource-details {
+  margin: 0 auto;
+  max-width: 105rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+}
 
+.ma-bt-lg {
+  margin-bottom: 3.5rem !important;
+}
 
+.ma-bt-md {
+  margin-bottom: 3rem !important;
+}
+/* 
+.login-form {
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 5rem 7rem;
+  border-radius: 5px;
+} */
+
+/* .form__group:not(:last-child) {
+  margin-bottom: 2.5rem;
+} */
+
+/* .form__label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+} */
+
+.form__input {
+  /* display: block; */
+  /* font-family: inherit;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: none; */
+  /* width: 40%; */
+  /* background-color: #fff;
+  background-color: #f2f2f2;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; */
+
+}
+
+.form__label.item-no,.form__label.item-desc {
+  /* display: block; */
+  /* font-size: 1.6rem; */
+  /* font-weight: 700; */
+  /* margin-bottom: 0.75rem; */
+  /* display: inline-block; */
+  /* min-width: 48.8%; */
+  /* width: 49%; */
+}
+
+/* label { width: 200px; float: left; margin: 0 20px 0 0; } */
+
+/* .form__group{
+  display: inline-block;
+  min-width: 27%;
+  padding:1.25rem 1.75rem
+} */
+
+.form-div{
+  display:  flex;
+}
+
+.form__group{
+  padding-right: 10px;
+}
+
+.label__item{
+  padding: 25px 10px ;
+  text-align: center;
+}
+
+input{
+  /* padding: 10px 10px; */
+  display: block;
+  text-align: center;
+}
