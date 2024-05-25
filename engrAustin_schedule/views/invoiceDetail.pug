@@ -27,15 +27,16 @@ block content
     // User Resources Data Display
     .resource-details
       .heading__title.ma-bt-lg Invoice Info
-      .form-div
-        .form__group
-          label.label__item Invoice No
-            input#inv-no.form__input(type='text', required)
-        .form__group
-          label.label__item Description
-            input#inv-desc.form__input(type='text',required)
-        .form__group
-          label WHT
-            input#inv-desc.form__input(type='text',required)
+    .form__div
+      label.label__item Invoice No
+        input#inv-no.form__input.half(type='text', required)
+      label.label__item Description
+        input#inv-desc.form__input.half(type='text',required)
+      label.label__item WHT
+        input#wht-desc.form__input(type='text',required)
+      label.label__item Invoice No
+        input#inv-no.form__input(type='text', required)
+      label.label__item Description
+        input#inv-desc.form__input(type='text',required)
         //- .form__groups__cta
         //-   button.btn.btn--green Login
