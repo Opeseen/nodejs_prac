@@ -29,7 +29,7 @@ const getInvoiceDetails = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
   const invoice = await invoiceService.getInvoice(id);
   if(!invoice) { return next(new ApiError("No Invoice Found", httpStatus.NOT_FOUND)) }
-  res.status(httpStatus.OK).render('invoiceDetail',{
+  res.status(httpStatus.OK).render('test',{
     title: 'Invoice Details',
     invoice
   });

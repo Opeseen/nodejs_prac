@@ -372,6 +372,11 @@ div a {
   /* width: 49%; */
 }
 
+.label__item{
+  width: 100px;
+  height: 100px;
+}
+
 .form__div{
   display: grid;
   grid-template-columns: 1fr, 1fr, 1fr;
