@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+
+  /* .blue{ background-color: blue;}
+  .box{width: 100px; height: 100px;}
+  .container{display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;} */
+
+
+  .center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: auto;
+  max-width: 80%;
+  }
+  .form__div{
+    display: grid;
+    /* grid-gap: 0.1rem; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: auto auto auto;
+    padding: 5px 5px 5px 5px;
+  }
+
+  input {
+  color: rgb(7 2 18);
+  height: 1.8rem;
+  border-radius: 0.5rem;
+  }
+  p{text-align: center;}
+  .desc{
+    width: 25rem;
+    /* max-width: 500px; */
+  }
+
+</style>
+</head>
+<body>
+
+  <h1>This is a Heading</h1>
+  <p>This is a paragraph.</p>
+
+
+  <!-- <div class="container center">
+    <div class="box blue">box1</div>
+    <div class="box blue">box2</div>
+    <div class="box blue">box3</div>
+    <div class="box blue">box4</div>
+    <div class="box blue">box5</div>
+  </div> -->
+
+
+
+
+  <div class="resource__details center">
+    <form>
+      <div class="form__div">
+        <div>
+          <!-- <label class="label__item"> box1</label> -->
+          <p>box1<p/>
+          <input type="text">
+        </div>
+        <div>
+          <!-- <label class="label__item"> box2</label> -->
+          <p>box2<p/>
+          <input class="desc" type="text">
+        </div>
+        <div>
+          <!-- <label class="label__item"> box3</label> -->
+          <p>box3<p/>
+          <input type="text">
+        </div>
+        <div>
+          <!-- <label class="label__item"> box4</label> -->
+          <p>box4<p/>
+          <input type="text">
+        </div>
+        <div>
+          <!-- <label class="label__item"> box4</label> -->
+          <p>box5<p/>
+          <input type="text">
+        </div>
+        <div>
+          <!-- <label class="label__item"> box4</label> -->
+          <p>box6<p/>
+          <input type="text">
+        </div>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
