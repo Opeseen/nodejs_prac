@@ -304,28 +304,24 @@ div a {
 
 /* Items Data Display */
 .resource-details {
-  margin: auto;
-  width: 70rem;
-  border: 3px solid #73AD21;
-  padding: 10px 10px 10px 10px;
-  /* margin-bottom: auto; */
-  /* max-width: 80%; */
-  }
-  .form__div{
-    display: grid;
-    grid-gap: 2.1rem;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    grid-template-columns: auto auto ;
-    padding: 5px 5px 5px 5px;
-  }
+margin: auto;
+width: 60%;
+border: 3px solid #73AD21;
+padding: 10px 10px 10px 10px;
+margin-bottom: auto;
+max-width: 80%;
+}
+.form__div{
+display: grid;
+/* grid-gap: 0.1rem; */
+/* grid-template-columns: 1fr 1fr 1fr 1fr; */
+grid-template-columns: auto auto auto;
+padding: 5px 5px 5px 5px;
+}
 
-  /* input {
+input {
   color: rgb(7 2 18);
   height: 1.8rem;
   border-radius: 0.5rem;
-  } */
-  p{text-align: center;}
-  .desc{
-    width: 25rem;
-    /* max-width: 500px; */
   }
+p{text-align: center;}
