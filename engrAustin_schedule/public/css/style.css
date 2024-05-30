@@ -304,92 +304,40 @@ div a {
 
 /* Items Data Display */
 .resource-details {
-  margin: 0 auto;
-  max-width: 100rem;
-  /* background-color: #fff; */
-  /* -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06); */
-  /* box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06); */
-  /* padding: 5rem 7em; */
-  padding: 10px 10px 10px 10px;
-  border-radius: 15px;
+  margin: auto;
+  width: 70%;
   border: 3px solid #73AD21;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: auto;
+  max-width: 80%;  
 }
 
 .form__div{
   display: grid;
-  /* grid-gap: 0.1rem; */
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  margin: 5px;
+  border: 2px solid #ccc;
+  grid-gap: 2.1rem;
   grid-template-columns: auto auto auto;
-  padding: 5px 5px 5px 5px;
+  padding: 10px 10px 10px 10px;
+}
+
+.box-text-cell{
+  text-align: center;
+}
+
+.box-title{
+ font-size: medium;
+ text-transform: uppercase;
 }
 
 input {
   color: rgb(7 2 18);
-  height: 1.8rem;
+  height: 3.5rem;
+  width:  29.8rem;
   border-radius: 0.5rem;
-  }
-p{text-align: center;}
-  .desc{
-    width: 25rem;
-    /* max-width: 500px; */
-  }
-
-.ma-bt-lg {
-  margin-bottom: 3.5rem !important;
 }
 
-.ma-bt-md {
-  margin-bottom: 3rem !important;
+textarea{
+  resize: none;
+  border-radius: 0.5rem;
 }
-/* 
-.login-form {
-  margin: 0 auto;
-  max-width: 55rem;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
-  padding: 5rem 7rem;
-  border-radius: 5px;
-} */
-
-/* .form__group:not(:last-child) {
-  margin-bottom: 2.5rem;
-} */
-
-/* .form__label {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-} */
-
-.form__input {
-  /* display: block; */
-  /* font-family: inherit;
-  font-size: 1.5rem;
-  color: inherit;
-  padding: 1.25rem 1.75rem;
-  border: none; */
-  /* width: 40%; */
-  /* background-color: #fff;
-  background-color: #f2f2f2;
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; */
-
-}
-
-.form__label.item-no,.form__label.item-desc {
-  /* display: block; */
-  /* font-size: 1.6rem; */
-  /* font-weight: 700; */
-  /* margin-bottom: 0.75rem; */
-  /* display: inline-block; */
-  /* min-width: 48.8%; */
-  /* width: 49%; */
-}
-

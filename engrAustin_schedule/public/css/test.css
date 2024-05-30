@@ -305,23 +305,30 @@ div a {
 /* Items Data Display */
 .resource-details {
 margin: auto;
-width: 60%;
+width: 50%;
 border: 3px solid #73AD21;
 padding: 10px 10px 10px 10px;
 margin-bottom: auto;
-max-width: 80%;
+max-width: 70%;
+
 }
 .form__div{
 display: grid;
-/* grid-gap: 0.1rem; */
-/* grid-template-columns: 1fr 1fr 1fr 1fr; */
+margin: 5px;
+border: 2px solid #ccc;
+grid-gap: 2.1rem;
 grid-template-columns: auto auto auto;
-padding: 5px 5px 5px 5px;
+padding: 10px 10px 10px 10px;
+/* padding: 15px 15px 15px 15px; */
 }
 
-input {
+.box-cell{
+  text-align: center;
+}
+
+input textarea{
   color: rgb(7 2 18);
-  height: 1.8rem;
+  height: 2.8rem;
   border-radius: 0.5rem;
   }
-p{text-align: center;}
+/* p{text-align: center;} */
