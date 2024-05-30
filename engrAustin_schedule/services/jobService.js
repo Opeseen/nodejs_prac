@@ -33,11 +33,11 @@ const deleteJob = async(jobId) => {
 const getJobLedger = async(Id) => {
   const jobStatics = await Invoice.aggregate([
     {
-      $match: {jobID: ObjectId(Id) }
+      $match: {job: ObjectId(Id) }
     },
     {
       $group: {
-        _id: '$jobID',
+        _id: '$job',
         details:{
           $push: {
             invoiceNumber: "$invoiceNumber",

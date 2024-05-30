@@ -51,7 +51,7 @@ const updateJob = catchAsyncError(async(req, res, next) => {
 
 const deleteJob = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
-  const job = await Invoice.find({jobID: ObjectId(id)});
+  const job = await Invoice.find({job: ObjectId(id)});
   if(job.length > 0){ return next(new ApiError('This Job cannot be deleted because it is used on an Invoice', httpStatus.BAD_REQUEST)) };
 
   const deletedJob = await jobService.deleteJob(id);

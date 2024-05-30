@@ -30,25 +30,31 @@ block content
       form
         .form__div
           div(class='box-text-cell')
-            p.box-title box1
-            textarea(rows='2' cols='40')
+            p.box-title invoice no
+            input(type='text', value=`${invoice.invoiceNumber}`)
           div(class='box-text-cell')
-            p.box-title box2
-            input(type='text')
+            p.box-title description
+            textarea(rows='2' cols='40')= invoice.invoiceDescription
           div(class='box-text-cell')
-            p.box-title box3
-            input(type='text')
+            p.box-title amount
+            input(type='number', value=`${invoice.invoiceAppliedToSalesValue}`)
           div(class='box-text-cell')
-            p.box-title box4
-            input(type='text')
+            p.box-title job id
+            input(type='text', value=`${invoice.job.jobID}`)
           div(class='box-text-cell')
-            p.box-title box5
-            input(type='text')
+            p.box-title class
+            input(type='text', value=`${invoice.invoiceClass}`)
           div(class='box-text-cell')
-            p.box-title box6
-            input(type='text')
+            p.box-title wht %
+            input(type='number', value=`${invoice.witholdingTaxPercent}`)
           div(class='box-text-cell')
-            p.box-title box7
-            input(type='text')
+            p.box-title wht amount
+            input(type='number', value=`${invoice.witholdingTaxAmount}`)
+          div(class='box-text-cell')
+            p.box-title profit/loss
+            input(type='number', value=`${invoice.profitOrLoss}`)
+          div(class='box-text-cell')
+            p.box-title partners payment
+            input(type='number', value=`${invoice.invoicePartnerPayment}`)
     .line &nbsp;
 

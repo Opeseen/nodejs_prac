@@ -10,7 +10,7 @@ const invoiceSchema = new mongoose.Schema(
       trim: true,
       uppercase: true
     },
-    jobID: {
+    job: {
       type: mongoose.Schema.ObjectId,
       ref: 'Job',
     },

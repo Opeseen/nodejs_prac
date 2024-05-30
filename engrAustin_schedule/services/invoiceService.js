@@ -8,7 +8,7 @@ const createInvoice = async(invoiceDetails) =>{
 const getInvoice = async(invoiceId) => {
   const invoice = await Invoice.findById(invoiceId)
     .populate({
-      path: 'paymentId',
+      path: 'paymentId job',
       select: {
         paymentRefId: 0
       }

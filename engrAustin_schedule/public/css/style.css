@@ -305,18 +305,19 @@ div a {
 /* Items Data Display */
 .resource-details {
   margin: auto;
-  width: 70%;
-  border: 3px solid #73AD21;
+  width: 50%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
   padding: 10px 10px 10px 10px;
   margin-bottom: auto;
-  max-width: 80%;  
+  max-width: 60%;  
 }
 
 .form__div{
   display: grid;
   margin: 5px;
-  border: 2px solid #ccc;
-  grid-gap: 2.1rem;
+  grid-gap: 1.5rem;
   grid-template-columns: auto auto auto;
   padding: 10px 10px 10px 10px;
 }
@@ -326,15 +327,19 @@ div a {
 }
 
 .box-title{
- font-size: medium;
+ font-size: small;
+ color: #777;
  text-transform: uppercase;
 }
 
 input {
   color: rgb(7 2 18);
   height: 3.5rem;
-  width:  29.8rem;
+  width:  20.8rem;
   border-radius: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: small;
 }
 
 textarea{
