@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const toJson = require('@meanie/mongoose-to-json');
+const slugify = require('slugify');
 
 const invoiceSchema = new mongoose.Schema(
   {
@@ -67,7 +68,8 @@ const invoiceSchema = new mongoose.Schema(
         type: mongoose.Schema.ObjectId,
         ref: 'Payment'
       }
-    ]
+    ],
+    slug: String
   }
 
 );
@@ -83,6 +85,11 @@ invoiceSchema.statics.calculatePaymentDetails = async function(invoice){
 };
 
 // MIDDLEWARES EXECUTION
+
+invoiceSchema.pre('save', function(next) {
+  this.slug = slugify(this.invoiceNumber, { lower: true });
+  next();
+});
 
 invoiceSchema.pre('save', async function(next){
   this.constructor.calculatePaymentDetails(this);

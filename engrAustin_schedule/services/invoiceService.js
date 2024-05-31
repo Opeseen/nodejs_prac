@@ -5,8 +5,19 @@ const createInvoice = async(invoiceDetails) =>{
   return newInvoice;
 };
 
-const getInvoice = async(invoiceId) => {
+const getInvoicebyId = async(invoiceId) => {
   const invoice = await Invoice.findById(invoiceId)
+    .populate({
+      path: 'paymentId job',
+      select: {
+        paymentRefId: 0
+      }
+    });
+  return invoice;
+};
+
+const findOneInvoice = async(slug) =>{
+  const invoice = await Invoice.findOne({slug})
     .populate({
       path: 'paymentId job',
       select: {
@@ -55,7 +66,8 @@ const removePaymentIdFromInvoice = async(invoiceId, PaymentId) => {
 
 module.exports = {
   createInvoice,
-  getInvoice,
+  getInvoicebyId,
+  findOneInvoice,
   getAllInvoices,
   updateInvoice,
   deleteInvoice,
