@@ -16,7 +16,7 @@ router
 
 router
   .route('/:id/payment/:payid/unlink')
-  .patch(invoiceController.removePaymentIdFromInvoice);
+  .patch(invoiceController.removePaymentFromInvoice);
 
 // router
 //   .route('/:id/testing')

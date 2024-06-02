@@ -3,7 +3,7 @@ extends base
 block content
   main
     h2.page__subject invoice details
-    - const paymentCount = Number(invoice.paymentId.length)
+    - const paymentCount = Number(invoice.payment.length)
     if paymentCount > 0
       .table-wrapper
         .heading__title Payment Info
@@ -13,7 +13,7 @@ block content
             th Description
             th Amount
             th Date 
-          each payment in invoice.paymentId
+          each payment in invoice.payment
               tr
                 td= payment.paymentTag
                 td= payment.paymentDetails

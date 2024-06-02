@@ -66,10 +66,10 @@ const deleteInvoice = catchAsyncError(async(req, res, next) => {
   });
 });
 
-const removePaymentIdFromInvoice = catchAsyncError(async(req, res) => {
+const removePaymentFromInvoice = catchAsyncError(async(req, res) => {
   const id = req.params.id;
   const payid = req.params.payid;
-  await invoiceService.removePaymentIdFromInvoice(id, payid);
+  await invoiceService.removePaymentFromInvoice(id, payid);
 
   res.status(httpStatus.OK).json({
     status: 'Success',
@@ -84,5 +84,5 @@ module.exports = {
   getAllInvoices,
   updateInvoice,
   deleteInvoice,
-  removePaymentIdFromInvoice
+  removePaymentFromInvoice
 };

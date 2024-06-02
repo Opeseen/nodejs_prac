@@ -8,8 +8,8 @@ const createPayment = async(paymentDetails) =>{
   return newPayment;
 };
 
-const getPayment = async(paymentId) => {
-  const payment = await Payment.findById(paymentId);
+const getPayment = async(id) => {
+  const payment = await Payment.findById(id);
   return payment;
 };
 
@@ -23,17 +23,17 @@ const updatePayment = async(id, updatedDetails) => {
   return payment;
 };
 
-const deletePayment = async(paymentId) => {
-  const payment = await Payment.findByIdAndDelete(paymentId);
+const deletePayment = async(id) => {
+  const payment = await Payment.findByIdAndDelete(id);
   return payment;
 };
 
-const getPaymentLedger = async(PaymentId) => {
+const getPaymentLedger = async(id) => {
   const paymentStatics = await Invoice.aggregate([
     {
       $match: {
-        paymentId: {
-          $elemMatch: {$in: [ObjectId(PaymentId)]}
+        payment: {
+          $elemMatch: {$in: [ObjectId(id)]}
         }
       }    
     },

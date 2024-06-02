@@ -8,7 +8,7 @@ const createInvoice = async(invoiceDetails) =>{
 const getInvoicebyId = async(invoiceId) => {
   const invoice = await Invoice.findById(invoiceId)
     .populate({
-      path: 'paymentId job',
+      path: 'payment job',
       select: {
         paymentRefId: 0
       }
@@ -19,7 +19,7 @@ const getInvoicebyId = async(invoiceId) => {
 const findOneInvoice = async(slug) =>{
   const invoice = await Invoice.findOne({slug})
     .populate({
-      path: 'paymentId job',
+      path: 'payment job',
       select: {
         paymentRefId: 0
       }
@@ -42,20 +42,20 @@ const deleteInvoice = async(invoiceId) => {
   return invoice;
 };
 
-const addPaymentIdToInvoice = async(invoiceId, PaymentId) => {
+const addPaymentToInvoice = async(invoiceId, PaymentId) => {
   await Invoice.findByIdAndUpdate(invoiceId, 
     { 
-      $addToSet: {paymentId: PaymentId},
+      $addToSet: {payment: PaymentId},
       $set: {invoicePaymentStatus: "Paid"}
     },  
     { new: true, runValidators: true }
   );
 };
 
-const removePaymentIdFromInvoice = async(invoiceId, PaymentId) => {
+const removePaymentFromInvoice = async(invoiceId, PaymentId) => {
   await Invoice.findByIdAndUpdate(invoiceId,
     {
-      $pull: {paymentId: PaymentId},
+      $pull: {payment: PaymentId},
       $set: {invoicePaymentStatus: "Unpaid"}
     },
     { new: true, runValidators: true }
@@ -71,6 +71,6 @@ module.exports = {
   getAllInvoices,
   updateInvoice,
   deleteInvoice,
-  addPaymentIdToInvoice,
-  removePaymentIdFromInvoice
+  addPaymentToInvoice,
+  removePaymentFromInvoice
 };

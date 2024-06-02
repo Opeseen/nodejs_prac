@@ -14,8 +14,8 @@ const createPayment = catchAsyncError(async(req, res) => {
 
   // THIS STAGE WILL ATTACH THE PAYMENT-ID TO THE INVOICE IF AN INVOICE WAS SELECTED
   if (req.body.invoices && req.body.invoices.length > 0 && payment.id){
-    req.body.invoices.forEach(invoiceId => {
-      invoiceService.addPaymentIdToInvoice(invoiceId, payment.id);
+    req.body.invoices.forEach(invoice => {
+      invoiceService.addPaymentToInvoice(invoice, payment.id);
     });
   };
   res.status(httpStatus.OK).json({
@@ -59,7 +59,7 @@ const updatePayment = catchAsyncError(async(req, res, next) => {
 
 const deletePayment = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
-  const payment = await Invoice.find({paymentId: id});
+  const payment = await Invoice.find({payment: id});
   if(payment.length > 0){ return next(new ApiError('This Payment cannot be deleted because it is used on an Invoice', httpStatus.BAD_REQUEST)) };
 
   const deletePayment = await paymentService.deletePayment(id);
@@ -72,8 +72,8 @@ const deletePayment = catchAsyncError(async(req, res, next) => {
 });
 
 const getPaymentLedger = catchAsyncError(async(req, res) => {
-  const PaymentId = req.params.id;
-  const paymentStatics = await paymentService.getPaymentLedger(PaymentId);
+  const id = req.params.id;
+  const paymentStatics = await paymentService.getPaymentLedger(id);
 
   res.status(httpStatus.OK).json({
     status: 'Success',
