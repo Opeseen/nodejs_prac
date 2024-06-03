@@ -12,7 +12,7 @@ const displayHomePage = catchAsyncError(async(req, res) => {
 const getAllJobs = catchAsyncError(async(req, res) => {
   const jobs = await jobService.getAllJobs();
   res.status(httpStatus.OK).render('jobOverview',{
-    title: 'Jobs',
+    title: 'Job',
     jobs
   });
 });
@@ -28,10 +28,12 @@ const getAllInvoices = catchAsyncError(async(req, res) => {
 const getInvoiceDetails = catchAsyncError(async(req, res, next) => {
   const slug = req.params.id;
   const invoice = await invoiceService.findOneInvoice(slug);
+  const jobs = await jobService.getAllJobs();
   if(!invoice) { return next(new ApiError("No Invoice Found", httpStatus.NOT_FOUND)) }
   res.status(httpStatus.OK).render('invoiceDetail',{
     title: 'Invoice Details',
-    invoice
+    invoice,
+    jobs
   });
 });
 

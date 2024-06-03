@@ -352,14 +352,20 @@ div a {
  text-transform: uppercase;
 }
 
-input {
+input,select{
   color: rgb(7 2 18);
   height: 3.5rem;
-  width:  20.8rem;
+  width:  15.8rem;
   border-radius: 0.5rem;
   text-align: center;
   text-transform: uppercase;
   font-size: small;
+}
+
+.jobid{
+  height: 3.5rem;
+  width:  37.8rem;
+  text-align: justify;
 }
 
 textarea{

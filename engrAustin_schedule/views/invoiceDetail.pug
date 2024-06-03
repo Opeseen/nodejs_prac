@@ -14,11 +14,11 @@ block content
             th Amount
             th Date 
           each payment in invoice.payment
-              tr
-                td= payment.paymentTag
-                td= payment.paymentDetails
-                td= payment.paymentAmount.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
-                td= payment.paymentDate.toLocaleString(en-us, {dateStyle: 'medium'})
+            tr
+              td= payment.paymentTag
+              td= payment.paymentDetails
+              td= payment.paymentAmount.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+              td= payment.paymentDate.toLocaleString(en-us, {dateStyle: 'medium'})
     else
       p.empty__record no payment record exist on this invoice!
 
@@ -34,31 +34,34 @@ block content
             input#invno(type='text', value=`${invoice.invoiceNumber}`)
           div(class='box-text-cell')
             p.box-title description
-            textarea#desc(rows='2' cols='40')= invoice.invoiceDescription
+            textarea#desc(rows='3' cols='48')= invoice.invoiceDescription
           div(class='box-text-cell')
             p.box-title sales amount
-            input#isalesval(type='number', value=`${invoice.invoiceAppliedToSalesValue}`)
+            input#isalesval(type='number',step='any',value=`${invoice.invoiceAppliedToSalesValue}`)
           div(class='box-text-cell')
             p.box-title cost amount
-            input#costval(type='number', value=`${invoice.spentOnProject}`)
+            input#costval(type='number',step='any',value=`${invoice.spentOnProject}`)
           div(class='box-text-cell')
             p.box-title job id
-            input#job(type='text', value=`${invoice.job ? invoice.job.jobID : ''}`)
+            select#job(name='jobid', class='jobid')
+              option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID + ' - ' + invoice.job.jobDescription: ''}`
           div(class='box-text-cell')
             p.box-title class
-            input#invclass(type='text', value=`${invoice.invoiceClass}`)
+            select#invclass(name='class')
+              option= invoice.invoiceClass
+              option= `${invoice.invoiceClass === 'Installation' ? 'Maintenance' : 'Installation'}`
           div(class='box-text-cell')
             p.box-title wht %
-            input#whtpercent(type='number', value=`${invoice.witholdingTaxPercent}`)
+            input#whtpercent(type='number',value=`${invoice.witholdingTaxPercent}`)
           div(class='box-text-cell')
             p.box-title wht amount
-            input#whtamt(type='number', value=`${invoice.witholdingTaxAmount}`)
+            input#whtamt(type='number',step='any',value=`${invoice.witholdingTaxAmount}`)
           div(class='box-text-cell')
             p.box-title profit/loss
-            input#profit-loss(type='number', value=`${invoice.profitOrLoss}`)
+            input#profit-loss(type='number',step='any',value=`${invoice.profitOrLoss}`)
           div(class='box-text-cell')
             p.box-title partners payment
-            input#partners-pyt(type='number', value=`${invoice.invoicePartnerPayment}`)
+            input#partners-pyt(type='number',step='any',value=`${invoice.invoicePartnerPayment}`)
         .form__cta
           button.btn--cta Save settings
     .line &nbsp;

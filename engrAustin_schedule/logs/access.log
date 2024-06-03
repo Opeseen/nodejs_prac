@@ -1,0 +1,360 @@
+ GET /invoices 304 6782.540 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:47 GMT
+ GET / 304 81.601 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:47 GMT
+ GET / 304 97.861 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:47 GMT
+ GET /jobs 200 139.565 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:49 GMT
+ GET /jobs 304 78.716 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:49 GMT
+ GET /payments 304 130.046 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:51 GMT
+ GET /payments 304 84.737 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:51 GMT
+ GET /invoices 200 87.240 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:52 GMT
+ GET /invoices 304 134.362 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:52 GMT
+ GET /invoice/b11961 200 398.255 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:54 GMT
+ GET /invoice/b11961 304 106.363 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:48:54 GMT
+ GET /invoices 304 157.326 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:04 GMT
+ GET /invoices 304 72.409 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:04 GMT
+ GET /invoice/b11962 200 94.851 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:06 GMT
+ GET /invoice/b11962 304 83.082 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:06 GMT
+ GET /invoices 304 109.689 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:22 GMT
+ GET /invoices 304 80.727 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:22 GMT
+ GET /invoice/b11963 200 220.603 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:24 GMT
+ GET /invoice/b11963 304 77.522 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:49:24 GMT
+ GET /invoices 304 70.433 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:50:16 GMT
+ GET /invoices 304 65.347 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:50:16 GMT
+ GET /invoice/b11961 304 89.621 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:50:17 GMT
+ GET /invoice/b11961 304 95.169 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:50:17 GMT
+ GET /invoice/b11961 304 109.951 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:51:22 GMT
+ GET /invoice/b11961 304 92.646 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:51:22 GMT
+ GET /invoice/b11961 304 105.483 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:51:32 GMT
+ GET /invoice/b11961 304 85.300 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:51:32 GMT
+ GET /invoice/b11961 304 143.371 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:52:15 GMT
+ GET /invoice/b11961 304 73.563 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:52:15 GMT
+ GET /invoice/b11961 304 99.939 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:52:44 GMT
+ GET /invoice/b11961 304 85.795 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:52:44 GMT
+ GET /invoice/b11961 304 95.775 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:52:52 GMT
+ GET /invoice/b11961 304 91.429 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 21:52:52 GMT
+ GET /invoice/b11961 200 77.940 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:02:45 GMT
+ GET /invoice/b11961 304 67.626 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:02:45 GMT
+ GET /invoice/b11961 304 110.288 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:02:56 GMT
+ GET /invoice/b11961 304 70.274 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:02:56 GMT
+ GET /invoice/b11961 200 87.368 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:04:52 GMT
+ GET /invoice/b11961 304 56.949 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:04:52 GMT
+ GET /invoice/b11961 304 104.927 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:05:10 GMT
+ GET /invoice/b11961 304 60.170 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:05:10 GMT
+ GET /invoice/b11961 200 66.380 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:19:14 GMT
+ GET /invoice/b11961 304 62.962 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:19:14 GMT
+ GET /invoice/b11961 304 90.866 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:19:55 GMT
+ GET /invoice/b11961 304 162.634 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:19:55 GMT
+ GET /invoice/b11961 200 68.953 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:22:14 GMT
+ GET /invoice/b11961 304 202.572 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:22:14 GMT
+ GET /invoice/b11961 200 92.013 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:22:29 GMT
+ GET /invoice/b11961 304 125.869 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:22:29 GMT
+ GET /invoice/b11961 304 69.536 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:23:38 GMT
+ GET /invoice/b11961 304 115.125 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:23:38 GMT
+ GET /invoice/b11961 304 54.764 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:23:49 GMT
+ GET /invoice/b11961 304 113.310 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:23:49 GMT
+ GET /invoice/b11961 304 92.756 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:24:03 GMT
+ GET /invoice/b11961 304 61.976 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:24:03 GMT
+ GET /invoice/b11961 200 87.719 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:27:08 GMT
+ GET /invoice/b11961 304 55.481 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:27:08 GMT
+ GET /invoice/b11961 304 4264.226 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:28:21 GMT
+ GET /invoice/b11961 304 214.260 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:28:21 GMT
+ GET /invoice/b11961 304 155.821 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:28:25 GMT
+ GET /invoice/b11961 304 140.898 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:28:26 GMT
+ GET /invoice/b11961 200 161.959 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:06 GMT
+ GET /invoice/b11961 304 134.592 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:06 GMT
+ GET /invoice/b11961 304 168.712 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:12 GMT
+ GET /invoice/b11961 304 151.607 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:12 GMT
+ GET /invoices 304 146.926 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:31 GMT
+ GET /invoices 304 113.814 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:32 GMT
+ GET /invoice/b11961 304 135.645 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:33 GMT
+ GET /invoice/b11961 304 127.355 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:33 GMT
+ GET /invoices 304 57.387 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:42 GMT
+ GET /invoices 304 122.936 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:42 GMT
+ GET /invoice/b11962 200 107.973 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:45 GMT
+ GET /invoice/b11962 304 135.444 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:31:46 GMT
+ GET /invoice/b11962 304 116.643 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:01 GMT
+ GET /invoice/b11962 304 136.889 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:01 GMT
+ GET /invoices 304 72.777 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:03 GMT
+ GET /invoices 304 86.121 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:03 GMT
+ GET /invoices 304 45.780 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:05 GMT
+ GET /invoices 304 85.119 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:05 GMT
+ GET /invoice/b11963 200 231.976 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:07 GMT
+ GET /invoice/b11963 304 141.320 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:33:07 GMT
+ GET /invoice/b11963 200 67.332 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:00 GMT
+ GET /invoice/b11963 304 140.380 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:00 GMT
+ GET /invoices 304 59.303 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:07 GMT
+ GET /invoices 304 90.691 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:07 GMT
+ GET /invoice/b11961 304 112.513 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:09 GMT
+ GET /invoice/b11961 304 160.650 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:09 GMT
+ GET /invoices 304 62.634 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:28 GMT
+ GET /invoices 304 118.015 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:28 GMT
+ GET /invoice/b11962 200 86.832 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:30 GMT
+ GET /invoice/b11962 304 128.011 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:30 GMT
+ GET /invoices 304 57.041 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:51 GMT
+ GET /invoices 304 95.117 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:51 GMT
+ GET /invoice/b11963 304 94.741 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:53 GMT
+ GET /invoice/b11963 304 130.919 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:34:53 GMT
+ GET /invoice/b11963 304 94.769 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:35:13 GMT
+ GET /invoice/b11963 304 156.860 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:35:13 GMT
+ GET /invoice/b11963 304 70.102 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:38:15 GMT
+ GET /invoice/b11963 304 84.096 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:38:15 GMT
+ GET /invoice/b11963 200 120.333 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:51:10 GMT
+ GET /invoice/b11963 304 60.938 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 22:51:10 GMT
+ GET /invoice/b11963 500 21.470 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:00:06 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47:37
+    45|             p.box-title job id
+    46|             select#job(name='jobid')
+  > 47|               option(value="")= the items  
+--------------------------------------------^
+    48|             //- input#job(type='text', value=`${invoice.job ? invoice.job.jobID : ''}`)
+    49|           div(class='box-text-cell')
+    50|             p.box-title class
+
+Syntax Error: Unexpected token
+ GET /invoice/b11963 200 70.739 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:00:22 GMT
+ GET /invoice/b11963 304 68.588 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:00:22 GMT
+ GET /invoice/b11963 200 75.744 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:03:41 GMT
+ GET /invoice/b11963 304 81.425 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:03:41 GMT
+ GET /invoice/b11963 304 79.008 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:03:55 GMT
+ GET /invoice/b11963 304 74.472 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:03:56 GMT
+ GET /invoice/b11963 304 81.188 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:04:04 GMT
+ GET /invoice/b11963 304 66.678 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:04:04 GMT
+ GET /invoice/b11963 304 92.231 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:04:23 GMT
+ GET /invoice/b11963 304 90.296 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:04:23 GMT
+ GET /invoice/b11963 304 71.324 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:04:58 GMT
+ GET /invoice/b11963 304 74.536 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:04:58 GMT
+ GET /invoice/b11963 200 90.940 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:07:26 GMT
+ GET /invoice/b11963 304 60.650 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:07:26 GMT
+ GET /invoice/b11963 304 73.964 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:07:31 GMT
+ GET /invoice/b11963 304 58.895 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:07:31 GMT
+ GET /invoice/b11963 304 47.584 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:07:33 GMT
+ GET /invoice/b11963 304 58.186 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:07:33 GMT
+ GET /invoice/b11963 200 80.122 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:11:10 GMT
+ GET /invoice/b11963 304 82.598 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:11:10 GMT
+ GET /invoice/b11963 304 55.684 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:11:13 GMT
+ GET /invoice/b11963 304 83.642 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:11:13 GMT
+ GET /invoice/b11963 200 76.903 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:13:50 GMT
+ GET /invoice/b11963 304 78.966 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:13:50 GMT
+ GET /invoice/b11963 200 3821.765 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:18:58 GMT
+ GET /invoice/b11963 304 407.175 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:18:58 GMT
+ GET /invoice/b11963 304 190.525 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:19:02 GMT
+ GET /invoice/b11963 304 101.590 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:19:02 GMT
+ GET /invoice/b11963 304 652.183 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:19:27 GMT
+ GET /invoice/b11963 304 163.459 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:19:28 GMT
+ GET /invoice/b11963 200 206.020 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:21:34 GMT
+ GET /invoice/b11963 304 139.936 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:21:35 GMT
+ GET /invoice/b11963 200 205.574 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:26:37 GMT
+ GET /invoice/b11963 304 468.465 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:26:38 GMT
+ GET /invoice/b11963 200 133.673 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:26:57 GMT
+ GET /invoice/b11963 304 419.818 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:26:58 GMT
+ GET /invoice/b11963 200 186.416 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:27:08 GMT
+ GET /invoice/b11963 304 339.662 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:27:09 GMT
+ GET /invoice/b11963 304 589.281 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:28:06 GMT
+ GET /invoice/b11963 304 506.384 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:28:06 GMT
+ GET /invoice/b11963 304 585.694 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:30:04 GMT
+ GET /invoice/b11963 304 247.330 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:30:05 GMT
+ GET /invoice/b11963 304 579.958 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:33:29 GMT
+ GET /invoice/b11963 304 294.720 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:33:29 GMT
+ GET /invoice/b11963 304 193.425 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:33:38 GMT
+ GET /invoice/b11963 304 171.944 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:33:38 GMT
+ GET /invoice/b11963 304 112.939 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:34:02 GMT
+ GET /invoice/b11963 304 159.217 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:34:02 GMT
+ GET /invoice/b11963 304 89.946 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:34:22 GMT
+ GET /invoice/b11963 304 215.274 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:34:22 GMT
+ GET /invoice/b11963 304 139.584 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:02 GMT
+ GET /invoice/b11963 304 152.324 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:02 GMT
+ GET /invoice/b11963 200 214.445 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:28 GMT
+ GET /invoice/b11963 304 182.230 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:29 GMT
+ GET /invoice/b11963 200 113.549 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:37 GMT
+ GET /invoice/b11963 304 173.347 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:38 GMT
+ GET /invoice/b11963 200 144.709 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:58 GMT
+ GET /invoice/b11963 304 228.109 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:35:59 GMT
+ GET /invoice/b11963 200 108.017 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:37:51 GMT
+ GET /invoice/b11963 304 86.526 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:37:52 GMT
+ GET /invoice/b11963 304 89.233 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:38:21 GMT
+ GET /invoice/b11963 304 88.233 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:38:21 GMT
+ GET /invoice/b11963 304 77.240 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:38:35 GMT
+ GET /invoice/b11963 304 104.800 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:38:35 GMT
+ GET /invoice/b11963 200 102.288 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:41:02 GMT
+ GET /invoice/b11963 304 77.460 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:41:03 GMT
+ GET /invoice/b11963 200 78.526 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:42:04 GMT
+ GET /invoice/b11963 304 84.515 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:42:04 GMT
+ GET /invoice/b11963 200 94.796 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:43:35 GMT
+ GET /invoice/b11963 304 90.001 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:43:35 GMT
+ GET /invoice/b11963 200 101.000 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:45:30 GMT
+ GET /invoice/b11963 304 174.050 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:45:30 GMT
+ GET /invoice/b11963 304 444.513 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:47:18 GMT
+ GET /invoice/b11963 304 271.568 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:47:18 GMT
+ GET /invoice/b11963 200 128.378 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:48:54 GMT
+ GET /invoice/b11963 304 184.252 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:48:54 GMT
+ GET /invoice/b11963 200 146.461 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:49:42 GMT
+ GET /invoice/b11963 304 222.603 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:49:42 GMT
+ GET / 304 116.638 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:04 GMT
+ GET / 304 72.348 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:04 GMT
+ GET /invoices 304 118.492 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:08 GMT
+ GET /invoices 304 54.057 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:08 GMT
+ GET /invoice/b11962 200 101.147 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:10 GMT
+ GET /invoice/b11962 304 102.071 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:10 GMT
+ GET /invoices 304 115.352 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:20 GMT
+ GET /invoices 304 116.923 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:20 GMT
+ GET /invoice/b11961 200 175.166 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:23 GMT
+ GET /invoice/b11961 304 112.800 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:50:23 GMT
+ POST /api/v2/mundial/invoices 200 315.952 ms PostmanRuntime/7.39.0 Sun, 02 Jun 2024 23:53:10 GMT
+ GET / 304 58.968 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:53:30 GMT
+ GET / 304 62.742 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:53:30 GMT
+ GET /invoices 200 68.420 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:53:31 GMT
+ GET /invoices 304 75.500 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:53:31 GMT
+ GET /invoice/b11964 500 71.558 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:53:36 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47
+    45|             p.box-title job id
+    46|             select#job(name='jobid', class='jobid')
+  > 47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID : ''} - ${invoice.job.jobDescription}`
+    48|               each job in jobs
+    49|                if job.jobID !== invoice.job.jobID
+    50|                 option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+
+Cannot read properties of undefined (reading 'jobDescription')
+ GET /invoices 304 56.625 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:54:52 GMT
+ GET /invoices 304 52.417 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:54:52 GMT
+ GET /invoice/b11964 500 123.122 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:54:56 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:49
+    47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID : ''}}`
+    48|               each job in jobs
+  > 49|                if job.jobID !== invoice.job.jobID
+    50|                 option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+    51|           div(class='box-text-cell')
+    52|             p.box-title class
+
+Cannot read properties of undefined (reading 'jobID')
+ GET /invoice/b11964 200 85.314 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:55:49 GMT
+ GET /invoice/b11964 304 68.610 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:55:49 GMT
+ GET /invoice/b11964 200 103.283 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:56:03 GMT
+ GET /invoice/b11964 304 71.375 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:56:03 GMT
+ GET /invoice/b11964 500 23.403 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:58:04 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47:105
+    45|             p.box-title job id
+    46|             select#job(name='jobid', class='jobid')
+  > 47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID '-' invoice.job.jobDescriotion : ''}`
+----------------------------------------------------------------------------------------------------------------^
+    48|               //- each job in jobs
+    49|               //-  if job.jobID !== invoice.job.jobID
+    50|               //-   option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+
+Syntax Error: Unexpected token
+ GET /invoice/b11961 500 26.505 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:58:10 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47:105
+    45|             p.box-title job id
+    46|             select#job(name='jobid', class='jobid')
+  > 47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID '-' invoice.job.jobDescriotion : ''}`
+----------------------------------------------------------------------------------------------------------------^
+    48|               //- each job in jobs
+    49|               //-  if job.jobID !== invoice.job.jobID
+    50|               //-   option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+
+Syntax Error: Unexpected token
+ GET /invoice/b11962 500 30.720 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:58:14 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47:105
+    45|             p.box-title job id
+    46|             select#job(name='jobid', class='jobid')
+  > 47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID '-' invoice.job.jobDescriotion : ''}`
+----------------------------------------------------------------------------------------------------------------^
+    48|               //- each job in jobs
+    49|               //-  if job.jobID !== invoice.job.jobID
+    50|               //-   option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+
+Syntax Error: Unexpected token
+ GET /invoices 304 39.041 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:21 GMT
+ GET /invoices 304 35.125 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:21 GMT
+ GET /invoice/b11961 200 66.716 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:23 GMT
+ GET /invoice/b11961 304 82.645 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:23 GMT
+ GET /invoices 304 43.936 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:46 GMT
+ GET /invoices 304 38.062 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:46 GMT
+ GET /invoice/b11961 200 86.068 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:48 GMT
+ GET /invoice/b11961 304 94.697 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:48 GMT
+ GET /invoice/b11964 500 96.170 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Sun, 02 Jun 2024 23:59:52 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47
+    45|             p.box-title job id
+    46|             select#job(name='jobid', class='jobid')
+  > 47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID : ''} ${invoice.job.jobDescription}`
+    48|               //- each job in jobs
+    49|               //-  if job.jobID !== invoice.job.jobID
+    50|               //-   option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+
+Cannot read properties of undefined (reading 'jobDescription')
+ GET /invoices 304 45.474 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:01:23 GMT
+ GET /invoices 304 55.246 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:01:23 GMT
+ GET /invoice/b11964 500 26.370 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:01:25 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47:105
+    45|             p.box-title job id
+    46|             select#job(name='jobid', class='jobid')
+  > 47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID ${invoice.job.jobDescription} : ''}`
+----------------------------------------------------------------------------------------------------------------^
+    48|               //- each job in jobs
+    49|               //-  if job.jobID !== invoice.job.jobID
+    50|               //-   option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+
+Syntax Error: Unexpected token
+ GET /invoice/b11964 200 75.398 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:02:40 GMT
+ GET /invoice/b11964 304 58.234 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:02:40 GMT
+ GET /invoice/b11964 500 75.149 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:03:19 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:47
+    45|             p.box-title job id
+    46|             select#job(name='jobid', class='jobid')
+  > 47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID: ''} ${invoice.job.jobDescription}`
+    48|               //- each job in jobs
+    49|               //-  if job.jobID !== invoice.job.jobID
+    50|               //-   option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+
+Cannot read properties of undefined (reading 'jobDescription')
+ GET /invoices 304 69.937 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:03:30 GMT
+ GET /invoices 304 49.592 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:03:30 GMT
+ GET /invoice/b11964 200 211.960 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:03:32 GMT
+ GET /invoice/b11964 304 116.538 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:03:32 GMT
+ GET /invoice/b11964 500 86.481 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:03:44 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:49
+    47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID: ''}`
+    48|               each job in jobs
+  > 49|                if job.jobID !== invoice.job.jobID
+    50|                 option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+    51|           div(class='box-text-cell')
+    52|             p.box-title class
+
+Cannot read properties of undefined (reading 'jobID')
+ GET /invoice/b11964 500 126.431 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:04:56 GMT - error-message: C:\Users\Horpeyemi\Desktop\Tutorials\CodePractice\FIRST GITHUB FILES\nodejs_prac\engrAustin_schedule\views\invoiceDetail.pug:49
+    47|               option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID: ''}`
+    48|               each job in jobs
+  > 49|                if job.jobID !== invoice.job.jobID || undefined
+    50|                 option(value=`${job.id}`)= `${job.jobID} - ${job.jobDescription}`
+    51|           div(class='box-text-cell')
+    52|             p.box-title class
+
+Cannot read properties of undefined (reading 'jobID')
+ GET /invoice/b11964 200 86.500 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:07:05 GMT
+ GET /invoice/b11964 304 81.693 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:07:06 GMT
+ GET /invoices 304 50.462 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:07:58 GMT
+ GET /invoices 304 69.689 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:07:58 GMT
+ GET /invoice/b11961 200 190.066 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:08:00 GMT
+ GET /invoice/b11961 304 87.687 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:08:00 GMT
+ GET /invoice/b11961 200 90.088 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:08:21 GMT
+ GET /invoice/b11961 304 75.849 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:08:21 GMT
+ GET /invoice/b11961 200 95.471 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:08:58 GMT
+ GET /invoice/b11961 304 77.179 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:08:58 GMT
+ GET /invoices 304 53.830 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:08 GMT
+ GET /invoices 304 66.462 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:08 GMT
+ GET /invoice/b11964 304 73.690 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:10 GMT
+ GET /invoice/b11964 304 84.442 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:10 GMT
+ GET /invoices 304 47.179 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:12 GMT
+ GET /invoices 304 59.182 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:12 GMT
+ GET /invoice/b11961 304 99.466 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:14 GMT
+ GET /invoice/b11961 200 81.295 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:14 GMT
+ GET /invoice/b11961 304 63.572 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:14 GMT
+ GET /invoice/b11961 200 75.578 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:45 GMT
+ GET /invoice/b11961 304 75.703 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:45 GMT
+ GET /invoices 304 70.642 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:55 GMT
+ GET /invoices 304 43.770 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:55 GMT
+ GET /invoice/b11963 200 68.766 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:57 GMT
+ GET /invoice/b11963 304 84.399 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:57 GMT
+ GET /invoices 304 50.516 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:59 GMT
+ GET /invoices 304 60.635 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:09:59 GMT
+ GET /invoice/b11964 304 63.064 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:01 GMT
+ GET /invoice/b11964 304 66.405 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:01 GMT
+ GET /invoices 304 45.343 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:02 GMT
+ GET /invoices 304 49.693 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:02 GMT
+ GET /invoice/b11962 200 57.533 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:04 GMT
+ GET /invoice/b11962 304 72.953 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:04 GMT
+ GET /invoices 304 33.718 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:13 GMT
+ GET /invoices 304 43.157 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:13 GMT
+ GET /invoice/b11962 304 53.875 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:15 GMT
+ GET /invoice/b11962 200 31.463 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:15 GMT
+ GET /invoice/b11962 304 52.351 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:15 GMT
+ GET /invoices 304 43.512 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:38 GMT
+ GET /invoices 304 52.682 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0 Mon, 03 Jun 2024 00:10:38 GMT

@@ -5,8 +5,9 @@ if (invoiceItems)
     e.preventDefault();
     const invoice = document.getElementById('invno').value;
     const description = document.getElementById('desc').value;
-    const data = document.getElementById('profit-loss').value;
+    const data = document.getElementById('invclass').value;
+    const job = document.getElementById('job').value;
 
-    console.log(invoice, description, data)
+    console.log(invoice, description, data, job)
 });
 
