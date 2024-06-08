@@ -2,6 +2,7 @@ const httpStatus = require('http-status');
 const {invoiceService} = require('../services');
 const ApiError = require('../utils/ApiError');
 const catchAsyncError = require('../utils/catchAsyncError');
+const {Invoice} = require('../models');
 
 
 const createInvoice = catchAsyncError(async(req, res) => {
@@ -9,17 +10,17 @@ const createInvoice = catchAsyncError(async(req, res) => {
 
   const newInvoice = await invoiceService.createInvoice(invoiceDetails);
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     newInvoice
   });
 });
 
 const getInvoice = catchAsyncError(async(req, res, next) => {
-  const id = req.params.id;
-  const invoice = await invoiceService.getInvoice(id);
+  const slug = req.params.id;
+  const invoice = await invoiceService.findOneInvoice(slug);
   if(!invoice) { return next(new ApiError("No Invoice Found", httpStatus.NOT_FOUND)) }
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     invoice
   })
 });
@@ -27,7 +28,7 @@ const getInvoice = catchAsyncError(async(req, res, next) => {
 const getAllInvoices = catchAsyncError(async(req, res) => {
   const invoices = await invoiceService.getAllInvoices();
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     results: invoices.length,
     invoices
   })
@@ -35,13 +36,13 @@ const getAllInvoices = catchAsyncError(async(req, res) => {
 
 const updateInvoice = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
-  const invoice = await invoiceService.getInvoice(id);
+  const invoice = await Invoice.findById(id);
   if(!invoice){
     return next(new ApiError("No Invoice found to update", httpStatus.NOT_FOUND));
   };
   
   invoice.invoiceNumber = req.body.invoiceNumber;
-  invoice.jobID = req.body.jobID;
+  invoice.job = req.body.job;
   invoice.invoiceDescription = req.body.invoiceDescription;
   invoice.invoiceClass = req.body.invoiceClass
   invoice.spentOnProject = req.body.spentOnProject || 0;
@@ -50,7 +51,7 @@ const updateInvoice = catchAsyncError(async(req, res, next) => {
   await invoice.save();
 
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     invoice
   });
 });
@@ -62,7 +63,7 @@ const deleteInvoice = catchAsyncError(async(req, res, next) => {
     return next(new ApiError("No Invoice found to delete", httpStatus.NOT_FOUND));
   };
   res.status(httpStatus.NO_CONTENT).json({
-    status: 'Success'
+    success: true
   });
 });
 
@@ -72,7 +73,7 @@ const removePaymentFromInvoice = catchAsyncError(async(req, res) => {
   await invoiceService.removePaymentFromInvoice(id, payid);
 
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     message: "Payment has been removed"
   });
 });

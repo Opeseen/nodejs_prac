@@ -11,7 +11,7 @@ const createJob = catchAsyncError(async(req, res) => {
 
   const newJob = await jobService.createJob(jobDetails);
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     newJob
   });
 });
@@ -22,7 +22,7 @@ const getJob = catchAsyncError(async(req, res, next) => {
   if(!job) { return next(new ApiError("No Job Found", httpStatus.NOT_FOUND)) }
 
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     job
   })
 });
@@ -30,7 +30,7 @@ const getJob = catchAsyncError(async(req, res, next) => {
 const getAllJobs = catchAsyncError(async(req, res) => {
   const jobs = await jobService.getAllJobs();
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     results: jobs.length,
     jobs
   })
@@ -44,7 +44,7 @@ const updateJob = catchAsyncError(async(req, res, next) => {
     return next(new ApiError("No Job found to update", httpStatus.NOT_FOUND));
   };
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     updatedJob
   })
 });
@@ -59,7 +59,7 @@ const deleteJob = catchAsyncError(async(req, res, next) => {
     return next(new ApiError("No Job found to delete", httpStatus.NOT_FOUND));
   };
   res.status(httpStatus.NO_CONTENT).json({
-    status: 'Success'
+    success: true
   })
 });
 
@@ -68,7 +68,7 @@ const getJobLedger = catchAsyncError(async(req, res) => {
   const jobStatics = await jobService.getJobLedger(id);
 
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     results: jobStatics.length > 0 ? jobStatics[0].details.length : 0,
     jobStatics
   });

@@ -28,12 +28,10 @@ const getAllInvoices = catchAsyncError(async(req, res) => {
 const getInvoiceDetails = catchAsyncError(async(req, res, next) => {
   const slug = req.params.id;
   const invoice = await invoiceService.findOneInvoice(slug);
-  const jobs = await jobService.getAllJobs();
   if(!invoice) { return next(new ApiError("No Invoice Found", httpStatus.NOT_FOUND)) }
   res.status(httpStatus.OK).render('invoiceDetail',{
     title: 'Invoice Details',
     invoice,
-    jobs
   });
 });
 
