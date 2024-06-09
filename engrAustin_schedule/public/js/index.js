@@ -37,7 +37,7 @@ if (invoiceDetails)
     const docid = document.getElementById('docid').value
 
     updateInvoice(docid,invoiceNo,description,salesval,costval,job,invclass,whtpercent)
-    console.log(invoiceNo, description, costval, job)
+    // console.log(invoiceNo, job)
     // console.log(id)
 });
 

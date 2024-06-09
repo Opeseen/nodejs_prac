@@ -38,18 +38,16 @@ block content
           div(class='box-text-cell')
             p.box-title sales amount
             input#salesval(type='number',step='any',value=`${invoice.invoiceAppliedToSalesValue}`)
-          div(class='box-text-cell')
+          div(class='box-stext-cell')
             p.box-title cost amount
             input#costval(type='number',step='any',value=`${invoice.spentOnProject}`)
           div(class='box-text-cell')
             p.box-title job id
-            //- select#job(name='jobs', class='jobs')
-            //-   option(value= `${invoice.job ? invoice.job.id : ''}`)= `${invoice.job ? invoice.job.jobID + ' - ' + invoice.job.jobDescription: ''}`
-            input#job(list='joblist',name='jobs',value=`${invoice.job ? invoice.job.id : ''}`)
-            datalist#joblist
-              option(value= 'job1')
-              option(value= 'job2')
-              option(value= 'job3')
+            - const checkJob = invoice.job
+            select#job(name='jobs', class='jobs')
+              option(value= `${invoice.job ? invoice.job.id : undefined}`)= `${invoice.job ? invoice.job.jobID + ' - ' + invoice.job.jobDescription: 'Please select'}`
+              if checkJob && checkJob.id.length > 0
+                option(value= 'undefined') Please select
           div(class='box-text-cell')
             p.box-title class
             select#invclass(name='class')

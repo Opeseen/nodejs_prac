@@ -42,7 +42,7 @@ const updateInvoice = catchAsyncError(async(req, res, next) => {
   };
   
   invoice.invoiceNumber = req.body.invoiceNumber;
-  invoice.job = req.body.job;
+  invoice.job = req.body.job === 'undefined' ? undefined: req.body.job;
   invoice.invoiceDescription = req.body.invoiceDescription;
   invoice.invoiceClass = req.body.invoiceClass
   invoice.spentOnProject = req.body.spentOnProject || 0;
