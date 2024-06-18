@@ -12636,7 +12636,7 @@ if (postInvoice) postInvoice.addEventListener('submit', function (event) {
   var invoiceNo = document.getElementById('invno').value;
   var description = document.getElementById('desc').value;
   var salesval = document.getElementById('salesval').value;
-  var costval = document.getElementById('costval').value;
+  var costval = document.getElementById('costval').value || 0;
   var job = document.getElementById('job').value;
   var invclass = document.getElementById('invclass').value;
   var whtpercent = document.getElementById('whtpercent').value;
@@ -12679,7 +12679,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57017" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64262" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -18,7 +18,7 @@ block content
             td= invoice.description
             td= invoice.salesValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
             td= invoice.spentValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
-            td= invoice.invoicePaymentStatus.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= invoice.invoicePaymentStatus
             td
              .btn--green
               a(href=`/invoice/${invoice.slug}`) Details

@@ -30,7 +30,7 @@ if(postInvoice)
     const invoiceNo = document.getElementById('invno').value;
     const description = document.getElementById('desc').value;
     const salesval = document.getElementById('salesval').value;
-    const costval = document.getElementById('costval').value;
+    const costval = document.getElementById('costval').value || 0;
     const job = document.getElementById('job').value;
     const invclass = document.getElementById('invclass').value;
     const whtpercent = document.getElementById('whtpercent').value;
