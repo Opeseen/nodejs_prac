@@ -18,7 +18,6 @@ if(job){
           addElement.text = jobs.jobID + " - " + jobs.jobDescription
           job.add(addElement)
         }
-
       })
     )
   )
