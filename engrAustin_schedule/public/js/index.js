@@ -1,8 +1,9 @@
 import '@babel/polyfill';
-import {getAllJobs, updateInvoice} from './processData';
+import {getAllJobs, updateInvoice, createInvoice} from './processData';
 
 
-const invoiceDetails = document.querySelector('.resource-details');
+const modifyInvoice = document.querySelector('.modify-resource');
+const postInvoice = document.querySelector('.create-resource');
 const job = document.querySelector('.jobs');
 
 
@@ -23,9 +24,22 @@ if(job){
   )
 };
 
+if(postInvoice)
+  postInvoice.addEventListener('submit', event => {
+    event.preventDefault();
+    const invoiceNo = document.getElementById('invno').value;
+    const description = document.getElementById('desc').value;
+    const salesval = document.getElementById('salesval').value;
+    const costval = document.getElementById('costval').value;
+    const job = document.getElementById('job').value;
+    const invclass = document.getElementById('invclass').value;
+    const whtpercent = document.getElementById('whtpercent').value;
 
-if (invoiceDetails)
-  invoiceDetails.addEventListener('submit', event => {
+    createInvoice(invoiceNo,description,salesval,costval,job,invclass,whtpercent);
+});
+
+if (modifyInvoice)
+  modifyInvoice.addEventListener('submit', event => {
     event.preventDefault();
     const invoiceNo = document.getElementById('invno').value;
     const description = document.getElementById('desc').value;
@@ -36,8 +50,6 @@ if (invoiceDetails)
     const whtpercent = document.getElementById('whtpercent').value;
     const docid = document.getElementById('docid').value
 
-    updateInvoice(docid,invoiceNo,description,salesval,costval,job,invclass,whtpercent)
-    // console.log(invoiceNo, job)
-    // console.log(id)
+    updateInvoice(docid,invoiceNo,description,salesval,costval,job,invclass,whtpercent);
 });
 

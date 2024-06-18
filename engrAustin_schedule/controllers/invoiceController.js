@@ -6,6 +6,7 @@ const {Invoice} = require('../models');
 
 
 const createInvoice = catchAsyncError(async(req, res) => {
+  if(req.body.job === 'undefined'){req.body.job = undefined}
   const invoiceDetails = req.body;
 
   const newInvoice = await invoiceService.createInvoice(invoiceDetails);
@@ -43,11 +44,11 @@ const updateInvoice = catchAsyncError(async(req, res, next) => {
   
   invoice.invoiceNumber = req.body.invoiceNumber;
   invoice.job = req.body.job === 'undefined' ? undefined: req.body.job;
-  invoice.invoiceDescription = req.body.invoiceDescription;
+  invoice.description = req.body.description;
   invoice.invoiceClass = req.body.invoiceClass
-  invoice.spentOnProject = req.body.spentOnProject || 0;
+  invoice.spentValue = req.body.spentValue || 0;
   invoice.witholdingTaxPercent = req.body.witholdingTaxPercent
-  invoice.invoiceAppliedToSalesValue = req.body.invoiceAppliedToSalesValue;
+  invoice.salesValue = req.body.salesValue;
   await invoice.save();
 
   res.status(httpStatus.OK).json({

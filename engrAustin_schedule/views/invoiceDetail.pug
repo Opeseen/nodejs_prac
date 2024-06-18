@@ -25,7 +25,7 @@ block content
     // Horizontal Line
     .line &nbsp;
     // User Resources Data Display
-    .resource-details
+    .resource-details.modify-resource
       .heading__title.ma-bt-lg Invoice Info
       form
         .form__div
@@ -34,13 +34,13 @@ block content
             input#invno(type='text', value=`${invoice.invoiceNumber}`)
           div(class='box-text-cell')
             p.box-title description
-            textarea#desc(rows='3' cols='48')= invoice.invoiceDescription
+            textarea#desc(rows='3' cols='48')= invoice.description
           div(class='box-text-cell')
             p.box-title sales amount
-            input#salesval(type='number',step='any',value=`${invoice.invoiceAppliedToSalesValue}`)
-          div(class='box-stext-cell')
+            input#salesval(type='number',step='any',value=`${invoice.salesValue}`)
+          div(class='box-text-cell')
             p.box-title cost amount
-            input#costval(type='number',step='any',value=`${invoice.spentOnProject}`)
+            input#costval(type='number',step='any',value=`${invoice.spentValue}`)
           div(class='box-text-cell')
             p.box-title job id
             - const checkJob = invoice.job
@@ -64,7 +64,7 @@ block content
             input#profit-loss(type='number',step='any',value=`${invoice.profitOrLoss}`)
           div(class='box-text-cell')
             p.box-title partners payment
-            input#partners-pyt(type='number',step='any',value=`${invoice.invoicePartnerPayment}`)
+            input#partners-pyt(type='number',step='any',value=`${invoice.partnerPayment}`)
           div(class='box-text-cell')
             input#docid(type='hidden',value=`${invoice.id}`)
         .form__cta

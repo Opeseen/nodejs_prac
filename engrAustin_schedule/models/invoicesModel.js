@@ -15,7 +15,7 @@ const invoiceSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: 'Job',
     },
-    invoiceDescription: {
+    description: {
       type: String,
       required: [true, 'An invoice must have a description'],
       trim: true,
@@ -30,7 +30,7 @@ const invoiceSchema = new mongoose.Schema(
         message: 'Invoice class must be either "Installation" or "Maintenance"'
       }
     },
-    invoiceAppliedToSalesValue: {
+    salesValue: {
       type: Number,
       required: [true, 'An invoice must have a value attached']
     },
@@ -39,7 +39,7 @@ const invoiceSchema = new mongoose.Schema(
       required: [true, 'A witholding tax percentage is required'],
       default: 5,
     },
-    spentOnProject: {
+    spentValue: {
       type: Number,
       default: 0
     },
@@ -51,7 +51,7 @@ const invoiceSchema = new mongoose.Schema(
       type: Number,
       set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
     },
-    invoicePartnerPayment:{
+    partnerPayment:{
       type: Number,
       set: val => (Math.round(val * 100) / 100) // this will round up decimal points on the results
     },
@@ -78,10 +78,10 @@ invoiceSchema.plugin(toJson);
 
 invoiceSchema.statics.calculatePaymentDetails = async function(invoice){
   // THIS WILL CALCULATE THE WHT, PROFITABILITY AND PARTNERS PAYMENT
-  invoice.witholdingTaxAmount = ((invoice.witholdingTaxPercent / 100) * invoice.invoiceAppliedToSalesValue);
-  invoice.profitOrLoss = (invoice.invoiceAppliedToSalesValue - (invoice.witholdingTaxAmount + invoice.spentOnProject));
+  invoice.witholdingTaxAmount = ((invoice.witholdingTaxPercent / 100) * invoice.salesValue);
+  invoice.profitOrLoss = (invoice.salesValue - (invoice.witholdingTaxAmount + invoice.salesValue));
   const percentage = invoice.invoiceClass ===  'Installation' ? 25 : 50;
-  invoice.invoicePartnerPayment = ((percentage / 100) * invoice.profitOrLoss);
+  invoice.partnerPayment = ((percentage / 100) * invoice.profitOrLoss);
 };
 
 // MIDDLEWARES EXECUTION

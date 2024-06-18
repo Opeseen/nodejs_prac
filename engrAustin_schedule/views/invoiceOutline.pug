@@ -15,9 +15,9 @@ block content
         each invoice in invoices
           tr
             td= invoice.invoiceNumber
-            td= invoice.invoiceDescription
-            td= invoice.invoiceAppliedToSalesValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
-            td= invoice.spentOnProject.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= invoice.description
+            td= invoice.salesValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= invoice.spentValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
             td= invoice.invoicePaymentStatus.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
             td
              .btn--green

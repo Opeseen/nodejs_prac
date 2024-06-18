@@ -41,17 +41,17 @@ const getJobLedger = async(Id) => {
         details:{
           $push: {
             invoiceNumber: "$invoiceNumber",
-            invoiceDescription: "$invoiceDescription",
-            invoiceAppliedToSalesValue: "$invoiceAppliedToSalesValue",
-            spentOnProject: "$spentOnProject"
+            description: "$description",
+            salesValue: "$salesValue",
+            spentValue: "$spentValue"
           }
         }
       }
     },
     {
       $addFields: {
-        totalExpenses: {$sum: "$details.spentOnProject"},
-        totalRevenue: {$sum: "$details.invoiceAppliedToSalesValue"}
+        totalExpenses: {$sum: "$details.spentValue"},
+        totalRevenue: {$sum: "$details.salesValue"}
       }
     },
     {

@@ -14,17 +14,44 @@ export const getAllJobs = async() => {
   }
 };
 
+export const createInvoice = 
+async(invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
+  try {
+    const resource = await axios({
+      method: 'POST',
+      url:  'http://localhost:3000/api/v2/mundial/invoices',
+      data: {
+        invoiceNumber,
+        description,
+        salesValue,
+        spentValue,
+        job,
+        invoiceClass,
+        witholdingTaxPercent
+      }
+    });
+    if(resource.data.success){
+      showAlert('success','Invoice Successfully Created');
+      window.setTimeout(() => {
+        location.reload();
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+}
+
 export const updateInvoice = 
-async(id,invoiceNumber,invoiceDescription,invoiceAppliedToSalesValue,spentOnProject,job,invoiceClass,witholdingTaxPercent) => {
+async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
   try {
     const resource = await axios({
       method: 'PATCH',
       url: `http://localhost:3000/api/v2/mundial/invoices/${id}`,
       data: {
         invoiceNumber,
-        invoiceDescription,
-        invoiceAppliedToSalesValue,
-        spentOnProject,
+        description,
+        salesValue,
+        spentValue,
         job,
         invoiceClass,
         witholdingTaxPercent
@@ -33,7 +60,7 @@ async(id,invoiceNumber,invoiceDescription,invoiceAppliedToSalesValue,spentOnProj
     if(resource.data.success){
       showAlert('success','Invoice Successfully Updated');
       window.setTimeout(() => {
-        location.assign('/invoices');
+        location.assign('/invoices/view');
       },2000);
     }
   } catch (error) {

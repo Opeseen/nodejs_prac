@@ -11,15 +11,21 @@ const displayHomePage = catchAsyncError(async(req, res) => {
 
 const getAllJobs = catchAsyncError(async(req, res) => {
   const jobs = await jobService.getAllJobs();
-  res.status(httpStatus.OK).render('jobOverview',{
+  res.status(httpStatus.OK).render('jobOutline',{
     title: 'Job',
     jobs
   });
 });
 
+const createInvoice = catchAsyncError(async(req, res) => {
+  res.status(httpStatus.OK).render('invoice',{
+    title: 'Create Invoice',
+  });
+});
+
 const getAllInvoices = catchAsyncError(async(req, res) => {
   const invoices = await invoiceService.getAllInvoices();
-  res.status(httpStatus.OK).render('invoiceOverview',{
+  res.status(httpStatus.OK).render('invoiceOutline',{
     title: 'Invoice',
     invoices
   });
@@ -37,7 +43,7 @@ const getInvoiceDetails = catchAsyncError(async(req, res, next) => {
 
 const getAllPayment = catchAsyncError(async(req, res) => {
   const payments = await paymentService.getAllPayment();
-  res.status(httpStatus.OK).render('paymentOverview',{
+  res.status(httpStatus.OK).render('paymentOutline',{
     title: 'Payment',
     payments
   });
@@ -47,6 +53,7 @@ const getAllPayment = catchAsyncError(async(req, res) => {
 module.exports = {
   displayHomePage,
   getAllJobs,
+  createInvoice,
   getAllInvoices,
   getAllPayment,
   getInvoiceDetails
