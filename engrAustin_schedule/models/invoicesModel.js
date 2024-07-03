@@ -79,7 +79,7 @@ invoiceSchema.plugin(toJson);
 invoiceSchema.statics.calculatePaymentDetails = async function(invoice){
   // THIS WILL CALCULATE THE WHT, PROFITABILITY AND PARTNERS PAYMENT
   invoice.witholdingTaxAmount = ((invoice.witholdingTaxPercent / 100) * invoice.salesValue);
-  invoice.profitOrLoss = (invoice.salesValue - (invoice.witholdingTaxAmount + invoice.salesValue));
+  invoice.profitOrLoss = (invoice.salesValue - (invoice.witholdingTaxAmount + invoice.spentValue));
   const percentage = invoice.invoiceClass ===  'Installation' ? 25 : 50;
   invoice.partnerPayment = ((percentage / 100) * invoice.profitOrLoss);
 };
