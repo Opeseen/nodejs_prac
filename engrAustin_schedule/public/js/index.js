@@ -1,9 +1,10 @@
 import '@babel/polyfill';
-import {getAllJobs, updateInvoice, createInvoice} from './processData';
+import {getAllJobs, createInvoice, updateInvoice, deleteInvoice} from './processData';
 
 
-const modifyInvoice = document.querySelector('.modify-resource');
-const postInvoice = document.querySelector('.create-resource');
+const modifyInvoice = document.querySelector('.modify-resource-invoice');
+const removeInvoice = document.querySelector('.delete-resource-invoice');
+const postInvoice = document.querySelector('.create-resource-invoice');
 const job = document.querySelector('.jobs');
 
 
@@ -52,3 +53,10 @@ if (modifyInvoice)
     updateInvoice(docid,invoiceNo,description,salesval,costval,job,invclass,whtpercent);
 });
 
+if (removeInvoice)
+  removeInvoice.addEventListener('submit', event => {
+    event.preventDefault();
+    const docid = document.getElementById('docid').value
+
+    deleteInvoice(docid);
+});

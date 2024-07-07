@@ -67,3 +67,20 @@ async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,withol
     showAlert('error',error.response.data.message);
   }
 };
+
+export const deleteInvoice = async(id) => {
+  try {
+    const resource = await axios({
+      method: 'DELETE',
+      url: `http://localhost:3000/api/v2/mundial/invoices/${id}`
+    })
+    if(resource.status === 204){
+      showAlert('success','Invoice Successfully Deleted');
+      window.setTimeout(() => {
+        location.assign('/invoices/view');
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+}

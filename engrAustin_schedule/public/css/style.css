@@ -286,6 +286,10 @@ html {
   color: white;
 }
 
+.table-data .th__option{
+  width: 10%;
+}
+
 .table-data td, .table-data th {
   border: 1px solid #ddd;
   padding: 6px;
@@ -308,19 +312,30 @@ div .btn--green{
   border-radius: 5rem;
   border: 1px solid currentColor !important;
 }
-.btn--cta{
+.btn--cta--save{
   padding: 1.25rem 3rem !important;
   font-size: 1.4rem !important;
   background-color: #55c57a;
   color: #fff;
-  border-radius: 25rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 400;
+}
+.btn--cta--delete{
+  padding: 1.25rem 3rem !important;
+  font-size: 1.4rem !important;
+  background-color: rgb(255, 51, 0);
+  color: #fff;
+  border-radius: 1rem;
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
   font-weight: 400;
 }
 
-.btn--cta:hover {
+.btn--cta--save:hover, .btn--cta--delete:hover {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   text-shadow: none;
@@ -353,6 +368,17 @@ div a {
   max-width: 60%;  
 }
 
+.warning{
+  margin: 15px;
+  font-style: italic;
+  font-weight: bold !important;
+  color: red;
+  font-size: 17px;
+  text-align: center;
+  padding: 0 0 20px 0 ;
+  font-family:"Calibri", sans-serif;
+}
+
 .form__div{
   display: grid;
   margin: 5px;
@@ -361,7 +387,8 @@ div a {
   padding: 10px 10px 10px 10px;
 }
 .form__cta{
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
+  text-align: center;
 }
 
 .box-text-cell{

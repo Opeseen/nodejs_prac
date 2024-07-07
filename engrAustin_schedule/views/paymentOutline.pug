@@ -10,13 +10,13 @@ block content
           th Description
           th Amount
           th Date
-          th option
+          th.th__option option
         each payment in payments
           tr
-            td= payment.paymentTag
-            td= payment.paymentDetails
-            td= payment.paymentAmount.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
-            td= payment.paymentDate.toLocaleString(en-us, {dateStyle: 'medium'})
+            td= payment.tag
+            td= payment.details
+            td= payment.amount.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= payment.date.toLocaleString(en-us, {dateStyle: 'medium'})
             td
              .btn--green
-              a(href=`#`) Details
+              a(href=`/payment/${payment.paymentRefId}`) Details

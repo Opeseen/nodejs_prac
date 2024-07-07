@@ -15,18 +15,18 @@ block content
             th Date 
           each payment in invoice.payment
             tr
-              td= payment.paymentTag
-              td= payment.paymentDetails
-              td= payment.paymentAmount.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
-              td= payment.paymentDate.toLocaleString(en-us, {dateStyle: 'medium'})
+              td= payment.tag
+              td= payment.details
+              td= payment.amount.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+              td= payment.date.toLocaleString(en-us, {dateStyle: 'medium'})
     else
       p.empty__record no payment record exist on this invoice!
 
     // Horizontal Line
     .line &nbsp;
-    // User Resources Data Display
-    .resource-details.modify-resource
-      .heading__title.ma-bt-lg Invoice Info
+    // Resources Data Display
+    .resource-details.modify-resource-invoice
+      .heading__title Invoice Info
       form
         .form__div
           div(class='box-text-cell')
@@ -68,6 +68,15 @@ block content
           div(class='box-text-cell')
             input#docid(type='hidden',value=`${invoice.id}`)
         .form__cta
-          button.btn--cta Save settings
+          button.btn--cta--save Save settings
+      br
+      br
+    .resource-details.delete-resource-invoice
+      .heading__title Delete Invoice
+      form 
+        .warning Warning: This action cannot be undone. Dont click the below button on accident!
+        .form__cta
+          button.btn--cta--delete Delete
+
     .line &nbsp;
 

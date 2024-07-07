@@ -1,0 +1,30 @@
+extends base
+
+block content
+  main
+    h2.page__subject Payment details
+
+    // Horizontal Line
+    .line &nbsp;
+
+    .resource-details.modify-resource-payment
+      .heading__title Payment Info
+      form
+        .form__div
+          div(class='box-text-cell')
+            p.box-title payment tag
+            input#tag(type='text',value=`${payment.tag}`)
+          div(class='box-text-cell')
+            p.box-title description
+            textarea#desc(rows='3' cols='48')= payment.details
+          div(class='box-text-cell')
+            p.box-title amount
+            input#amount(type='number',step='any',value=`${payment.amount}`)
+          div(class='box-text-cell')
+            p.box-title date
+            input#date(type='date', value=`${payment.date.toLocaleDateString('en-CA')}`)
+          div(class='box-text-cell')
+            input#docid(type='hidden',value=`${payment.id}`)
+        .form__cta
+          button.btn--cta--save Save settings
+    .line &nbsp;

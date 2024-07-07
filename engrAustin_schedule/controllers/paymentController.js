@@ -12,7 +12,7 @@ const createPayment = catchAsyncError(async(req, res) => {
   const paymentDetails = req.body;
   const payment = await paymentService.createPayment(paymentDetails);
 
-  // THIS STAGE WILL ATTACH THE PAYMENT-ID TO THE INVOICE IF AN INVOICE WAS SELECTED
+  // THIS STAGE WILL ATTACH THE PAYMENT-ID TO THE INVOICE IF AN INVOICE WAS INPUTED
   if (req.body.invoices && req.body.invoices.length > 0 && payment.id){
     req.body.invoices.forEach(invoice => {
       invoiceService.addPaymentToInvoice(invoice, payment.id);
@@ -51,6 +51,14 @@ const updatePayment = catchAsyncError(async(req, res, next) => {
   if(!updatedPayment){
     return next(new ApiError("No Payment found to update", httpStatus.NOT_FOUND));
   };
+
+  // THIS STAGE WILL ATTACH THE PAYMENT-ID TO THE INVOICE IF AN INVOICE WAS INPUTED
+  if (req.body.invoices && req.body.invoices.length > 0 && updatedPayment.id){
+    req.body.invoices.forEach(invoice => {
+      invoiceService.addPaymentToInvoice(invoice, updatedPayment.id);
+    });
+  };
+
   res.status(httpStatus.OK).json({
     status: 'Success',
     updatedPayment

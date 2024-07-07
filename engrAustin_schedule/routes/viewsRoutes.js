@@ -5,10 +5,14 @@ const router = express.Router();
 
 router.get('/',viewsController.displayHomePage);
 router.get('/jobs',viewsController.getAllJobs);
+
+// Invoice Route
 router.get('/invoice/create', viewsController.createInvoice);
 router.get('/invoices/view', viewsController.getAllInvoices);
 router.get('/invoice/:id', viewsController.getInvoiceDetails);
-router.get('/payments', viewsController.getAllPayment);
 
+// Payment Route
+router.get('/payments', viewsController.getAllPayment);
+router.get('/payment/:id', viewsController.getPaymentDetails);
 
 module.exports = router;

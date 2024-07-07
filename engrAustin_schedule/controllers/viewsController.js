@@ -49,12 +49,22 @@ const getAllPayment = catchAsyncError(async(req, res) => {
   });
 });
 
+const getPaymentDetails = catchAsyncError(async(req, res, next) => {
+  const paymentRef = req.params.id;
+  const payment = await paymentService.findOnePayment(paymentRef);
+  if(!payment) { return next(new ApiError("No Payment Found", httpStatus.NOT_FOUND)) }
+  res.status(httpStatus.OK).render('paymentDetail',{
+    title: 'Payment Details',
+    payment,
+  });
+});
 
 module.exports = {
   displayHomePage,
   getAllJobs,
   createInvoice,
   getAllInvoices,
+  getInvoiceDetails,
   getAllPayment,
-  getInvoiceDetails
+  getPaymentDetails
 };

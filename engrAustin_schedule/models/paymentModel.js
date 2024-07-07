@@ -3,21 +3,21 @@ const toJson = require('@meanie/mongoose-to-json');
 
 const paymentSchema = new mongoose.Schema(
   {
-    paymentTag: {
+    tag: {
       type: String,
       uppercase: true,
       required: [true, 'A payent must have a tag attached']
     },
-    paymentDetails: {
+    details: {
       type: String,
       uppercase: true,
       required: [true, 'A payent must have a description attached']
     },
-    paymentAmount: {
+    amount: {
       type: Number,
       required: [true, 'Amount payable is required']
     },
-    paymentDate: {
+    date: {
       type: Date,
       required: [true, 'A payment date is required']
     },

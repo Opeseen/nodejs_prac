@@ -11,7 +11,7 @@ const errorConverter = (err, req, res, next) => {
 
     if(error.name === 'CastError') { message = `Invalid ${error.path} : ${error.value} provided` };
     if(error.code === 11000) { message = `Duplicate Field: "${Object.values(error.keyValue)[0]}" already exists`, statusCode = httpStatus.BAD_REQUEST };
-    if(error.name === 'ValidationError') { message = Object.values(error.errors).map(element => element.message).join('. ') };
+    if(error.name === 'ValidationError') { message = Object.values(error.errors).map(element => element.message).join(', ') };
     if(error.name === 'JsonWebTokenError') { return next(new ApiError('Invalid token. Please login again', httpStatus.UNAUTHORIZED)) };
     if(error.name === 'TokenExpiredError') { return next(new ApiError('Your Token has expired - Please login again', httpStatus.UNAUTHORIZED)) };
 

@@ -13,6 +13,11 @@ const getPayment = async(id) => {
   return payment;
 };
 
+const findOnePayment = async(paymentRefId) =>{
+  const payment = await Payment.findOne({paymentRefId})
+  return payment;
+};
+
 const getAllPayment = async() => {
   const payments = await Payment.find();
   return payments;
@@ -53,6 +58,7 @@ const getPaymentLedger = async(id) => {
 module.exports = {
   createPayment,
   getPayment,
+  findOnePayment,
   getAllPayment,
   updatePayment,
   deletePayment,
