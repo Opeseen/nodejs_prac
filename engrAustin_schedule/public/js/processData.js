@@ -84,3 +84,30 @@ export const deleteInvoice = async(id) => {
     showAlert('error',error.response.data.message);
   }
 }
+
+
+export const updatePayment = 
+(id, tag, details, amount, date) => {
+  // try {
+  //   const resource = await axios({
+  //     method: 'PATCH',
+  //     url: `http://localhost:3000/api/v2/mundial/payments/${id}`,
+  //     data: {
+  //       id,
+  //       tag,
+  //       details,
+  //       invoices
+  //     }
+  //   });
+  //   if(resource.data.success){
+  //     showAlert('success','Payment Successfully Updated');
+  //     window.setTimeout(() => {
+  //       location.assign('/invoices/view');
+  //     },2000);
+  //   }
+  // } catch (error) {
+  //   showAlert('error',error.response.data.message);
+  // }
+
+  console.log(id, tag, details, amount, date)
+};
