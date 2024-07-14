@@ -85,8 +85,8 @@ const getPaymentLedger = catchAsyncError(async(req, res) => {
 
   res.status(httpStatus.OK).json({
     status: 'Success',
-    results: paymentStatics.length > 0 ? paymentStatics.length : 0,
-    paymentStatics
+    result: paymentStatics.length > 0 ? paymentStatics.length : 0,
+    paymentStatics,
   });
 });
 

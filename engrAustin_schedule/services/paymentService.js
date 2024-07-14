@@ -45,9 +45,9 @@ const getPaymentLedger = async(id) => {
     {
       $project: {
         invoiceNumber: 1,
-        invoiceDescription: 1,
+        description: 1,
         invoicePaymentStatus: 1,
-        invoicePartnerPayment: 1,
+        invoiceClass: 1,
         _id: 0
       }
     }

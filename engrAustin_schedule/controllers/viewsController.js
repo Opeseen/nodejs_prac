@@ -53,8 +53,12 @@ const getPaymentDetails = catchAsyncError(async(req, res, next) => {
   const paymentRef = req.params.id;
   const payment = await paymentService.findOnePayment(paymentRef);
   if(!payment) { return next(new ApiError("No Payment Found", httpStatus.NOT_FOUND)) }
+  const paymentStatics = await paymentService.getPaymentLedger(payment._id);
+
   res.status(httpStatus.OK).render('paymentDetail',{
     title: 'Payment Details',
+    paymentStaticsCount: paymentStatics.length > 0 ? paymentStatics.length : 0,
+    paymentStatics,
     payment,
   });
 });
