@@ -312,6 +312,17 @@ div .btn--green{
   border-radius: 5rem;
   border: 1px solid currentColor !important;
 }
+
+div .btn--red{
+  width: 100px;
+  margin: auto;
+  text-align: center;
+  background-color: rgb(255, 51, 0);
+  padding: 0.3rem 0.3rem;
+  border-radius: 5rem;
+  border: 1px solid currentColor !important;
+}
+
 .btn--cta--save{
   padding: 1.25rem 3rem !important;
   font-size: 1.4rem !important;

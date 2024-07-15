@@ -3,9 +3,8 @@ extends base
 block content
   main
     h2.page__subject Payment details
-      // @TODO Use javascript to populate the payment ledger
     - const invoiceCount = paymentStaticsCount
-    if invoiceCount !== 0
+    if invoiceCount > 0
       .table-wrapper
         .heading__title Invoice Info
         table.table-data
@@ -14,7 +13,16 @@ block content
             th Invoice
             th Class
             th Status
-      // @TODO Use javascript to populate the payment ledger
+            th.th__option option
+          each invoice in paymentStatics
+            tr
+              td= invoice.description
+              td= invoice.invoiceNumber
+              td= invoice.invoiceClass
+              td= invoice.invoicePaymentStatus
+              td
+                .btn--red
+                  a(href='#') Unlink
     else
       p.empty__record no invoice record exist for this payment!
     // Horizontal Line
