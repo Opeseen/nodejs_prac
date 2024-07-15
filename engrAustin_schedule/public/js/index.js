@@ -15,17 +15,18 @@ const job = document.querySelector('.jobs');
 if(job){
   const defaultDropdownValue = job.value;
   getAllJobs().then(
-    data => (
-      // @TODO - Inplement if-else statement
-      data.forEach( (jobs) => {
-        const addElement = document.createElement("option");
-        if(jobs.id !== defaultDropdownValue){
-          addElement.value = jobs.id.trim()
-          addElement.text = jobs.jobID + " - " + jobs.jobDescription
-          job.add(addElement)
-        }
-      })
-    )
+    (data) => {
+      if (data !== undefined){
+        data.forEach( (jobs) => {
+          const addElement = document.createElement("option");
+          if(jobs.id !== defaultDropdownValue){
+            addElement.value = jobs.id.trim()
+            addElement.text = jobs.jobID + " - " + jobs.jobDescription
+            job.add(addElement)
+          }
+        })
+      }
+    }
   )
 };
 

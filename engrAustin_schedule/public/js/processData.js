@@ -8,9 +8,7 @@ export const getAllJobs = async() => {
       url: 'http://localhost:3000/api/v2/mundial/jobs'
     });
     if(result.data.jobs.length > 0){ return result.data.jobs };
-    
   } catch (error) {
-    console.log(error.response.data.message)
   }
 };
 

@@ -12374,13 +12374,12 @@ var getAllJobs = exports.getAllJobs = /*#__PURE__*/function () {
           return _context.abrupt("return", result.data.jobs);
         case 6:
           ;
-          _context.next = 12;
+          _context.next = 11;
           break;
         case 9:
           _context.prev = 9;
           _context.t0 = _context["catch"](0);
-          console.log(_context.t0.response.data.message);
-        case 12:
+        case 11:
         case "end":
           return _context.stop();
       }
@@ -12685,8 +12684,7 @@ var job = document.querySelector('.jobs');
 if (job) {
   var defaultDropdownValue = job.value;
   (0, _processData.getAllJobs)().then(function (data) {
-    return (
-      // @TODO - Inplement if-else statement
+    if (data !== undefined) {
       data.forEach(function (jobs) {
         var addElement = document.createElement("option");
         if (jobs.id !== defaultDropdownValue) {
@@ -12694,8 +12692,8 @@ if (job) {
           addElement.text = jobs.jobID + " - " + jobs.jobDescription;
           job.add(addElement);
         }
-      })
-    );
+      });
+    }
   });
 }
 ;
@@ -12761,7 +12759,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60805" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52414" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
