@@ -16,6 +16,7 @@ if(job){
   const defaultDropdownValue = job.value;
   getAllJobs().then(
     data => (
+      // @TODO - Inplement if-else statement
       data.forEach( (jobs) => {
         const addElement = document.createElement("option");
         if(jobs.id !== defaultDropdownValue){
