@@ -11,28 +11,28 @@ block content
         .form__div
           div(class='box-text-cell')
             p.box-title invoice no
-            input#invno(type='text')
+            input.input-style-one#invno(type='text')
           div(class='box-text-cell')
             p.box-title description
             textarea#desc(rows='3' cols='48')
           div(class='box-text-cell')
             p.box-title sales amount
-            input#salesval(type='number',step='any')
+            input.input-style-one#salesval(type='number',step='any')
           div(class='box-text-cell')
             p.box-title cost amount
-            input#costval(type='number',step='any')
+            input.input-style-one#costval(type='number',step='any')
           div(class='box-text-cell')
             p.box-title job id
-            select#job(name='jobs', class='jobs')
+            select.select-style-one#job(name='jobs', class='jobs')
               option(value= 'undefined') Please select
           div(class='box-text-cell')
             p.box-title class
-            select#invclass(name='class')
+            select.select-style-one#invclass(name='class')
               option Installation
               option Maintenance 
           div(class='box-text-cell')
             p.box-title wht %
-            input#whtpercent(type='number')
+            input.input-style-one#whtpercent(type='number')
         .form__cta
           button.btn--cta--save Create Invoice
     .line &nbsp;

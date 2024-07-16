@@ -416,7 +416,7 @@ div a {
  text-transform: uppercase;
 }
 
-input,select{
+.input-style-one,.select-style-one{
   color: rgb(7 2 18);
   height: 3.5rem;
   width:  15.8rem;

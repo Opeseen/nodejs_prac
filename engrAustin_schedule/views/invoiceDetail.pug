@@ -31,42 +31,42 @@ block content
         .form__div
           div(class='box-text-cell')
             p.box-title invoice no
-            input#invno(type='text', value=`${invoice.invoiceNumber}`)
+            input.input-style-one#invno(type='text', value=`${invoice.invoiceNumber}`)
           div(class='box-text-cell')
             p.box-title description
             textarea#desc(rows='3' cols='48')= invoice.description
           div(class='box-text-cell')
             p.box-title sales amount
-            input#salesval(type='number',step='any',value=`${invoice.salesValue}`)
+            input.input-style-one#salesval(type='number',step='any',value=`${invoice.salesValue}`)
           div(class='box-text-cell')
             p.box-title cost amount
-            input#costval(type='number',step='any',value=`${invoice.spentValue}`)
+            input.input-style-one#costval(type='number',step='any',value=`${invoice.spentValue}`)
           div(class='box-text-cell')
             p.box-title job id
             - const checkJob = invoice.job
-            select#job(name='jobs', class='jobs')
+            select.select-style-one#job(name='jobs', class='jobs')
               option(value= `${invoice.job ? invoice.job.id : undefined}`)= `${invoice.job ? invoice.job.jobID + ' - ' + invoice.job.jobDescription: 'Please select'}`
               if checkJob && checkJob.id.length > 0
                 option(value= 'undefined') Please select
           div(class='box-text-cell')
             p.box-title class
-            select#invclass(name='class')
+            select.select-style-one#invclass(name='class')
               option= invoice.invoiceClass
               option= `${invoice.invoiceClass === 'Installation' ? 'Maintenance' : 'Installation'}`
           div(class='box-text-cell')
             p.box-title wht %
-            input#whtpercent(type='number',value=`${invoice.witholdingTaxPercent}`)
+            input.input-style-one#whtpercent(type='number',value=`${invoice.witholdingTaxPercent}`)
           div(class='box-text-cell')
             p.box-title wht amount
-            input#whtamt(type='number',step='any',value=`${invoice.witholdingTaxAmount}`, readonly)
+            input.input-style-one#whtamt(type='number',step='any',value=`${invoice.witholdingTaxAmount}`, readonly)
           div(class='box-text-cell')
             p.box-title profit/loss
-            input#profit-loss(type='number',step='any',value=`${invoice.profitOrLoss}`, readonly)
+            input.input-style-one#profit-loss(type='number',step='any',value=`${invoice.profitOrLoss}`, readonly)
           div(class='box-text-cell')
             p.box-title partners payment
-            input#partners-pyt(type='number',step='any',value=`${invoice.partnerPayment}`,readonly)
+            input.input-style-one#partners-pyt(type='number',step='any',value=`${invoice.partnerPayment}`,readonly)
           div(class='box-text-cell')
-            input#docid(type='hidden',value=`${invoice.id}`)
+            input.input-style-one#docid(type='hidden',value=`${invoice.id}`)
         .form__cta
           button.btn--cta--save Save settings
         .line &nbsp;
