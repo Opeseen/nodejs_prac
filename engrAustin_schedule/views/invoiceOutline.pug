@@ -6,12 +6,12 @@ block content
     .table-wrapper
       table.table-data
         tr
-          th Invoice No
+          th.th__size-small Invoice No
           th Description
-          th Applied to sales
-          th Spent on project
-          th payment status
-          th.th__option option
+          th.th__size-medium Applied to sales
+          th.th__size-medium Spent on project
+          th.th__size-medium payment status
+          th.th__size-small option
         each invoice in invoices
           tr
             td= invoice.invoiceNumber

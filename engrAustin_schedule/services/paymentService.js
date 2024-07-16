@@ -48,6 +48,7 @@ const getPaymentLedger = async(id) => {
         description: 1,
         invoicePaymentStatus: 1,
         invoiceClass: 1,
+        partnerPayment: 1,
         _id: 0
       }
     }

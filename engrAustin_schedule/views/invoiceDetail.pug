@@ -9,10 +9,10 @@ block content
         .heading__title Payment Info
         table.table-data
           tr
-            th payment tag
+            th.th__size-small payment tag
             th Description
-            th Amount
-            th Date 
+            th.th__size-medium Amount
+            th.th__size-small Date 
           each payment in invoice.payment
             tr
               td= payment.tag
@@ -58,25 +58,24 @@ block content
             input#whtpercent(type='number',value=`${invoice.witholdingTaxPercent}`)
           div(class='box-text-cell')
             p.box-title wht amount
-            input#whtamt(type='number',step='any',value=`${invoice.witholdingTaxAmount}`)
+            input#whtamt(type='number',step='any',value=`${invoice.witholdingTaxAmount}`, readonly)
           div(class='box-text-cell')
             p.box-title profit/loss
-            input#profit-loss(type='number',step='any',value=`${invoice.profitOrLoss}`)
+            input#profit-loss(type='number',step='any',value=`${invoice.profitOrLoss}`, readonly)
           div(class='box-text-cell')
             p.box-title partners payment
-            input#partners-pyt(type='number',step='any',value=`${invoice.partnerPayment}`)
+            input#partners-pyt(type='number',step='any',value=`${invoice.partnerPayment}`,readonly)
           div(class='box-text-cell')
             input#docid(type='hidden',value=`${invoice.id}`)
         .form__cta
           button.btn--cta--save Save settings
-      br
-      br
+        .line &nbsp;
     .resource-details.delete-resource-invoice
       .heading__title Delete Invoice
       form 
         .warning Warning: This action cannot be undone. Dont click the below button on accident!
         .form__cta
-          button.btn--cta--delete Delete
+          button.btn--cta--red Delete
 
     .line &nbsp;
 

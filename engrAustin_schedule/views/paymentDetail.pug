@@ -10,16 +10,18 @@ block content
         table.table-data
           tr
             th Description
-            th Invoice
-            th Class
-            th Status
-            th.th__option option
+            th.th__size-small Invoice
+            th.th__size-small Class
+            th.th__size-small Status
+            th.th__size-medium Partner Payment
+            th.th__size-small action
           each invoice in paymentStatics
             tr
               td= invoice.description
               td= invoice.invoiceNumber
               td= invoice.invoiceClass
               td= invoice.invoicePaymentStatus
+              td= invoice.partnerPayment.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
               td
                 .btn--red
                   a(href='#') Unlink
@@ -48,4 +50,14 @@ block content
             input#docid(type='hidden',value=`${payment.id}`)
         .form__cta
           button.btn--cta--save Save settings
+        .line &nbsp;
+    .resource-details
+      .heading__title Link Invoice
+      .form__cta
+        button.btn--cta--save Link
+      .line &nbsp;
+      .heading__title Delete Payment
+      .warning Warning: This action cannot be undone. Dont click the below button on accident!
+        .form__cta
+          button.btn--cta--red Delete
     .line &nbsp;

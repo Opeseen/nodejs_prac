@@ -4,7 +4,7 @@ const {jobService, invoiceService, paymentService, userService} = require('../se
 const ApiError = require('../utils/ApiError');
 
 const displayHomePage = catchAsyncError(async(req, res) => {
-  res.status(httpStatus.OK).render('base',{
+  res.status(httpStatus.OK).render('homepage',{
     title: 'Home Page'
   });
 });
