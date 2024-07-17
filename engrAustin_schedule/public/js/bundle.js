@@ -12681,6 +12681,20 @@ var postInvoice = document.querySelector('.create-resource-invoice');
 // PAYMENTS
 var modifyPayment = document.querySelector('.modify-resource-payment');
 var job = document.querySelector('.jobs');
+
+// For Testing
+var testMultipleSelection = document.querySelector('.field-items');
+if (testMultipleSelection) {
+  var name = "Opeyemi";
+  console.log(true);
+  var data = document.createElement('div');
+  data.innerHTML = "<input type=\"checkbox\" id=\"last 31 days\" name=\"new\" value=\"last 31 days\"> <label for=\"last 30 days\">".concat(name, "</label>");
+  testMultipleSelection.appendChild(data);
+} else {
+  console.log(false);
+}
+// For Testing
+
 if (job) {
   var defaultDropdownValue = job.value;
   (0, _processData.getAllJobs)().then(function (data) {
@@ -12759,7 +12773,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63633" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57127" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

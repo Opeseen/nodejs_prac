@@ -11,6 +11,18 @@ const postInvoice = document.querySelector('.create-resource-invoice');
 const modifyPayment = document.querySelector('.modify-resource-payment');
 const job = document.querySelector('.jobs');
 
+// For Testing
+const testMultipleSelection = document.querySelector('.field-items');
+if(testMultipleSelection){
+  const name = "Opeyemi"
+  console.log(true)
+  const data = document.createElement('div');
+  data.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
+  testMultipleSelection.appendChild(data);
+}else{
+  console.log(false)
+}
+// For Testing
 
 if(job){
   const defaultDropdownValue = job.value;

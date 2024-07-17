@@ -3,11 +3,52 @@ extends base
 block content
   main
     h2.page__subject Welcome to nestle management console
-    //- <form>
-    //-   <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-    //-   <label for="vehicle1"> I have a bike</label><br>
-    //-   <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-    //-   <label for="vehicle2"> I have a car</label><br>
-    //-   <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-    //-   <label for="vehicle3"> I have a boat</label><br><br>
-    //- </form>
+
+
+    //- <div class="container">
+    //-     <div class="form-group">
+    //-         <label>Month</label>
+    //-         <select id="ms" multiple="multiple" class="form-control">
+    //-             <option value="1">January</option>
+    //-             <option value="2">February</option>
+    //-             <option value="3">March</option>
+    //-             <option value="4">April</option>
+    //-             <option value="5">May</option>
+    //-             <option value="6">June</option>
+    //-             <option value="7">July</option>
+    //-             <option value="8">August</option>
+    //-             <option value="9">September</option>
+    //-             <option value="10">October</option>
+    //-             <option value="11">November</option>
+    //-             <option value="12">December</option>
+    //-         </select>
+    //-     </div>
+    //- </div>
+    .resource-details
+      details
+        form.field-items
+          fieldset
+            div
+              <input type="checkbox" id="last 30 days" name="new" value="last 30 days">
+              <label for="last 30 days">Day1</label>
+            div
+              <input type="checkbox" id="last 6 months" name="new" value="last 6 months">
+              <label for="last 6 months">Day2</label>
+            div
+              <input type="checkbox" id="last 6 months" name="new" value="last 6 months">
+              <label for="last 6 months">Day3</label>
+            div
+              <input type="checkbox" id="last 6 months" name="new" value="last 6 months">
+              <label for="last 6 months">Day3</label>
+
+
+    //- details
+    //-   <form>
+    //-     <select multiple="true" title="Filter results by category">
+    //-       <optgroup label="New">
+    //-         <option value="last 30 days">Last 30 Days</option>
+    //-         <option value="last 6 months">Last 6 Months</option>
+    //-       </optgroup>
+    //-     </select>
+    //-   </form>
+
