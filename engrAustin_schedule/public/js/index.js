@@ -9,16 +9,26 @@ const postInvoice = document.querySelector('.create-resource-invoice');
 
 // PAYMENTS
 const modifyPayment = document.querySelector('.modify-resource-payment');
+
+// OTHERS 
 const job = document.querySelector('.jobs');
+const invoiceSelection = document.querySelector('.invoice-selection');
 
 // For Testing
-const testMultipleSelection = document.querySelector('.field-items');
+const testMultipleSelection = document.querySelector('.field-item');
 if(testMultipleSelection){
   const name = "Opeyemi"
-  console.log(true)
-  const data = document.createElement('div');
-  data.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
-  testMultipleSelection.appendChild(data);
+  // console.log(true)
+  const create_li_tag = document.createElement('li');
+  const create_label_tag = document.createElement('label');
+  const create_input_tag = document.createElement('input');
+  // data.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
+  // create_li_tag.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
+  // create_label_tag.appendChild(create_input_tag)
+  create_label_tag.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> ${name}`
+  create_li_tag.appendChild(create_label_tag)
+  
+  testMultipleSelection.appendChild(create_li_tag);
 }else{
   console.log(false)
 }
@@ -41,6 +51,22 @@ if(job){
     }
   )
 };
+
+
+if(invoiceSelection){
+  invoiceSelection.addEventListener('submit', event => {
+    event.preventDefault();
+
+    let checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
+    let checkedValues = [];
+    checkboxes.forEach((checkbox) => {
+      checkedValues.push(checkbox.value);
+    });
+
+    console.log(checkedValues)
+  });
+
+}
 
 if(postInvoice)
   postInvoice.addEventListener('submit', event => {
@@ -80,7 +106,6 @@ if (removeInvoice)
 });
 
 if (modifyPayment){
-  console.log(true)
   const tag = document.getElementById('tag').value;
   const description = document.getElementById('desc').value;
   const amount = document.getElementById('amount').value;

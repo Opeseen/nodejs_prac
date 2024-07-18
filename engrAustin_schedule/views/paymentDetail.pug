@@ -51,16 +51,28 @@ block content
         .form__cta
           button.btn--cta--save Save settings
         .line &nbsp;
-    .resource-details
+    .resource-details.invoice-selection
       .heading__title Link Invoice
-      form
-        // @TODO
+      br
+      form.modify-field-resource
+        ul.field-item
+          li
+            <label for="inv-1"><input type="checkbox" name="invoice" id="inv-1" value="first">First</label>
+          li
+            <label for="inv-2"><input type="checkbox" name="invoice" id="inv-2" value="second">Second</label>
+          li
+            <label for="inv-3"><input type="checkbox" name="invoice" id="inv-3" value="third">Third</label>
+          li
+            <label for="inv-4"><input type="checkbox" name="invoice" id="inv-4" value="fourth">Fourth</label>
+          li
+
         .form__cta
           button.btn--cta--save Link
         .line &nbsp;
+    .resource-details.delete-resource-payment 
       .heading__title Delete Payment
       form
         .warning Warning: This action cannot be undone. Dont click the below button on accident!
-          .form__cta
-            button.btn--cta--red Delete
-    .line &nbsp;
+        .form__cta
+          button.btn--cta--red Delete
+        .line &nbsp;

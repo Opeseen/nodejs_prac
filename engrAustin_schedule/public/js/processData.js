@@ -12,6 +12,14 @@ export const getAllJobs = async() => {
   }
 };
 
+export const getUnpaidInvoices = async() =>{
+  try {
+    
+  } catch (error) {
+    
+  }
+};
+
 export const createInvoice = 
 async(invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
   try {
@@ -107,5 +115,6 @@ export const updatePayment =
   //   showAlert('error',error.response.data.message);
   // }
 
-  console.log(id, tag, details, amount, date)
 };
+
+

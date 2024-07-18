@@ -12345,7 +12345,7 @@ var showAlert = exports.showAlert = function showAlert(type, msg) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updatePayment = exports.updateInvoice = exports.getAllJobs = exports.deleteInvoice = exports.createInvoice = void 0;
+exports.updatePayment = exports.updateInvoice = exports.getUnpaidInvoices = exports.getAllJobs = exports.deleteInvoice = exports.createInvoice = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 var _alert = require("./alert");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -12389,14 +12389,30 @@ var getAllJobs = exports.getAllJobs = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
-var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
-    var resource;
+var getUnpaidInvoices = exports.getUnpaidInvoices = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          _context2.prev = 0;
-          _context2.next = 3;
+          try {} catch (error) {}
+        case 1:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2);
+  }));
+  return function getUnpaidInvoices() {
+    return _ref2.apply(this, arguments);
+  };
+}();
+var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
+    var resource;
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.prev = 0;
+          _context3.next = 3;
           return (0, _axios.default)({
             method: 'POST',
             url: 'http://localhost:3000/api/v2/mundial/invoices',
@@ -12411,56 +12427,11 @@ var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
             }
           });
         case 3:
-          resource = _context2.sent;
+          resource = _context3.sent;
           if (resource.data.success) {
             (0, _alert.showAlert)('success', 'Invoice Successfully Created');
             window.setTimeout(function () {
               location.reload();
-            }, 2000);
-          }
-          _context2.next = 10;
-          break;
-        case 7:
-          _context2.prev = 7;
-          _context2.t0 = _context2["catch"](0);
-          (0, _alert.showAlert)('error', _context2.t0.response.data.message);
-        case 10:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2, null, [[0, 7]]);
-  }));
-  return function createInvoice(_x, _x2, _x3, _x4, _x5, _x6, _x7) {
-    return _ref2.apply(this, arguments);
-  };
-}();
-var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(id, invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
-    var resource;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
-        case 0:
-          _context3.prev = 0;
-          _context3.next = 3;
-          return (0, _axios.default)({
-            method: 'PATCH',
-            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id),
-            data: {
-              invoiceNumber: invoiceNumber,
-              description: description,
-              salesValue: salesValue,
-              spentValue: spentValue,
-              job: job,
-              invoiceClass: invoiceClass,
-              witholdingTaxPercent: witholdingTaxPercent
-            }
-          });
-        case 3:
-          resource = _context3.sent;
-          if (resource.data.success) {
-            (0, _alert.showAlert)('success', 'Invoice Successfully Updated');
-            window.setTimeout(function () {
-              location.assign('/invoices/view');
             }, 2000);
           }
           _context3.next = 10;
@@ -12475,12 +12446,12 @@ var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
       }
     }, _callee3, null, [[0, 7]]);
   }));
-  return function updateInvoice(_x8, _x9, _x10, _x11, _x12, _x13, _x14, _x15) {
+  return function createInvoice(_x, _x2, _x3, _x4, _x5, _x6, _x7) {
     return _ref3.apply(this, arguments);
   };
 }();
-var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
-  var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(id) {
+var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(id, invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
     var resource;
     return _regeneratorRuntime().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
@@ -12488,13 +12459,22 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
           _context4.prev = 0;
           _context4.next = 3;
           return (0, _axios.default)({
-            method: 'DELETE',
-            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id)
+            method: 'PATCH',
+            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id),
+            data: {
+              invoiceNumber: invoiceNumber,
+              description: description,
+              salesValue: salesValue,
+              spentValue: spentValue,
+              job: job,
+              invoiceClass: invoiceClass,
+              witholdingTaxPercent: witholdingTaxPercent
+            }
           });
         case 3:
           resource = _context4.sent;
-          if (resource.status === 204) {
-            (0, _alert.showAlert)('success', 'Invoice Successfully Deleted');
+          if (resource.data.success) {
+            (0, _alert.showAlert)('success', 'Invoice Successfully Updated');
             window.setTimeout(function () {
               location.assign('/invoices/view');
             }, 2000);
@@ -12511,8 +12491,44 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
       }
     }, _callee4, null, [[0, 7]]);
   }));
-  return function deleteInvoice(_x16) {
+  return function updateInvoice(_x8, _x9, _x10, _x11, _x12, _x13, _x14, _x15) {
     return _ref4.apply(this, arguments);
+  };
+}();
+var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
+  var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(id) {
+    var resource;
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.prev = 0;
+          _context5.next = 3;
+          return (0, _axios.default)({
+            method: 'DELETE',
+            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id)
+          });
+        case 3:
+          resource = _context5.sent;
+          if (resource.status === 204) {
+            (0, _alert.showAlert)('success', 'Invoice Successfully Deleted');
+            window.setTimeout(function () {
+              location.assign('/invoices/view');
+            }, 2000);
+          }
+          _context5.next = 10;
+          break;
+        case 7:
+          _context5.prev = 7;
+          _context5.t0 = _context5["catch"](0);
+          (0, _alert.showAlert)('error', _context5.t0.response.data.message);
+        case 10:
+        case "end":
+          return _context5.stop();
+      }
+    }, _callee5, null, [[0, 7]]);
+  }));
+  return function deleteInvoice(_x16) {
+    return _ref5.apply(this, arguments);
   };
 }();
 var updatePayment = exports.updatePayment = function updatePayment(id, tag, details, amount, date) {
@@ -12536,8 +12552,6 @@ var updatePayment = exports.updatePayment = function updatePayment(id, tag, deta
   // } catch (error) {
   //   showAlert('error',error.response.data.message);
   // }
-
-  console.log(id, tag, details, amount, date);
 };
 },{"axios":"../../node_modules/axios/index.js","./alert":"alert.js"}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -12680,16 +12694,25 @@ var postInvoice = document.querySelector('.create-resource-invoice');
 
 // PAYMENTS
 var modifyPayment = document.querySelector('.modify-resource-payment');
+
+// OTHERS 
 var job = document.querySelector('.jobs');
+var invoiceSelection = document.querySelector('.invoice-selection');
 
 // For Testing
-var testMultipleSelection = document.querySelector('.field-items');
+var testMultipleSelection = document.querySelector('.field-item');
 if (testMultipleSelection) {
   var name = "Opeyemi";
-  console.log(true);
-  var data = document.createElement('div');
-  data.innerHTML = "<input type=\"checkbox\" id=\"last 31 days\" name=\"new\" value=\"last 31 days\"> <label for=\"last 30 days\">".concat(name, "</label>");
-  testMultipleSelection.appendChild(data);
+  // console.log(true)
+  var create_li_tag = document.createElement('li');
+  var create_label_tag = document.createElement('label');
+  var create_input_tag = document.createElement('input');
+  // data.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
+  // create_li_tag.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
+  // create_label_tag.appendChild(create_input_tag)
+  create_label_tag.innerHTML = "<input type=\"checkbox\" id=\"last 31 days\" name=\"new\" value=\"last 31 days\"> ".concat(name);
+  create_li_tag.appendChild(create_label_tag);
+  testMultipleSelection.appendChild(create_li_tag);
 } else {
   console.log(false);
 }
@@ -12711,6 +12734,17 @@ if (job) {
   });
 }
 ;
+if (invoiceSelection) {
+  invoiceSelection.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
+    var checkedValues = [];
+    checkboxes.forEach(function (checkbox) {
+      checkedValues.push(checkbox.value);
+    });
+    console.log(checkedValues);
+  });
+}
 if (postInvoice) postInvoice.addEventListener('submit', function (event) {
   event.preventDefault();
   var invoiceNo = document.getElementById('invno').value;
@@ -12740,7 +12774,6 @@ if (removeInvoice) removeInvoice.addEventListener('submit', function (event) {
   (0, _processData.deleteInvoice)(docid);
 });
 if (modifyPayment) {
-  console.log(true);
   var tag = document.getElementById('tag').value;
   var description = document.getElementById('desc').value;
   var amount = document.getElementById('amount').value;
@@ -12773,7 +12806,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57127" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50015" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
