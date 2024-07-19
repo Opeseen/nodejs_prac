@@ -48,26 +48,23 @@ block content
             input.input-style-one#date(type='date', value=`${payment.date.toLocaleDateString('en-CA')}`)
           div(class='box-text-cell')
             input.input-style-one#docid(type='hidden',value=`${payment.id}`)
-        .form__cta
-          button.btn--cta--save Save settings
         .line &nbsp;
-    .resource-details.invoice-selection
-      .heading__title Link Invoice
-      br
-      form.modify-field-resource
-        ul.field-item
-          li
-            <label for="inv-1"><input type="checkbox" name="invoice" id="inv-1" value="first">First</label>
-          li
-            <label for="inv-2"><input type="checkbox" name="invoice" id="inv-2" value="second">Second</label>
-          li
-            <label for="inv-3"><input type="checkbox" name="invoice" id="inv-3" value="third">Third</label>
-          li
-            <label for="inv-4"><input type="checkbox" name="invoice" id="inv-4" value="fourth">Fourth</label>
-          li
+        .heading__title Link Invoice
+          br
+        .modify-field-resource
+          ul.field-item
+            li
+              <label for="inv-1"><input type="checkbox" name="invoice" id="inv-1" value="first">First</label>
+            li
+              <label for="inv-2"><input type="checkbox" name="invoice" id="inv-2" value="second">Second</label>
+            li
+              <label for="inv-3"><input type="checkbox" name="invoice" id="inv-3" value="third">Third</label>
+            li
+              <label for="inv-4"><input type="checkbox" name="invoice" id="inv-4" value="fourth">Fourth</label>
+            li
 
         .form__cta
-          button.btn--cta--save Link
+          button.btn--cta--save Save Settings
         .line &nbsp;
     .resource-details.delete-resource-payment 
       .heading__title Delete Payment

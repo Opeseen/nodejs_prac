@@ -1,4 +1,5 @@
 const {Invoice} = require('../models');
+const APIFeatures = require('../utils/ApiFeatures');
 
 const createInvoice = async(invoiceDetails) =>{
   const newInvoice = await Invoice.create(invoiceDetails);
@@ -27,9 +28,16 @@ const findOneInvoice = async(slug) =>{
   return invoice;
 };
 
-const getAllInvoices = async() => {
-  const invoices = await Invoice.find();
-  return invoices;
+const getAllInvoices = async(queryObject) => {
+  const requestQuery = {...queryObject};
+
+  // EXECUTE QUERY...
+  const features = new APIFeatures(Invoice.find(),requestQuery)
+    .filter()
+    .sort()
+    .limitFields()
+  const invoice = await features.query;
+  return invoice;
 };
 
 const getUnpaidInvoices = async() => {

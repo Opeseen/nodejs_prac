@@ -1,5 +1,5 @@
 import '@babel/polyfill';
-import {getAllJobs, createInvoice, updateInvoice, deleteInvoice, updatePayment} from './processData';
+import {getAllJobs, getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, updatePayment} from './processData';
 
 
 // INVOICES
@@ -12,7 +12,7 @@ const modifyPayment = document.querySelector('.modify-resource-payment');
 
 // OTHERS 
 const job = document.querySelector('.jobs');
-const invoiceSelection = document.querySelector('.invoice-selection');
+
 
 // For Testing
 const testMultipleSelection = document.querySelector('.field-item');
@@ -34,6 +34,7 @@ if(testMultipleSelection){
 }
 // For Testing
 
+// JOBS
 if(job){
   const defaultDropdownValue = job.value;
   getAllJobs().then(
@@ -52,22 +53,7 @@ if(job){
   )
 };
 
-
-if(invoiceSelection){
-  invoiceSelection.addEventListener('submit', event => {
-    event.preventDefault();
-
-    let checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
-    let checkedValues = [];
-    checkboxes.forEach((checkbox) => {
-      checkedValues.push(checkbox.value);
-    });
-
-    console.log(checkedValues)
-  });
-
-}
-
+// INVOICES
 if(postInvoice)
   postInvoice.addEventListener('submit', event => {
     event.preventDefault();
@@ -105,13 +91,25 @@ if (removeInvoice)
     deleteInvoice(docid);
 });
 
+// PAYMENTS
 if (modifyPayment){
-  const tag = document.getElementById('tag').value;
-  const description = document.getElementById('desc').value;
-  const amount = document.getElementById('amount').value;
-  const date = document.getElementById('date').value;
-  const docid = document.getElementById('docid').value
-
-  updatePayment(docid, tag, description, amount, date);
+  modifyPayment.addEventListener('submit', event =>{
+    event.preventDefault();
+    // GET THE VALUE OF DATA UPDATED
+      const tag = document.getElementById('tag').value;
+      const description = document.getElementById('desc').value;
+      const amount = document.getElementById('amount').value;
+      const date = document.getElementById('date').value;
+      const docid = document.getElementById('docid').value
+      // PROCESS DATA FOR ANY INVOICE TO BE ATTACHED
+      let checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
+      let checkedValues = [];
+      checkboxes.forEach((checkbox) => {
+        checkedValues.push(checkbox.value);
+      });
+      getUnpaidInvoices().then((data) => console.log(data) )
+ 
+      updatePayment(docid, tag, description, amount, date);
+  });
 }
 

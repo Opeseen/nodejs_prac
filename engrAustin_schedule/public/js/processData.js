@@ -9,14 +9,21 @@ export const getAllJobs = async() => {
     });
     if(result.data.jobs.length > 0){ return result.data.jobs };
   } catch (error) {
+    console.log(error.response.data.message);
+    showAlert('error',"Error Fetching Jobs");
   }
 };
 
 export const getUnpaidInvoices = async() =>{
   try {
-    
+    const result = await axios({
+      method: 'GET',
+      url: 'http://localhost:3000/api/v2/mundial/invoices?invoicePaymentStatus=Unpaid'
+    });
+    if(result.data.invoices.length > 0){ return result.data.invoices };
   } catch (error) {
-    
+    console.log(error.response.data.message);
+    showAlert('error',"Error Fetching Invoices");
   }
 };
 
