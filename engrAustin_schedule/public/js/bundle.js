@@ -12555,30 +12555,50 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
     return _ref5.apply(this, arguments);
   };
 }();
-var updatePayment = exports.updatePayment = function updatePayment(id, tag, details, amount, date, invoice) {
-  console.log(id, tag, details, date, invoice);
-
-  // try {
-  //   const resource = await axios({
-  //     method: 'PATCH',
-  //     url: `http://localhost:3000/api/v2/mundial/payments/${id}`,
-  //     data: {
-  //       id,
-  //       tag,
-  //       details,
-  //       invoices
-  //     }
-  //   });
-  //   if(resource.data.success){
-  //     showAlert('success','Payment Successfully Updated');
-  //     window.setTimeout(() => {
-  //       location.assign('/invoices/view');
-  //     },2000);
-  //   }
-  // } catch (error) {
-  //   showAlert('error',error.response.data.message);
-  // }
-};
+var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
+  var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(id, tag, details, amount, date, invoices) {
+    var resource;
+    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+      while (1) switch (_context6.prev = _context6.next) {
+        case 0:
+          _context6.prev = 0;
+          _context6.next = 3;
+          return (0, _axios.default)({
+            method: 'PATCH',
+            url: "http://localhost:3000/api/v2/mundial/payments/".concat(id),
+            data: {
+              id: id,
+              tag: tag,
+              details: details,
+              amount: amount,
+              date: date,
+              invoices: invoices
+            }
+          });
+        case 3:
+          resource = _context6.sent;
+          if (resource.data.success) {
+            (0, _alert.showAlert)('success', 'Payment Successfully Updated');
+            window.setTimeout(function () {
+              location.reload();
+            }, 2000);
+          }
+          _context6.next = 10;
+          break;
+        case 7:
+          _context6.prev = 7;
+          _context6.t0 = _context6["catch"](0);
+          (0, _alert.showAlert)('error', _context6.t0.response.data.message);
+        case 10:
+        case "end":
+          return _context6.stop();
+      }
+    }, _callee6, null, [[0, 7]]);
+  }));
+  return function updatePayment(_x17, _x18, _x19, _x20, _x21, _x22) {
+    return _ref6.apply(this, arguments);
+  };
+}();
 },{"axios":"../../node_modules/axios/index.js","./alert":"alert.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -12743,6 +12763,7 @@ if (job) {
 ;
 
 // INVOICES
+
 if (postInvoice) postInvoice.addEventListener('submit', function (event) {
   event.preventDefault();
   var invoiceNo = document.getElementById('invno').value;
@@ -12773,6 +12794,7 @@ if (removeInvoice) removeInvoice.addEventListener('submit', function (event) {
 });
 
 // PAYMENTS
+
 if (modifyPayment) {
   // SECTION 1
   var invoiceSelection = document.querySelector('.invoice-field-item');
@@ -12808,6 +12830,8 @@ if (modifyPayment) {
     checkboxes.forEach(function (checkbox) {
       checkedInvoiceValues.push(checkbox.value);
     });
+
+    // UPDATE THE PAYMENT
     (0, _processData.updatePayment)(docid, tag, description, amount, date, checkedInvoiceValues);
   });
 }
@@ -12836,7 +12860,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64813" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52812" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

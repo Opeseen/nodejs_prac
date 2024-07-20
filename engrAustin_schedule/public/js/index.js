@@ -1,5 +1,8 @@
 import '@babel/polyfill';
-import {getAllJobs, getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, updatePayment} from './processData';
+import {
+  getAllJobs, getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, updatePayment
+} 
+from './processData';
 
 
 // INVOICES
@@ -34,6 +37,7 @@ if(job){
 };
 
 // INVOICES
+
 if(postInvoice)
   postInvoice.addEventListener('submit', event => {
     event.preventDefault();
@@ -72,6 +76,7 @@ if (removeInvoice)
 });
 
 // PAYMENTS
+
 if (modifyPayment){
   // SECTION 1
   const invoiceSelection = document.querySelector('.invoice-field-item');
@@ -108,6 +113,7 @@ if (modifyPayment){
       checkedInvoiceValues.push(checkbox.value);
     });
 
+    // UPDATE THE PAYMENT
     updatePayment(docid, tag, description, amount, date, checkedInvoiceValues);
   });
 }

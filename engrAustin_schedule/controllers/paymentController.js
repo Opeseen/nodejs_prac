@@ -19,7 +19,7 @@ const createPayment = catchAsyncError(async(req, res) => {
     });
   };
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     payment
   });
 });
@@ -30,7 +30,7 @@ const getPayment = catchAsyncError(async(req, res, next) => {
   if(!payment) { return next(new ApiError("No Payment Found", httpStatus.NOT_FOUND)) }
 
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     payment
   })
 });
@@ -38,7 +38,7 @@ const getPayment = catchAsyncError(async(req, res, next) => {
 const getAllPayment = catchAsyncError(async(req, res) => {
   const payment = await paymentService.getAllPayment();
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     results: payment.length,
     payment
   })
@@ -60,7 +60,7 @@ const updatePayment = catchAsyncError(async(req, res, next) => {
   };
 
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     updatedPayment
   })
 });
@@ -75,7 +75,7 @@ const deletePayment = catchAsyncError(async(req, res, next) => {
     return next(new ApiError("No Payment found to delete", httpStatus.NOT_FOUND));
   };
   res.status(httpStatus.NO_CONTENT).json({
-    status: 'Success'
+    success: true
   })
 });
 
@@ -84,7 +84,7 @@ const getPaymentLedger = catchAsyncError(async(req, res) => {
   const paymentStatics = await paymentService.getPaymentLedger(id);
 
   res.status(httpStatus.OK).json({
-    status: 'Success',
+    success: true,
     result: paymentStatics.length > 0 ? paymentStatics.length : 0,
     paymentStatics,
   });

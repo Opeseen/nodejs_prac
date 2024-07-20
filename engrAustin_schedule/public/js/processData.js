@@ -100,29 +100,29 @@ export const deleteInvoice = async(id) => {
 
 
 export const updatePayment = 
-(id, tag, details, amount, date, invoice) => {
-  console.log(id,tag,details,date,invoice)
-
-  // try {
-  //   const resource = await axios({
-  //     method: 'PATCH',
-  //     url: `http://localhost:3000/api/v2/mundial/payments/${id}`,
-  //     data: {
-  //       id,
-  //       tag,
-  //       details,
-  //       invoices
-  //     }
-  //   });
-  //   if(resource.data.success){
-  //     showAlert('success','Payment Successfully Updated');
-  //     window.setTimeout(() => {
-  //       location.assign('/invoices/view');
-  //     },2000);
-  //   }
-  // } catch (error) {
-  //   showAlert('error',error.response.data.message);
-  // }
+async(id, tag, details, amount, date, invoices) => {
+  try {
+    const resource = await axios({
+      method: 'PATCH',
+      url: `http://localhost:3000/api/v2/mundial/payments/${id}`,
+      data: {
+        id,
+        tag,
+        details,
+        amount,
+        date,
+        invoices
+      }
+    });
+    if(resource.data.success){
+      showAlert('success','Payment Successfully Updated');
+      window.setTimeout(() => {
+        location.reload();
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
 
 };
 
