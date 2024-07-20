@@ -9,10 +9,6 @@ router
   .post(invoiceController.createInvoice);
 
 router
-  .route('/unpaid')
-  .get(invoiceController.getUnpaidInvoice)
-
-router
   .route('/:id')
   .get(invoiceController.getInvoice)
   .patch(invoiceController.updateInvoice)

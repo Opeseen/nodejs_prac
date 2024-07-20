@@ -14,26 +14,6 @@ const modifyPayment = document.querySelector('.modify-resource-payment');
 const job = document.querySelector('.jobs');
 
 
-// For Testing
-const testMultipleSelection = document.querySelector('.field-item');
-if(testMultipleSelection){
-  const name = "Opeyemi"
-  // console.log(true)
-  const create_li_tag = document.createElement('li');
-  const create_label_tag = document.createElement('label');
-  const create_input_tag = document.createElement('input');
-  // data.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
-  // create_li_tag.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> <label for="last 30 days">${name}</label>`
-  // create_label_tag.appendChild(create_input_tag)
-  create_label_tag.innerHTML = `<input type="checkbox" id="last 31 days" name="new" value="last 31 days"> ${name}`
-  create_li_tag.appendChild(create_label_tag)
-  
-  testMultipleSelection.appendChild(create_li_tag);
-}else{
-  console.log(false)
-}
-// For Testing
-
 // JOBS
 if(job){
   const defaultDropdownValue = job.value;
@@ -93,23 +73,41 @@ if (removeInvoice)
 
 // PAYMENTS
 if (modifyPayment){
+  // SECTION 1
+  const invoiceSelection = document.querySelector('.invoice-field-item');
+  if (invoiceSelection){
+    // LOAD ALL UNPAID INVOICES
+    getUnpaidInvoices().then(
+      (data) => {
+        if(data !== undefined){
+          let x = 0;
+          data.forEach((element) => {
+            x++
+            // CREATE HTML TAG FOR "LI" & "LABEL"
+            const create_li_tag = document.createElement('li');
+            create_li_tag.innerHTML = `<label for="inv-${x}"><input type="checkbox" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            invoiceSelection.appendChild(create_li_tag);
+          });
+        };
+      }
+    )
+  };
+  // SECTION 2
   modifyPayment.addEventListener('submit', event =>{
     event.preventDefault();
     // GET THE VALUE OF DATA UPDATED
-      const tag = document.getElementById('tag').value;
-      const description = document.getElementById('desc').value;
-      const amount = document.getElementById('amount').value;
-      const date = document.getElementById('date').value;
-      const docid = document.getElementById('docid').value
-      // PROCESS DATA FOR ANY INVOICE TO BE ATTACHED
-      let checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
-      let checkedValues = [];
-      checkboxes.forEach((checkbox) => {
-        checkedValues.push(checkbox.value);
-      });
-      getUnpaidInvoices().then((data) => console.log(data) )
- 
-      updatePayment(docid, tag, description, amount, date);
+    const tag = document.getElementById('tag').value;
+    const description = document.getElementById('desc').value;
+    const amount = document.getElementById('amount').value;
+    const date = document.getElementById('date').value;
+    const docid = document.getElementById('docid').value
+    // PROCESS DATA FOR ANY INVOICE TO BE ATTACHED
+    let checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
+    let checkedInvoiceValues = [];
+    checkboxes.forEach((checkbox) => {
+      checkedInvoiceValues.push(checkbox.value);
+    });
+
+    updatePayment(docid, tag, description, amount, date, checkedInvoiceValues);
   });
 }
-

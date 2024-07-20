@@ -40,11 +40,6 @@ const getAllInvoices = async(queryObject) => {
   return invoice;
 };
 
-const getUnpaidInvoices = async() => {
-  const invoices = await Invoice.find({invoicePaymentStatus: "Unpaid"});
-  return invoices;
-};
-
 const updateInvoice = async(invoiceId, updatedDetails) => {
   const invoice = await Invoice.findByIdAndUpdate(invoiceId, updatedDetails, {new: true, runValidators: true});
   return invoice;
@@ -82,7 +77,6 @@ module.exports = {
   getInvoicebyId,
   findOneInvoice,
   getAllInvoices,
-  getUnpaidInvoices,
   updateInvoice,
   deleteInvoice,
   addPaymentToInvoice,

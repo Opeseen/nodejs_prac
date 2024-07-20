@@ -100,7 +100,9 @@ export const deleteInvoice = async(id) => {
 
 
 export const updatePayment = 
-(id, tag, details, amount, date) => {
+(id, tag, details, amount, date, invoice) => {
+  console.log(id,tag,details,date,invoice)
+
   // try {
   //   const resource = await axios({
   //     method: 'PATCH',

@@ -35,15 +35,6 @@ const getAllInvoices = catchAsyncError(async(req, res) => {
   })
 });
 
-const getUnpaidInvoice = catchAsyncError(async(req, res) => {
-  const unpaidInvoices = await invoiceService.getUnpaidInvoices();
-  res.status(httpStatus.OK).json({
-    success: true,
-    results: unpaidInvoices.length,
-    unpaidInvoices
-  })
-});
-
 const updateInvoice = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
   const invoice = await Invoice.findById(id);
@@ -93,7 +84,6 @@ module.exports = {
   createInvoice,
   getInvoice,
   getAllInvoices,
-  getUnpaidInvoice,
   updateInvoice,
   deleteInvoice,
   removePaymentFromInvoice
