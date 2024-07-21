@@ -69,7 +69,12 @@ const invoiceSchema = new mongoose.Schema(
         ref: 'Payment'
       }
     ],
-    slug: String
+    slug: String,
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+      private: true
+    },
   }
 
 );

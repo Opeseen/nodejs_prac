@@ -1,6 +1,7 @@
 import '@babel/polyfill';
 import {
-  getAllJobs, getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, updatePayment
+  getAllJobs, getUnpaidInvoices, createInvoice, 
+  updateInvoice, deleteInvoice, unlinkResource, updatePayment
 } 
 from './processData';
 
@@ -9,6 +10,7 @@ from './processData';
 const modifyInvoice = document.querySelector('.modify-resource-invoice');
 const removeInvoice = document.querySelector('.delete-resource-invoice');
 const postInvoice = document.querySelector('.create-resource-invoice');
+const unlinkInvoice = document.querySelectorAll('.unlink');
 
 // PAYMENTS
 const modifyPayment = document.querySelector('.modify-resource-payment');
@@ -74,6 +76,16 @@ if (removeInvoice)
 
     deleteInvoice(docid);
 });
+
+if(unlinkInvoice){
+  let invoice_id = null
+  for (let i = 0; i < unlinkInvoice.length; i++) {
+    unlinkInvoice[i].addEventListener("click", function(event) {
+      invoice_id = event.target.lastChild.innerText
+      unlinkResource(invoice_id,2)
+    });
+  }
+}
 
 // PAYMENTS
 

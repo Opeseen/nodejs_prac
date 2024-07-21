@@ -4,6 +4,7 @@ block content
   main
     h2.page__subject Payment details
     - const invoiceCount = paymentStaticsCount
+    
     if invoiceCount > 0
       .table-wrapper
         .heading__title Invoice Info
@@ -23,8 +24,8 @@ block content
               td= invoice.invoicePaymentStatus
               td= invoice.partnerPayment.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
               td
-                .btn--red
-                  a(href='#') Unlink
+                .btn--red.unlink Unlink
+                  p(hidden)= invoice._id
     else
       p.empty__record no invoice record exist for this payment!
     // Horizontal Line

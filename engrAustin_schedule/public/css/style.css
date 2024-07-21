@@ -312,8 +312,11 @@ div .btn--red{
   margin: auto;
   text-align: center;
   background-color: rgb(255, 51, 0);
+  color: white;
+  font-size: 1.4rem;
   padding: 0.3rem 0.3rem;
   border-radius: 5rem;
+  cursor: pointer;
   border: 1px solid currentColor !important;
 }
 
@@ -340,7 +343,7 @@ div .btn--red{
   font-weight: 400;
 }
 
-.btn--cta--save:hover, .btn--cta--red:hover {
+.btn--cta--save:hover, .btn--cta--red:hover, .btn--red:hover {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   text-shadow: none;

@@ -27,7 +27,12 @@ const jobSchema = new mongoose.Schema(
     },
     jobPO:{
       type: String,
-    }
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+      private: true
+    },
   }
 );
 

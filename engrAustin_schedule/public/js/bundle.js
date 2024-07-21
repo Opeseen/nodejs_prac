@@ -12345,7 +12345,7 @@ var showAlert = exports.showAlert = function showAlert(type, msg) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updatePayment = exports.updateInvoice = exports.getUnpaidInvoices = exports.getAllJobs = exports.deleteInvoice = exports.createInvoice = void 0;
+exports.updatePayment = exports.updateInvoice = exports.unlinkResource = exports.getUnpaidInvoices = exports.getAllJobs = exports.deleteInvoice = exports.createInvoice = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 var _alert = require("./alert");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -12431,7 +12431,7 @@ var getUnpaidInvoices = exports.getUnpaidInvoices = /*#__PURE__*/function () {
 }();
 var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
-    var resource;
+    var response;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
@@ -12451,8 +12451,8 @@ var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
             }
           });
         case 3:
-          resource = _context3.sent;
-          if (resource.data.success) {
+          response = _context3.sent;
+          if (response.data.success) {
             (0, _alert.showAlert)('success', 'Invoice Successfully Created');
             window.setTimeout(function () {
               location.reload();
@@ -12476,7 +12476,7 @@ var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
 }();
 var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
   var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(id, invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
-    var resource;
+    var response;
     return _regeneratorRuntime().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
@@ -12496,8 +12496,8 @@ var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
             }
           });
         case 3:
-          resource = _context4.sent;
-          if (resource.data.success) {
+          response = _context4.sent;
+          if (response.data.success) {
             (0, _alert.showAlert)('success', 'Invoice Successfully Updated');
             window.setTimeout(function () {
               location.assign('/invoices/view');
@@ -12521,7 +12521,7 @@ var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
 }();
 var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
   var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(id) {
-    var resource;
+    var response;
     return _regeneratorRuntime().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
@@ -12532,8 +12532,8 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
             url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id)
           });
         case 3:
-          resource = _context5.sent;
-          if (resource.status === 204) {
+          response = _context5.sent;
+          if (response.status === 204) {
             (0, _alert.showAlert)('success', 'Invoice Successfully Deleted');
             window.setTimeout(function () {
               location.assign('/invoices/view');
@@ -12557,7 +12557,7 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
 }();
 var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
   var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(id, tag, details, amount, date, invoices) {
-    var resource;
+    var response;
     return _regeneratorRuntime().wrap(function _callee6$(_context6) {
       while (1) switch (_context6.prev = _context6.next) {
         case 0:
@@ -12576,8 +12576,8 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
             }
           });
         case 3:
-          resource = _context6.sent;
-          if (resource.data.success) {
+          response = _context6.sent;
+          if (response.data.success) {
             (0, _alert.showAlert)('success', 'Payment Successfully Updated');
             window.setTimeout(function () {
               location.reload();
@@ -12597,6 +12597,42 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
   }));
   return function updatePayment(_x17, _x18, _x19, _x20, _x21, _x22) {
     return _ref6.apply(this, arguments);
+  };
+}();
+var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
+  var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(id, payid) {
+    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
+        case 0:
+          // try {
+          //   const response = await axios({
+          //     method: 'PATCH',
+          //     url: `http://localhost:3000/api/v2/mundial/invoices/${id}/payment/${payid}/unlink`,
+          //   });
+          //   if(response.data.success){
+          //     showAlert('success','Invoice Successfully Unlink');
+          //     window.setTimeout(() => {
+          //       location.reload();
+          //     },2000);
+          //   }
+          // } catch (error) {
+          //   console.log(error.response.data.message);
+          //   showAlert('error',"Error Unlinking Invoice");
+          // }
+
+          (0, _alert.showAlert)('success', 'Invoice Successfully Unlink');
+          console.log(id);
+          window.setTimeout(function () {
+            location.reload();
+          }, 1000);
+        case 3:
+        case "end":
+          return _context7.stop();
+      }
+    }, _callee7);
+  }));
+  return function unlinkResource(_x23, _x24) {
+    return _ref7.apply(this, arguments);
   };
 }();
 },{"axios":"../../node_modules/axios/index.js","./alert":"alert.js"}],"index.js":[function(require,module,exports) {
@@ -12737,6 +12773,7 @@ var _processData = require("./processData");
 var modifyInvoice = document.querySelector('.modify-resource-invoice');
 var removeInvoice = document.querySelector('.delete-resource-invoice');
 var postInvoice = document.querySelector('.create-resource-invoice');
+var unlinkInvoice = document.querySelectorAll('.unlink');
 
 // PAYMENTS
 var modifyPayment = document.querySelector('.modify-resource-payment');
@@ -12792,6 +12829,15 @@ if (removeInvoice) removeInvoice.addEventListener('submit', function (event) {
   var docid = document.getElementById('docid').value;
   (0, _processData.deleteInvoice)(docid);
 });
+if (unlinkInvoice) {
+  var invoice_id = null;
+  for (var i = 0; i < unlinkInvoice.length; i++) {
+    unlinkInvoice[i].addEventListener("click", function (event) {
+      invoice_id = event.target.lastChild.innerText;
+      (0, _processData.unlinkResource)(invoice_id, 2);
+    });
+  }
+}
 
 // PAYMENTS
 
@@ -12860,7 +12906,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52812" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63350" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

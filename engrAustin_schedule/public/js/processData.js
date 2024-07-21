@@ -30,7 +30,7 @@ export const getUnpaidInvoices = async() =>{
 export const createInvoice = 
 async(invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
   try {
-    const resource = await axios({
+    const response = await axios({
       method: 'POST',
       url:  'http://localhost:3000/api/v2/mundial/invoices',
       data: {
@@ -43,7 +43,7 @@ async(invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdin
         witholdingTaxPercent
       }
     });
-    if(resource.data.success){
+    if(response.data.success){
       showAlert('success','Invoice Successfully Created');
       window.setTimeout(() => {
         location.reload();
@@ -57,7 +57,7 @@ async(invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdin
 export const updateInvoice = 
 async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
   try {
-    const resource = await axios({
+    const response = await axios({
       method: 'PATCH',
       url: `http://localhost:3000/api/v2/mundial/invoices/${id}`,
       data: {
@@ -70,7 +70,7 @@ async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,withol
         witholdingTaxPercent
       }
     });
-    if(resource.data.success){
+    if(response.data.success){
       showAlert('success','Invoice Successfully Updated');
       window.setTimeout(() => {
         location.assign('/invoices/view');
@@ -83,11 +83,11 @@ async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,withol
 
 export const deleteInvoice = async(id) => {
   try {
-    const resource = await axios({
+    const response = await axios({
       method: 'DELETE',
       url: `http://localhost:3000/api/v2/mundial/invoices/${id}`
     })
-    if(resource.status === 204){
+    if(response.status === 204){
       showAlert('success','Invoice Successfully Deleted');
       window.setTimeout(() => {
         location.assign('/invoices/view');
@@ -102,7 +102,7 @@ export const deleteInvoice = async(id) => {
 export const updatePayment = 
 async(id, tag, details, amount, date, invoices) => {
   try {
-    const resource = await axios({
+    const response = await axios({
       method: 'PATCH',
       url: `http://localhost:3000/api/v2/mundial/payments/${id}`,
       data: {
@@ -114,7 +114,7 @@ async(id, tag, details, amount, date, invoices) => {
         invoices
       }
     });
-    if(resource.data.success){
+    if(response.data.success){
       showAlert('success','Payment Successfully Updated');
       window.setTimeout(() => {
         location.reload();
@@ -126,4 +126,29 @@ async(id, tag, details, amount, date, invoices) => {
 
 };
 
+export const unlinkResource = async(id,payid) => {
+  // try {
+  //   const response = await axios({
+  //     method: 'PATCH',
+  //     url: `http://localhost:3000/api/v2/mundial/invoices/${id}/payment/${payid}/unlink`,
+  //   });
+  //   if(response.data.success){
+  //     showAlert('success','Invoice Successfully Unlink');
+  //     window.setTimeout(() => {
+  //       location.reload();
+  //     },2000);
+  //   }
+  // } catch (error) {
+  //   console.log(error.response.data.message);
+  //   showAlert('error',"Error Unlinking Invoice");
+  // }
 
+
+  showAlert('success','Invoice Successfully Unlink');
+  console.log(id)
+  window.setTimeout(() => {
+    location.reload();
+  },1000);
+
+
+};

@@ -21,7 +21,12 @@ const paymentSchema = new mongoose.Schema(
       type: Date,
       required: [true, 'A payment date is required']
     },
-    paymentRefId: String
+    paymentRefId: String,
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+      private: true
+    },
   }
 );
 

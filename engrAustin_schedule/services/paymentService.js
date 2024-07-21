@@ -49,7 +49,7 @@ const getPaymentLedger = async(id) => {
         invoicePaymentStatus: 1,
         invoiceClass: 1,
         partnerPayment: 1,
-        _id: 0
+        _id: 1
       }
     }
   ]);
