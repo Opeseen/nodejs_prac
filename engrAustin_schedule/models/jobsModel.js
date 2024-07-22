@@ -23,10 +23,12 @@ const jobSchema = new mongoose.Schema(
     jobDescription: {
       type: String,
       uppercase: true,
-      maxlength: [45, 'The details of a job must not be more that 45 character']
+      maxlength: [45, 'The details of a job must not be more that 45 character'],
+      trim: true
     },
     jobPO:{
       type: String,
+      trim: true
     },
     createdAt: {
       type: Date,

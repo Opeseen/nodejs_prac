@@ -12601,35 +12601,36 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
 }();
 var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
   var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(id, payid) {
+    var response;
     return _regeneratorRuntime().wrap(function _callee7$(_context7) {
       while (1) switch (_context7.prev = _context7.next) {
         case 0:
-          // try {
-          //   const response = await axios({
-          //     method: 'PATCH',
-          //     url: `http://localhost:3000/api/v2/mundial/invoices/${id}/payment/${payid}/unlink`,
-          //   });
-          //   if(response.data.success){
-          //     showAlert('success','Invoice Successfully Unlink');
-          //     window.setTimeout(() => {
-          //       location.reload();
-          //     },2000);
-          //   }
-          // } catch (error) {
-          //   console.log(error.response.data.message);
-          //   showAlert('error',"Error Unlinking Invoice");
-          // }
-
-          (0, _alert.showAlert)('success', 'Invoice Successfully Unlink');
-          console.log(id);
-          window.setTimeout(function () {
-            location.reload();
-          }, 1000);
+          _context7.prev = 0;
+          _context7.next = 3;
+          return (0, _axios.default)({
+            method: 'PATCH',
+            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id, "/payment/").concat(payid, "/unlink")
+          });
         case 3:
+          response = _context7.sent;
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', 'Invoice Successfully Unlink');
+            window.setTimeout(function () {
+              location.reload();
+            }, 1000);
+          }
+          _context7.next = 11;
+          break;
+        case 7:
+          _context7.prev = 7;
+          _context7.t0 = _context7["catch"](0);
+          console.log(_context7.t0.response.data.message);
+          (0, _alert.showAlert)('error', "Error Unlinking Invoice");
+        case 11:
         case "end":
           return _context7.stop();
       }
-    }, _callee7);
+    }, _callee7, null, [[0, 7]]);
   }));
   return function unlinkResource(_x23, _x24) {
     return _ref7.apply(this, arguments);
@@ -12831,12 +12832,14 @@ if (removeInvoice) removeInvoice.addEventListener('submit', function (event) {
 });
 if (unlinkInvoice) {
   var invoice_id = null;
+  var payid = document.getElementById('docid').value;
   for (var i = 0; i < unlinkInvoice.length; i++) {
     unlinkInvoice[i].addEventListener("click", function (event) {
       invoice_id = event.target.lastChild.innerText;
-      (0, _processData.unlinkResource)(invoice_id, 2);
+      (0, _processData.unlinkResource)(invoice_id, payid);
     });
   }
+  ;
 }
 
 // PAYMENTS
@@ -12906,7 +12909,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63350" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62979" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

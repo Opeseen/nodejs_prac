@@ -1,0 +1,160 @@
+[{
+  "_id": {
+    "$oid": "669e958b90ade1599c05da8f"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "FAULTY CCTV EQUIPMENT REPLACEMENT AT NESTLE FACTORY AGBARA",
+  "tag": "NESTLE 2023 CCTV",
+  "amount": 262438,
+  "date": {
+    "$date": "2024-03-11T00:00:00.000Z"
+  },
+  "paymentRefId": "dd8b3bfd-7582-4377-8620-2ed069a10235",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e95f890ade1599c05da92"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "MULTIPLE PAYMENT",
+  "tag": "MULTIPLE",
+  "amount": 1092499.76,
+  "date": {
+    "$date": "2024-03-22T00:00:00.000Z"
+  },
+  "paymentRefId": "728d3f24-a802-4f96-a494-2bce3129c3dc",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e965990ade1599c05da94"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "3 NEW ADDITIONAL TERMINALS FOR CANTEEN",
+  "tag": "NESTLE-284",
+  "amount": 247522.16,
+  "date": {
+    "$date": "2024-04-01T23:00:00.000Z"
+  },
+  "paymentRefId": "f3c8147a-2558-4dce-bf96-8926b0340d76",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e977090ade1599c05da9a"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "2024, FIRST QUARTER CCTV CAMERAS MAINTENANCE",
+  "tag": "GBF-796",
+  "amount": 694341.25,
+  "date": {
+    "$date": "2024-01-21T00:00:00.000Z"
+  },
+  "paymentRefId": "5a91aeaa-4fb5-45f9-841b-6948dfe45de5",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e97b790ade1599c05da9c"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "NESTLE GREATER ILUPEJU LAGOS NESTLE HQ ILUPEJU LAGOS CCTV MAINTENANCE 2023",
+  "tag": "NESTLE-CCTV",
+  "amount": 371497.5,
+  "date": {
+    "$date": "2024-03-01T00:00:00.000Z"
+  },
+  "paymentRefId": "ff53b388-2469-4325-a680-fceb200c4030",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e980e90ade1599c05da9e"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "BOOM BARRIER AND FULL COPPER",
+  "tag": "MULTIPLE",
+  "amount": 770429.52,
+  "date": {
+    "$date": "2024-05-07T23:00:00.000Z"
+  },
+  "paymentRefId": "7e27cf15-e012-4ab3-81e1-32d6198ec4d9",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e984190ade1599c05daa0"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "P-TECH OR HIKVISION 2MP COLOURVU HIGH",
+  "tag": "NESTLE-243",
+  "amount": 211077.69,
+  "date": {
+    "$date": "2024-06-04T23:00:00.000Z"
+  },
+  "paymentRefId": "eef9768a-9d28-4cb8-bbf4-e67a707513f0",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e988090ade1599c05daa2"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "2024 SECOND QUARTER CCTV CAMERAS MAINTENANCE AT GB FOODS SANGO OTA",
+  "tag": "GBF-827",
+  "amount": 503656.25,
+  "date": {
+    "$date": "2024-07-18T00:00:00.000Z"
+  },
+  "paymentRefId": "869db55f-46ea-46a8-8fa7-fcaf0adad6f0",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e98cf90ade1599c05daa5"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "DIGNITY PVC TRUCKS 50 X 50 (PIECES)",
+  "tag": "NESTLE-306",
+  "amount": 42296,
+  "date": {
+    "$date": "2024-07-16T00:00:00.000Z"
+  },
+  "paymentRefId": "ebaa7ee2-a9a5-4e34-8f5a-3e1a0035da4d",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "669e996790ade1599c05daa7"
+  },
+  "createdAt": {
+    "$date": "2024-07-22T16:48:53.819Z"
+  },
+  "details": "CCTV INSTALLATION IN KANO BRANCH",
+  "tag": "NESTLE-200",
+  "amount": 106076.18,
+  "date": {
+    "$date": "2024-02-13T00:00:00.000Z"
+  },
+  "paymentRefId": "ada904f2-9fe7-43aa-9370-3dbbb6095e81",
+  "__v": 0
+}]

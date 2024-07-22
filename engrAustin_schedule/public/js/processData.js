@@ -127,28 +127,20 @@ async(id, tag, details, amount, date, invoices) => {
 };
 
 export const unlinkResource = async(id,payid) => {
-  // try {
-  //   const response = await axios({
-  //     method: 'PATCH',
-  //     url: `http://localhost:3000/api/v2/mundial/invoices/${id}/payment/${payid}/unlink`,
-  //   });
-  //   if(response.data.success){
-  //     showAlert('success','Invoice Successfully Unlink');
-  //     window.setTimeout(() => {
-  //       location.reload();
-  //     },2000);
-  //   }
-  // } catch (error) {
-  //   console.log(error.response.data.message);
-  //   showAlert('error',"Error Unlinking Invoice");
-  // }
-
-
-  showAlert('success','Invoice Successfully Unlink');
-  console.log(id)
-  window.setTimeout(() => {
-    location.reload();
-  },1000);
-
+  try {
+    const response = await axios({
+      method: 'PATCH',
+      url: `http://localhost:3000/api/v2/mundial/invoices/${id}/payment/${payid}/unlink`,
+    });
+    if(response.data.success){
+      showAlert('success','Invoice Successfully Unlink');
+      window.setTimeout(() => {
+        location.reload();
+      },1000);
+    }
+  } catch (error) {
+    console.log(error.response.data.message);
+    showAlert('error',"Error Unlinking Invoice");
+  }
 
 };

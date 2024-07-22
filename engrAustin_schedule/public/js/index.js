@@ -79,12 +79,13 @@ if (removeInvoice)
 
 if(unlinkInvoice){
   let invoice_id = null
+  const payid = document.getElementById('docid').value
   for (let i = 0; i < unlinkInvoice.length; i++) {
     unlinkInvoice[i].addEventListener("click", function(event) {
       invoice_id = event.target.lastChild.innerText
-      unlinkResource(invoice_id,2)
+      unlinkResource(invoice_id,payid);
     });
-  }
+  };
 }
 
 // PAYMENTS
