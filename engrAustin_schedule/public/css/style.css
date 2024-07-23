@@ -366,14 +366,14 @@ div a {
 
 /* Items Data Display */
 .resource-details {
-  margin: auto;
-  width: 50%;
-  background-color: #fff;
+  margin: auto !important;
+  width: 50% !important;
+  background-color: #fff !important;
   -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
   box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
-  padding: 10px 10px 10px 10px;
-  margin-bottom: auto;
-  max-width: 60%;  
+  padding: 10px 10px 10px 10px !important;
+  margin-bottom: auto !important;
+  max-width: 60% !important;  
 }
 
 .warning{
@@ -388,11 +388,11 @@ div a {
 }
 
 .form__div{
-  display: grid;
-  margin: 5px;
-  grid-gap: 1.5rem;
-  grid-template-columns: auto auto auto;
-  padding: 10px 10px 10px 10px;
+  display: grid !important;
+  margin: 5px !important;
+  grid-gap: 1.5rem !important;
+  grid-template-columns: auto auto auto !important;
+  padding: 10px 10px 10px 10px !important;
 }
 .form__cta{
   margin-top: 2.5rem;
@@ -400,13 +400,13 @@ div a {
 }
 
 .box-text-cell{
-  text-align: center;
+  text-align: center !important;
 }
 
 .box-title{
- font-size: small;
- color: #777;
- text-transform: uppercase;
+ font-size: small !important;
+ color: #777 !important;
+ text-transform: uppercase !important;
 }
 
 .input-style-one,.select-style-one{
@@ -426,33 +426,33 @@ div a {
 }
 
 textarea{
-  resize: none;
+  resize: none !important;
   border-radius: 0.5rem;
 }
 
 .alert {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 9999;
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 400;
-  text-align: center;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 1.6rem 15rem;
-  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  position: fixed !important;
+  top: 0 !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%) !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  color: #fff !important;
+  font-size: 1.8rem !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  padding: 1.6rem 15rem !important;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25) !important;
 }
 .alert--success {
-  background-color: #20bf6b;
+  background-color: #20bf6b !important;
 
 }
 .alert--error {
-  background-color: #eb4d4b;
+  background-color: #eb4d4b !important;
 }
 
 .invoice-field-item { height: 100px; overflow: auto; border: 1px solid #000; font-size: small;}
