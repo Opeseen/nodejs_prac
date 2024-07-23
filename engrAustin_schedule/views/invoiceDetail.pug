@@ -50,7 +50,7 @@ block content
                 option(value= 'undefined') Please select
           div(class='box-text-cell')
             p.box-title class
-            select.select-style-one#invclass(name='class')
+            select.form-select.mt-3.select-style-one#invclass(name='class')
               option= invoice.invoiceClass
               option= `${invoice.invoiceClass === 'Installation' ? 'Maintenance' : 'Installation'}`
           div(class='box-text-cell')

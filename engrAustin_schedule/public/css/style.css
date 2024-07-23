@@ -449,13 +449,13 @@ textarea{
 }
 .alert--success {
   background-color: #20bf6b;
+
 }
 .alert--error {
   background-color: #eb4d4b;
 }
 
-.invoice-field-item { height: 100px; overflow: auto; border: 1px solid #000;}
-.field-item { list-style-type: none; margin: 0; padding: 0; overflow-x: hidden; }
+.invoice-field-item { height: 100px; overflow: auto; border: 1px solid #000; font-size: small;}
 li { margin: 5; padding: 0; }
 label { display: block; color: WindowText; background-color: Window; margin: 2; padding: 0; width: 100%; }
 label:hover { background-color: Highlight; color: HighlightText; }
