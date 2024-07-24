@@ -457,5 +457,5 @@ textarea{
 
 .invoice-field-item { height: 100px; overflow: auto; border: 1px solid #000; font-size: small;}
 li { margin: 5; padding: 0; }
-label { display: block; color: WindowText; background-color: Window; margin: 2; padding: 0; width: 100%; }
+label { display: block; color: WindowText; background-color: Window; margin: 2; padding: 0; width: 100%; justify-content: space-between !important;}
 label:hover { background-color: Highlight; color: HighlightText; }

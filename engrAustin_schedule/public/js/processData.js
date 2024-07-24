@@ -142,5 +142,21 @@ export const unlinkResource = async(id,payid) => {
     console.log(error.response.data.message);
     showAlert('error',"Error Unlinking Invoice");
   }
-
 };
+
+export const deletePayment = async(id) => {
+  try {
+    const response = await axios({
+      method: 'DELETE',
+      url: `http://localhost:3000/api/v2/mundial/payments/${id}`
+    })
+    if(response.status === 204){
+      showAlert('success','Payment Successfully Deleted');
+      window.setTimeout(() => {
+        location.assign('/Payments/view');
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+}

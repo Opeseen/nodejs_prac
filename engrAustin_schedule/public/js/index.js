@@ -1,7 +1,8 @@
 import '@babel/polyfill';
 import {
   getAllJobs, getUnpaidInvoices, createInvoice, 
-  updateInvoice, deleteInvoice, unlinkResource, updatePayment
+  updateInvoice, deleteInvoice, unlinkResource, updatePayment,
+  deletePayment
 } 
 from './processData';
 
@@ -10,10 +11,10 @@ from './processData';
 const modifyInvoice = document.querySelector('.modify-resource-invoice');
 const removeInvoice = document.querySelector('.delete-resource-invoice');
 const postInvoice = document.querySelector('.create-resource-invoice');
-const unlinkInvoice = document.querySelectorAll('.unlink');
 
 // PAYMENTS
 const modifyPayment = document.querySelector('.modify-resource-payment');
+const removePayment = document.querySelector('.delete-resource-payment');
 
 // OTHERS 
 const job = document.querySelector('.jobs');
@@ -75,18 +76,9 @@ if (removeInvoice)
     const docid = document.getElementById('docid').value
 
     deleteInvoice(docid);
-});
+  });
 
-if(unlinkInvoice){
-  let invoice_id = null
-  const payid = document.getElementById('docid').value
-  for (let i = 0; i < unlinkInvoice.length; i++) {
-    unlinkInvoice[i].addEventListener("click", function(event) {
-      invoice_id = event.target.lastChild.innerText
-      unlinkResource(invoice_id,payid);
-    });
-  };
-}
+
 
 // PAYMENTS
 
@@ -129,4 +121,26 @@ if (modifyPayment){
     // UPDATE THE PAYMENT
     updatePayment(docid, tag, description, amount, date, checkedInvoiceValues);
   });
+
+  // SECTION 3
+  const unlinkInvoice = document.querySelectorAll('.unlink');
+  if (unlinkInvoice){
+    const payid = document.getElementById('docid').value
+    let invoice_id = null
+    for (let i = 0; i < unlinkInvoice.length; i++) {
+      unlinkInvoice[i].addEventListener("click", function(event) {
+        invoice_id = event.target.lastChild.innerText
+        unlinkResource(invoice_id,payid);
+      });
+    };
+  }
 }
+
+if (removePayment){
+  removePayment.addEventListener('submit', event => {
+    event.preventDefault();
+    const docid = document.getElementById('docid').value
+
+    deletePayment(docid);
+  });
+};
