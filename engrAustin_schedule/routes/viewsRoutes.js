@@ -12,6 +12,7 @@ router.get('/invoices/view', viewsController.getAllInvoices);
 router.get('/invoice/:id', viewsController.getInvoiceDetails);
 
 // Payment Route
+router.get('/payment/create', viewsController.createPayment);
 router.get('/payments/view', viewsController.getAllPayment);
 router.get('/payment/:id', viewsController.getPaymentDetails);
 

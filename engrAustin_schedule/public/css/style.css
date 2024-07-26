@@ -155,8 +155,8 @@ html {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  font-size: small;
-  text-transform: capitalize;
+  font-size: small !important;
+  text-transform: capitalize !important;
 }
 
 .dropdown:hover .nav__el  {color: orange;}
@@ -415,8 +415,8 @@ div a {
   width:  15.8rem;
   border-radius: 0.5rem;
   text-align: center;
-  text-transform: uppercase;
-  font-size: small;
+  text-transform: uppercase !important;
+  font-size: small !important;
 }
 
 .jobs{
@@ -427,7 +427,7 @@ div a {
 
 textarea{
   resize: none !important;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem !important;
 }
 
 .alert {
@@ -455,7 +455,7 @@ textarea{
   background-color: #eb4d4b !important;
 }
 
-.invoice-field-item { height: 100px; overflow: auto; border: 1px solid #000; font-size: small;}
+.invoice-field-item { height: 100px; overflow: auto; border: 1px solid #000; font-size: small; list-style-type: none;} 
 li { margin: 5; padding: 0; }
 label { display: block; color: WindowText; background-color: Window; margin: 2; padding: 0; width: 100%; justify-content: space-between !important;}
 label:hover { background-color: Highlight; color: HighlightText; }

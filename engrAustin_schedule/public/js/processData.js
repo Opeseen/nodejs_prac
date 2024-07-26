@@ -96,7 +96,32 @@ export const deleteInvoice = async(id) => {
   } catch (error) {
     showAlert('error',error.response.data.message);
   }
-}
+};
+
+export const createPayment = 
+async(tag, details, amount, date, invoices) => {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url:  'http://localhost:3000/api/v2/mundial/payments',
+      data: {
+        tag,
+        details,
+        amount,
+        date,
+        invoices
+      }
+    });
+    if(response.data.success){
+      showAlert('success','Payment Successfully Created');
+      window.setTimeout(() => {
+        location.reload();
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+};
 
 
 export const updatePayment = 
@@ -159,4 +184,4 @@ export const deletePayment = async(id) => {
   } catch (error) {
     showAlert('error',error.response.data.message);
   }
-}
+};

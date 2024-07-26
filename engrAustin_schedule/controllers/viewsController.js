@@ -41,6 +41,12 @@ const getInvoiceDetails = catchAsyncError(async(req, res, next) => {
   });
 });
 
+const createPayment = catchAsyncError(async(req, res) => {
+  res.status(httpStatus.OK).render('payment',{
+    title: 'Create Payment',
+  });
+});
+
 const getAllPayment = catchAsyncError(async(req, res) => {
   const payments = await paymentService.getAllPayment();
   res.status(httpStatus.OK).render('paymentOutline',{
@@ -74,6 +80,7 @@ module.exports = {
   createInvoice,
   getAllInvoices,
   getInvoiceDetails,
+  createPayment,
   getAllPayment,
   getPaymentDetails
 };
