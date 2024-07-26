@@ -30,6 +30,7 @@ const jobSchema = new mongoose.Schema(
       type: String,
       trim: true
     },
+    slug: String,
     createdAt: {
       type: Date,
       default: Date.now(),
@@ -39,6 +40,13 @@ const jobSchema = new mongoose.Schema(
 );
 
 jobSchema.plugin(toJson);
+
+// MIDDLEWARES EXECUTION
+
+jobSchema.pre('save', function(next) {
+  this.slug = slugify(this.jobID, { lower: true });
+  next();
+});
 
 const Job = mongoose.model('Job', jobSchema);
 

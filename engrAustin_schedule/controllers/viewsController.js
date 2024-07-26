@@ -17,6 +17,26 @@ const getAllJobs = catchAsyncError(async(req, res) => {
   });
 });
 
+const getJobDetails = catchAsyncError(async(req, res, next) => {
+  const jobid = req.params.id;
+  const job = await jobService.findOneJob(jobid);
+  if(!job) { return next(new ApiError("No Job Found", httpStatus.NOT_FOUND)) }
+  let jobLedger = await jobService.getJobLedger();
+
+  // Strignify and parse payment statistics to JSON before sending to the browser
+  paymentStatics = JSON.stringify(paymentStatics);
+  paymentStatics = JSON.parse(paymentStatics)
+
+  res.status(httpStatus.OK).render('paymentDetail',{
+    title: 'Payment Details',
+    paymentStaticsCount: paymentStatics.length > 0 ? paymentStatics.length : 0,
+    paymentStatics,
+    payment,
+  });
+  
+});
+
+
 const createInvoice = catchAsyncError(async(req, res) => {
   res.status(httpStatus.OK).render('invoice',{
     title: 'Create Invoice',

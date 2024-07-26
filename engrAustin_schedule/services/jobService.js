@@ -14,6 +14,11 @@ const getJob = async(jobId) => {
   return job;
 };
 
+const findOneJob = async(jobID) =>{
+  const job = await Job.findOne({jobID})
+  return job;
+};
+
 const getAllJobs = async() => {
   const jobs = await Job.find();
   return jobs;
@@ -71,6 +76,7 @@ const getJobLedger = async(Id) => {
 module.exports = {
   createJob,
   getJob,
+  findOneJob,
   getAllJobs,
   updateJob,
   deleteJob,
