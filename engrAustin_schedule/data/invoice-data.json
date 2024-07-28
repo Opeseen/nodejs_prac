@@ -1,18 +1,9 @@
 [{
-  "_id": {
-    "$oid": "669e8c680f86ad4018002e73"
-  },
+  "_id": "669e8c680f86ad4018002e73",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Paid",
-  "payment": [
-    {
-      "$oid": "669e95f890ade1599c05da92"
-    }
-  ],
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.703Z"
-  },
+  "payment": [],
   "invoiceNumber": "B11900",
   "description": "3 NEW ADDITIONAL TERMINALS FOR CANTEEN",
   "salesValue": 2844107.6,
@@ -24,20 +15,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8d2f0f86ad4018002e75"
-  },
+  "_id": "669e8d2f0f86ad4018002e75",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Paid",
-  "payment": [
-    {
-      "$oid": "669e95f890ade1599c05da92"
-    }
-  ],
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.703Z"
-  },
+  "payment": [],
   "invoiceNumber": "B11901",
   "description": "NESTLE FACTORY AGBARA INSTALLATION OF HOURS E1-FP",
   "salesValue": 855604.29,
@@ -49,20 +31,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8dbe90ade1599c05da23"
-  },
+  "_id": "669e8dbe90ade1599c05da23",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Paid",
-  "payment": [
-    {
-      "$oid": "669e97b790ade1599c05da9c"
-    }
-  ],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
+  "payment": [],
   "invoiceNumber": "B11902",
   "description": "QUATERLY CCTV MAINTENANCE",
   "salesValue": 5735662.5,
@@ -74,16 +47,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8e6690ade1599c05da25"
-  },
+  "_id": "669e8e6690ade1599c05da25",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11903",
   "description": "NETWORK ADDRESSABLE THERMAL XPRINTER 80X",
   "salesValue": 1642492.5,
@@ -95,20 +63,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8f9090ade1599c05da2f"
-  },
+  "_id": "669e8f9090ade1599c05da2f",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Paid",
-  "payment": [
-    {
-      "$oid": "669e988090ade1599c05daa2"
-    }
-  ],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
+  "payment": [],
   "invoiceNumber": "B11904",
   "description": "DRUM OF FULL COPPER TWISTED CAT6 CABLE",
   "salesValue": 188603.38,
@@ -120,16 +79,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8fcf90ade1599c05da31"
-  },
+  "_id": "669e8fcf90ade1599c05da31",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11905",
   "description": "Q4 2023 CCTV MAINTENANCE(DEC #23/FEB '24",
   "salesValue": 903645,
@@ -141,16 +95,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8ffa90ade1599c05da35"
-  },
+  "_id": "669e8ffa90ade1599c05da35",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11906",
   "description": "4TH QTR FOR FACTORY CCTV MAINTENANCE & QUARTERLY TURNSILE MAINTENANCE",
   "salesValue": 2065075,
@@ -162,16 +111,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e903390ade1599c05da37"
-  },
+  "_id": "669e903390ade1599c05da37",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11907",
   "description": "ADDITIONAL WORKS FOR INSTALLATION OF BIOMETRIC TERMINAL",
   "salesValue": 465624.87,
@@ -183,16 +127,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e910a90ade1599c05da3c"
-  },
+  "_id": "669e910a90ade1599c05da3c",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11908",
   "description": "ONE TIME OVERHAUL OF CANTEEN TERMINAL",
   "salesValue": 991671.38,
@@ -204,16 +143,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e91b190ade1599c05da50"
-  },
+  "_id": "669e91b190ade1599c05da50",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11909",
   "description": "CANTEEN BIOMETRIC MTCE",
   "salesValue": 991671.36,
@@ -225,16 +159,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e921590ade1599c05da52"
-  },
+  "_id": "669e921590ade1599c05da52",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11910",
   "description": "SAGAMU CANTEEN MANAGEMENT",
   "salesValue": 4306068.38,
@@ -246,16 +175,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e923790ade1599c05da54"
-  },
+  "_id": "669e923790ade1599c05da54",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11911",
   "description": "SUPPLY AND INSTALLATION OF CCTV ITEMS",
   "salesValue": 2033346.38,
@@ -267,16 +191,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e925f90ade1599c05da56"
-  },
+  "_id": "669e925f90ade1599c05da56",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11912",
   "description": "NESTLE CANTEEN SYSTEM UPGRADE",
   "salesValue": 806071.55,
@@ -288,16 +207,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e928b90ade1599c05da58"
-  },
+  "_id": "669e928b90ade1599c05da58",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11913",
   "description": "CANTEEN BIMETRIC MANAGEMENT MAINTENANCE",
   "salesValue": 2907321,
@@ -309,16 +223,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e92ac90ade1599c05da5a"
-  },
+  "_id": "669e92ac90ade1599c05da5a",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11914",
   "description": "INSTALLATN & COMMISSNG BIOMETRIC ACCESS",
   "salesValue": 2681824.86,
@@ -330,16 +239,11 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e92d990ade1599c05da5c"
-  },
+  "_id": "669e92d990ade1599c05da5c",
   "witholdingTaxPercent": 5,
   "spentValue": 0,
   "invoicePaymentStatus": "Unpaid",
   "payment": [],
-  "createdAt": {
-    "$date": "2024-07-22T16:48:53.791Z"
-  },
   "invoiceNumber": "B11915",
   "description": "THERMAL XPRINTER XPH300L WITH USB PORT",
   "salesValue": 197015.25,

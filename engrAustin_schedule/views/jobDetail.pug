@@ -3,63 +3,55 @@ extends base
 block content
   main
     h2.page__subject Job details
-    - const invoiceCount = paymentStaticsCount
+    - const jobCount = jobStaticsCount
     
-    if invoiceCount > 0
+    if jobCount > 0
       .table-wrapper
         .heading__title Job Ledger
         table.table-data
           tr
-            th Description
             th.th__size-small Invoice
-            th.th__size-small Class
-            th.th__size-small Status
-            th.th__size-medium Partner Payment
-            th.th__size-small action
-          each invoice in paymentStatics
-            tr
-              td= invoice.description
-              td= invoice.invoiceNumber
-              td= invoice.invoiceClass
-              td= invoice.invoicePaymentStatus
-              td= invoice.partnerPayment.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
-              td
-                .btn--red.unlink Unlink
-                  p(hidden)= invoice._id
+            th Description
+            th.th__size-small sales value
+            th.th__size-medium spent value
+          //- each invoice in paymentStatics
+          //-   tr
+          //-     td= invoice.description
+          //-     td= invoice.invoiceNumber
+          //-     td= invoice.invoiceClass
+          //-     td= invoice.invoicePaymentStatus
+          //-     td= invoice.partnerPayment.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+          //-     td
+          //-       .btn--red.unlink Unlink
+          //-         p(hidden)= invoice._id
     else
-      p.empty__record no invoice record exist for this payment!
+      p.empty__record no ledger record exist for this job!
     // Horizontal Line
     .line &nbsp;
 
-    .resource-details.modify-resource-payment
-      .heading__title Payment Info
+    .resource-details.modify-resource-job
+      .heading__title Job Info
       form
         .form__div
           div(class='box-text-cell')
-            p.box-title payment tag
-            input.input-style-one#tag(type='text',value=`${payment.tag}`)
+            p.box-title job Id
+            input.input-style-one#jobid(type='text',value=`${job.jobID}`)
           div(class='box-text-cell')
             p.box-title description
-            textarea#desc(rows='3' cols='48')= payment.details
+            textarea#desc(rows='3' cols='48')= job.jobDescription
           div(class='box-text-cell')
-            p.box-title amount
-            input.input-style-one#amount(type='number',step='any',value=`${payment.amount}`)
+            p.box-title PO
+            input.input-style-one#po(type='number',step='any',value=`${job.jobPO}`)
           div(class='box-text-cell')
-            p.box-title date
-            input.input-style-one#date(type='date', value=`${payment.date.toLocaleDateString('en-CA')}`)
+            p.box-title type
+            input.input-style-one#date(type='text', value=`${job.jobType}`)
           div(class='box-text-cell')
-            input.input-style-one#docid(type='hidden',value=`${payment.id}`)
-        .line &nbsp;
-        .heading__title Link Invoice
-          br
-        .modify-field-resource
-          ul.invoice-field-item
-            //- POPULATE UNPAID INVOICES HERE
+            input.input-style-one#docid(type='hidden',value=`${job.id}`)
         .form__cta
           button.btn--cta--save Save Settings
         .line &nbsp;
-    .resource-details.delete-resource-payment 
-      .heading__title Delete Payment
+    .resource-details.delete-resource-job 
+      .heading__title Delete Job
       form
         .warning Warning: This action cannot be undone. Dont click the below button on accident!
         .form__cta

@@ -21,19 +21,18 @@ const getJobDetails = catchAsyncError(async(req, res, next) => {
   const jobid = req.params.id;
   const job = await jobService.findOneJob(jobid);
   if(!job) { return next(new ApiError("No Job Found", httpStatus.NOT_FOUND)) }
-  let jobLedger = await jobService.getJobLedger();
+  let jobStatics = await jobService.getJobLedger(job.id);
 
-  // Strignify and parse payment statistics to JSON before sending to the browser
-  paymentStatics = JSON.stringify(paymentStatics);
-  paymentStatics = JSON.parse(paymentStatics)
+  // Strignify and parse job statistics to JSON before sending to the browser
+  jobStatics = JSON.stringify(jobStatics);
+  jobStatics = JSON.parse(jobStatics)
 
-  res.status(httpStatus.OK).render('paymentDetail',{
-    title: 'Payment Details',
-    paymentStaticsCount: paymentStatics.length > 0 ? paymentStatics.length : 0,
-    paymentStatics,
-    payment,
+  res.status(httpStatus.OK).render('jobDetail',{
+    title: 'Job Details',
+    jobStaticsCount: jobStatics.length > 0 ? jobStatics.length : 0,
+    jobStatics,
+    job,
   });
-  
 });
 
 
@@ -97,6 +96,7 @@ const getPaymentDetails = catchAsyncError(async(req, res, next) => {
 module.exports = {
   displayHomePage,
   getAllJobs,
+  getJobDetails,
   createInvoice,
   getAllInvoices,
   getInvoiceDetails,

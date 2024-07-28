@@ -1,7 +1,5 @@
 [{
-  "_id": {
-    "$oid": "6694fef572e5011dd018ee2f"
-  },
+  "_id": "6694fef572e5011dd018ee2f",
   "jobID": "NESTLE-891",
   "jobType": "Product",
   "jobDescription": "SAGAMU CANTEEN MANAGEMENT",
@@ -9,12 +7,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e82f249eeb325907f5874"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T15:35:41.642Z"
-  },
+  "_id": "669e82f249eeb325907f5874",
   "jobID": "NESTLE-284",
   "jobType": "Product",
   "jobDescription": "3 NEW ADDITIONAL TERMINALS FOR CANTEEN",
@@ -22,12 +15,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e83c949eeb325907f587b"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T15:35:41.642Z"
-  },
+  "_id": "669e83c949eeb325907f587b",
   "jobID": "NESTLE-398",
   "jobType": "Product",
   "jobDescription": "NESTLE FACTORY AGBARA INSTALLATION OF HOURS",
@@ -35,12 +23,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e83fc49eeb325907f587d"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T15:35:41.642Z"
-  },
+  "_id": "669e83fc49eeb325907f587d",
   "jobID": "NESTLE-698",
   "jobType": "Service",
   "jobDescription": "QUATERLY CCTV MAINTENANCE ",
@@ -48,12 +31,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e841b49eeb325907f587f"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T15:35:41.642Z"
-  },
+  "_id": "669e841b49eeb325907f587f",
   "jobID": "NESTLE-549",
   "jobType": "Service",
   "jobDescription": "NETWORK ADDRESSABLE THERMAL XPRINTER 80X",
@@ -61,12 +39,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e84840f86ad4018002e42"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e84840f86ad4018002e42",
   "jobID": "NESTLE-616",
   "jobType": "Service",
   "jobDescription": "DRUM OF FULL COPPER TWISTED CAT6 CABLE",
@@ -74,12 +47,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e84ab0f86ad4018002e44"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e84ab0f86ad4018002e44",
   "jobID": "NESTLE-672",
   "jobType": "Service",
   "jobDescription": "Q4 2023 CCTV MAINTENANCE(DEC #23/FEB '24",
@@ -87,12 +55,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e84d50f86ad4018002e46"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e84d50f86ad4018002e46",
   "jobID": "NESTLE-986",
   "jobType": "Service",
   "jobDescription": "4TH QTR FOR FACTORY CCTV MAINTENANCE",
@@ -100,12 +63,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e85520f86ad4018002e48"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e85520f86ad4018002e48",
   "jobID": "NESTLE-306",
   "jobType": "Service",
   "jobDescription": "INSTALLATION OF BIOMETRIC TERMINALS",
@@ -113,12 +71,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e85700f86ad4018002e4a"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e85700f86ad4018002e4a",
   "jobID": "NESTLE-021",
   "jobType": "Service",
   "jobDescription": "ONE TIME OVERHAUL OF CANTEEN TERMINAL",
@@ -126,12 +79,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e858b0f86ad4018002e4c"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e858b0f86ad4018002e4c",
   "jobID": "NESTLE-729",
   "jobType": "Service",
   "jobDescription": "CANTEEN BIOMETRIC MTCE",
@@ -139,12 +87,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e85d60f86ad4018002e50"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e85d60f86ad4018002e50",
   "jobID": "NESTLE-243",
   "jobType": "Service",
   "jobDescription": "SUPPLY AND INSTALLATION OF CCTV ITEMS",
@@ -152,12 +95,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e85f80f86ad4018002e52"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e85f80f86ad4018002e52",
   "jobID": "NESTLE-608",
   "jobType": "Service",
   "jobDescription": "NESTLE CANTEEN SYSTEM UPGRADE",
@@ -165,12 +103,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e86180f86ad4018002e54"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e86180f86ad4018002e54",
   "jobID": "NESTLE-374",
   "jobType": "Service",
   "jobDescription": "CANTEEN BIMETRIC MANAGEMENT MAINTENANCE",
@@ -178,12 +111,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e86aa0f86ad4018002e56"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e86aa0f86ad4018002e56",
   "jobID": "NESTLE-773",
   "jobType": "Service",
   "jobDescription": "INSTALLATN & COMMISSNG BIOMETRIC ACCESS",
@@ -191,12 +119,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e871e0f86ad4018002e58"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e871e0f86ad4018002e58",
   "jobID": "NESTLE-484",
   "jobType": "Service",
   "jobDescription": "THERMAL XPRINTER XPH300L WITH USB PORT",
@@ -204,12 +127,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e89e10f86ad4018002e64"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e89e10f86ad4018002e64",
   "jobID": "NESTLE-4151",
   "jobType": "Service",
   "jobDescription": "SUPPLY OF NETWORK DEVICES FOR DMO ENERGY",
@@ -217,12 +135,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8a080f86ad4018002e66"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e8a080f86ad4018002e66",
   "jobID": "NESTLE-9342",
   "jobType": "Service",
   "jobDescription": "OFFER FOR SUPPLY OF THERMAL RECEIPT PRINTER",
@@ -230,12 +143,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8a510f86ad4018002e68"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e8a510f86ad4018002e68",
   "jobID": "NESTLE-5657",
   "jobType": "Service",
   "jobDescription": "FAULTY CCTV EQUIPMENT NESTLE FACTORY AGBARA",
@@ -243,12 +151,7 @@
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "669e8ac90f86ad4018002e6a"
-  },
-  "createdAt": {
-    "$date": "2024-07-22T16:10:34.640Z"
-  },
+  "_id": "669e8ac90f86ad4018002e6a",
   "jobID": "NESTLE-200",
   "jobType": "Service",
   "jobDescription": "CCTV INSTALLATION IN KANO BRANCH",

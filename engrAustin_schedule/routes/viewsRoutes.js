@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/',viewsController.displayHomePage);
 router.get('/jobs/view',viewsController.getAllJobs);
+router.get('/job/:id',viewsController.getJobDetails)
 
 // Invoice Route
 router.get('/invoice/create', viewsController.createInvoice);

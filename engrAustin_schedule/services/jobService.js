@@ -70,7 +70,6 @@ const getJobLedger = async(Id) => {
   ]);
   
   return jobStatics;
-
 };
 
 module.exports = {
