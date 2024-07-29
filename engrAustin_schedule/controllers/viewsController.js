@@ -35,7 +35,6 @@ const getJobDetails = catchAsyncError(async(req, res, next) => {
   });
 });
 
-
 const createInvoice = catchAsyncError(async(req, res) => {
   res.status(httpStatus.OK).render('invoice',{
     title: 'Create Invoice',

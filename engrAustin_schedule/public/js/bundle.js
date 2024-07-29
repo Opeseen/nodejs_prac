@@ -12345,7 +12345,7 @@ var showAlert = exports.showAlert = function showAlert(type, msg) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updatePayment = exports.updateInvoice = exports.unlinkResource = exports.getUnpaidInvoices = exports.getAllJobs = exports.deletePayment = exports.deleteInvoice = exports.createPayment = exports.createInvoice = void 0;
+exports.updatePayment = exports.updateJob = exports.updateInvoice = exports.unlinkResource = exports.getUnpaidInvoices = exports.getAllJobs = exports.deletePayment = exports.deleteJob = exports.deleteInvoice = exports.createPayment = exports.createInvoice = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 var _alert = require("./alert");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -12391,46 +12391,50 @@ var getAllJobs = exports.getAllJobs = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
-var getUnpaidInvoices = exports.getUnpaidInvoices = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-    var result;
+var updateJob = exports.updateJob = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(id, jobID, jobType, jobDescription, jobPO) {
+    var response;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           _context2.prev = 0;
           _context2.next = 3;
           return (0, _axios.default)({
-            method: 'GET',
-            url: 'http://localhost:3000/api/v2/mundial/invoices?invoicePaymentStatus=Unpaid'
+            method: 'PATCH',
+            url: "http://localhost:3000/api/v2/mundial/jobs/".concat(id),
+            data: {
+              jobID: jobID,
+              jobType: jobType,
+              jobDescription: jobDescription,
+              jobPO: jobPO
+            }
           });
         case 3:
-          result = _context2.sent;
-          if (!(result.data.invoices.length > 0)) {
-            _context2.next = 6;
-            break;
+          response = _context2.sent;
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', 'Job Successfully Updated');
+            window.setTimeout(function () {
+              location.assign('/jobs/view');
+            }, 2000);
           }
-          return _context2.abrupt("return", result.data.invoices);
-        case 6:
-          ;
-          _context2.next = 13;
+          _context2.next = 10;
           break;
-        case 9:
-          _context2.prev = 9;
+        case 7:
+          _context2.prev = 7;
           _context2.t0 = _context2["catch"](0);
-          console.log(_context2.t0.response.data.message);
-          (0, _alert.showAlert)('error', "Error Fetching Invoices");
-        case 13:
+          (0, _alert.showAlert)('error', _context2.t0.response.data.message);
+        case 10:
         case "end":
           return _context2.stop();
       }
-    }, _callee2, null, [[0, 9]]);
+    }, _callee2, null, [[0, 7]]);
   }));
-  return function getUnpaidInvoices() {
+  return function updateJob(_x, _x2, _x3, _x4, _x5) {
     return _ref2.apply(this, arguments);
   };
 }();
-var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
+var deleteJob = exports.deleteJob = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(id) {
     var response;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
@@ -12438,24 +12442,15 @@ var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
           _context3.prev = 0;
           _context3.next = 3;
           return (0, _axios.default)({
-            method: 'POST',
-            url: 'http://localhost:3000/api/v2/mundial/invoices',
-            data: {
-              invoiceNumber: invoiceNumber,
-              description: description,
-              salesValue: salesValue,
-              spentValue: spentValue,
-              job: job,
-              invoiceClass: invoiceClass,
-              witholdingTaxPercent: witholdingTaxPercent
-            }
+            method: 'DELETE',
+            url: "http://localhost:3000/api/v2/mundial/jobs/".concat(id)
           });
         case 3:
           response = _context3.sent;
-          if (response.data.success) {
-            (0, _alert.showAlert)('success', 'Invoice Successfully Created');
+          if (response.status === 204) {
+            (0, _alert.showAlert)('success', 'Job Successfully Deleted');
             window.setTimeout(function () {
-              location.reload();
+              location.assign('/jobs/view');
             }, 2000);
           }
           _context3.next = 10;
@@ -12470,21 +12465,59 @@ var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
       }
     }, _callee3, null, [[0, 7]]);
   }));
-  return function createInvoice(_x, _x2, _x3, _x4, _x5, _x6, _x7) {
+  return function deleteJob(_x6) {
     return _ref3.apply(this, arguments);
   };
 }();
-var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
-  var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(id, invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
-    var response;
+var getUnpaidInvoices = exports.getUnpaidInvoices = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+    var result;
     return _regeneratorRuntime().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
           _context4.prev = 0;
           _context4.next = 3;
           return (0, _axios.default)({
-            method: 'PATCH',
-            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id),
+            method: 'GET',
+            url: 'http://localhost:3000/api/v2/mundial/invoices?invoicePaymentStatus=Unpaid'
+          });
+        case 3:
+          result = _context4.sent;
+          if (!(result.data.invoices.length > 0)) {
+            _context4.next = 6;
+            break;
+          }
+          return _context4.abrupt("return", result.data.invoices);
+        case 6:
+          ;
+          _context4.next = 13;
+          break;
+        case 9:
+          _context4.prev = 9;
+          _context4.t0 = _context4["catch"](0);
+          console.log(_context4.t0.response.data.message);
+          (0, _alert.showAlert)('error', "Error Fetching Invoices");
+        case 13:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4, null, [[0, 9]]);
+  }));
+  return function getUnpaidInvoices() {
+    return _ref4.apply(this, arguments);
+  };
+}();
+var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
+  var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
+    var response;
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.prev = 0;
+          _context5.next = 3;
+          return (0, _axios.default)({
+            method: 'POST',
+            url: 'http://localhost:3000/api/v2/mundial/invoices',
             data: {
               invoiceNumber: invoiceNumber,
               description: description,
@@ -12496,47 +12529,11 @@ var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
             }
           });
         case 3:
-          response = _context4.sent;
-          if (response.data.success) {
-            (0, _alert.showAlert)('success', 'Invoice Successfully Updated');
-            window.setTimeout(function () {
-              location.assign('/invoices/view');
-            }, 2000);
-          }
-          _context4.next = 10;
-          break;
-        case 7:
-          _context4.prev = 7;
-          _context4.t0 = _context4["catch"](0);
-          (0, _alert.showAlert)('error', _context4.t0.response.data.message);
-        case 10:
-        case "end":
-          return _context4.stop();
-      }
-    }, _callee4, null, [[0, 7]]);
-  }));
-  return function updateInvoice(_x8, _x9, _x10, _x11, _x12, _x13, _x14, _x15) {
-    return _ref4.apply(this, arguments);
-  };
-}();
-var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
-  var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(id) {
-    var response;
-    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
-        case 0:
-          _context5.prev = 0;
-          _context5.next = 3;
-          return (0, _axios.default)({
-            method: 'DELETE',
-            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id)
-          });
-        case 3:
           response = _context5.sent;
-          if (response.status === 204) {
-            (0, _alert.showAlert)('success', 'Invoice Successfully Deleted');
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', 'Invoice Successfully Created');
             window.setTimeout(function () {
-              location.assign('/invoices/view');
+              location.reload();
             }, 2000);
           }
           _context5.next = 10;
@@ -12551,12 +12548,12 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
       }
     }, _callee5, null, [[0, 7]]);
   }));
-  return function deleteInvoice(_x16) {
+  return function createInvoice(_x7, _x8, _x9, _x10, _x11, _x12, _x13) {
     return _ref5.apply(this, arguments);
   };
 }();
-var createPayment = exports.createPayment = /*#__PURE__*/function () {
-  var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(tag, details, amount, date, invoices) {
+var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
+  var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(id, invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
     var response;
     return _regeneratorRuntime().wrap(function _callee6$(_context6) {
       while (1) switch (_context6.prev = _context6.next) {
@@ -12564,22 +12561,24 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
           _context6.prev = 0;
           _context6.next = 3;
           return (0, _axios.default)({
-            method: 'POST',
-            url: 'http://localhost:3000/api/v2/mundial/payments',
+            method: 'PATCH',
+            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id),
             data: {
-              tag: tag,
-              details: details,
-              amount: amount,
-              date: date,
-              invoices: invoices
+              invoiceNumber: invoiceNumber,
+              description: description,
+              salesValue: salesValue,
+              spentValue: spentValue,
+              job: job,
+              invoiceClass: invoiceClass,
+              witholdingTaxPercent: witholdingTaxPercent
             }
           });
         case 3:
           response = _context6.sent;
           if (response.data.success) {
-            (0, _alert.showAlert)('success', 'Payment Successfully Created');
+            (0, _alert.showAlert)('success', 'Invoice Successfully Updated');
             window.setTimeout(function () {
-              location.reload();
+              location.assign('/invoices/view');
             }, 2000);
           }
           _context6.next = 10;
@@ -12594,12 +12593,12 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
       }
     }, _callee6, null, [[0, 7]]);
   }));
-  return function createPayment(_x17, _x18, _x19, _x20, _x21) {
+  return function updateInvoice(_x14, _x15, _x16, _x17, _x18, _x19, _x20, _x21) {
     return _ref6.apply(this, arguments);
   };
 }();
-var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
-  var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(id, tag, details, amount, date, invoices) {
+var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
+  var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(id) {
     var response;
     return _regeneratorRuntime().wrap(function _callee7$(_context7) {
       while (1) switch (_context7.prev = _context7.next) {
@@ -12607,23 +12606,15 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
           _context7.prev = 0;
           _context7.next = 3;
           return (0, _axios.default)({
-            method: 'PATCH',
-            url: "http://localhost:3000/api/v2/mundial/payments/".concat(id),
-            data: {
-              id: id,
-              tag: tag,
-              details: details,
-              amount: amount,
-              date: date,
-              invoices: invoices
-            }
+            method: 'DELETE',
+            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id)
           });
         case 3:
           response = _context7.sent;
-          if (response.data.success) {
-            (0, _alert.showAlert)('success', 'Payment Successfully Updated');
+          if (response.status === 204) {
+            (0, _alert.showAlert)('success', 'Invoice Successfully Deleted');
             window.setTimeout(function () {
-              location.reload();
+              location.assign('/invoices/view');
             }, 2000);
           }
           _context7.next = 10;
@@ -12638,12 +12629,12 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
       }
     }, _callee7, null, [[0, 7]]);
   }));
-  return function updatePayment(_x22, _x23, _x24, _x25, _x26, _x27) {
+  return function deleteInvoice(_x22) {
     return _ref7.apply(this, arguments);
   };
 }();
-var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
-  var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(id, payid) {
+var createPayment = exports.createPayment = /*#__PURE__*/function () {
+  var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(tag, details, amount, date, invoices) {
     var response;
     return _regeneratorRuntime().wrap(function _callee8$(_context8) {
       while (1) switch (_context8.prev = _context8.next) {
@@ -12651,36 +12642,42 @@ var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
           _context8.prev = 0;
           _context8.next = 3;
           return (0, _axios.default)({
-            method: 'PATCH',
-            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id, "/payment/").concat(payid, "/unlink")
+            method: 'POST',
+            url: 'http://localhost:3000/api/v2/mundial/payments',
+            data: {
+              tag: tag,
+              details: details,
+              amount: amount,
+              date: date,
+              invoices: invoices
+            }
           });
         case 3:
           response = _context8.sent;
           if (response.data.success) {
-            (0, _alert.showAlert)('success', 'Invoice Successfully Unlink');
+            (0, _alert.showAlert)('success', 'Payment Successfully Created');
             window.setTimeout(function () {
               location.reload();
-            }, 1000);
+            }, 2000);
           }
-          _context8.next = 11;
+          _context8.next = 10;
           break;
         case 7:
           _context8.prev = 7;
           _context8.t0 = _context8["catch"](0);
-          console.log(_context8.t0.response.data.message);
-          (0, _alert.showAlert)('error', "Error Unlinking Invoice");
-        case 11:
+          (0, _alert.showAlert)('error', _context8.t0.response.data.message);
+        case 10:
         case "end":
           return _context8.stop();
       }
     }, _callee8, null, [[0, 7]]);
   }));
-  return function unlinkResource(_x28, _x29) {
+  return function createPayment(_x23, _x24, _x25, _x26, _x27) {
     return _ref8.apply(this, arguments);
   };
 }();
-var deletePayment = exports.deletePayment = /*#__PURE__*/function () {
-  var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(id) {
+var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
+  var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(id, tag, details, amount, date, invoices) {
     var response;
     return _regeneratorRuntime().wrap(function _callee9$(_context9) {
       while (1) switch (_context9.prev = _context9.next) {
@@ -12688,15 +12685,23 @@ var deletePayment = exports.deletePayment = /*#__PURE__*/function () {
           _context9.prev = 0;
           _context9.next = 3;
           return (0, _axios.default)({
-            method: 'DELETE',
-            url: "http://localhost:3000/api/v2/mundial/payments/".concat(id)
+            method: 'PATCH',
+            url: "http://localhost:3000/api/v2/mundial/payments/".concat(id),
+            data: {
+              id: id,
+              tag: tag,
+              details: details,
+              amount: amount,
+              date: date,
+              invoices: invoices
+            }
           });
         case 3:
           response = _context9.sent;
-          if (response.status === 204) {
-            (0, _alert.showAlert)('success', 'Payment Successfully Deleted');
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', 'Payment Successfully Updated');
             window.setTimeout(function () {
-              location.assign('/Payments/view');
+              location.reload();
             }, 2000);
           }
           _context9.next = 10;
@@ -12711,8 +12716,81 @@ var deletePayment = exports.deletePayment = /*#__PURE__*/function () {
       }
     }, _callee9, null, [[0, 7]]);
   }));
-  return function deletePayment(_x30) {
+  return function updatePayment(_x28, _x29, _x30, _x31, _x32, _x33) {
     return _ref9.apply(this, arguments);
+  };
+}();
+var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
+  var _ref10 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10(id, payid) {
+    var response;
+    return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+      while (1) switch (_context10.prev = _context10.next) {
+        case 0:
+          _context10.prev = 0;
+          _context10.next = 3;
+          return (0, _axios.default)({
+            method: 'PATCH',
+            url: "http://localhost:3000/api/v2/mundial/invoices/".concat(id, "/payment/").concat(payid, "/unlink")
+          });
+        case 3:
+          response = _context10.sent;
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', 'Invoice Successfully Unlink');
+            window.setTimeout(function () {
+              location.reload();
+            }, 1000);
+          }
+          _context10.next = 11;
+          break;
+        case 7:
+          _context10.prev = 7;
+          _context10.t0 = _context10["catch"](0);
+          console.log(_context10.t0.response.data.message);
+          (0, _alert.showAlert)('error', "Error Unlinking Invoice");
+        case 11:
+        case "end":
+          return _context10.stop();
+      }
+    }, _callee10, null, [[0, 7]]);
+  }));
+  return function unlinkResource(_x34, _x35) {
+    return _ref10.apply(this, arguments);
+  };
+}();
+var deletePayment = exports.deletePayment = /*#__PURE__*/function () {
+  var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11(id) {
+    var response;
+    return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+      while (1) switch (_context11.prev = _context11.next) {
+        case 0:
+          _context11.prev = 0;
+          _context11.next = 3;
+          return (0, _axios.default)({
+            method: 'DELETE',
+            url: "http://localhost:3000/api/v2/mundial/payments/".concat(id)
+          });
+        case 3:
+          response = _context11.sent;
+          if (response.status === 204) {
+            (0, _alert.showAlert)('success', 'Payment Successfully Deleted');
+            window.setTimeout(function () {
+              location.assign('/Payments/view');
+            }, 2000);
+          }
+          _context11.next = 10;
+          break;
+        case 7:
+          _context11.prev = 7;
+          _context11.t0 = _context11["catch"](0);
+          (0, _alert.showAlert)('error', _context11.t0.response.data.message);
+        case 10:
+        case "end":
+          return _context11.stop();
+      }
+    }, _callee11, null, [[0, 7]]);
+  }));
+  return function deletePayment(_x36) {
+    return _ref11.apply(this, arguments);
   };
 }();
 },{"axios":"../../node_modules/axios/index.js","./alert":"alert.js"}],"index.js":[function(require,module,exports) {
@@ -12859,8 +12937,10 @@ var modifyPayment = document.querySelector('.modify-resource-payment');
 var removePayment = document.querySelector('.delete-resource-payment');
 var postPayment = document.querySelector('.create-resource-payment');
 
-// OTHERS 
+// JOBS 
 var job = document.querySelector('.jobs');
+var modifyJob = document.querySelector('.modify-resource-job');
+var removeJob = document.querySelector('.delete-resource-job');
 
 // JOBS
 if (job) {
@@ -12876,6 +12956,26 @@ if (job) {
         }
       });
     }
+  });
+}
+;
+if (modifyJob) {
+  modifyJob.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var jobid = document.getElementById('jobid').value;
+    var description = document.getElementById('desc').value;
+    var po = document.getElementById('podoc').value;
+    var jobtype = document.getElementById('jobtype').value || 0;
+    var id = document.getElementById('docid').value;
+    (0, _processData.updateJob)(id, jobid, jobtype, description, po);
+  });
+}
+;
+if (removeJob) {
+  removeJob.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var id = document.getElementById('docid').value;
+    (0, _processData.deleteJob)(id);
   });
 }
 ;
@@ -13048,7 +13148,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51887" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59077" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -1,8 +1,8 @@
 import '@babel/polyfill';
 import {
-  getAllJobs, getUnpaidInvoices, createInvoice, 
-  updateInvoice, deleteInvoice, unlinkResource, updatePayment,
-  deletePayment,createPayment
+  getAllJobs, updateJob, deleteJob, getUnpaidInvoices, 
+  createInvoice, updateInvoice, deleteInvoice, unlinkResource, 
+  updatePayment, deletePayment,createPayment
 } 
 from './processData';
 
@@ -17,8 +17,10 @@ const modifyPayment = document.querySelector('.modify-resource-payment');
 const removePayment = document.querySelector('.delete-resource-payment');
 const postPayment = document.querySelector('.create-resource-payment');
 
-// OTHERS 
+// JOBS 
 const job = document.querySelector('.jobs');
+const modifyJob = document.querySelector('.modify-resource-job');
+const removeJob = document.querySelector('.delete-resource-job')
 
 
 // JOBS
@@ -39,6 +41,29 @@ if(job){
     }
   )
 };
+
+if(modifyJob){
+  modifyJob.addEventListener('submit', event => {
+    event.preventDefault();
+    const jobid = document.getElementById('jobid').value;
+    const description = document.getElementById('desc').value;
+    const po = document.getElementById('podoc').value;
+    const jobtype = document.getElementById('jobtype').value || 0;
+    const id = document.getElementById('docid').value;
+    
+    updateJob(id,jobid,jobtype,description,po);
+  });
+};
+
+if (removeJob){
+  removeJob.addEventListener('submit', event => {
+    event.preventDefault();
+    const id = document.getElementById('docid').value
+
+    deleteJob(id);
+  });
+};
+
 
 // INVOICES
 

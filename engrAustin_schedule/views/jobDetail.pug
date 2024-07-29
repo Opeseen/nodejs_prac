@@ -14,16 +14,31 @@ block content
             th Description
             th.th__size-small sales value
             th.th__size-medium spent value
-          //- each invoice in paymentStatics
-          //-   tr
-          //-     td= invoice.description
-          //-     td= invoice.invoiceNumber
-          //-     td= invoice.invoiceClass
-          //-     td= invoice.invoicePaymentStatus
-          //-     td= invoice.partnerPayment.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
-          //-     td
-          //-       .btn--red.unlink Unlink
-          //-         p(hidden)= invoice._id
+            th.th__size-small net
+          each invoice in jobStatics[0].details
+            tr
+              td= invoice.invoiceNumber
+              td= invoice.description
+              td= invoice.salesValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+              td= invoice.spentValue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+              td= undefined
+
+          each invoice in jobStatics
+            tr
+              td
+              td
+              td
+              td
+              td
+          tr
+            td= undefined 
+            td Grand Total
+            td= jobStatics[0].totalRevenue.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= jobStatics[0].totalExpenses.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+            td= jobStatics[0].NetProfitOrLoss.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+
+        
+
     else
       p.empty__record no ledger record exist for this job!
     // Horizontal Line
@@ -41,10 +56,12 @@ block content
             textarea#desc(rows='3' cols='48')= job.jobDescription
           div(class='box-text-cell')
             p.box-title PO
-            input.input-style-one#po(type='number',step='any',value=`${job.jobPO}`)
+            input.input-style-one#podoc(type='number',step='any',value=`${job.jobPO}`)
           div(class='box-text-cell')
             p.box-title type
-            input.input-style-one#date(type='text', value=`${job.jobType}`)
+            select.select-style-one#jobtype(name='type')
+              option= job.jobType
+              option= `${job.jobType === 'Product' ? 'Service' : 'Product'}`
           div(class='box-text-cell')
             input.input-style-one#docid(type='hidden',value=`${job.id}`)
         .form__cta

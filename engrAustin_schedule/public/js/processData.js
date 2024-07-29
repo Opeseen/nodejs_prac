@@ -14,6 +14,47 @@ export const getAllJobs = async() => {
   }
 };
 
+export const updateJob = 
+async(id, jobID, jobType, jobDescription, jobPO) => {
+  try {
+    const response = await axios({
+      method: 'PATCH',
+      url: `http://localhost:3000/api/v2/mundial/jobs/${id}`,
+      data: {
+        jobID,
+        jobType,
+        jobDescription,
+        jobPO
+      }
+    });
+    if(response.data.success){
+      showAlert('success','Job Successfully Updated');
+      window.setTimeout(() => {
+        location.assign('/jobs/view');
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+};
+
+export const deleteJob = async(id) => {
+  try {
+    const response = await axios({
+      method: 'DELETE',
+      url: `http://localhost:3000/api/v2/mundial/jobs/${id}`
+    })
+    if(response.status === 204){
+      showAlert('success','Job Successfully Deleted');
+      window.setTimeout(() => {
+        location.assign('/jobs/view');
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+};
+
 export const getUnpaidInvoices = async() =>{
   try {
     const result = await axios({
