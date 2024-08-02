@@ -35,6 +35,12 @@ const getJobDetails = catchAsyncError(async(req, res, next) => {
   });
 });
 
+const createJob = catchAsyncError(async(req, res) => {
+  res.status(httpStatus.OK).render('job',{
+    title: 'Create Job',
+  });
+});
+
 const createInvoice = catchAsyncError(async(req, res) => {
   res.status(httpStatus.OK).render('invoice',{
     title: 'Create Invoice',
@@ -96,6 +102,7 @@ module.exports = {
   displayHomePage,
   getAllJobs,
   getJobDetails,
+  createJob,
   createInvoice,
   getAllInvoices,
   getInvoiceDetails,

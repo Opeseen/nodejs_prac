@@ -1,0 +1,26 @@
+extends base
+
+block content
+  main
+    h2.page__subject Job
+    // User Resources Data Creation
+    .resource-details.create-resource-job
+      .heading__title.ma-bt-lg Create New Job
+      form
+        .form__div
+          div(class='box-text-cell')
+            p.box-title job id
+            input.input-style-one#jobid(type='text')
+          div(class='box-text-cell')
+            p.box-title description
+            textarea#paydesc(rows='3' cols='48')
+          div(class='box-text-cell')
+            p.box-title job po
+            input.input-style-one#podoc(type='text',step='any')
+          div(class='box-text-cell')
+            p.box-title type
+            select.select-style-one#jobtype(name='class')
+              option Product
+              option service 
+        .form__cta
+          button.btn--cta--save Create job

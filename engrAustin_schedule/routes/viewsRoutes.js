@@ -4,6 +4,9 @@ const {viewsController} = require('../controllers');
 const router = express.Router();
 
 router.get('/',viewsController.displayHomePage);
+
+// Job Route
+router.get('/job/create', viewsController.createJob);
 router.get('/jobs/view',viewsController.getAllJobs);
 router.get('/job/:id',viewsController.getJobDetails)
 

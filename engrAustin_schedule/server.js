@@ -6,8 +6,8 @@ const logger = require('./config/logger');
 
 mongoose
   .connect(process.env.DB_CONNECTION, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
+    // useNewUrlParser: true,
+    // useCreateIndex: true,
     useFindAndModify: false
   })
   .then(() => logger.info("mongodb connected"))
