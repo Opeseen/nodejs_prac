@@ -12780,7 +12780,7 @@ var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
             (0, _alert.showAlert)('success', 'Invoice Successfully Unlink');
             window.setTimeout(function () {
               location.reload();
-            }, 800);
+            }, 700);
           }
           _context11.next = 11;
           break;
@@ -13087,9 +13087,9 @@ if (postPayment) {
         data.forEach(function (element) {
           x++;
           // CREATE HTML TAG FOR "LI" & "LABEL"
-          var create_li_tag = document.createElement('li');
-          create_li_tag.classList.add('data-selection');
-          create_li_tag.innerHTML = "<label for=\"inv-".concat(x, "\"><input type=\"checkbox\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
+          var create_li_tag = document.createElement('div');
+          create_li_tag.classList.add('form-check');
+          create_li_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"checkbox\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
           invoiceSelection.appendChild(create_li_tag);
         });
       }
@@ -13127,9 +13127,9 @@ if (modifyPayment) {
         data.forEach(function (element) {
           x++;
           // CREATE HTML TAG FOR "LI" & "LABEL"
-          var create_li_tag = document.createElement('li');
-          create_li_tag.classList.add('data-selection');
-          create_li_tag.innerHTML = "<label for=\"inv-".concat(x, "\"><input type=\"checkbox\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
+          var create_li_tag = document.createElement('div');
+          create_li_tag.classList.add('form-check');
+          create_li_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"checkbox\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
           _invoiceSelection.appendChild(create_li_tag);
         });
       }

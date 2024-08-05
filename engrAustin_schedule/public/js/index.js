@@ -134,9 +134,9 @@ if (postPayment){
           data.forEach((element) => {
             x++
             // CREATE HTML TAG FOR "LI" & "LABEL"
-            const create_li_tag = document.createElement('li');
-            create_li_tag.classList.add('data-selection');
-            create_li_tag.innerHTML = `<label for="inv-${x}"><input type="checkbox" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            const create_li_tag = document.createElement('div');
+            create_li_tag.classList.add('form-check');
+            create_li_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
             invoiceSelection.appendChild(create_li_tag);
           });
         };
@@ -175,9 +175,9 @@ if (modifyPayment){
           data.forEach((element) => {
             x++
             // CREATE HTML TAG FOR "LI" & "LABEL"
-            const create_li_tag = document.createElement('li');
-            create_li_tag.classList.add('data-selection');
-            create_li_tag.innerHTML = `<label for="inv-${x}"><input type="checkbox" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            const create_li_tag = document.createElement('div');
+            create_li_tag.classList.add('form-check');
+            create_li_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
             invoiceSelection.appendChild(create_li_tag);
           });
         };

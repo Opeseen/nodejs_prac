@@ -409,7 +409,7 @@ div a {
  text-transform: uppercase !important;
 }
 
-.input-style-one,.select-style-one{
+.input-style-one{
   color: rgb(7 2 18);
   height: 3.5rem;
   width:  15.8rem;
@@ -418,6 +418,17 @@ div a {
   text-transform: uppercase !important;
   font-size: small !important;
 }
+
+.select-style-one{
+  color: rgb(7 2 18);
+  height: 3.5rem;
+  width:  15.8rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-transform: uppercase !important;
+  font-size: small !important;
+}
+
 
 .jobs{
   height: 3.5rem;
@@ -456,7 +467,20 @@ textarea{
   background-color: #eb4d4b !important;
 }
 
-.invoice-field-item { height: 200px; overflow: auto; border: 1px solid #000; font-size: small; list-style-type: none;}
-/* .data-selection { margin: 5; padding: 0; } */
-label { display: block; color: WindowText; background-color: Window; margin: 2; padding: 0; width: 100%; justify-content: space-between;}
+.invoice-field-item { 
+  height: 220px; 
+  overflow: auto; 
+  border: 1px solid #006100;
+  border-radius: 0.5rem;
+  font-size: small;
+}
+label { 
+  margin-left: 5px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: block; 
+  color: WindowText; 
+  background-color: Window; 
+  width: 100%; 
+}
 label:hover { background-color: Highlight; color: HighlightText; }

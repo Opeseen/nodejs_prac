@@ -224,7 +224,7 @@ export const unlinkResource = async(id,payid) => {
       showAlert('success','Invoice Successfully Unlink');
       window.setTimeout(() => {
         location.reload();
-      },800);
+      },700);
     }
   } catch (error) {
     console.log(error.response.data.message);
