@@ -134,10 +134,10 @@ if (postPayment){
           data.forEach((element) => {
             x++
             // CREATE HTML TAG FOR "LI" & "LABEL"
-            const create_li_tag = document.createElement('div');
-            create_li_tag.classList.add('form-check');
-            create_li_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
-            invoiceSelection.appendChild(create_li_tag);
+            const create_div_tag = document.createElement('div');
+            create_div_tag.classList.add('form-check');
+            create_div_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            invoiceSelection.appendChild(create_div_tag);
           });
         };
       }
@@ -175,10 +175,10 @@ if (modifyPayment){
           data.forEach((element) => {
             x++
             // CREATE HTML TAG FOR "LI" & "LABEL"
-            const create_li_tag = document.createElement('div');
-            create_li_tag.classList.add('form-check');
-            create_li_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
-            invoiceSelection.appendChild(create_li_tag);
+            const create_div_tag = document.createElement('div');
+            create_div_tag.classList.add('form-check');
+            create_div_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            invoiceSelection.appendChild(create_div_tag);
           });
         };
       }

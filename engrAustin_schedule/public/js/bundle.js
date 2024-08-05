@@ -13087,10 +13087,10 @@ if (postPayment) {
         data.forEach(function (element) {
           x++;
           // CREATE HTML TAG FOR "LI" & "LABEL"
-          var create_li_tag = document.createElement('div');
-          create_li_tag.classList.add('form-check');
-          create_li_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"checkbox\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
-          invoiceSelection.appendChild(create_li_tag);
+          var create_div_tag = document.createElement('div');
+          create_div_tag.classList.add('form-check');
+          create_div_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"checkbox\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
+          invoiceSelection.appendChild(create_div_tag);
         });
       }
       ;
@@ -13127,10 +13127,10 @@ if (modifyPayment) {
         data.forEach(function (element) {
           x++;
           // CREATE HTML TAG FOR "LI" & "LABEL"
-          var create_li_tag = document.createElement('div');
-          create_li_tag.classList.add('form-check');
-          create_li_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"checkbox\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
-          _invoiceSelection.appendChild(create_li_tag);
+          var create_div_tag = document.createElement('div');
+          create_div_tag.classList.add('form-check');
+          create_div_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"checkbox\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
+          _invoiceSelection.appendChild(create_div_tag);
         });
       }
       ;
@@ -13204,7 +13204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60650" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60158" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
