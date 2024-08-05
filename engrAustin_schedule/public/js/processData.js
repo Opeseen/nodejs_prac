@@ -14,28 +14,51 @@ export const getAllJobs = async() => {
   }
 };
 
-export const updateJob = 
-async(id, jobID, jobType, jobDescription, jobPO) => {
+export const createJob = async(jobID, type, description, jobPO) => {
   try {
     const response = await axios({
-      method: 'PATCH',
-      url: `http://localhost:3000/api/v2/mundial/jobs/${id}`,
+      method: 'POST',
+      url:  'http://localhost:3000/api/v2/mundial/jobs',
       data: {
         jobID,
-        jobType,
-        jobDescription,
-        jobPO
+        type,
+        description,
+        jobPO,
       }
     });
     if(response.data.success){
-      showAlert('success','Job Successfully Updated');
+      showAlert('success','Job Successfully Created');
       window.setTimeout(() => {
-        location.assign('/jobs/view');
+        location.reload();
       },2000);
     }
   } catch (error) {
     showAlert('error',error.response.data.message);
   }
+};
+
+export const updateJob = 
+  async(id, jobID, type, description, jobPO) => {
+    try {
+      const response = await axios({
+        method: 'PATCH',
+        url: `http://localhost:3000/api/v2/mundial/jobs/${id}`,
+        data: {
+          jobID,
+          type,
+          description,
+          jobPO
+        }
+      });
+      if(response.data.success){
+        showAlert('success','Job Successfully Updated');
+        window.setTimeout(() => {
+          location.assign('/jobs/view');
+        },2000);
+      }
+    } catch (error) {
+      showAlert('error',error.response.data.message);
+    }
 };
 
 export const deleteJob = async(id) => {
@@ -69,57 +92,57 @@ export const getUnpaidInvoices = async() =>{
 };
 
 export const createInvoice = 
-async(invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
-  try {
-    const response = await axios({
-      method: 'POST',
-      url:  'http://localhost:3000/api/v2/mundial/invoices',
-      data: {
-        invoiceNumber,
-        description,
-        salesValue,
-        spentValue,
-        job,
-        invoiceClass,
-        witholdingTaxPercent
+  async(invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
+    try {
+      const response = await axios({
+        method: 'POST',
+        url:  'http://localhost:3000/api/v2/mundial/invoices',
+        data: {
+          invoiceNumber,
+          description,
+          salesValue,
+          spentValue,
+          job,
+          invoiceClass,
+          witholdingTaxPercent
+        }
+      });
+      if(response.data.success){
+        showAlert('success','Invoice Successfully Created');
+        window.setTimeout(() => {
+          location.reload();
+        },2000);
       }
-    });
-    if(response.data.success){
-      showAlert('success','Invoice Successfully Created');
-      window.setTimeout(() => {
-        location.reload();
-      },2000);
+    } catch (error) {
+      showAlert('error',error.response.data.message);
     }
-  } catch (error) {
-    showAlert('error',error.response.data.message);
-  }
-}
+};
 
 export const updateInvoice = 
-async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
-  try {
-    const response = await axios({
-      method: 'PATCH',
-      url: `http://localhost:3000/api/v2/mundial/invoices/${id}`,
-      data: {
-        invoiceNumber,
-        description,
-        salesValue,
-        spentValue,
-        job,
-        invoiceClass,
-        witholdingTaxPercent
+  async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
+    try {
+      const response = await axios({
+        method: 'PATCH',
+        url: `http://localhost:3000/api/v2/mundial/invoices/${id}`,
+        data: {
+          invoiceNumber,
+          description,
+          salesValue,
+          spentValue,
+          job,
+          invoiceClass,
+          witholdingTaxPercent
+        }
+      });
+      if(response.data.success){
+        showAlert('success','Invoice Successfully Updated');
+        window.setTimeout(() => {
+          location.assign('/invoices/view');
+        },2000);
       }
-    });
-    if(response.data.success){
-      showAlert('success','Invoice Successfully Updated');
-      window.setTimeout(() => {
-        location.assign('/invoices/view');
-      },2000);
+    } catch (error) {
+      showAlert('error',error.response.data.message);
     }
-  } catch (error) {
-    showAlert('error',error.response.data.message);
-  }
 };
 
 export const deleteInvoice = async(id) => {
@@ -140,56 +163,55 @@ export const deleteInvoice = async(id) => {
 };
 
 export const createPayment = 
-async(tag, details, amount, date, invoices) => {
-  try {
-    const response = await axios({
-      method: 'POST',
-      url:  'http://localhost:3000/api/v2/mundial/payments',
-      data: {
-        tag,
-        details,
-        amount,
-        date,
-        invoices
+  async(tag, details, amount, date, invoices) => {
+    try {
+      const response = await axios({
+        method: 'POST',
+        url:  'http://localhost:3000/api/v2/mundial/payments',
+        data: {
+          tag,
+          details,
+          amount,
+          date,
+          invoices
+        }
+      });
+      if(response.data.success){
+        showAlert('success','Payment Successfully Created');
+        window.setTimeout(() => {
+          location.reload();
+        },2000);
       }
-    });
-    if(response.data.success){
-      showAlert('success','Payment Successfully Created');
-      window.setTimeout(() => {
-        location.reload();
-      },2000);
+    } catch (error) {
+      showAlert('error',error.response.data.message);
     }
-  } catch (error) {
-    showAlert('error',error.response.data.message);
-  }
 };
 
 
 export const updatePayment = 
-async(id, tag, details, amount, date, invoices) => {
-  try {
-    const response = await axios({
-      method: 'PATCH',
-      url: `http://localhost:3000/api/v2/mundial/payments/${id}`,
-      data: {
-        id,
-        tag,
-        details,
-        amount,
-        date,
-        invoices
+  async(id, tag, details, amount, date, invoices) => {
+    try {
+      const response = await axios({
+        method: 'PATCH',
+        url: `http://localhost:3000/api/v2/mundial/payments/${id}`,
+        data: {
+          id,
+          tag,
+          details,
+          amount,
+          date,
+          invoices
+        }
+      });
+      if(response.data.success){
+        showAlert('success','Payment Successfully Updated');
+        window.setTimeout(() => {
+          location.reload();
+        },2000);
       }
-    });
-    if(response.data.success){
-      showAlert('success','Payment Successfully Updated');
-      window.setTimeout(() => {
-        location.reload();
-      },2000);
+    } catch (error) {
+      showAlert('error',error.response.data.message);
     }
-  } catch (error) {
-    showAlert('error',error.response.data.message);
-  }
-
 };
 
 export const unlinkResource = async(id,payid) => {
@@ -202,7 +224,7 @@ export const unlinkResource = async(id,payid) => {
       showAlert('success','Invoice Successfully Unlink');
       window.setTimeout(() => {
         location.reload();
-      },1000);
+      },800);
     }
   } catch (error) {
     console.log(error.response.data.message);

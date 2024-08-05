@@ -13,15 +13,15 @@ const jobSchema = new mongoose.Schema(
       maxlength: [15, 'The Id of the Job must not be more that 15 character'],
       minlength: [6, 'The Id of the Job must not be less than 6 character']
     },
-    jobType:{
+    type:{
       type: String,
       required: [true, 'Job type cannot be blank'],
       enum: {
         values: ['Product', 'Service'],
-        message: 'Job type must be either "Product" or "Services"'
+        message: 'Job type must be either "Product" or "Service"'
       }
     },
-    jobDescription: {
+    description: {
       type: String,
       uppercase: true,
       maxlength: [45, 'The details of a job must not be more that 45 character'],

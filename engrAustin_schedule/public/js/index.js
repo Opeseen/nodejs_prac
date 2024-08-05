@@ -1,11 +1,10 @@
 import '@babel/polyfill';
 import {
-  getAllJobs, updateJob, deleteJob, getUnpaidInvoices, 
-  createInvoice, updateInvoice, deleteInvoice, unlinkResource, 
-  updatePayment, deletePayment,createPayment
+  getAllJobs, createJob, updateJob, deleteJob, 
+  getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, 
+  unlinkResource, updatePayment, deletePayment,createPayment
 } 
 from './processData';
-
 
 // INVOICES
 const modifyInvoice = document.querySelector('.modify-resource-invoice');
@@ -19,6 +18,7 @@ const postPayment = document.querySelector('.create-resource-payment');
 
 // JOBS 
 const job = document.querySelector('.jobs');
+const postJob = document.querySelector('.create-resource-job');
 const modifyJob = document.querySelector('.modify-resource-job');
 const removeJob = document.querySelector('.delete-resource-job')
 
@@ -33,7 +33,7 @@ if(job){
           const addElement = document.createElement("option");
           if(jobs.id !== defaultDropdownValue){
             addElement.value = jobs.id.trim()
-            addElement.text = jobs.jobID + " - " + jobs.jobDescription
+            addElement.text = jobs.jobID + " - " + jobs.description
             job.add(addElement)
           }
         })
@@ -42,16 +42,28 @@ if(job){
   )
 };
 
+if (postJob){
+  postJob.addEventListener('submit', event => {
+    event.preventDefault();
+    const jobid = document.getElementById('jobid').value;
+    const description = document.getElementById('desc').value;
+    const jobtype = document.getElementById('jobtype').value;
+    const jobpo = document.getElementById('podoc').value;
+
+    createJob(jobid,jobtype,description,jobpo);
+  });
+};
+
 if(modifyJob){
   modifyJob.addEventListener('submit', event => {
     event.preventDefault();
     const jobid = document.getElementById('jobid').value;
     const description = document.getElementById('desc').value;
     const po = document.getElementById('podoc').value;
-    const jobtype = document.getElementById('jobtype').value || 0;
+    const type = document.getElementById('jobtype').value;
     const id = document.getElementById('docid').value;
     
-    updateJob(id,jobid,jobtype,description,po);
+    updateJob(id,jobid,type,description,po);
   });
 };
 
@@ -123,6 +135,7 @@ if (postPayment){
             x++
             // CREATE HTML TAG FOR "LI" & "LABEL"
             const create_li_tag = document.createElement('li');
+            create_li_tag.classList.add('data-selection');
             create_li_tag.innerHTML = `<label for="inv-${x}"><input type="checkbox" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
             invoiceSelection.appendChild(create_li_tag);
           });
@@ -163,6 +176,7 @@ if (modifyPayment){
             x++
             // CREATE HTML TAG FOR "LI" & "LABEL"
             const create_li_tag = document.createElement('li');
+            create_li_tag.classList.add('data-selection');
             create_li_tag.innerHTML = `<label for="inv-${x}"><input type="checkbox" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
             invoiceSelection.appendChild(create_li_tag);
           });

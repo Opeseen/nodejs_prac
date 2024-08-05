@@ -45,7 +45,7 @@ block content
             p.box-title job id
             - const checkJob = invoice.job
             select.select-style-one#job(name='jobs', class='jobs')
-              option(value= `${invoice.job ? invoice.job.id : undefined}`)= `${invoice.job ? invoice.job.jobID + ' - ' + invoice.job.jobDescription: 'Please select'}`
+              option(value= `${invoice.job ? invoice.job.id : undefined}`)= `${invoice.job ? invoice.job.jobID + ' - ' + invoice.job.description: 'Please select'}`
               if checkJob && checkJob.id.length > 0
                 option(value= 'undefined') Please select
           div(class='box-text-cell')

@@ -6,12 +6,12 @@ const paymentSchema = new mongoose.Schema(
     tag: {
       type: String,
       uppercase: true,
-      required: [true, 'A payent must have a tag attached']
+      required: [true, 'A payment must have a tag attached']
     },
     details: {
       type: String,
       uppercase: true,
-      required: [true, 'A payent must have a description attached']
+      required: [true, 'A payment must have a description attached']
     },
     amount: {
       type: Number,

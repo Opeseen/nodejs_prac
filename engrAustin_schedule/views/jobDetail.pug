@@ -51,15 +51,15 @@ block content
             input.input-style-one#jobid(type='text',value=`${job.jobID}`)
           div(class='box-text-cell')
             p.box-title description
-            textarea#desc(rows='3' cols='48')= job.jobDescription
+            textarea#desc(rows='3' cols='48')= job.description
           div(class='box-text-cell')
             p.box-title PO
-            input.input-style-one#podoc(type='number',step='any',value=`${job.jobPO}`)
+            input.input-style-one#podoc(type='text',step='any',value=`${job.jobPO}`)
           div(class='box-text-cell')
             p.box-title type
             select.select-style-one#jobtype(name='type')
-              option= job.jobType
-              option= `${job.jobType === 'Product' ? 'Service' : 'Product'}`
+              option= job.type
+              option= `${job.type === 'Product' ? 'Service' : 'Product'}`
           div(class='box-text-cell')
             input.input-style-one#docid(type='hidden',value=`${job.id}`)
         .form__cta
