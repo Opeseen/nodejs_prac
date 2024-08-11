@@ -69,3 +69,12 @@ db.collection_name.aggregate({
 //     }
 //   }
 // }
+
+
+// Jquery function to delete items through checkbox selecion option
+$(function(){
+  $("#query").click(function () {
+    
+  });
+   
+})

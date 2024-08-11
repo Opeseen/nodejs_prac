@@ -13026,10 +13026,34 @@ if (modifyJob) {
 }
 ;
 if (removeJob) {
+  var id = document.getElementById('docid').value;
   removeJob.addEventListener('submit', function (event) {
     event.preventDefault();
-    var id = document.getElementById('docid').value;
-    (0, _processData.deleteJob)(id);
+  });
+  // Jquery function to pop up confirmation before deletion
+  $(function () {
+    $("#jobdelete").click(function () {
+      bootbox.confirm({
+        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
+        message: 'Do you want to continue?',
+        buttons: {
+          confirm: {
+            label: 'Yes',
+            className: 'btn-success'
+          },
+          cancel: {
+            label: 'No',
+            className: 'btn-danger'
+          }
+        },
+        callback: function callback(result) {
+          if (result) {
+            (0, _processData.deleteJob)(id);
+          }
+          ;
+        }
+      });
+    });
   });
 }
 ;
@@ -13066,10 +13090,34 @@ if (modifyInvoice) {
 }
 ;
 if (removeInvoice) {
+  var docid = document.getElementById('docid').value;
   removeInvoice.addEventListener('submit', function (event) {
     event.preventDefault();
-    var docid = document.getElementById('docid').value;
-    (0, _processData.deleteInvoice)(docid);
+  });
+  // Jquery function to pop up confirmation before deletion
+  $(function () {
+    $("#invdelete").click(function () {
+      bootbox.confirm({
+        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
+        message: 'Do you want to continue?',
+        buttons: {
+          confirm: {
+            label: 'Yes',
+            className: 'btn-success'
+          },
+          cancel: {
+            label: 'No',
+            className: 'btn-danger'
+          }
+        },
+        callback: function callback(result) {
+          if (result) {
+            (0, _processData.deleteInvoice)(docid);
+          }
+          ;
+        }
+      });
+    });
   });
 }
 ;
@@ -13172,10 +13220,34 @@ if (modifyPayment) {
   }
 }
 if (removePayment) {
+  var _docid = document.getElementById('docid').value;
   removePayment.addEventListener('submit', function (event) {
     event.preventDefault();
-    var docid = document.getElementById('docid').value;
-    (0, _processData.deletePayment)(docid);
+  });
+  // Jquery function to pop up confirmation before deletion
+  $(function () {
+    $("#paydelete").click(function () {
+      bootbox.confirm({
+        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
+        message: 'Do you want to continue?',
+        buttons: {
+          confirm: {
+            label: 'Yes',
+            className: 'btn-success'
+          },
+          cancel: {
+            label: 'No',
+            className: 'btn-danger'
+          }
+        },
+        callback: function callback(result) {
+          if (result) {
+            (0, _processData.deletePayment)(_docid);
+          }
+          ;
+        }
+      });
+    });
   });
 }
 ;
@@ -13204,7 +13276,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61874" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55266" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

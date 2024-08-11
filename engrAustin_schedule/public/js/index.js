@@ -68,12 +68,36 @@ if(modifyJob){
 };
 
 if (removeJob){
+  const id = document.getElementById('docid').value
   removeJob.addEventListener('submit', event => {
     event.preventDefault();
-    const id = document.getElementById('docid').value
-
-    deleteJob(id);
   });
+  // Jquery function to pop up confirmation before deletion
+  $(function(){
+    $("#jobdelete").click(function () {
+      bootbox.confirm({
+        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
+        message: 'Do you want to continue?',
+        buttons: {
+        confirm: {
+        label: 'Yes',
+        className: 'btn-success'
+        },
+        cancel: {
+        label: 'No',
+        className: 'btn-danger'
+        }
+        },
+        callback: function (result) {
+          if(result){
+            deleteJob(id);
+          };
+        }
+      });
+    });
+
+  });
+
 };
 
 
@@ -112,12 +136,36 @@ if (modifyInvoice){
 };
 
 if (removeInvoice){
+  const docid = document.getElementById('docid').value
   removeInvoice.addEventListener('submit', event => {
     event.preventDefault();
-    const docid = document.getElementById('docid').value
-
-    deleteInvoice(docid);
   });
+  // Jquery function to pop up confirmation before deletion
+  $(function(){
+    $("#invdelete").click(function () {
+      bootbox.confirm({
+        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
+        message: 'Do you want to continue?',
+        buttons: {
+        confirm: {
+        label: 'Yes',
+        className: 'btn-success'
+        },
+        cancel: {
+        label: 'No',
+        className: 'btn-danger'
+        }
+        },
+        callback: function (result) {
+          if(result){
+            deleteInvoice(docid);
+          };
+        }
+      });
+    });
+
+  });
+
 };
 
 // PAYMENTS
@@ -219,10 +267,34 @@ if (modifyPayment){
 }
 
 if (removePayment){
+  const docid = document.getElementById('docid').value
   removePayment.addEventListener('submit', event => {
     event.preventDefault();
-    const docid = document.getElementById('docid').value
-
-    deletePayment(docid);
   });
+  // Jquery function to pop up confirmation before deletion
+  $(function(){
+    $("#paydelete").click(function () {
+      bootbox.confirm({
+        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
+        message: 'Do you want to continue?',
+        buttons: {
+        confirm: {
+        label: 'Yes',
+        className: 'btn-success'
+        },
+        cancel: {
+        label: 'No',
+        className: 'btn-danger'
+        }
+        },
+        callback: function (result) {
+          if(result){
+            deletePayment(docid);
+          };
+        }
+      });
+    });
+
+  });
+
 };
