@@ -78,3 +78,7 @@ $(function(){
   });
    
 })
+
+db.bios.find(
+  {_id: { $in: [ 5,0 ] }}
+)

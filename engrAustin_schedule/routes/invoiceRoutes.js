@@ -19,7 +19,7 @@ router
   .patch(invoiceController.removePaymentFromInvoice);
 
 // router
-//   .route('/:id/testing')
-//   .get(invoiceController.testing);
+//   .route('/testing')
+//   .post(invoiceController.testError);
 
 module.exports = router;

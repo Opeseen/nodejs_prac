@@ -50,11 +50,12 @@ const deleteInvoice = async(invoiceId) => {
   return invoice;
 };
 
-const addPaymentToInvoice = async(invoiceId, PaymentId) => {
+const addPaymentToInvoice = async(invoiceId, PaymentId, paymentStatus) => {
   await Invoice.findByIdAndUpdate(invoiceId, 
     { 
       $addToSet: {payment: PaymentId},
-      $set: {invoicePaymentStatus: "Paid"}
+      $set: {invoicePaymentStatus: paymentStatus}
+      
     },  
     { new: true, runValidators: true }
   );

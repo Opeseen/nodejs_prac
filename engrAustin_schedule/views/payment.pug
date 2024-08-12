@@ -20,11 +20,19 @@ block content
           div(class='box-text-cell')
             p.box-title Date
             input.input-style-one#date(type='date')
+          div(class='box-text-cell')
+            p.box-title invoice payment status
+            select.select-style-one#invstatus(name='class')
+              option Please Select
+              option Paid
+              option Unpaid
+              option Partially Paid
         .line &nbsp;
         .heading__title Link Invoice
           br
         .modify-field-resource
           .invoice-field-item
-            //- POPULATE UNPAID INVOICES HERE        
+            //- POPULATE UNPAID INVOICES HERE  
+
         .form__cta
           button.btn--cta--save Create Payment

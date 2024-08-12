@@ -83,7 +83,8 @@ const getPaymentDetails = catchAsyncError(async(req, res, next) => {
   const paymentRef = req.params.id;
   const payment = await paymentService.findOnePayment(paymentRef);
   if(!payment) { return next(new ApiError("No Payment Found", httpStatus.NOT_FOUND)) }
-  let paymentStatics = await paymentService.getPaymentLedger(payment._id);
+
+  let paymentStatics = await paymentService.getPaymentLedger(payment._id); // This will return the invoices attached to the payment.
 
   // Strignify and parse payment statistics to JSON before sending to the browser
   paymentStatics = JSON.stringify(paymentStatics);

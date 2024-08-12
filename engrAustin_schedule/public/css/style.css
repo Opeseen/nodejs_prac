@@ -467,7 +467,7 @@ textarea{
 }
 
 .invoice-field-item { 
-  height: 220px; 
+  height: auto; 
   overflow: auto; 
   border: 1px solid #006100;
   border-radius: 0.5rem;

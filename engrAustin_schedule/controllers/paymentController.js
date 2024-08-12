@@ -54,9 +54,14 @@ const updatePayment = catchAsyncError(async(req, res, next) => {
 
   // THIS STAGE WILL ATTACH THE PAYMENT-ID TO THE INVOICE IF AN INVOICE WAS INPUTED
   if (req.body.invoices && req.body.invoices.length > 0 && updatedPayment.id){
-    req.body.invoices.forEach(invoice => {
-      invoiceService.addPaymentToInvoice(invoice, updatedPayment.id);
-    });
+    try {
+      await Promise.all(req.body.invoices.map(async (invoice) => {
+        await invoiceService.addPaymentToInvoice(invoice, updatedPayment.id, req.body.invStatus);
+      }))
+    } catch (error) {
+      return next(error)
+    }
+
   };
 
   res.status(httpStatus.OK).json({

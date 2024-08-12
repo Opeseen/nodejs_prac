@@ -2,7 +2,8 @@ import '@babel/polyfill';
 import {
   getAllJobs, createJob, updateJob, deleteJob, 
   getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, 
-  unlinkResource, updatePayment, deletePayment,createPayment
+  unlinkResource, updatePayment, getPaymentLedger, deletePayment,
+  createPayment
 } 
 from './processData';
 
@@ -213,6 +214,11 @@ if (postPayment){
 
 if (modifyPayment){
   // SECTION 1
+  // This will display current invoice on payment status and other status option
+  const docid = document.getElementById('docid').value
+  
+  // SECTION 2
+  // This will display all invoices except paid
   const invoiceSelection = document.querySelector('.invoice-field-item');
   if (invoiceSelection){
     // LOAD ALL UNPAID INVOICES
@@ -225,14 +231,15 @@ if (modifyPayment){
             // CREATE HTML TAG FOR "LI" & "LABEL"
             const create_div_tag = document.createElement('div');
             create_div_tag.classList.add('form-check');
-            create_div_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            create_div_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="radio" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
             invoiceSelection.appendChild(create_div_tag);
           });
         };
       }
     )
   };
-  // SECTION 2
+  // SECTION 3
+  // This will update the payment data
   modifyPayment.addEventListener('submit', event =>{
     event.preventDefault();
     // GET THE VALUE OF DATA UPDATED
@@ -240,19 +247,20 @@ if (modifyPayment){
     const description = document.getElementById('desc').value;
     const amount = document.getElementById('amount').value;
     const date = document.getElementById('date').value;
+    const invStatus = document.getElementById('invstatus').value;
     const docid = document.getElementById('docid').value
     // PROCESS DATA FOR ANY INVOICE TO BE ATTACHED
-    let checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
+    let checkditem = document.querySelectorAll('input[name="invoice"]:checked');
     let checkedInvoiceValues = [];
-    checkboxes.forEach((checkbox) => {
-      checkedInvoiceValues.push(checkbox.value);
+    checkditem.forEach((item) => {
+      checkedInvoiceValues.push(item.value);
     });
-
     // UPDATE THE PAYMENT
-    updatePayment(docid, tag, description, amount, date, checkedInvoiceValues);
+    updatePayment(docid, tag, description, amount, date, checkedInvoiceValues,invStatus);
   });
 
-  // SECTION 3
+  // SECTION 4
+  // Ths will removed attached invoice to a particular payment
   const unlinkInvoice = document.querySelectorAll('.unlink');
   if (unlinkInvoice){
     const payid = document.getElementById('docid').value

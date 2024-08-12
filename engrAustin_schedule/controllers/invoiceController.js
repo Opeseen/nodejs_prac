@@ -4,7 +4,6 @@ const ApiError = require('../utils/ApiError');
 const catchAsyncError = require('../utils/catchAsyncError');
 const {Invoice} = require('../models');
 
-
 const createInvoice = catchAsyncError(async(req, res) => {
   if(req.body.job === 'undefined'){req.body.job = undefined}
   const invoiceDetails = req.body;
@@ -86,5 +85,5 @@ module.exports = {
   getAllInvoices,
   updateInvoice,
   deleteInvoice,
-  removePaymentFromInvoice
+  removePaymentFromInvoice,
 };

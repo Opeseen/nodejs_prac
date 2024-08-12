@@ -187,9 +187,8 @@ export const createPayment =
     }
 };
 
-
 export const updatePayment = 
-  async(id, tag, details, amount, date, invoices) => {
+  async(id, tag, details, amount, date, invoices, invStatus) => {
     try {
       const response = await axios({
         method: 'PATCH',
@@ -200,7 +199,8 @@ export const updatePayment =
           details,
           amount,
           date,
-          invoices
+          invoices,
+          invStatus
         }
       });
       if(response.data.success){
@@ -212,6 +212,17 @@ export const updatePayment =
     } catch (error) {
       showAlert('error',error.response.data.message);
     }
+};
+
+export const getPaymentLedger = async(payid) => {
+  try {
+    const response = await axios({
+      method: 'GET',
+      url: `http://localhost:3000/api/v2/mundial/payments/${payid}/ledger`
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const unlinkResource = async(id,payid) => {

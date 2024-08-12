@@ -48,6 +48,13 @@ block content
             p.box-title date
             input.input-style-one#date(type='date', value=`${payment.date.toLocaleDateString('en-CA')}`)
           div(class='box-text-cell')
+            p.box-title invoice payment status
+            select.select-style-one#invstatus(name='class')
+              option(value='null') Please Select
+              option Paid
+              option Unpaid
+              option Partially Paid
+          div(class='box-text-cell')
             input.input-style-one#docid(type='hidden',value=`${payment.id}`)
         .line &nbsp;
         .heading__title Link Invoice
