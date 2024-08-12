@@ -11,6 +11,7 @@ from './processData';
 const modifyInvoice = document.querySelector('.modify-resource-invoice');
 const removeInvoice = document.querySelector('.delete-resource-invoice');
 const postInvoice = document.querySelector('.create-resource-invoice');
+const paymentStatus = document.querySelector('.paystatus');
 
 // PAYMENTS
 const modifyPayment = document.querySelector('.modify-resource-payment');
@@ -26,16 +27,16 @@ const removeJob = document.querySelector('.delete-resource-job')
 
 // JOBS
 if(job){
-  const defaultDropdownValue = job.value;
+  const currentDropdownValue = job.value;
   getAllJobs().then(
     (data) => {
       if (data !== undefined){
         data.forEach( (jobs) => {
           const addElement = document.createElement("option");
-          if(jobs.id !== defaultDropdownValue){
+          if(jobs.id !== currentDropdownValue){
             addElement.value = jobs.id.trim()
             addElement.text = jobs.jobID + " - " + jobs.description
-            job.add(addElement)
+            job.add(addElement);
           }
         })
       }
@@ -121,6 +122,18 @@ if(postInvoice){
 };
 
 if (modifyInvoice){
+  // Append other payment status to the drop down list
+  if(paymentStatus){
+    const currentStatus = paymentStatus.value;
+    ['Paid','Unpaid','Partially Paid'].forEach( paystatus => {
+      const addElement = document.createElement("option");
+      if(paystatus !== currentStatus){
+        addElement.text = paystatus;
+        paymentStatus.add(addElement);
+      }
+    })
+  }
+  // Process data for submission
   modifyInvoice.addEventListener('submit', event => {
     event.preventDefault();
     const invoiceNo = document.getElementById('invno').value;
@@ -129,10 +142,11 @@ if (modifyInvoice){
     const costval = document.getElementById('costval').value;
     const job = document.getElementById('job').value;
     const invclass = document.getElementById('invclass').value;
+    const invstatus = document.getElementById('invstatus').value;
     const whtpercent = document.getElementById('whtpercent').value;
     const docid = document.getElementById('docid').value
 
-    updateInvoice(docid,invoiceNo,description,salesval,costval,job,invclass,whtpercent);
+    updateInvoice(docid,invoiceNo,description,salesval,costval,job,invclass,whtpercent,invstatus);
   });
 };
 

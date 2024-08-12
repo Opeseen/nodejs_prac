@@ -12,11 +12,7 @@ class APIFeatures{
   
     // 1B) ADVANCE FILTERING..
     let queryString = JSON.stringify(requestQuery);
-    queryString = queryString.replace(/\b(gte|gt|lte|lt|in)\b/g, match => `$${match}`);
-    console.log(queryString)
-    let result = queryString.substring(queryString.indexOf("[") + 1, queryString.indexOf("]"))
-    console.log(result)
-    const finder = {invoicePaymentStatus: {$in: ['Paid','Partially Paid']}} // This is for testing
+    queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
     this.query = this.query.find(JSON.parse(queryString));
     return this;
   }

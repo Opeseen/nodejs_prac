@@ -82,7 +82,7 @@ export const getUnpaidInvoices = async() =>{
   try {
     const result = await axios({
       method: 'GET',
-      url: 'http://localhost:3000/api/v2/mundial/invoices?invoicePaymentStatus=Unpaid'
+      url: 'http://localhost:3000/api/v2/mundial/invoices?invoicePaymentStatus=Unpaid&invoicePaymentStatus=Partially Paid'
     });
     if(result.data.invoices.length > 0){ return result.data.invoices };
   } catch (error) {
@@ -119,7 +119,7 @@ export const createInvoice =
 };
 
 export const updateInvoice = 
-  async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent) => {
+  async(id,invoiceNumber,description,salesValue,spentValue,job,invoiceClass,witholdingTaxPercent,invoicePaymentStatus) => {
     try {
       const response = await axios({
         method: 'PATCH',
@@ -131,7 +131,8 @@ export const updateInvoice =
           spentValue,
           job,
           invoiceClass,
-          witholdingTaxPercent
+          witholdingTaxPercent,
+          invoicePaymentStatus
         }
       });
       if(response.data.success){

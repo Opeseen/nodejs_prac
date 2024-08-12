@@ -12521,7 +12521,7 @@ var getUnpaidInvoices = exports.getUnpaidInvoices = /*#__PURE__*/function () {
           _context5.next = 3;
           return (0, _axios.default)({
             method: 'GET',
-            url: 'http://localhost:3000/api/v2/mundial/invoices?invoicePaymentStatus=Unpaid'
+            url: 'http://localhost:3000/api/v2/mundial/invoices?invoicePaymentStatus=Unpaid&invoicePaymentStatus=Partially Paid'
           });
         case 3:
           result = _context5.sent;
@@ -12595,7 +12595,7 @@ var createInvoice = exports.createInvoice = /*#__PURE__*/function () {
   };
 }();
 var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
-  var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(id, invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent) {
+  var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(id, invoiceNumber, description, salesValue, spentValue, job, invoiceClass, witholdingTaxPercent, invoicePaymentStatus) {
     var response;
     return _regeneratorRuntime().wrap(function _callee7$(_context7) {
       while (1) switch (_context7.prev = _context7.next) {
@@ -12612,7 +12612,8 @@ var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
               spentValue: spentValue,
               job: job,
               invoiceClass: invoiceClass,
-              witholdingTaxPercent: witholdingTaxPercent
+              witholdingTaxPercent: witholdingTaxPercent,
+              invoicePaymentStatus: invoicePaymentStatus
             }
           });
         case 3:
@@ -12635,7 +12636,7 @@ var updateInvoice = exports.updateInvoice = /*#__PURE__*/function () {
       }
     }, _callee7, null, [[0, 7]]);
   }));
-  return function updateInvoice(_x18, _x19, _x20, _x21, _x22, _x23, _x24, _x25) {
+  return function updateInvoice(_x18, _x19, _x20, _x21, _x22, _x23, _x24, _x25, _x26) {
     return _ref7.apply(this, arguments);
   };
 }();
@@ -12671,7 +12672,7 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
       }
     }, _callee8, null, [[0, 7]]);
   }));
-  return function deleteInvoice(_x26) {
+  return function deleteInvoice(_x27) {
     return _ref8.apply(this, arguments);
   };
 }();
@@ -12714,7 +12715,7 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
       }
     }, _callee9, null, [[0, 7]]);
   }));
-  return function createPayment(_x27, _x28, _x29, _x30, _x31) {
+  return function createPayment(_x28, _x29, _x30, _x31, _x32) {
     return _ref9.apply(this, arguments);
   };
 }();
@@ -12759,7 +12760,7 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
       }
     }, _callee10, null, [[0, 7]]);
   }));
-  return function updatePayment(_x32, _x33, _x34, _x35, _x36, _x37, _x38) {
+  return function updatePayment(_x33, _x34, _x35, _x36, _x37, _x38, _x39) {
     return _ref10.apply(this, arguments);
   };
 }();
@@ -12789,7 +12790,7 @@ var getPaymentLedger = exports.getPaymentLedger = /*#__PURE__*/function () {
       }
     }, _callee11, null, [[0, 6]]);
   }));
-  return function getPaymentLedger(_x39) {
+  return function getPaymentLedger(_x40) {
     return _ref11.apply(this, arguments);
   };
 }();
@@ -12826,7 +12827,7 @@ var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
       }
     }, _callee12, null, [[0, 7]]);
   }));
-  return function unlinkResource(_x40, _x41) {
+  return function unlinkResource(_x41, _x42) {
     return _ref12.apply(this, arguments);
   };
 }();
@@ -12862,7 +12863,7 @@ var deletePayment = exports.deletePayment = /*#__PURE__*/function () {
       }
     }, _callee13, null, [[0, 7]]);
   }));
-  return function deletePayment(_x42) {
+  return function deletePayment(_x43) {
     return _ref13.apply(this, arguments);
   };
 }();
@@ -13004,6 +13005,7 @@ var _processData = require("./processData");
 var modifyInvoice = document.querySelector('.modify-resource-invoice');
 var removeInvoice = document.querySelector('.delete-resource-invoice');
 var postInvoice = document.querySelector('.create-resource-invoice');
+var paymentStatus = document.querySelector('.paystatus');
 
 // PAYMENTS
 var modifyPayment = document.querySelector('.modify-resource-payment');
@@ -13018,12 +13020,12 @@ var removeJob = document.querySelector('.delete-resource-job');
 
 // JOBS
 if (job) {
-  var defaultDropdownValue = job.value;
+  var currentDropdownValue = job.value;
   (0, _processData.getAllJobs)().then(function (data) {
     if (data !== undefined) {
       data.forEach(function (jobs) {
         var addElement = document.createElement("option");
-        if (jobs.id !== defaultDropdownValue) {
+        if (jobs.id !== currentDropdownValue) {
           addElement.value = jobs.id.trim();
           addElement.text = jobs.jobID + " - " + jobs.description;
           job.add(addElement);
@@ -13106,6 +13108,18 @@ if (postInvoice) {
 }
 ;
 if (modifyInvoice) {
+  // Append other payment status to the drop down list
+  if (paymentStatus) {
+    var currentStatus = paymentStatus.value;
+    ['Paid', 'Unpaid', 'Partially Paid'].forEach(function (paystatus) {
+      var addElement = document.createElement("option");
+      if (paystatus !== currentStatus) {
+        addElement.text = paystatus;
+        paymentStatus.add(addElement);
+      }
+    });
+  }
+  // Process data for submission
   modifyInvoice.addEventListener('submit', function (event) {
     event.preventDefault();
     var invoiceNo = document.getElementById('invno').value;
@@ -13114,9 +13128,10 @@ if (modifyInvoice) {
     var costval = document.getElementById('costval').value;
     var job = document.getElementById('job').value;
     var invclass = document.getElementById('invclass').value;
+    var invstatus = document.getElementById('invstatus').value;
     var whtpercent = document.getElementById('whtpercent').value;
     var docid = document.getElementById('docid').value;
-    (0, _processData.updateInvoice)(docid, invoiceNo, description, salesval, costval, job, invclass, whtpercent);
+    (0, _processData.updateInvoice)(docid, invoiceNo, description, salesval, costval, job, invclass, whtpercent, invstatus);
   });
 }
 ;
@@ -13314,7 +13329,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53003" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51375" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

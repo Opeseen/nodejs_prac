@@ -84,3 +84,6 @@ db.bios.find(
 )
 
 { invoicePaymentStatus: { '$in': '[Paid,Unpaid]' } }
+
+  // let result = queryString.substring(queryString.indexOf("[") + 1, queryString.indexOf("]"))
+  // console.log(result)

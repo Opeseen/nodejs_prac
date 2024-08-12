@@ -46,8 +46,9 @@ const updateInvoice = catchAsyncError(async(req, res, next) => {
   invoice.description = req.body.description;
   invoice.invoiceClass = req.body.invoiceClass
   invoice.spentValue = req.body.spentValue || 0;
-  invoice.witholdingTaxPercent = req.body.witholdingTaxPercent
+  invoice.witholdingTaxPercent = req.body.witholdingTaxPercent;
   invoice.salesValue = req.body.salesValue;
+  invoice.invoicePaymentStatus = req.body.invoicePaymentStatus;
   await invoice.save();
 
   res.status(httpStatus.OK).json({

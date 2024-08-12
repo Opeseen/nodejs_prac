@@ -66,6 +66,10 @@ block content
             p.box-title partners payment
             input.input-style-one#partners-pyt(type='number',step='any',value=`${invoice.partnerPayment}`,readonly)
           div(class='box-text-cell')
+            p.box-title payment status
+            select.select-style-one#invstatus(name='status', class='paystatus')
+              option= invoice.invoicePaymentStatus
+          div(class='box-text-cell')
             input.input-style-one#docid(type='hidden',value=`${invoice.id}`)
         .form__cta
           button.btn--cta--save Save settings
