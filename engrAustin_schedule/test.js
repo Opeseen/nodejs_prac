@@ -82,3 +82,5 @@ $(function(){
 db.bios.find(
   {_id: { $in: [ 5,0 ] }}
 )
+
+{ invoicePaymentStatus: { '$in': '[Paid,Unpaid]' } }

@@ -38,7 +38,8 @@ const getAllJobs = catchAsyncError(async(req, res) => {
 
 const updateJob = catchAsyncError(async(req, res, next) => {
   const id = req.params.id;
-  req.body.slug = req.body.jobID
+  if(req.body.jobID){req.body.slug = req.body.jobID}
+  
   const updatedJob = await jobService.updateJob(id, req.body)
 
   if(!updatedJob){
