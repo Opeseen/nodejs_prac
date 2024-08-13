@@ -7,16 +7,26 @@ const ApiError = require('../utils/ApiError');
 const catchAsyncError = require('../utils/catchAsyncError');
 
 
-const createPayment = catchAsyncError(async(req, res) => {
+const createPayment = catchAsyncError(async(req, res, next) => {
   req.body.paymentRefId = randomUUID();
   const paymentDetails = req.body;
   const payment = await paymentService.createPayment(paymentDetails);
 
   // THIS STAGE WILL ATTACH THE PAYMENT-ID TO THE INVOICE IF AN INVOICE WAS INPUTED
   if (req.body.invoices && req.body.invoices.length > 0 && payment.id){
-    req.body.invoices.forEach(invoice => {
-      invoiceService.addPaymentToInvoice(invoice, payment.id);
-    });
+    try {
+      await Promise.all(req.body.invoices.map(async (invoice) => {
+        await invoiceService.addPaymentToInvoice(invoice, payment.id, req.body.invStatus);
+      }))
+    } catch (error) {
+      let message;
+      if(error.name === 'ValidationError'){
+        message = Object.values(error.errors).map(element => element.message).join(', ');
+        return next(new ApiError(`Payment successfully updated but error linking invoice because ${message}`,httpStatus.BAD_REQUEST))
+      }
+      return next(new ApiError("Payment successfully updated but an Internal Error while Linking the Invoice",httpStatus.INTERNAL_SERVER_ERROR))
+    }
+
   };
   res.status(httpStatus.OK).json({
     success: true,
@@ -59,7 +69,12 @@ const updatePayment = catchAsyncError(async(req, res, next) => {
         await invoiceService.addPaymentToInvoice(invoice, updatedPayment.id, req.body.invStatus);
       }))
     } catch (error) {
-      return next(error)
+      let message;
+      if(error.name === 'ValidationError'){
+        message = Object.values(error.errors).map(element => element.message).join(', ');
+        return next(new ApiError(`Payment successfully updated but error linking invoice because ${message}`,httpStatus.BAD_REQUEST))
+      }
+      return next(new ApiError("Payment successfully updated but an Internal Error while Linking the Invoice",httpStatus.INTERNAL_SERVER_ERROR))
     }
 
   };

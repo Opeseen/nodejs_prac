@@ -61,7 +61,6 @@ const userSchema = new mongoose.Schema(
 userSchema.pre('save', async function(next){
   const user = this
   if(!user.isModified('password')) { 
-    console.log(true) 
     return next()
   }; // ONLY RUN IF PASSWORD WAS NOT MODIFIED
 
@@ -73,7 +72,6 @@ userSchema.pre('save', async function(next){
 userSchema.pre('save', async function(next){
   const user = this
   if(!user.isModified('password') || user.isNew) {
-    console.log(false)
     return next()
   }; // ONLY RUN IF PASSWORD WAS NOT MODIFIED OR PASSWORD CREATION IS NEW NEW
 

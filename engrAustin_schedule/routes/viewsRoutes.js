@@ -20,4 +20,7 @@ router.get('/payment/create', viewsController.createPayment);
 router.get('/payments/view', viewsController.getAllPayment);
 router.get('/payment/:id', viewsController.getPaymentDetails);
 
+// User Route
+router.get('/user/register', viewsController.registerUser)
+
 module.exports = router;

@@ -164,7 +164,7 @@ export const deleteInvoice = async(id) => {
 };
 
 export const createPayment = 
-  async(tag, details, amount, date, invoices) => {
+  async(tag, details, amount, date, invoices,invStatus) => {
     try {
       const response = await axios({
         method: 'POST',
@@ -174,7 +174,8 @@ export const createPayment =
           details,
           amount,
           date,
-          invoices
+          invoices,
+          invStatus
         }
       });
       if(response.data.success){

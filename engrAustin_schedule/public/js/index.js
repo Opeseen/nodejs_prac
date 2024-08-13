@@ -199,7 +199,7 @@ if (postPayment){
             // CREATE HTML TAG FOR "LI" & "LABEL"
             const create_div_tag = document.createElement('div');
             create_div_tag.classList.add('form-check');
-            create_div_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="checkbox" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            create_div_tag.innerHTML = `<label class="form-check-label flabel" for="inv-${x}"><input type="radio" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
             invoiceSelection.appendChild(create_div_tag);
           });
         };
@@ -214,6 +214,7 @@ if (postPayment){
     const description = document.getElementById('paydesc').value;
     const amount = document.getElementById('payamount').value;
     const date = document.getElementById('date').value;
+    const invStatus = document.getElementById('invstatus').value;
 
     // PROCESS DATA FOR ANY INVOICE TO BE ATTACHED
     let checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
@@ -222,16 +223,12 @@ if (postPayment){
       checkedInvoiceValues.push(checkbox.value);
     });
 
-    createPayment(tag,description,amount,date,checkedInvoiceValues);
+    createPayment(tag,description,amount,date,checkedInvoiceValues,invStatus);
   });
 };
 
-if (modifyPayment){
+if (modifyPayment){  
   // SECTION 1
-  // This will display current invoice on payment status and other status option
-  const docid = document.getElementById('docid').value
-  
-  // SECTION 2
   // This will display all invoices except paid
   const invoiceSelection = document.querySelector('.invoice-field-item');
   if (invoiceSelection){
@@ -245,14 +242,14 @@ if (modifyPayment){
             // CREATE HTML TAG FOR "LI" & "LABEL"
             const create_div_tag = document.createElement('div');
             create_div_tag.classList.add('form-check');
-            create_div_tag.innerHTML = `<label class="form-check-label" for="inv-${x}"><input type="radio" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
+            create_div_tag.innerHTML = `<label class="form-check-label flabel" for="inv-${x}"><input type="radio" class="form-check-input" name="invoice" id="inv-${x}" value="${element.id}">${element.invoiceNumber} - ${element.description}</label>`
             invoiceSelection.appendChild(create_div_tag);
           });
         };
       }
     )
   };
-  // SECTION 3
+  // SECTION 2
   // This will update the payment data
   modifyPayment.addEventListener('submit', event =>{
     event.preventDefault();
@@ -273,7 +270,7 @@ if (modifyPayment){
     updatePayment(docid, tag, description, amount, date, checkedInvoiceValues,invStatus);
   });
 
-  // SECTION 4
+  // SECTION 3
   // Ths will removed attached invoice to a particular payment
   const unlinkInvoice = document.querySelectorAll('.unlink');
   if (unlinkInvoice){

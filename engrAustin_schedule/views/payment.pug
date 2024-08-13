@@ -23,7 +23,7 @@ block content
           div(class='box-text-cell')
             p.box-title invoice payment status
             select.select-style-one#invstatus(name='class')
-              option Please Select
+              option(value='null') Please Select
               option Paid
               option Unpaid
               option Partially Paid
@@ -36,3 +36,4 @@ block content
 
         .form__cta
           button.btn--cta--save Create Payment
+    .spacing

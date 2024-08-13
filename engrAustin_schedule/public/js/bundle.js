@@ -12337,7 +12337,7 @@ var showAlert = exports.showAlert = function showAlert(type, msg) {
   hideAlert();
   var message = "<div class=\"alert alert--".concat(type, "\">").concat(msg, "</div>");
   document.querySelector('body').insertAdjacentHTML('afterbegin', message);
-  window.setTimeout(hideAlert, 3000);
+  window.setTimeout(hideAlert, 5000);
 };
 },{}],"processData.js":[function(require,module,exports) {
 "use strict";
@@ -12677,7 +12677,7 @@ var deleteInvoice = exports.deleteInvoice = /*#__PURE__*/function () {
   };
 }();
 var createPayment = exports.createPayment = /*#__PURE__*/function () {
-  var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(tag, details, amount, date, invoices) {
+  var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(tag, details, amount, date, invoices, invStatus) {
     var response;
     return _regeneratorRuntime().wrap(function _callee9$(_context9) {
       while (1) switch (_context9.prev = _context9.next) {
@@ -12692,7 +12692,8 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
               details: details,
               amount: amount,
               date: date,
-              invoices: invoices
+              invoices: invoices,
+              invStatus: invStatus
             }
           });
         case 3:
@@ -12715,7 +12716,7 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
       }
     }, _callee9, null, [[0, 7]]);
   }));
-  return function createPayment(_x28, _x29, _x30, _x31, _x32) {
+  return function createPayment(_x28, _x29, _x30, _x31, _x32, _x33) {
     return _ref9.apply(this, arguments);
   };
 }();
@@ -12760,7 +12761,7 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
       }
     }, _callee10, null, [[0, 7]]);
   }));
-  return function updatePayment(_x33, _x34, _x35, _x36, _x37, _x38, _x39) {
+  return function updatePayment(_x34, _x35, _x36, _x37, _x38, _x39, _x40) {
     return _ref10.apply(this, arguments);
   };
 }();
@@ -12790,7 +12791,7 @@ var getPaymentLedger = exports.getPaymentLedger = /*#__PURE__*/function () {
       }
     }, _callee11, null, [[0, 6]]);
   }));
-  return function getPaymentLedger(_x40) {
+  return function getPaymentLedger(_x41) {
     return _ref11.apply(this, arguments);
   };
 }();
@@ -12827,7 +12828,7 @@ var unlinkResource = exports.unlinkResource = /*#__PURE__*/function () {
       }
     }, _callee12, null, [[0, 7]]);
   }));
-  return function unlinkResource(_x41, _x42) {
+  return function unlinkResource(_x42, _x43) {
     return _ref12.apply(this, arguments);
   };
 }();
@@ -12863,7 +12864,7 @@ var deletePayment = exports.deletePayment = /*#__PURE__*/function () {
       }
     }, _callee13, null, [[0, 7]]);
   }));
-  return function deletePayment(_x43) {
+  return function deletePayment(_x44) {
     return _ref13.apply(this, arguments);
   };
 }();
@@ -13183,7 +13184,7 @@ if (postPayment) {
           // CREATE HTML TAG FOR "LI" & "LABEL"
           var create_div_tag = document.createElement('div');
           create_div_tag.classList.add('form-check');
-          create_div_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"checkbox\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
+          create_div_tag.innerHTML = "<label class=\"form-check-label flabel\" for=\"inv-".concat(x, "\"><input type=\"radio\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
           invoiceSelection.appendChild(create_div_tag);
         });
       }
@@ -13199,6 +13200,7 @@ if (postPayment) {
     var description = document.getElementById('paydesc').value;
     var amount = document.getElementById('payamount').value;
     var date = document.getElementById('date').value;
+    var invStatus = document.getElementById('invstatus').value;
 
     // PROCESS DATA FOR ANY INVOICE TO BE ATTACHED
     var checkboxes = document.querySelectorAll('input[name="invoice"]:checked');
@@ -13206,16 +13208,12 @@ if (postPayment) {
     checkboxes.forEach(function (checkbox) {
       checkedInvoiceValues.push(checkbox.value);
     });
-    (0, _processData.createPayment)(tag, description, amount, date, checkedInvoiceValues);
+    (0, _processData.createPayment)(tag, description, amount, date, checkedInvoiceValues, invStatus);
   });
 }
 ;
 if (modifyPayment) {
   // SECTION 1
-  // This will display current invoice on payment status and other status option
-  var _docid = document.getElementById('docid').value;
-
-  // SECTION 2
   // This will display all invoices except paid
   var _invoiceSelection = document.querySelector('.invoice-field-item');
   if (_invoiceSelection) {
@@ -13228,7 +13226,7 @@ if (modifyPayment) {
           // CREATE HTML TAG FOR "LI" & "LABEL"
           var create_div_tag = document.createElement('div');
           create_div_tag.classList.add('form-check');
-          create_div_tag.innerHTML = "<label class=\"form-check-label\" for=\"inv-".concat(x, "\"><input type=\"radio\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
+          create_div_tag.innerHTML = "<label class=\"form-check-label flabel\" for=\"inv-".concat(x, "\"><input type=\"radio\" class=\"form-check-input\" name=\"invoice\" id=\"inv-").concat(x, "\" value=\"").concat(element.id, "\">").concat(element.invoiceNumber, " - ").concat(element.description, "</label>");
           _invoiceSelection.appendChild(create_div_tag);
         });
       }
@@ -13236,7 +13234,7 @@ if (modifyPayment) {
     });
   }
   ;
-  // SECTION 3
+  // SECTION 2
   // This will update the payment data
   modifyPayment.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -13257,7 +13255,7 @@ if (modifyPayment) {
     (0, _processData.updatePayment)(docid, tag, description, amount, date, checkedInvoiceValues, invStatus);
   });
 
-  // SECTION 4
+  // SECTION 3
   // Ths will removed attached invoice to a particular payment
   var unlinkInvoice = document.querySelectorAll('.unlink');
   if (unlinkInvoice) {
@@ -13273,7 +13271,7 @@ if (modifyPayment) {
   }
 }
 if (removePayment) {
-  var _docid2 = document.getElementById('docid').value;
+  var _docid = document.getElementById('docid').value;
   removePayment.addEventListener('submit', function (event) {
     event.preventDefault();
   });
@@ -13295,7 +13293,7 @@ if (removePayment) {
         },
         callback: function callback(result) {
           if (result) {
-            (0, _processData.deletePayment)(_docid2);
+            (0, _processData.deletePayment)(_docid);
           }
           ;
         }
@@ -13329,7 +13327,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51375" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54590" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

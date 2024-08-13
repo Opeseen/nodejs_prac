@@ -3,6 +3,7 @@ const catchAsyncError = require('../utils/catchAsyncError');
 const {jobService, invoiceService, paymentService, userService} = require('../services');
 const ApiError = require('../utils/ApiError');
 
+// SECTION 1 - Jobs, Invoices & Payments
 const displayHomePage = catchAsyncError(async(req, res) => {
   res.status(httpStatus.OK).render('homepage',{
     title: 'Home Page'
@@ -99,7 +100,18 @@ const getPaymentDetails = catchAsyncError(async(req, res, next) => {
   
 });
 
+
+// SECTION 2 - User
+const registerUser = (req, res) => {
+  res.status(httpStatus.OK).render('signup', {
+    title: 'Create your account'
+  });
+};
+
+
+
 module.exports = {
+  // Section 1
   displayHomePage,
   getAllJobs,
   getJobDetails,
@@ -109,5 +121,7 @@ module.exports = {
   getInvoiceDetails,
   createPayment,
   getAllPayment,
-  getPaymentDetails
+  getPaymentDetails,
+  // Section 2
+  registerUser
 };
