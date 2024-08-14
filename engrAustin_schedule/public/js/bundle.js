@@ -12682,8 +12682,14 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee9$(_context9) {
       while (1) switch (_context9.prev = _context9.next) {
         case 0:
-          _context9.prev = 0;
-          _context9.next = 3;
+          if (!(invoices && invoices.length > 0 && invStatus === 'null')) {
+            _context9.next = 2;
+            break;
+          }
+          return _context9.abrupt("return", (0, _alert.showAlert)('error', 'Error processing request. <br><br> A payment status is required when an invoice is selected'));
+        case 2:
+          _context9.prev = 2;
+          _context9.next = 5;
           return (0, _axios.default)({
             method: 'POST',
             url: 'http://localhost:3000/api/v2/mundial/payments',
@@ -12696,7 +12702,7 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
               invStatus: invStatus
             }
           });
-        case 3:
+        case 5:
           response = _context9.sent;
           if (response.data.success) {
             (0, _alert.showAlert)('success', 'Payment Successfully Created');
@@ -12704,17 +12710,17 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
               location.reload();
             }, 2000);
           }
-          _context9.next = 10;
+          _context9.next = 12;
           break;
-        case 7:
-          _context9.prev = 7;
-          _context9.t0 = _context9["catch"](0);
+        case 9:
+          _context9.prev = 9;
+          _context9.t0 = _context9["catch"](2);
           (0, _alert.showAlert)('error', _context9.t0.response.data.message);
-        case 10:
+        case 12:
         case "end":
           return _context9.stop();
       }
-    }, _callee9, null, [[0, 7]]);
+    }, _callee9, null, [[2, 9]]);
   }));
   return function createPayment(_x28, _x29, _x30, _x31, _x32, _x33) {
     return _ref9.apply(this, arguments);
@@ -12726,8 +12732,14 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee10$(_context10) {
       while (1) switch (_context10.prev = _context10.next) {
         case 0:
-          _context10.prev = 0;
-          _context10.next = 3;
+          if (!(invoices && invoices.length > 0 && invStatus === 'null')) {
+            _context10.next = 2;
+            break;
+          }
+          return _context10.abrupt("return", (0, _alert.showAlert)('error', 'Error processing request. <br><br> A payment status is required when an invoice is selected'));
+        case 2:
+          _context10.prev = 2;
+          _context10.next = 5;
           return (0, _axios.default)({
             method: 'PATCH',
             url: "http://localhost:3000/api/v2/mundial/payments/".concat(id),
@@ -12741,7 +12753,7 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
               invStatus: invStatus
             }
           });
-        case 3:
+        case 5:
           response = _context10.sent;
           if (response.data.success) {
             (0, _alert.showAlert)('success', 'Payment Successfully Updated');
@@ -12749,17 +12761,17 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
               location.reload();
             }, 2000);
           }
-          _context10.next = 10;
+          _context10.next = 12;
           break;
-        case 7:
-          _context10.prev = 7;
-          _context10.t0 = _context10["catch"](0);
+        case 9:
+          _context10.prev = 9;
+          _context10.t0 = _context10["catch"](2);
           (0, _alert.showAlert)('error', _context10.t0.response.data.message);
-        case 10:
+        case 12:
         case "end":
           return _context10.stop();
       }
-    }, _callee10, null, [[0, 7]]);
+    }, _callee10, null, [[2, 9]]);
   }));
   return function updatePayment(_x34, _x35, _x36, _x37, _x38, _x39, _x40) {
     return _ref10.apply(this, arguments);
@@ -13068,8 +13080,8 @@ if (removeJob) {
   $(function () {
     $("#jobdelete").click(function () {
       bootbox.confirm({
-        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
-        message: 'Do you want to continue?',
+        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
+        message: '<h3>Do you wish to continue?</h3>',
         buttons: {
           confirm: {
             label: 'Yes',
@@ -13145,8 +13157,8 @@ if (removeInvoice) {
   $(function () {
     $("#invdelete").click(function () {
       bootbox.confirm({
-        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
-        message: 'Do you want to continue?',
+        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
+        message: '<h3>Do you wish to continue?</h3>',
         buttons: {
           confirm: {
             label: 'Yes',
@@ -13279,8 +13291,8 @@ if (removePayment) {
   $(function () {
     $("#paydelete").click(function () {
       bootbox.confirm({
-        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
-        message: 'Do you want to continue?',
+        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
+        message: '<h3>Do you wish to continue?</h3>',
         buttons: {
           confirm: {
             label: 'Yes',
@@ -13327,7 +13339,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54590" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57301" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

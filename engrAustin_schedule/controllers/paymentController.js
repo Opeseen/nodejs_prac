@@ -19,12 +19,7 @@ const createPayment = catchAsyncError(async(req, res, next) => {
         await invoiceService.addPaymentToInvoice(invoice, payment.id, req.body.invStatus);
       }))
     } catch (error) {
-      let message;
-      if(error.name === 'ValidationError'){
-        message = Object.values(error.errors).map(element => element.message).join(', ');
-        return next(new ApiError(`Payment successfully updated but error linking invoice because ${message}`,httpStatus.BAD_REQUEST))
-      }
-      return next(new ApiError("Payment successfully updated but an Internal Error while Linking the Invoice",httpStatus.INTERNAL_SERVER_ERROR))
+      return next(error)
     }
 
   };
@@ -69,12 +64,7 @@ const updatePayment = catchAsyncError(async(req, res, next) => {
         await invoiceService.addPaymentToInvoice(invoice, updatedPayment.id, req.body.invStatus);
       }))
     } catch (error) {
-      let message;
-      if(error.name === 'ValidationError'){
-        message = Object.values(error.errors).map(element => element.message).join(', ');
-        return next(new ApiError(`Payment successfully updated but error linking invoice because ${message}`,httpStatus.BAD_REQUEST))
-      }
-      return next(new ApiError("Payment successfully updated but an Internal Error while Linking the Invoice",httpStatus.INTERNAL_SERVER_ERROR))
+      return next(error)
     }
 
   };

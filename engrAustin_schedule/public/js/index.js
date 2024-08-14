@@ -78,8 +78,8 @@ if (removeJob){
   $(function(){
     $("#jobdelete").click(function () {
       bootbox.confirm({
-        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
-        message: 'Do you want to continue?',
+        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
+        message: '<h3>Do you wish to continue?</h3>',
         buttons: {
         confirm: {
         label: 'Yes',
@@ -159,8 +159,8 @@ if (removeInvoice){
   $(function(){
     $("#invdelete").click(function () {
       bootbox.confirm({
-        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
-        message: 'Do you want to continue?',
+        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
+        message: '<h3>Do you wish to continue?</h3>',
         buttons: {
         confirm: {
         label: 'Yes',
@@ -294,8 +294,8 @@ if (removePayment){
   $(function(){
     $("#paydelete").click(function () {
       bootbox.confirm({
-        title: '<p class="text-danger font-weight-bold text-uppercase">This will delete permanently</p>',
-        message: 'Do you want to continue?',
+        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
+        message: '<h3>Do you wish to continue?</h3>',
         buttons: {
         confirm: {
         label: 'Yes',
