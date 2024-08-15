@@ -52,7 +52,7 @@ const getAllInvoices = catchAsyncError(async(req, res) => {
   const invoices = await invoiceService.getAllInvoices();
   res.status(httpStatus.OK).render('invoiceOutline',{
     title: 'Invoice',
-    invoices
+    invoices: invoices.invoice,
   });
 });
 

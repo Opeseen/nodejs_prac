@@ -48,6 +48,13 @@ class APIFeatures{
 
     return this;
   }
+
+  // 5 COUNT THE NO OF INVOICE...
+  count(){
+    this.query = this.query.count();
+
+    return this;
+  }
 };
 
 module.exports = APIFeatures;

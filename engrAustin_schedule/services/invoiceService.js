@@ -37,7 +37,11 @@ const getAllInvoices = async(queryObject) => {
     .sort()
     .limitFields()
   const invoice = await features.query;
-  return invoice;
+  // EXECUTE QUERY FOR COUN...
+  const docCount = new APIFeatures(Invoice.find()).count();
+  const docCounted = await docCount.query;
+  
+  return {invoice, docCounted}
 };
 
 const updateInvoice = async(invoiceId, updatedDetails) => {
