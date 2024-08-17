@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: [true, 'Please provide a password'],
-      minlength: 8,
+      minlength: [8, 'Password length must not be less than 8 chatacter'],
       private: true
     },
     passwordConfirm: {
@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema(
         validator: function(element) {
           return element === this.password;
         },
-        message: 'Passwords are not the same!'
+        message: 'Passwords do not match!'
       }
     },
     passwordChangedAt: { 

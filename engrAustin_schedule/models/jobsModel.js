@@ -6,7 +6,7 @@ const jobSchema = new mongoose.Schema(
   {
     jobID:{
       type: String,
-      required: [true, 'A Job must must contain an ID'],
+      required: [true, 'A Job must must contain a job id'],
       unique: true,
       trim: true,
       uppercase: true,

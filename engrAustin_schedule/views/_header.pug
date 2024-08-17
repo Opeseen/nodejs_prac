@@ -1,6 +1,6 @@
 header.header
   nav.nav.nav--welcome
-    a.nav__el(href='/') Welcome
+    a.nav__el.nav__el--home(href='/') home
   // dot(.) automatically creates a div element in pug template
   .header__logo
     img(src='/img/mundial-logo.png' alt='Logo')
@@ -20,4 +20,5 @@ header.header
       .dropdown-content
         a(href='/jobs/view') view job
         a(href='/job/create') create new job
+    //- a.nav__el.nav__el--cta(href='#') login
     a.nav__el.nav__el--cta(href='/user/register') Sign Up

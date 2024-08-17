@@ -3,9 +3,12 @@ import {
   getAllJobs, createJob, updateJob, deleteJob, 
   getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, 
   unlinkResource, updatePayment, getPaymentLedger, deletePayment,
-  createPayment
+  createPayment, createNewUser
 } 
 from './processData';
+
+// GLOBAL VARIABLE
+const bootbox_cta_fsize = 'fs-4'
 
 // INVOICES
 const modifyInvoice = document.querySelector('.modify-resource-invoice');
@@ -24,6 +27,8 @@ const postJob = document.querySelector('.create-resource-job');
 const modifyJob = document.querySelector('.modify-resource-job');
 const removeJob = document.querySelector('.delete-resource-job')
 
+// USERS
+const createNewUserRecord = document.querySelector('.form--signup');
 
 // JOBS
 if(job){
@@ -78,16 +83,16 @@ if (removeJob){
   $(function(){
     $("#jobdelete").click(function () {
       bootbox.confirm({
-        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
-        message: '<h3>Do you wish to continue?</h3>',
+        title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+        message: '<h4>Do you wish to continue?</h4>',
         buttons: {
         confirm: {
         label: 'Yes',
-        className: 'btn-success'
+        className: `btn-success ${bootbox_cta_fsize}`
         },
         cancel: {
         label: 'No',
-        className: 'btn-danger'
+        className: `btn-danger ${bootbox_cta_fsize}`
         }
         },
         callback: function (result) {
@@ -159,16 +164,16 @@ if (removeInvoice){
   $(function(){
     $("#invdelete").click(function () {
       bootbox.confirm({
-        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
-        message: '<h3>Do you wish to continue?</h3>',
+        title: '<h5class="text-danger text-uppercase">This will delete permanently</h5>',
+        message: '<h4>Do you wish to continue?</h4>',
         buttons: {
         confirm: {
         label: 'Yes',
-        className: 'btn-success'
+        className: `btn-success ${bootbox_cta_fsize}`
         },
         cancel: {
         label: 'No',
-        className: 'btn-danger'
+        className: `btn-danger ${bootbox_cta_fsize}`
         }
         },
         callback: function (result) {
@@ -294,16 +299,16 @@ if (removePayment){
   $(function(){
     $("#paydelete").click(function () {
       bootbox.confirm({
-        title: '<h3 class="text-danger text-uppercase">This will delete permanently</h3>',
-        message: '<h3>Do you wish to continue?</h3>',
+        title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+        message: '<h4>Do you wish to continue?</h4>',
         buttons: {
         confirm: {
         label: 'Yes',
-        className: 'btn-success'
+        className: `btn-success ${bootbox_cta_fsize}`
         },
         cancel: {
         label: 'No',
-        className: 'btn-danger'
+        className: `btn-danger ${bootbox_cta_fsize}`
         }
         },
         callback: function (result) {
@@ -316,4 +321,19 @@ if (removePayment){
 
   });
 
+};
+
+
+// USER
+if(createNewUserRecord){
+  createNewUserRecord.addEventListener('submit', event => {
+    event.preventDefault();
+    const firstname = document.getElementById('fname').value;
+    const lastname = document.getElementById('lname').value;
+    const email = document.getElementById('email').value;
+    const password1 = document.getElementById('passwd1').value;
+    const password2 = document.getElementById('passwd2').value;
+
+    createNewUser(firstname,lastname,email,password1,password2);
+  });
 };

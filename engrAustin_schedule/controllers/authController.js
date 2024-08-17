@@ -18,7 +18,7 @@ const sendUserDetailsAndToken = (user, statusCode, res) => {
   res.cookie('jwt', token, cookieOption); // Send the cookie at every response
 
   res.status(statusCode).json({
-    status: 'Success',
+    success: true,
     user,
     token
   });

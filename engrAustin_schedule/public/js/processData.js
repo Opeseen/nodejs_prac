@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {showAlert} from './alert';
 
+// JOBS
 export const getAllJobs = async() => {
   try {
     const result = await axios({
@@ -78,6 +79,7 @@ export const deleteJob = async(id) => {
   }
 };
 
+// INVOICES
 export const getUnpaidInvoices = async() =>{
   try {
     const result = await axios({
@@ -163,10 +165,11 @@ export const deleteInvoice = async(id) => {
   }
 };
 
+// PAYMENTS
 export const createPayment = 
   async(tag, details, amount, date, invoices,invStatus) => {
     if(invoices && invoices.length > 0 && invStatus === 'null'){
-      return showAlert('error','Error processing request. <br><br> A payment status is required when an invoice is selected');
+      return showAlert('error','Error processing request. <br><br> A payment status is required when an invoice is selected.');
     }
     try {
       const response = await axios({
@@ -185,7 +188,7 @@ export const createPayment =
         showAlert('success','Payment Successfully Created');
         window.setTimeout(() => {
           location.reload();
-        },2000);
+        },3000);
       }
     } catch (error) {
       showAlert('error',error.response.data.message);
@@ -195,7 +198,7 @@ export const createPayment =
 export const updatePayment = 
   async(id, tag, details, amount, date, invoices, invStatus) => {
     if(invoices && invoices.length > 0 && invStatus === 'null'){
-      return showAlert('error','Error processing request. <br><br> A payment status is required when an invoice is selected');
+      return showAlert('error','Error processing request. <br><br> A payment status is required when an invoice is selected.');
     }
     try {
       const response = await axios({
@@ -266,4 +269,30 @@ export const deletePayment = async(id) => {
   } catch (error) {
     showAlert('error',error.response.data.message);
   }
+};
+
+// USERS
+export const createNewUser = async(firstname,lastname,email,password,passwordConfirm) => {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url:  'http://localhost:3000/api/v2/mundial/users/signup',
+      data: {
+        firstname,
+        lastname,
+        email,
+        password,
+        passwordConfirm,
+      }
+    });
+    if(response.data.success){
+      showAlert('success',`User <b>${firstname} ${lastname}</b> Successfully Created. <br><br> You can proceed to login now with your email and password.`);
+      window.setTimeout(() => {
+        location.reload();
+      },5000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+
 };
