@@ -115,8 +115,8 @@ if(postInvoice){
     event.preventDefault();
     const invoiceNo = document.getElementById('invno').value;
     const description = document.getElementById('desc').value;
-    const salesval = document.getElementById('salesval').value;
-    const costval = document.getElementById('costval').value || 0;
+    const salesval = Number(document.getElementById('salesval').value);
+    const costval = Number(document.getElementById('costval').value || 0);
     const job = document.getElementById('job').value;
     const invclass = document.getElementById('invclass').value;
     const whtpercent = document.getElementById('whtpercent').value;
@@ -164,7 +164,7 @@ if (removeInvoice){
   $(function(){
     $("#invdelete").click(function () {
       bootbox.confirm({
-        title: '<h5class="text-danger text-uppercase">This will delete permanently</h5>',
+        title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
         message: '<h4>Do you wish to continue?</h4>',
         buttons: {
         confirm: {

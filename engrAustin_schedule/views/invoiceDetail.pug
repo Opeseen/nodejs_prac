@@ -37,7 +37,7 @@ block content
             textarea#desc(rows='3' cols='48')= invoice.description
           div(class='box-text-cell')
             p.box-title sales amount
-            input.input-style-one#salesval(type='number',step='any',value=`${invoice.salesValue}`)
+            input.input-style-one#salesval(type='text',step='any',value=`${invoice.salesValue}`)
           div(class='box-text-cell')
             p.box-title cost amount
             input.input-style-one#costval(type='number',step='any',value=`${invoice.spentValue}`)
@@ -82,4 +82,3 @@ block content
           button#invdelete.btn--cta--red Delete
 
     .line &nbsp;
-

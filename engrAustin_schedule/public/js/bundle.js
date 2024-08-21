@@ -13167,8 +13167,8 @@ if (postInvoice) {
     event.preventDefault();
     var invoiceNo = document.getElementById('invno').value;
     var description = document.getElementById('desc').value;
-    var salesval = document.getElementById('salesval').value;
-    var costval = document.getElementById('costval').value || 0;
+    var salesval = Number(document.getElementById('salesval').value);
+    var costval = Number(document.getElementById('costval').value || 0);
     var job = document.getElementById('job').value;
     var invclass = document.getElementById('invclass').value;
     var whtpercent = document.getElementById('whtpercent').value;
@@ -13213,7 +13213,7 @@ if (removeInvoice) {
   $(function () {
     $("#invdelete").click(function () {
       bootbox.confirm({
-        title: '<h5class="text-danger text-uppercase">This will delete permanently</h5>',
+        title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
         message: '<h4>Do you wish to continue?</h4>',
         buttons: {
           confirm: {
@@ -13409,7 +13409,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50290" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59781" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
