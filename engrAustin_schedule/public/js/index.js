@@ -331,9 +331,10 @@ if(createNewUserRecord){
     const firstname = document.getElementById('fname').value;
     const lastname = document.getElementById('lname').value;
     const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
     const password1 = document.getElementById('passwd1').value;
     const password2 = document.getElementById('passwd2').value;
 
-    createNewUser(firstname,lastname,email,password1,password2);
+    createNewUser(firstname,lastname,email,username,password1,password2);
   });
 };

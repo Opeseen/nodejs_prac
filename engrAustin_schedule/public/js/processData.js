@@ -272,7 +272,7 @@ export const deletePayment = async(id) => {
 };
 
 // USERS
-export const createNewUser = async(firstname,lastname,email,password,passwordConfirm) => {
+export const createNewUser = async(firstname,lastname,email,username,password,passwordConfirm) => {
   try {
     const response = await axios({
       method: 'POST',
@@ -281,12 +281,13 @@ export const createNewUser = async(firstname,lastname,email,password,passwordCon
         firstname,
         lastname,
         email,
+        username,
         password,
         passwordConfirm,
       }
     });
     if(response.data.success){
-      showAlert('success',`User <b>${firstname} ${lastname}</b> Successfully Created. <br><br> You can proceed to login now with your email and password.`);
+      showAlert('success',`User <b>${firstname} ${lastname}</b> Successfully Created. <br> You can proceed to login now with your email and password.`);
       window.setTimeout(() => {
         location.reload();
       },5000);

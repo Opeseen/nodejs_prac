@@ -26,9 +26,10 @@ const sendUserDetailsAndToken = (user, statusCode, res) => {
 
 const signUpUser = catchAsyncError(async (req, res) => {
   // CREATE A NEW USER
-  const newUser = await userService.signUpUser(req.body);
-  // SEND TOKEN AND USER DETAILS
-  sendUserDetailsAndToken(newUser, httpStatus.CREATED, res);
+  await userService.signUpUser(req.body);
+  res.status(httpStatus.OK).json({
+    success: true,
+  });
 });
 
 const loginUser = catchAsyncError(async(req, res, next) => {

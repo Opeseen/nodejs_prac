@@ -14,7 +14,7 @@ const getuserByID = async(id) => {
   return user;
 };
 
-const updateCurrentUserData = async (updatedUserDetails, userId) => {
+const updateCurrentUserData = async (updatedUserDetails, user) => {
   const updatedUser = await User.findByIdAndUpdate(userId, updatedUserDetails, {
     new: true,
     runValidators: true
@@ -22,9 +22,8 @@ const updateCurrentUserData = async (updatedUserDetails, userId) => {
   return updatedUser;
 };
 
-const deleteMyUserData = async(userId) => {
-  const user = await User.findByIdAndDelete(userId);
-  return user;
+const deleteUser = async(user) => {
+  return await User.findOneAndDelete({username: user});
 };
 
 const getAllUsers = async() => {
@@ -36,6 +35,6 @@ module.exports = {
   getUserByEmail,
   getuserByID,
   updateCurrentUserData,
-  deleteMyUserData,
+  deleteUser,
   getAllUsers
 };

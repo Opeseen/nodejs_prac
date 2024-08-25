@@ -18,12 +18,13 @@ const updateCurrentUserData = catchAsyncError(async(req, res, next) => {
 
 });
 
-const deleteMyUserData = catchAsyncError(async(req, res) => {
-  await userService.deleteMyUserData(req.user.id);
-
+const deleteUser = catchAsyncError(async(req, res, next) => {
+  const user = await userService.deleteUser(req.params.username);
+  if(!user){
+    return next(new ApiError("No User found to delete", httpStatus.NOT_FOUND));
+  };
   res.status(httpStatus.NO_CONTENT).json({
-    status: "Success",
-    data: null
+    success: true
   });
 });
 
@@ -40,6 +41,6 @@ const getAllUsers = catchAsyncError(async(req, res) => {
 
 module.exports = {
   updateCurrentUserData,
-  deleteMyUserData,
+  deleteUser,
   getAllUsers
 };

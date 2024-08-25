@@ -12888,7 +12888,7 @@ var deletePayment = exports.deletePayment = /*#__PURE__*/function () {
 
 // USERS
 var createNewUser = exports.createNewUser = /*#__PURE__*/function () {
-  var _ref14 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14(firstname, lastname, email, password, passwordConfirm) {
+  var _ref14 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee14(firstname, lastname, email, username, password, passwordConfirm) {
     var response;
     return _regeneratorRuntime().wrap(function _callee14$(_context14) {
       while (1) switch (_context14.prev = _context14.next) {
@@ -12902,6 +12902,7 @@ var createNewUser = exports.createNewUser = /*#__PURE__*/function () {
               firstname: firstname,
               lastname: lastname,
               email: email,
+              username: username,
               password: password,
               passwordConfirm: passwordConfirm
             }
@@ -12909,7 +12910,7 @@ var createNewUser = exports.createNewUser = /*#__PURE__*/function () {
         case 3:
           response = _context14.sent;
           if (response.data.success) {
-            (0, _alert.showAlert)('success', "User <b>".concat(firstname, " ").concat(lastname, "</b> Successfully Created. <br><br> You can proceed to login now with your email and password."));
+            (0, _alert.showAlert)('success', "User <b>".concat(firstname, " ").concat(lastname, "</b> Successfully Created. <br> You can proceed to login now with your email and password."));
             window.setTimeout(function () {
               location.reload();
             }, 5000);
@@ -12926,7 +12927,7 @@ var createNewUser = exports.createNewUser = /*#__PURE__*/function () {
       }
     }, _callee14, null, [[0, 7]]);
   }));
-  return function createNewUser(_x45, _x46, _x47, _x48, _x49) {
+  return function createNewUser(_x45, _x46, _x47, _x48, _x49, _x50) {
     return _ref14.apply(this, arguments);
   };
 }();
@@ -13378,9 +13379,10 @@ if (createNewUserRecord) {
     var firstname = document.getElementById('fname').value;
     var lastname = document.getElementById('lname').value;
     var email = document.getElementById('email').value;
+    var username = document.getElementById('username').value;
     var password1 = document.getElementById('passwd1').value;
     var password2 = document.getElementById('passwd2').value;
-    (0, _processData.createNewUser)(firstname, lastname, email, password1, password2);
+    (0, _processData.createNewUser)(firstname, lastname, email, username, password1, password2);
   });
 }
 ;
@@ -13409,7 +13411,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59346" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49763" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
