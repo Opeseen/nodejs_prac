@@ -167,9 +167,9 @@ export const deleteInvoice = async(id) => {
 
 // PAYMENTS
 export const createPayment = 
-  async(tag, details, amount, date, invoices,invStatus) => {
+  async(tag,details,amount,date,invoices,invStatus) => {
     if(invoices && invoices.length > 0 && invStatus === 'null'){
-      return showAlert('error','Error processing request. <br><br> A payment status is required when an invoice is selected.');
+      return showAlert('error','Error processing request. <br> A payment status is required when an invoice is selected.');
     }
     try {
       const response = await axios({
@@ -198,7 +198,7 @@ export const createPayment =
 export const updatePayment = 
   async(id, tag, details, amount, date, invoices, invStatus) => {
     if(invoices && invoices.length > 0 && invStatus === 'null'){
-      return showAlert('error','Error processing request. <br><br> A payment status is required when an invoice is selected.');
+      return showAlert('error','Error processing request. <br> A payment status is required when an invoice is selected.');
     }
     try {
       const response = await axios({

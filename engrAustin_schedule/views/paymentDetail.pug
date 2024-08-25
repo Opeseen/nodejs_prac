@@ -37,16 +37,16 @@ block content
         .form__div
           div(class='box-text-cell')
             p.box-title payment tag
-            input.input-style-one#tag(type='text',value=`${payment.tag}`)
+            input.input-style-one#tag(type='text' value=`${payment.tag}`)
           div(class='box-text-cell')
             p.box-title description
             textarea#desc(rows='3' cols='48')= payment.details
           div(class='box-text-cell')
             p.box-title amount
-            input.input-style-one#amount(type='number',step='any',value=`${payment.amount}`)
+            input.input-style-one#amount(type='text' step='any' name='thousand-convert' value=`${payment.amount}` onfocus='use_number(this)' onblur='use_text(this)')
           div(class='box-text-cell')
             p.box-title date
-            input.input-style-one#date(type='date', value=`${payment.date.toLocaleDateString('en-CA')}`)
+            input.input-style-one#date(type='date' value=`${payment.date.toLocaleDateString('en-CA')}`)
           div(class='box-text-cell')
             p.box-title invoice payment status
             select.select-style-one#invstatus(name='class')
@@ -55,7 +55,7 @@ block content
               option Unpaid
               option Partially Paid
           div(class='box-text-cell')
-            input.input-style-one#docid(type='hidden',value=`${payment.id}`)
+            input.input-style-one#docid(type='hidden' value=`${payment.id}`)
         .line &nbsp;
         .heading__title Link Invoice
           br
@@ -68,7 +68,7 @@ block content
     .resource-details.delete-resource-payment 
       .heading__title Delete Payment
       form
-        .warning Warning: This action cannot be undone. Dont click the below button on accident!
+        .warning Warning: This action cannot be undone!
         .form__cta
           button#paydelete.btn--cta--red Delete
         .line &nbsp;

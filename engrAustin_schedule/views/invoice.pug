@@ -16,13 +16,13 @@ block content
             textarea#desc(rows='3' cols='48')
           div(class='box-text-cell')
             p.box-title sales amount
-            input.input-style-one#salesval(type='number',step='any')
+            input.input-style-one#salesval(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)')
           div(class='box-text-cell')
             p.box-title cost amount
-            input.input-style-one#costval(type='number',step='any')
+            input.input-style-one#costval(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)')
           div(class='box-text-cell')
             p.box-title job id
-            select.select-style-one#job(name='jobs', class='jobs')
+            select.select-style-one#job(name='jobs' class='jobs')
               option(value= 'undefined') Please select
           div(class='box-text-cell')
             p.box-title class

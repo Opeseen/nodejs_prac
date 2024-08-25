@@ -16,7 +16,7 @@ block content
             textarea#paydesc(rows='3' cols='48')
           div(class='box-text-cell')
             p.box-title amount
-            input.input-style-one#payamount(type='number',step='any')
+            input.input-style-one#payamount(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)')
           div(class='box-text-cell')
             p.box-title Date
             input.input-style-one#date(type='date')

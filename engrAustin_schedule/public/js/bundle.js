@@ -12691,7 +12691,7 @@ var createPayment = exports.createPayment = /*#__PURE__*/function () {
             _context9.next = 2;
             break;
           }
-          return _context9.abrupt("return", (0, _alert.showAlert)('error', 'Error processing request. <br><br> A payment status is required when an invoice is selected.'));
+          return _context9.abrupt("return", (0, _alert.showAlert)('error', 'Error processing request. <br> A payment status is required when an invoice is selected.'));
         case 2:
           _context9.prev = 2;
           _context9.next = 5;
@@ -12741,7 +12741,7 @@ var updatePayment = exports.updatePayment = /*#__PURE__*/function () {
             _context10.next = 2;
             break;
           }
-          return _context10.abrupt("return", (0, _alert.showAlert)('error', 'Error processing request. <br><br> A payment status is required when an invoice is selected.'));
+          return _context10.abrupt("return", (0, _alert.showAlert)('error', 'Error processing request. <br> A payment status is required when an invoice is selected.'));
         case 2:
           _context10.prev = 2;
           _context10.next = 5;
@@ -13167,8 +13167,8 @@ if (postInvoice) {
     event.preventDefault();
     var invoiceNo = document.getElementById('invno').value;
     var description = document.getElementById('desc').value;
-    var salesval = Number(document.getElementById('salesval').value);
-    var costval = Number(document.getElementById('costval').value || 0);
+    var salesval = Number(document.getElementById('salesval').value.replace(/,/g, ''));
+    var costval = Number(document.getElementById('costval').value.replace(/,/g, '') || 0);
     var job = document.getElementById('job').value;
     var invclass = document.getElementById('invclass').value;
     var whtpercent = document.getElementById('whtpercent').value;
@@ -13193,8 +13193,8 @@ if (modifyInvoice) {
     event.preventDefault();
     var invoiceNo = document.getElementById('invno').value;
     var description = document.getElementById('desc').value;
-    var salesval = document.getElementById('salesval').value;
-    var costval = document.getElementById('costval').value;
+    var salesval = Number(document.getElementById('salesval').value.replace(/,/g, ''));
+    var costval = Number(document.getElementById('costval').value.replace(/,/g, ''));
     var job = document.getElementById('job').value;
     var invclass = document.getElementById('invclass').value;
     var invstatus = document.getElementById('invstatus').value;
@@ -13266,7 +13266,7 @@ if (postPayment) {
     event.preventDefault();
     var tag = document.getElementById('paytag').value;
     var description = document.getElementById('paydesc').value;
-    var amount = document.getElementById('payamount').value;
+    var amount = Number(document.getElementById('payamount').value.replace(/,/g, ''));
     var date = document.getElementById('date').value;
     var invStatus = document.getElementById('invstatus').value;
 
@@ -13309,7 +13309,7 @@ if (modifyPayment) {
     // GET THE VALUE OF DATA UPDATED
     var tag = document.getElementById('tag').value;
     var description = document.getElementById('desc').value;
-    var amount = document.getElementById('amount').value;
+    var amount = Number(document.getElementById('amount').value.replace(/,/g, ''));
     var date = document.getElementById('date').value;
     var invStatus = document.getElementById('invstatus').value;
     var docid = document.getElementById('docid').value;
@@ -13409,7 +13409,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59781" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59346" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

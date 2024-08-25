@@ -115,8 +115,8 @@ if(postInvoice){
     event.preventDefault();
     const invoiceNo = document.getElementById('invno').value;
     const description = document.getElementById('desc').value;
-    const salesval = Number(document.getElementById('salesval').value);
-    const costval = Number(document.getElementById('costval').value || 0);
+    const salesval = Number(document.getElementById('salesval').value.replace(/,/g, ''));
+    const costval = Number(document.getElementById('costval').value.replace(/,/g, '') || 0);
     const job = document.getElementById('job').value;
     const invclass = document.getElementById('invclass').value;
     const whtpercent = document.getElementById('whtpercent').value;
@@ -143,8 +143,8 @@ if (modifyInvoice){
     event.preventDefault();
     const invoiceNo = document.getElementById('invno').value;
     const description = document.getElementById('desc').value;
-    const salesval = document.getElementById('salesval').value;
-    const costval = document.getElementById('costval').value;
+    const salesval = Number(document.getElementById('salesval').value.replace(/,/g, ''));
+    const costval = Number(document.getElementById('costval').value.replace(/,/g, ''));
     const job = document.getElementById('job').value;
     const invclass = document.getElementById('invclass').value;
     const invstatus = document.getElementById('invstatus').value;
@@ -217,7 +217,7 @@ if (postPayment){
     event.preventDefault();
     const tag = document.getElementById('paytag').value;
     const description = document.getElementById('paydesc').value;
-    const amount = document.getElementById('payamount').value;
+    const amount = Number(document.getElementById('payamount').value.replace(/,/g, ''));
     const date = document.getElementById('date').value;
     const invStatus = document.getElementById('invstatus').value;
 
@@ -261,7 +261,7 @@ if (modifyPayment){
     // GET THE VALUE OF DATA UPDATED
     const tag = document.getElementById('tag').value;
     const description = document.getElementById('desc').value;
-    const amount = document.getElementById('amount').value;
+    const amount = Number(document.getElementById('amount').value.replace(/,/g, ''));
     const date = document.getElementById('date').value;
     const invStatus = document.getElementById('invstatus').value;
     const docid = document.getElementById('docid').value
