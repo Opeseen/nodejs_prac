@@ -5,8 +5,8 @@ const signUpUser = async (userDetails) => {
   return newUser;
 };
 
-const getUserByEmail = async(email) => {
-  return await User.findOne({email}).select('+password');
+const getUserByUsername = async(username) => {
+  return await User.findOne({username}).select('+password');
 };
 
 const getuserByID = async(id) => {
@@ -15,7 +15,7 @@ const getuserByID = async(id) => {
 };
 
 const updateCurrentUserData = async (updatedUserDetails, user) => {
-  const updatedUser = await User.findByIdAndUpdate(userId, updatedUserDetails, {
+  const updatedUser = await User.findByIdAndUpdate(user, updatedUserDetails, {
     new: true,
     runValidators: true
   });
@@ -32,7 +32,7 @@ const getAllUsers = async() => {
 
 module.exports = {
   signUpUser,
-  getUserByEmail,
+  getUserByUsername,
   getuserByID,
   updateCurrentUserData,
   deleteUser,

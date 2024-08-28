@@ -22,5 +22,6 @@ router.get('/payment/:id', viewsController.getPaymentDetails);
 
 // User Route
 router.get('/user/register', viewsController.registerUser)
+router.get('/user/login', viewsController.loginUser)
 
 module.exports = router;

@@ -297,3 +297,25 @@ export const createNewUser = async(firstname,lastname,email,username,password,pa
   }
 
 };
+
+export const loginUser = async(username,password) => {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url:  'http://localhost:3000/api/v2/mundial/users/login',
+      data: {
+        username,
+        password
+      }
+    });
+    if(response.data.success){
+      showAlert('success','Login Successful');
+      window.setTimeout(() => {
+        location.reload();
+      },3000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message);
+  }
+
+};

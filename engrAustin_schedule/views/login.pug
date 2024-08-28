@@ -1,0 +1,16 @@
+extends base
+
+block content
+  main
+    h2.page__subject Login to your account
+    .login-form 
+      form.form--login
+        .form__group
+          label.form__label(for='username') Username
+          input#username.form__input(type='text', placeholder='Enter Your Username', required)
+        .form__group.ma-bt-md
+          label.form__label(for='passwd') Password
+          input#passwd.form__input(type='password', placeholder='••••••••', required, minlength='8')
+        .form__cta
+          button.btn--cta--save Login
+    .spacing  

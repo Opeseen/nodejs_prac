@@ -108,6 +108,12 @@ const registerUser = (req, res) => {
   });
 };
 
+const loginUser = (req, res) => {
+  res.status(httpStatus.OK).render('login', {
+    title: 'Login'
+  });
+};
+
 
 
 module.exports = {
@@ -123,5 +129,6 @@ module.exports = {
   getAllPayment,
   getPaymentDetails,
   // Section 2
-  registerUser
+  registerUser,
+  loginUser
 };

@@ -128,7 +128,7 @@ html {
 }
 .nav__el--cta, .nav__el--home {
   padding: 1rem 3rem;
-  margin-left: 2.0rem;
+  margin-left: 0.5rem;
   border-radius: 10rem;
   border: 1px solid currentColor !important;
   -webkit-transition: all 0.3s;
@@ -505,7 +505,7 @@ textarea{
   font-family: inherit;
   font-size: 1.5rem;
   color: inherit;
-  padding: 1.25rem 1.75rem;
+  padding: 1.25rem 1.25rem;
   border: none;
   width: 100%;
   background-color: #fff;
@@ -539,6 +539,6 @@ textarea{
   display: block;
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.55rem;
   color:#54585d;
 }

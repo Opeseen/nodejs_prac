@@ -27,19 +27,19 @@ const sendUserDetailsAndToken = (user, statusCode, res) => {
 const signUpUser = catchAsyncError(async (req, res) => {
   // CREATE A NEW USER
   await userService.signUpUser(req.body);
-  res.status(httpStatus.OK).json({
+  res.status(httpStatus.CREATED).json({
     success: true,
   });
 });
 
 const loginUser = catchAsyncError(async(req, res, next) => {
-  const {email, password} = req.body;
+  const {username, password} = req.body;
 
   // CHECK IF EMAIL AND PASSWORD IS PROVIDED
-  if(!email || !password) {return next(new ApiError('Please provide email and password',httpStatus.BAD_REQUEST))};
+  if(!username || !password) {return next(new ApiError('Please provide username and password',httpStatus.BAD_REQUEST))};
   
   // CHECK LOGIN CREDENTIALS
-  const user = await authService.verifyLoginCredentials(email, password);
+  const user = await authService.verifyLoginCredentials(username, password);
   // SEND USER DETAILS AND TOKEN
   sendUserDetailsAndToken(user, httpStatus.OK, res);
 });

@@ -3,7 +3,7 @@ import {
   getAllJobs, createJob, updateJob, deleteJob, 
   getUnpaidInvoices, createInvoice, updateInvoice, deleteInvoice, 
   unlinkResource, updatePayment, getPaymentLedger, deletePayment,
-  createPayment, createNewUser
+  createPayment, createNewUser, loginUser
 } 
 from './processData';
 
@@ -29,6 +29,7 @@ const removeJob = document.querySelector('.delete-resource-job')
 
 // USERS
 const createNewUserRecord = document.querySelector('.form--signup');
+const loginUserDetails = document.querySelector('.form--login');
 
 // JOBS
 if(job){
@@ -336,5 +337,15 @@ if(createNewUserRecord){
     const password2 = document.getElementById('passwd2').value;
 
     createNewUser(firstname,lastname,email,username,password1,password2);
+  });
+};
+
+if(loginUserDetails){
+  loginUserDetails.addEventListener('submit', event => {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('passwd').value;
+    
+    loginUser(username,password);
   });
 };
