@@ -7,7 +7,6 @@ if(inputValue){
   });
 } 
 
-
 function use_number(node) {
   let empty_val = false;
   const value = node.value
