@@ -1,8 +1,12 @@
 let inputValue = document.querySelectorAll('input[name="thousand-convert"]');
-inputValue.forEach((element) => {
-  let value = Number(element.value)
-  element.value = value.toLocaleString('en-us');
-});
+
+if(inputValue){
+  inputValue.forEach((element) => {
+    let value = Number(element.value)
+    element.value = value.toLocaleString('en-us');
+  });
+} 
+
 
 function use_number(node) {
   let empty_val = false;
