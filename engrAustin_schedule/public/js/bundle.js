@@ -12952,7 +12952,7 @@ var loginUser = exports.loginUser = /*#__PURE__*/function () {
           if (response.data.success) {
             (0, _alert.showAlert)('success', 'Login Successful');
             window.setTimeout(function () {
-              location.reload();
+              location.assign('/');
             }, 3000);
           }
           _context15.next = 10;
@@ -13461,7 +13461,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54434" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53199" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

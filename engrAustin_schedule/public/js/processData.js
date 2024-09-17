@@ -311,7 +311,7 @@ export const loginUser = async(username,password) => {
     if(response.data.success){
       showAlert('success','Login Successful');
       window.setTimeout(() => {
-        location.reload();
+        location.assign('/');
       },3000);
     }
   } catch (error) {

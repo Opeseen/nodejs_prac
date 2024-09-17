@@ -5,20 +5,22 @@ header.header
   .header__logo
     img(src='/img/mundial-logo.png' alt='Logo')
   nav.nav.nav--user
-    .dropdown
-      button.nav__el Invoice
-      .dropdown-content
-        a(href='/invoices/view') view invoice
-        a(href='/invoice/create') create new invoice
-    .dropdown
-      button.nav__el Payment
-      .dropdown-content
-        a(href='/payments/view') view payment
-        a(href='/payment/create') create new payment
-    .dropdown
-      button.nav__el Job
-      .dropdown-content
-        a(href='/jobs/view') view job
-        a(href='/job/create') create new job
-    a.nav__el.nav__el--cta(href='/user/login') login
-    a.nav__el.nav__el--cta(href='/user/register') Sign Up
+    if user
+      .dropdown
+        button.nav__el Invoice
+        .dropdown-content
+          a(href='/invoices/view') view invoice
+          a(href='/invoice/create') create new invoice
+      .dropdown
+        button.nav__el Payment
+        .dropdown-content
+          a(href='/payments/view') view payment
+          a(href='/payment/create') create new payment
+      .dropdown
+        button.nav__el Job
+        .dropdown-content
+          a(href='/jobs/view') view job
+          a(href='/job/create') create new job
+    else
+      a.nav__el.nav__el--cta(href='/user/login') login
+      a.nav__el.nav__el--cta(href='/user/register') Sign Up

@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const {errorHandler, pathNotFoundErrorHandler, errorConverter} = require('./middlewares/error');
 const {successLogHandler, errorLogHandler} = require('./config/morgan');
 const jobRouter = require('./routes/jobRoutes');
@@ -20,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // BODY PARSER
 app.use(express.json( { limit: '10kb' } ));
+app.use(cookieParser());
 
 // ERROR LOGS
 app.use(successLogHandler);
