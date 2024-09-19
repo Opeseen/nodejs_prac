@@ -51,7 +51,7 @@ const isLoginAuth = async(req, res, next) => {
       return next();
     };
   };
-  next(new ApiError('You are not login. Login to get authorized', httpStatus.UNAUTHORIZED));
+  next(new ApiError('You are not login. Please Login to get authorized', httpStatus.UNAUTHORIZED));
   // next()
 };
 

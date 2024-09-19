@@ -2,6 +2,7 @@ const httpStatus = require('http-status');
 const catchAsyncError = require('../utils/catchAsyncError');
 const {jobService, invoiceService, paymentService, userService} = require('../services');
 const ApiError = require('../utils/ApiError');
+const { Error } = require('mongoose');
 
 // SECTION 1 - Jobs, Invoices & Payments
 const displayHomePage = catchAsyncError(async(req, res) => {
@@ -24,7 +25,7 @@ const getJobDetails = catchAsyncError(async(req, res, next) => {
   if(!job) { return next(new ApiError("No Job Found", httpStatus.NOT_FOUND)) }
   let jobStatics = await jobService.getJobLedger(job.id);
 
-  // Strignify and parse job statistics to JSON before sending to the browser
+  // Stringify and parse job statistics to JSON before sending to the browser
   jobStatics = JSON.stringify(jobStatics);
   jobStatics = JSON.parse(jobStatics)
 

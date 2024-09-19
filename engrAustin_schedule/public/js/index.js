@@ -228,7 +228,6 @@ if (postPayment){
     checkboxes.forEach((checkbox) => {
       checkedInvoiceValues.push(checkbox.value);
     });
-
     createPayment(tag,description,amount,date,checkedInvoiceValues,invStatus);
   });
 };

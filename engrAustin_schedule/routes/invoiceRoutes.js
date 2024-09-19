@@ -18,8 +18,4 @@ router
   .route('/:id/payment/:payid/unlink')
   .patch(invoiceController.removePaymentFromInvoice);
 
-// router
-//   .route('/testing')
-//   .post(invoiceController.testError);
-
 module.exports = router;

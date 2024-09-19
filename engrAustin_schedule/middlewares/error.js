@@ -28,16 +28,21 @@ const pathNotFoundErrorHandler = (req, res, next) => {
 
 const errorHandler = (err, req, res, next) => {
   let {message, statusCode} = err;
-  const response = {
-    error: true,
-    status: `${statusCode}`.startsWith('4') ? 'Failed' : 'Error',
-    code: statusCode || httpStatus.INTERNAL_SERVER_ERROR,
-    message,
-    ...(process.env.NODE_ENV === 'development' && {stack: err.stack})
-  };
-  
   res.locals.errorMessage = message;
-  res.status(statusCode).send(response);
+  if(req.originalUrl.startsWith('/api')){
+    const response = {
+      error: true,
+      status: `${statusCode}`.startsWith('4') ? 'Failed' : 'Error',
+      code: statusCode || httpStatus.INTERNAL_SERVER_ERROR,
+      message,
+      ...(process.env.NODE_ENV === 'development' && {stack: err.stack})
+    };
+    return res.status(statusCode).send(response);
+  };
+  return res.status(statusCode).render('error', {
+    title: 'Something went wrong',
+    message
+  });
 };
 
 
