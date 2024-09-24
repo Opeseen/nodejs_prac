@@ -313,10 +313,26 @@ export const loginUser = async(username,password) => {
       showAlert('success','Login Successful');
       window.setTimeout(() => {
         location.assign('/');
-      },3000);
+      },2000);
     }
   } catch (error) {
     showAlert('error',error.response.data.message);
   }
 
+};
+
+export const logoutUser = async() => {
+  try {
+    const response = await axios({
+      method: 'GET',
+      url: 'http://localhost:3000/api/v2/mundial/users/logout'
+    });
+    if(response.data.success){
+      window.setTimeout(() => {
+        location.assign('/user/logout');
+      },1000);   
+    }
+  } catch (error) {
+    showAlert('error', 'Error Logging Out!')
+  }
 };

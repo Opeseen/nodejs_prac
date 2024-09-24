@@ -115,6 +115,12 @@ const loginUser = (req, res) => {
   });
 };
 
+const loggedOutUserPage = (req, res) => {
+  res.status(httpStatus.OK).render('logout', {
+    title: 'Logout'
+  });
+};
+
 
 
 module.exports = {
@@ -131,5 +137,6 @@ module.exports = {
   getPaymentDetails,
   // Section 2
   registerUser,
-  loginUser
+  loginUser,
+  loggedOutUserPage
 };

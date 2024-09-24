@@ -45,8 +45,21 @@ const loginUser = catchAsyncError(async(req, res, next) => {
 });
 
 
+const logoutUser = (req, res) => {
+  res.cookie('jwt', 'null', {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnly: true
+  });
+  res.status(httpStatus.OK).json({
+    success: true
+  });
+};
+
+
+
 module.exports = {
   signUpUser,
-  loginUser
+  loginUser,
+  logoutUser
 };
 
