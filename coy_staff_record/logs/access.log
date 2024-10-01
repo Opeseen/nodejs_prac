@@ -1,39 +1,20 @@
- GET /api/v2/mundial/staffs/download 404 3.232 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:34:36 GMT - error-message: The requested url /api/v2/mundial/staffs/download is Not Found
- GET /api/v2/mundial/staffs/download 404 1.238 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:35:07 GMT - error-message: The requested url /api/v2/mundial/staffs/download is Not Found
- GET /api/v2/mundial/staffs/download 404 0.609 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:35:13 GMT - error-message: The requested url /api/v2/mundial/staffs/download is Not Found
- GET /api/v2/mundial/staffs/download 200 3.876 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:35:42 GMT
- GET /api/v2/mundial/staffs/download 200 5.436 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:40:41 GMT
- GET /api/v2/mundial/staffs/download 200 5.006 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:42:19 GMT
- GET /api/v2/mundial/staffs/download 200 21129.262 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:43:19 GMT
- GET /api/v2/mundial/staffs/download 200 7344.153 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:43:39 GMT
- GET /api/v2/mundial/staffs/download 200 7967.389 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:44:00 GMT
- GET /api/v2/mundial/staffs/download 200 15390.977 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:47:07 GMT
- GET /api/v2/mundial/staffs/download 200 32632.027 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:59:24 GMT
- GET /api/v2/mundial/staffs/download 200 8953.066 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 15:59:57 GMT
- GET /api/v2/mundial/staffs/download 200 7360.992 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:00:13 GMT
- GET /api/v2/mundial/staffs/download 200 9879.183 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:00:34 GMT
- GET /api/v2/mundial/staffs/download 200 17585.034 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:09:11 GMT
- GET /api/v2/mundial/staffs/download 200 14291.615 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:33:08 GMT
- GET /api/v2/mundial/staffs/download 200 3982.574 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:33:20 GMT
- GET /api/v2/mundial/staffs/download 200 7294.689 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:34:11 GMT
- GET /api/v2/mundial/staffs/download 200 8719.742 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:34:30 GMT
- GET /api/v2/mundial/staffs/download 200 7415.152 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:35:16 GMT
- GET /api/v2/mundial/staffs/download 200 4540.748 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:35:37 GMT
- GET /api/v2/mundial/staffs/download 200 5108.336 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:35:54 GMT
- GET /api/v2/mundial/staffs/download - - ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:44:46 GMT
- GET /api/v2/mundial/staffs/download 200 9630.279 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:45:25 GMT
- GET /api/v2/mundial/staffs/download 200 7587.710 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:46:06 GMT
- GET /api/v2/mundial/staffs/download 200 6406.287 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:46:32 GMT
- GET /api/v2/mundial/staffs/download 200 6286.789 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:46:45 GMT
- GET /api/v2/mundial/staffs/download 200 7641.429 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:47:16 GMT
- GET /api/v2/mundial/staffs/download - - ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:51:20 GMT
- GET /api/v2/mundial/staffs/download 200 13388.483 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:52:19 GMT
- GET /api/v2/mundial/staffs/download - - ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:54:42 GMT
- GET /api/v2/mundial/staffs/download 200 9658.998 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:55:45 GMT
- GET /api/v2/mundial/staffs/download 200 11629.085 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 16:59:14 GMT
- GET /api/v2/mundial/staffs/download 200 10889.304 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 17:08:49 GMT
- GET /api/v2/mundial/staffs/download 200 7599.026 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 17:10:25 GMT
- GET /api/v2/mundial/staffs/download 200 4756.274 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 17:10:36 GMT
- GET /api/v2/mundial/staffs/download 200 5371.879 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 17:11:01 GMT
- GET /api/v2/mundial/staffs/download 200 4574.486 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 17:11:12 GMT
- GET /api/v2/mundial/staffs/download 200 7038.829 ms PostmanRuntime/7.41.2 Fri, 30 Aug 2024 17:11:28 GMT
+ GET /api/v2/mundial/employee - - ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:27:59 GMT
+ GET /api/v2/mundial/employee?id=1 - - ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:28:23 GMT
+ GET /api/v2/mundial/employee?id=1 - - ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:29:13 GMT
+ GET /api/v2/mundial/employee?id=1 - - ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:30:36 GMT
+ GET /api/v2/mundial/employee?id=1 200 144.534 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:41:08 GMT
+ GET /api/v2/mundial/employee?id=2 404 82.807 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:41:58 GMT - error-message: -
+ GET /api/v2/mundial/employee?id=2 404 11.444 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:42:13 GMT - error-message: -
+ GET /api/v2/mundial/employee?id=3 404 17.104 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:42:20 GMT - error-message: -
+ GET /api/v2/mundial/employee?id=1 200 7.691 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:42:25 GMT
+ GET /api/v2/mundial/employee?id=0 404 25.326 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:42:48 GMT - error-message: -
+ GET /api/v2/mundial/employee?id=0 404 25.586 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:43:48 GMT - error-message: -
+ GET /api/v2/mundial/employee?id=1 200 516.239 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:43:52 GMT
+ GET /api/v2/mundial/employee?id=1 200 7.280 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:43:58 GMT
+ GET /api/v2/mundial/employee?id=1 200 40.827 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:46:38 GMT
+ GET /api/v2/mundial/employee?id=1 200 41.279 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:46:45 GMT
+ GET /api/v2/mundial/employee?id=1 200 46.706 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:47:53 GMT
+ GET /api/v2/mundial/employee?id=2 200 16.450 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:48:26 GMT
+ GET /api/v2/mundial/employee?id=2 200 31.897 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:48:53 GMT
+ GET /api/v2/mundial/employee?id=20o 400 173.815 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:49:03 GMT - error-message: -
+ GET /api/v2/mundial/employee?id=20 404 26.236 ms PostmanRuntime/7.42.0 Tue, 01 Oct 2024 09:49:47 GMT - error-message: -

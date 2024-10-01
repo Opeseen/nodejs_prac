@@ -4,15 +4,6 @@ const http = require('http');
 const logger = require('./config/logger');
 
 
-mongoose
-  .connect(process.env.DB_CONNECTION, {
-    // useNewUrlParser: true,
-    // useCreateIndex: true,
-    useFindAndModify: false
-  })
-  .then(() => logger.info("mongodb connected"))
-  .catch((error) => logger.error(error));
-
 const app = require('./app');
 
 const httpServer = http.createServer(app); 
