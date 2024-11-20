@@ -6,19 +6,15 @@ header.header
     img(src='/img/mundial-logo.png' alt='Logo')
   nav.nav.nav--user
     .dropdown
-      button.nav__el Invoice
+      button.nav__el Employees
       .dropdown-content
-        a(href='/invoices/view') view invoice
-        a(href='/invoice/create') create new invoice
+        a(href='/invoices/view') view employees
+        a(href='/invoice/create') create new employee
     .dropdown
-      button.nav__el Payment
+      button.nav__el PayGroup
       .dropdown-content
-        a(href='/payments/view') view payment
-        a(href='/payment/create') create new payment
-    .dropdown
-      button.nav__el Job
-      .dropdown-content
-        a(href='/jobs/view') view job
-        a(href='/job/create') create new job
+        a(href='/payments/view') view paygroup
+        a(href='/payment/create') create new paygroup
+
     a.nav__el.nav__el--cta(href='/user/login') login
     a.nav__el.nav__el--cta(href='/user/register') Sign Up
