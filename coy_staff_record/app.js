@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const {errorHandler, pathNotFoundErrorHandler, errorConverter} = require('./middlewares/error');
 const {successLogHandler, errorLogHandler} = require('./config/morgan');
-const staffRouter = require('./routes/staffRoutes');
+const staffRouter = require('./routes/userRoutes');
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(successLogHandler);
 app.use(errorLogHandler);
 
 // ROUTES
-app.use('/api/v2/mundial', staffRouter);
+app.use('/api/v2/mun', staffRouter);
 
 
 // ERROR HANDLER

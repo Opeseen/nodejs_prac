@@ -1,1 +1,1 @@
-module.exports.Invoice = require('./staffModel');
+module.exports.Invoice = require('./userModel');

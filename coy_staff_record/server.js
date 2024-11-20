@@ -30,7 +30,6 @@ const unExpectedErrorHandler = (error) => {
   exitHandler();
 };
 
-
 process.on("uncaughtException", unExpectedErrorHandler);
 process.on("unhandledRejection", unExpectedErrorHandler);
 process.on("SIGTERM", () => {
