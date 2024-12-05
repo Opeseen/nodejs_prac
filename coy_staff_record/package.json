@@ -2,10 +2,11 @@
   "name": "starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "public/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "build": "parcel build --dist-dir public"
   },
   "author": "Opeyemi Alabi",
   "license": "ISC",
@@ -22,5 +23,8 @@
     "starter": "file:",
     "validator": "^13.11.0",
     "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.13.2"
   }
 }
