@@ -204,3 +204,10 @@ html {
 }
 
 
+.clickTest{
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 30px 0;
+}

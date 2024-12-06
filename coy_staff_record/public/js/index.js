@@ -10,3 +10,10 @@ const showAlert = (type, msg) => {
   document.querySelector('body').insertAdjacentHTML('afterbegin', message);
   window.setTimeout(hideAlert, 5000);
 };
+
+// const testClick = document.getElementById('clickTest');
+
+// if (testClick){
+//   console.log("Test Clicked Worked")
+//   testClick.addEventListener('click', showAlert('success','Alert Worked'))
+// }
