@@ -2,11 +2,11 @@
   "name": "starter",
   "version": "1.0.0",
   "description": "",
-  "source": "public/js/index.js",
+  "main": "public/js/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon server.js",
-    "build": "parcel build --dist-dir public"
+    "build": "parcel watch ./public/js/index.js --dist-dir ./public/js"
   },
   "author": "Opeyemi Alabi",
   "license": "ISC",
