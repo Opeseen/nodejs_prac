@@ -14,7 +14,6 @@ function $d0f7ce18c37ad6f6$var$myFunction() {
 }
 const $d0f7ce18c37ad6f6$var$testClick = document.querySelector('.clickTest');
 if ($d0f7ce18c37ad6f6$var$testClick) $d0f7ce18c37ad6f6$var$testClick.addEventListener('click', $d0f7ce18c37ad6f6$var$myFunction);
-console.log("Hello Parcel");
 
 
 //# sourceMappingURL=bundle.js.map

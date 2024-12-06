@@ -7,6 +7,15 @@
   color: red;
 }
 
+/* Page Subject */
+.body-title{
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 30px 0;
+}
+
 /* Table Section */
 .table-wrapper{
   margin: 10px 70px 70px;
@@ -19,7 +28,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   color:#54585d;
-  font-weight: bold
+  font-weight: bold;
+  padding: 10px 0;
 }
 .table-data {
   font-family: Arial, Helvetica, sans-serif;

@@ -67,7 +67,7 @@ html {
 }
 
 /* Page Subject */
-.body-title{
+.body-title-home{
   text-align: center;
   font-size: 25px;
   text-transform: uppercase;
@@ -200,7 +200,7 @@ html {
 }
 
 .spacing{
-  padding: 30px 0;
+  padding: 5px 0;
 }
 
 
