@@ -3,14 +3,28 @@ extends base
 block content
   main
     h2.body-title Employees Overview
-    .table-wrapper
-      .heading__title Employees Info
-      table.table-data
-        tr
-          th.th__size-small FirstName
-          th.th__size-small LastName
-          th.th__size-small GrossPay
-          th.th__size-small Tax
-          th.th__size-small Pension
-          th.th__size-small NetPay
-          th.th__size-small Option
+    if allEmployees
+      .table-wrapper
+        .heading__title Employees Info
+        table.table-data
+          tr
+            th.th__size-small FirstName
+            th.th__size-small LastName
+            th.th__size-small Email
+            th.th__size-small State
+            th.th__size-small Nationality
+            th.th__size-small Option
+
+          each employee in allEmployees
+            tr
+              td= employee.firstname.toUpperCase()
+              td= employee.lastname.toUpperCase()
+              td= employee.email.toUpperCase()
+              td= employee.state.toUpperCase()
+              td= employee.nationality.toUpperCase()
+              td
+                .btn--green
+                  a(href='#') Details
+
+    else
+      p.empty__record no employee record found in this organization

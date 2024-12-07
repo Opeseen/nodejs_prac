@@ -8,13 +8,7 @@ const displayHomePage = catchAsyncError(async(req, res) => {
   });
 });
 
-const listEmployees = catchAsyncError(async(req, res) => {
-  res.status(httpStatus.OK).render('employees', {
-    title: 'Employees'
-  });
-});
 
 module.exports = {
   displayHomePage,
-  listEmployees
 };
