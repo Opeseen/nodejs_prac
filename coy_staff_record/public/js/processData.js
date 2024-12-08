@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {showAlert} from './alert';
-// EMPLOYEES SECTION
+
+// Employees Section
 export const processUpdatedEmployeeRecord = async(id, firstname, lastname, phone, email,
   address, state, city, nationality
 ) => {
@@ -27,5 +28,17 @@ export const processUpdatedEmployeeRecord = async(id, firstname, lastname, phone
     }
   } catch (error) {
     showAlert('error',error.response.data.message);
+  }
+};
+
+// payGroup Section
+export const fetchAllPayGroup = async() =>{
+  try {
+    const response = await axios({
+      method: 'GET',
+      url: 'http://localhost:8080/api/mun/v1/paygroup/all'
+    });
+  } catch (error) {
+    
   }
 };

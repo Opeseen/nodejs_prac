@@ -1,9 +1,10 @@
+import '@babel/polyfill';
 import {processUpdatedEmployeeRecord} 
 from './processData';
 
 // EMPLOYEE QUERY SELECTOR
 const updatedEmployeeRecord = document.querySelector('.modify-employee');
-
+const updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup');
 
 // Employee Section
 if(updatedEmployeeRecord){
@@ -19,7 +20,13 @@ if(updatedEmployeeRecord){
     const nationality = document.getElementById('nationality').value;
     const id = document.getElementById('docid').value;
 
-    console.log(true)
     processUpdatedEmployeeRecord(id,firstname,lastname,phone,email,address,state,city,nationality);
   });
-} 
+};
+
+if(updatedEmployeePayGroup){
+  updatedEmployeePayGroup.addEventListener('submit', event => {
+    event.preventDefault();
+    const employeeId = document.getElementById('docid').value;
+  });
+};
