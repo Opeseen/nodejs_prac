@@ -1,0 +1,104 @@
+extends base
+
+block content
+  main
+    h2.body-title Employee Details
+    if employeeDetails
+      // Show this when an employee record exist
+      section#employeeInfo
+        .resource-details.modify-employee
+          .heading__title Personal Info
+          form
+            .form__div
+              div(class='box-text-cell')
+                p.box-title firstName
+                input#fname.input-style-one(type='text' value=`${employeeDetails.firstname}`)
+              div(class='box-text-cell')
+                p.box-title lastName
+                input#lname.input-style-one(type='text' value=`${employeeDetails.lastname}`)
+              div(class='box-text-cell')
+                p.box-title email
+                textarea#email(rows='1' cols='30')= employeeDetails.email
+              div(class='box-text-cell')
+                p.box-title Phone
+                input#phone.input-style-one(type='text' value=`${employeeDetails.phone}`)
+              div(class='box-text-cell')
+                p.box-title state
+                input#state.input-style-one(type='text' value=`${employeeDetails.state}`)
+              div(class='box-text-cell')
+                p.box-title address
+                textarea#address(rows='2' cols='30')= employeeDetails.address
+              div(class='box-text-cell')
+                p.box-title city
+                input#city.input-style-one(type='text' value=`${employeeDetails.city}`)
+              div(class='box-text-cell')
+                p.box-title nationality
+                input#nationality.input-style-one(type='text' value=`${employeeDetails.nationality}`)
+              div(class='box-text-cell')
+                input#docid.input-style-one(type='hidden' value=`${employeeDetails.id}`)
+            br
+            .form__cta
+              button.btn--cta--save Save record
+            .line &nbsp;
+      
+      if employeePayGroupDetails
+        // Show this when an employee is attached to a payGroup
+        section#EmployeePayGroupInfo
+          .resource-details.employeePayGroup
+            .heading__title PayGroup Info
+              .form__div
+                div(class='box-text-cell')
+                  p.box-title Category
+                  input.input-style-one(type='text' value=`${employeePayGroupDetails.category}` readonly)
+                div(class='box-text-cell')
+                  p.box-title basic
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.basic}` readonly)
+                div(class='box-text-cell')
+                  p.box-title housing
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.housing}` readonly)
+                div(class='box-text-cell')
+                  p.box-title transport
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.transport}` readonly)
+                div(class='box-text-cell')
+                  p.box-title utility
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.utility}` readonly)
+                div(class='box-text-cell')
+                  p.box-title grossPay
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.grossPay}` readonly)
+                div(class='box-text-cell')
+                  p.box-title tax
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.tax}` readonly)
+                div(class='box-text-cell')
+                  p.box-title employee contribution
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.employeePensionContribution}` readonly)
+                div(class='box-text-cell')
+                  p.box-title employer contribution
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.employerPensionContribution}` readonly)
+                div(class='box-text-cell')
+                  p.box-title netPay
+                  input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.netPay}` readonly)
+            .form__cta
+              button.btn--cta--save(onclick='openForm()') update payGroup
+            .line &nbsp;
+
+        section#ModifyEmployeePayGroupInfo.PopupModifyEmployeePayGroup
+          .resource-details.modify-employeePayGroup
+            .heading__title update employee payGroup
+              form.updateEmployeePayGroup
+                .popup-form 
+                  div(class='box-text-cell')
+                  p.box-title payGroup category
+                  select.select-style-one#payGroupSelection(class='payGroupSelect')
+                    option(value= 'undefined') Please select
+                .popup-form-cta
+                  button.popup--cta--save Save
+              .popup-form-cta
+                button.popup--cta--red(onclick='closeForm()') Close
+
+      else
+        // Show this if an employee is not attached to a payGroup
+        .resource-details
+          p.empty__record no payGroup exist for this employee yet
+    else
+      // Show this when an employee record doesn't exist
+      p.empty__record error fetching employee details

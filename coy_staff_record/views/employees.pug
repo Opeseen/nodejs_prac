@@ -24,7 +24,7 @@ block content
               td= employee.nationality.toUpperCase()
               td
                 .btn--green
-                  a(href='#') Details
+                  a(href=`/employee/view?eid=${employee.id}`) Details
 
     else
       p.empty__record no employee record found in this organization

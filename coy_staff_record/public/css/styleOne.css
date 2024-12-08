@@ -202,12 +202,3 @@ html {
 .spacing{
   padding: 5px 0;
 }
-
-
-.clickTest{
-  text-align: center;
-  font-size: 25px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 30px 0;
-}

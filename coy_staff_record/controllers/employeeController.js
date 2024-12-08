@@ -2,7 +2,6 @@ const httpStatus = require('http-status');
 const catchAsyncError = require('../utils/catchAsyncError');
 const ApiError = require('../utils/ApiError');
 const { default: axios } = require('axios');
-const { response } = require('express');
 
 const listAllEmployees = catchAsyncError(async(req, res, next) => {
   let allEmployees = false;
@@ -12,7 +11,7 @@ const listAllEmployees = catchAsyncError(async(req, res, next) => {
 			method:	'GET',
 			url:	URL
 		});
-		// Return response if success and employee record is present in the database
+		// Return if response === "success" and employee record is present in the database
 		if(response.data.success && response.data.details?.length){
 			allEmployees = response.data.details;
 			return res.status(httpStatus.OK).render('employees', {
@@ -34,6 +33,37 @@ const listAllEmployees = catchAsyncError(async(req, res, next) => {
   });
 });
 
+const getEmployee = catchAsyncError(async(req, res) => {
+	let employeeDetails = false;
+	let employeePayGroupDetails = false;
+	const eid = req.query.eid;
+	const FETCH_EMPLOYEE_DATA = `http://localhost:8080/api/mun/v1/employee/${eid}`
+	const FETCH_EMPLOYEE_PAYGROUP_DATA = `http://localhost:8080/api/mun/v1/employee/${eid}/paygroup`
+	try {
+		const [responseDataOne, responseDataTwo] = await Promise.all([
+			axios.get(FETCH_EMPLOYEE_DATA),
+			axios.get(FETCH_EMPLOYEE_PAYGROUP_DATA)
+		]);
+		if(responseDataOne.data.success){
+			employeeDetails = responseDataOne.data.details;
+			employeePayGroupDetails = responseDataTwo.data.details !== null ? responseDataTwo.data.details : false
+			return res.status(httpStatus.OK).render('employeeDetails', {
+				title: 'Employee Info',
+				employeeDetails,
+				employeePayGroupDetails
+			});
+		}
+	} catch (error) {
+		console.log(error.response.data)
+	}
+
+	// Default response if no record is present in the database
+  res.status(httpStatus.OK).render('employeeDetails', {
+    title: 'Employee Info'
+  });
+});
+
 module.exports = {
-  listAllEmployees
+  listAllEmployees,
+	getEmployee
 };

@@ -133,11 +133,12 @@ div a {
 
 /* Horizontal Line Display */
 .line {
-  margin: 3rem 0;
+  margin: 1.5rem 0;
   width: 100%;
   height: 0.5px;
   background-color: #e0e0e0;
 }
+/* Horizontal Line Display */
 
 /* Items Data Display */
 .resource-details {
@@ -151,15 +152,44 @@ div a {
   max-width: 60% !important;  
 }
 
-.warning{
-  margin: 15px;
-  font-style: italic;
-  font-weight: bold !important;
-  color: red;
-  font-size: 17px;
+.PopupModifyEmployeePayGroup{
+  display: none;
+}
+
+.popup-form{
+  margin: 0 auto;
+  max-width: 55rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  padding: 2.0rem 2.0rem;
+  border-radius: 5px;
+}
+
+.popup-form-cta{
+  margin-top: 1.0rem;
+  margin-left: 1.0em;
+}
+
+.popup--cta--save{
+  padding: 1.25rem 3rem !important;
+  font-size: 1.4rem !important;
+  width: 30%;
+  background-color: #55c57a;
+  color: #fff;
+  border-radius: 1rem;
+  text-transform: uppercase;
+}
+.popup--cta--red{
+  padding: 1.25rem 3rem !important;
+  font-size: 1.4rem !important;
+  width: 30%;
+  background-color: rgb(255, 51, 0);
+  color: #fff;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
   text-align: center;
-  padding: 0 0 20px 0 ;
-  font-family:"Calibri", sans-serif;
 }
 
 .form__div{
@@ -170,16 +200,17 @@ div a {
   padding: 10px 10px 10px 10px !important;
 }
 .form__cta{
-  margin-top: 2.5rem;
-  text-align: center;
+  margin-top: 2.0rem;
+  margin-left: 5.0em;
 }
+
 .box-text-cell{
   text-align: center !important;
 }
 
 .box-title{
  font-size: small !important;
- /* color: #777 !important; */
+ color: #777777 !important;
  text-transform: uppercase !important;
 }
 
@@ -189,7 +220,7 @@ div a {
   width:  15.8rem;
   border-radius: 0.5rem;
   text-align: center;
-  text-transform: uppercase !important;
+  /* text-transform: uppercase !important; */
   font-size: small !important;
 }
 
@@ -204,7 +235,7 @@ div a {
 }
 
 
-.jobs{
+.payGroupSelect{
   height: 3.5rem;
   width:  37.8rem;
   text-align: justify;
@@ -313,4 +344,15 @@ textarea{
   font-weight: 700;
   margin-bottom: 0.55rem;
   color:#54585d;
+}
+
+.warning{
+  margin: 15px;
+  font-style: italic;
+  font-weight: bold !important;
+  color: red;
+  font-size: 17px;
+  text-align: center;
+  padding: 0 0 20px 0 ;
+  font-family:"Calibri", sans-serif;
 }

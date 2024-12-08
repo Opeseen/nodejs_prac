@@ -23,7 +23,7 @@ app.use(errorLogHandler);
 
 // ROUTES
 app.use('/', viewRouter);
-app.use('/employees', employeeRouter);
+app.use('/employee', employeeRouter);
 
 
 // ERROR HANDLER
