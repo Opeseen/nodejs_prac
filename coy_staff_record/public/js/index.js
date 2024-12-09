@@ -1,10 +1,13 @@
 import '@babel/polyfill';
-import {processUpdatedEmployeeRecord} 
+import {sendUpdatedEmployeeRecord, fetchAllPayGroup} 
 from './processData';
 
-// EMPLOYEE QUERY SELECTOR
+// Employee Query Selector
 const updatedEmployeeRecord = document.querySelector('.modify-employee');
 const updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup');
+
+// PayGroup Query Selector
+const payGroupPopUp = document.querySelector('.PopupModifyEmployeePayGroup');
 
 // Employee Section
 if(updatedEmployeeRecord){
@@ -20,7 +23,7 @@ if(updatedEmployeeRecord){
     const nationality = document.getElementById('nationality').value;
     const id = document.getElementById('docid').value;
 
-    processUpdatedEmployeeRecord(id,firstname,lastname,phone,email,address,state,city,nationality);
+    sendUpdatedEmployeeRecord(id,firstname,lastname,phone,email,address,state,city,nationality);
   });
 };
 
@@ -30,3 +33,8 @@ if(updatedEmployeePayGroup){
     const employeeId = document.getElementById('docid').value;
   });
 };
+
+// PayGroup Section
+if(payGroupPopUp){
+  console.log(true)
+}

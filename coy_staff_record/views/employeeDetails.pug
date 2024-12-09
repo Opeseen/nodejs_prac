@@ -97,8 +97,27 @@ block content
 
       else
         // Show this if an employee is not attached to a payGroup
-        .resource-details
-          p.empty__record no payGroup exist for this employee yet
+        section#noEmployeePayGroupExist
+          .resource-details
+            p.empty__record no payGroup exist for this employee yet
+            .heading__title Add Employee To PayGroup
+              .popup-form-cta
+                button.popup--cta--red(onclick='openForm()') click here
+        section#ModifyEmployeePayGroupInfo.PopupModifyEmployeePayGroup
+          .resource-details.addEmployeeToPayGroup
+            .heading__title
+              form.updateEmployeePayGroup
+                .popup-form
+                  div(class='box-text-cell')
+                  p.box-title payGroup category
+                  select.select-style-one#payGroupSelection(class='payGroupSelect')
+                    option(value= 'undefined') Please select
+                .popup-form-cta
+                  button.popup--cta--save Save
+              .popup-form-cta
+                button.popup--cta--red(onclick='closeForm()') Close
+
+
     else
       // Show this when an employee record doesn't exist
       p.empty__record error fetching employee details

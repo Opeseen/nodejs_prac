@@ -2,14 +2,14 @@ import axios from 'axios';
 import {showAlert} from './alert';
 
 // Employees Section
-export const processUpdatedEmployeeRecord = async(id, firstname, lastname, phone, email,
-  address, state, city, nationality
-) => {
+export const sendUpdatedEmployeeRecord = async(id, firstname, lastname, phone, email,
+  address, state, city, nationality) => {
   try {
     const response = await axios({
-      method: 'PUT',
-      url: `http://localhost:8080/api/mun/v1/employee/${id}`,
+      method: 'POST',
+      url: 'http://localhost:3000/employee/update',
       data: {
+        id,
         firstname,
         lastname,
         phone,
@@ -31,14 +31,16 @@ export const processUpdatedEmployeeRecord = async(id, firstname, lastname, phone
   }
 };
 
+
 // payGroup Section
 export const fetchAllPayGroup = async() =>{
   try {
     const response = await axios({
       method: 'GET',
-      url: 'http://localhost:8080/api/mun/v1/paygroup/all'
+      url: 'http://localhost:3000/paygroup/view/all?reqType=clientRequest'
     });
+    if(response.data.count > 0){ return result.data.details };
   } catch (error) {
-    
+    console.log(error)
   }
 };

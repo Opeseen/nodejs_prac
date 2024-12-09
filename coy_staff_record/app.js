@@ -4,6 +4,7 @@ const {errorHandler, pathNotFoundErrorHandler, errorConverter} = require('./midd
 const {successLogHandler, errorLogHandler} = require('./config/morgan');
 const viewRouter = require('./routes/viewsRoutes');
 const employeeRouter = require('./routes/employeeRoutes');
+const payGroupRouter = require('./routes/payGroupRoutes');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(errorLogHandler);
 // ROUTES
 app.use('/', viewRouter);
 app.use('/employee', employeeRouter);
+app.use('/paygroup', payGroupRouter);
 
 
 // ERROR HANDLER
