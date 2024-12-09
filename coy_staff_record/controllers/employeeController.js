@@ -3,6 +3,12 @@ const catchAsyncError = require('../utils/catchAsyncError');
 const ApiError = require('../utils/ApiError');
 const { default: axios } = require('axios');
 
+const createEmployee = catchAsyncError(async(req, res, next) => {
+	res.status(httpStatus.OK).render('createEmployee', {
+    title: 'Create Employee',
+  });
+});
+
 const getAllEmployees = catchAsyncError(async(req, res, next) => {
   let allEmployees = false;
 	const URL = 'http://localhost:8080/api/mun/v1/employee/all'
@@ -100,7 +106,7 @@ const updateEmployee = catchAsyncError(async(req, res, next) => {
 			});
 		}
 	} catch (error) {
-		console.log(error)
+		console.log(error.response.data);
 		if(error.code === 'ECONNREFUSED') return next(new ApiError(`CONNECTION ERROR AT ${URL}`, httpStatus.BAD_REQUEST));
 		if(error.response.data.message) return next(new ApiError(error.response.data.message,httpStatus.BAD_REQUEST));
 		return next(new ApiError("Error Occurred While Updating Employee Data", httpStatus.INTERNAL_SERVER_ERROR));
@@ -109,7 +115,8 @@ const updateEmployee = catchAsyncError(async(req, res, next) => {
 
 
 module.exports = {
-  getAllEmployees,
+	createEmployee,
+	getAllEmployees,
 	getEmployee,
 	updateEmployee
 };

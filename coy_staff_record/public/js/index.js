@@ -7,7 +7,7 @@ const updatedEmployeeRecord = document.querySelector('.modify-employee');
 const updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup');
 
 // PayGroup Query Selector
-const payGroupPopUp = document.querySelector('.PopupModifyEmployeePayGroup');
+const payGroupPopUp = document.querySelector('.PopupPayGroupSelection');
 
 // Employee Section
 if(updatedEmployeeRecord){
@@ -36,5 +36,27 @@ if(updatedEmployeePayGroup){
 
 // PayGroup Section
 if(payGroupPopUp){
-  console.log(true)
-}
+  const payGroupSelect = document.querySelector('.payGroupSelect');
+  const payGroupPopUpForUpdate = document.querySelector('.payGroupSelectUpdate');
+  if(payGroupPopUpForUpdate){
+    const noneElement = document.createElement("option");
+    noneElement.value = 'delete';
+    noneElement.text = 'none';
+    payGroupPopUpForUpdate.add(noneElement);
+  }
+  if(payGroupSelect){
+    fetchAllPayGroup()
+    .then(
+      (data) => {
+        if(data !== undefined){
+          data.details.forEach((payGroup) => {
+            const addElement = document.createElement("option");
+            addElement.value = payGroup.id;
+            addElement.text = payGroup.category;
+            payGroupSelect.add(addElement);
+          });
+        }
+      }
+    );
+  }
+};

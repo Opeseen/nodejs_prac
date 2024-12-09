@@ -39,8 +39,8 @@ export const fetchAllPayGroup = async() =>{
       method: 'GET',
       url: 'http://localhost:3000/paygroup/view/all?reqType=clientRequest'
     });
-    if(response.data.count > 0){ return result.data.details };
+    if(response.data.count > 0){ return response.data };
   } catch (error) {
-    console.log(error)
+    return showAlert('error',error.response.data.message);
   }
 };

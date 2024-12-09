@@ -4,7 +4,7 @@ block content
   main
     h2.body-title Employee Details
     if employeeDetails
-      // Show this when an employee record exist
+      // Show this section when an employee record exist
       section#employeeInfo
         .resource-details.modify-employee
           .heading__title Personal Info
@@ -42,7 +42,7 @@ block content
             .line &nbsp;
       
       if employeePayGroupDetails
-        // Show this when an employee is attached to a payGroup
+        // Show this section when an employee is attached to a payGroup
         section#EmployeePayGroupInfo
           .resource-details.employeePayGroup
             .heading__title PayGroup Info
@@ -80,15 +80,15 @@ block content
             .form__cta
               button.btn--cta--save(onclick='openForm()') update payGroup
             .line &nbsp;
-
-        section#ModifyEmployeePayGroupInfo.PopupModifyEmployeePayGroup
+        // Popup this section when an onClick event is emitted 
+        section#ModifyEmployeePayGroupInfo.PopupPayGroupSelection
           .resource-details.modify-employeePayGroup
             .heading__title update employee payGroup
               form.updateEmployeePayGroup
                 .popup-form 
                   div(class='box-text-cell')
                   p.box-title payGroup category
-                  select.select-style-one#payGroupSelection(class='payGroupSelect')
+                  select.select-style-one#payGroupSelection(class='payGroupSelect payGroupSelectUpdate')
                     option(value= 'undefined') Please select
                 .popup-form-cta
                   button.popup--cta--save Save
@@ -96,14 +96,14 @@ block content
                 button.popup--cta--red(onclick='closeForm()') Close
 
       else
-        // Show this if an employee is not attached to a payGroup
+        // Show this section if an employee is not attached to a payGroup
         section#noEmployeePayGroupExist
           .resource-details
             p.empty__record no payGroup exist for this employee yet
             .heading__title Add Employee To PayGroup
               .popup-form-cta
                 button.popup--cta--red(onclick='openForm()') click here
-        section#ModifyEmployeePayGroupInfo.PopupModifyEmployeePayGroup
+        section#ModifyEmployeePayGroupInfo.PopupPayGroupSelection
           .resource-details.addEmployeeToPayGroup
             .heading__title
               form.updateEmployeePayGroup
@@ -119,5 +119,6 @@ block content
 
 
     else
-      // Show this when an employee record doesn't exist
-      p.empty__record error fetching employee details
+      // Show this when an employee record doesn't 
+      section.noEmployeeRecordFound
+        p.empty__record error fetching employee details

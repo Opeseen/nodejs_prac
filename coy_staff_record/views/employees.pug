@@ -4,27 +4,29 @@ block content
   main
     h2.body-title Employees Overview
     if allEmployees
-      .table-wrapper
-        .heading__title Employees Info
-        table.table-data
-          tr
-            th.th__size-small FirstName
-            th.th__size-small LastName
-            th.th__size-small Email
-            th.th__size-small State
-            th.th__size-small Nationality
-            th.th__size-small Option
-
-          each employee in allEmployees
+      section.EmployeeTableSection
+        .table-wrapper
+          .heading__title Employees Info
+          table.table-data
             tr
-              td= employee.firstname.toUpperCase()
-              td= employee.lastname.toUpperCase()
-              td= employee.email.toUpperCase()
-              td= employee.state.toUpperCase()
-              td= employee.nationality.toUpperCase()
-              td
-                .btn--green
-                  a(href=`/employee/view?eid=${employee.id}`) Details
+              th.th__size-small FirstName
+              th.th__size-small LastName
+              th.th__size-small Email
+              th.th__size-small State
+              th.th__size-small Nationality
+              th.th__size-small Option
+
+            each employee in allEmployees
+              tr
+                td= employee.firstname.toUpperCase()
+                td= employee.lastname.toUpperCase()
+                td= employee.email.toUpperCase()
+                td= employee.state.toUpperCase()
+                td= employee.nationality.toUpperCase()
+                td
+                  .btn--green
+                    a(href=`/employee/view?eid=${employee.id}`) Details
 
     else
-      p.empty__record no employee record found in this organization
+      section.emptyEmployeeRecord
+        p.empty__record no employee record found in this organization

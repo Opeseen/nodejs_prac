@@ -14,6 +14,7 @@ const getAllPayGroup = catchAsyncError(async(req, res) => {
         url:	URL
       });
       return res.status(httpStatus.OK).json({
+        success: true,
         details: response.data.details,
         count: response.data.details.length
       });
