@@ -1,0 +1,11 @@
+ GET /employee/create 200 768.449 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:22:58 GMT
+ GET /employee/create 304 92.980 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:22:58 GMT
+ GET /employee/create 200 199.062 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:24:18 GMT
+ GET /employee/create 304 54.016 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:24:18 GMT
+ GET / 304 84.298 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:24:28 GMT
+ GET / 304 61.563 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:24:28 GMT
+ GET /employee/view/all 400 102.725 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:24:30 GMT - error-message: CONNECTION ERROR AT http://localhost:8080/api/mun/v1/employee/all
+ GET /employee/create 304 92.433 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:24:34 GMT
+ GET /employee/create 304 77.366 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:24:35 GMT
+ GET /employee/create 304 46.848 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:26:02 GMT
+ GET /employee/create 304 69.299 ms Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0 Mon, 09 Dec 2024 23:26:02 GMT
