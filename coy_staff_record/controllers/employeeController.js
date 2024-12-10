@@ -154,11 +154,35 @@ const updateEmployee = catchAsyncError(async(req, res, next) => {
 	}
 });
 
+const updatedEmployeePayGroup = catchAsyncError(async(req, res, next) => {
+  const employeeId = Number(req.body.employeeId);
+  const payGroupId = Number(req.body.payGroupId);
+
+  const URL = `http://localhost:8080/api/mun/v1/employee/${employeeId}/paygroup/${payGroupId}/update`;
+
+  try {
+    const response = await axios({
+      method:	'PUT',
+      url:	URL
+    });
+    if(response.data.success){
+      return res.status(httpStatus.OK).json({
+        success: true,
+        message: "Employee PayGroup Successfully Updated"
+      });
+    }
+  } catch (error) {
+    console.log(error.response.data)
+    if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
+		return next(new ApiError("Error Occurred Updating Employee PayGroup", httpStatus.INTERNAL_SERVER_ERROR));
+  }
+});
 
 module.exports = {
 	createEmployeeForm,
   createEmployee,
 	getAllEmployees,
 	getEmployee,
-	updateEmployee
+	updateEmployee,
+  updatedEmployeePayGroup
 };

@@ -12653,7 +12653,7 @@ var showAlert = exports.showAlert = function showAlert(type, msg) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.sendUpdatedEmployeeRecord = exports.sendCreateNewEmployeeRecord = exports.fetchAllPayGroup = exports.addEmployeeToPayGroup = void 0;
+exports.sendUpdatedEmployeeRecord = exports.sendCreateNewEmployeeRecord = exports.fetchAllPayGroup = exports.addEmployeeToPayGroup = exports.ProcessUpdatedEmployeePayGroup = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 var _alert = require("./alert");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -12755,59 +12755,105 @@ var sendUpdatedEmployeeRecord = exports.sendUpdatedEmployeeRecord = /*#__PURE__*
     return _ref2.apply(this, arguments);
   };
 }();
-
-// payGroup Section
-var fetchAllPayGroup = exports.fetchAllPayGroup = /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+var ProcessUpdatedEmployeePayGroup = exports.ProcessUpdatedEmployeePayGroup = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(employeeId, payGroupId) {
     var response;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          _context3.prev = 0;
-          _context3.next = 3;
+          if (!(payGroupId === 'undefined')) {
+            _context3.next = 2;
+            break;
+          }
+          return _context3.abrupt("return", (0, _alert.showAlert)('error', 'Invalid Selection'));
+        case 2:
+          _context3.prev = 2;
+          _context3.next = 5;
+          return (0, _axios.default)({
+            method: 'POST',
+            url: 'http://localhost:3000/employee/paygroup/update',
+            data: {
+              employeeId: employeeId,
+              payGroupId: payGroupId
+            }
+          });
+        case 5:
+          response = _context3.sent;
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', response.data.message);
+            window.setTimeout(function () {
+              location.reload();
+            }, 2000);
+          }
+          _context3.next = 12;
+          break;
+        case 9:
+          _context3.prev = 9;
+          _context3.t0 = _context3["catch"](2);
+          (0, _alert.showAlert)('error', _context3.t0.response.data.message || "Error Occurred Updating Employee PayGroup");
+        case 12:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3, null, [[2, 9]]);
+  }));
+  return function ProcessUpdatedEmployeePayGroup(_x18, _x19) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
+// payGroup Section
+var fetchAllPayGroup = exports.fetchAllPayGroup = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+    var response;
+    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.prev = 0;
+          _context4.next = 3;
           return (0, _axios.default)({
             method: 'GET',
             url: 'http://localhost:3000/paygroup/view/all?reqType=clientRequest'
           });
         case 3:
-          response = _context3.sent;
+          response = _context4.sent;
           if (!(response.data.count > 0)) {
-            _context3.next = 6;
+            _context4.next = 6;
             break;
           }
-          return _context3.abrupt("return", response.data);
+          return _context4.abrupt("return", response.data);
         case 6:
           ;
-          _context3.next = 12;
+          _context4.next = 12;
           break;
         case 9:
-          _context3.prev = 9;
-          _context3.t0 = _context3["catch"](0);
-          return _context3.abrupt("return", (0, _alert.showAlert)('error', _context3.t0.response.data.message || "Error Fetching PayGroup"));
+          _context4.prev = 9;
+          _context4.t0 = _context4["catch"](0);
+          return _context4.abrupt("return", (0, _alert.showAlert)('error', _context4.t0.response.data.message || "Error Fetching PayGroup"));
         case 12:
         case "end":
-          return _context3.stop();
+          return _context4.stop();
       }
-    }, _callee3, null, [[0, 9]]);
+    }, _callee4, null, [[0, 9]]);
   }));
   return function fetchAllPayGroup() {
-    return _ref3.apply(this, arguments);
+    return _ref4.apply(this, arguments);
   };
 }();
 var addEmployeeToPayGroup = exports.addEmployeeToPayGroup = /*#__PURE__*/function () {
-  var _ref4 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee4(employeeId, payGroupId) {
+  var _ref5 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5(employeeId, payGroupId) {
     var response;
-    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
         case 0:
           if (!(payGroupId === 'undefined')) {
-            _context4.next = 2;
+            _context5.next = 2;
             break;
           }
-          return _context4.abrupt("return", (0, _alert.showAlert)('error', 'Invalid Selection'));
+          return _context5.abrupt("return", (0, _alert.showAlert)('error', 'Invalid Selection'));
         case 2:
-          _context4.prev = 2;
-          _context4.next = 5;
+          _context5.prev = 2;
+          _context5.next = 5;
           return (0, _axios.default)({
             method: 'POST',
             url: 'http://localhost:3000/paygroup/employee/add',
@@ -12817,27 +12863,27 @@ var addEmployeeToPayGroup = exports.addEmployeeToPayGroup = /*#__PURE__*/functio
             }
           });
         case 5:
-          response = _context4.sent;
+          response = _context5.sent;
           if (response.data.success) {
             (0, _alert.showAlert)('success', response.data.message);
             window.setTimeout(function () {
               location.reload();
             }, 2000);
           }
-          _context4.next = 12;
+          _context5.next = 12;
           break;
         case 9:
-          _context4.prev = 9;
-          _context4.t0 = _context4["catch"](2);
-          (0, _alert.showAlert)('error', _context4.t0.response.data.message || "Error Occurred Adding Employee To PayGroup");
+          _context5.prev = 9;
+          _context5.t0 = _context5["catch"](2);
+          (0, _alert.showAlert)('error', _context5.t0.response.data.message || "Error Occurred Adding Employee To PayGroup");
         case 12:
         case "end":
-          return _context4.stop();
+          return _context5.stop();
       }
-    }, _callee4, null, [[2, 9]]);
+    }, _callee5, null, [[2, 9]]);
   }));
-  return function addEmployeeToPayGroup(_x18, _x19) {
-    return _ref4.apply(this, arguments);
+  return function addEmployeeToPayGroup(_x20, _x21) {
+    return _ref5.apply(this, arguments);
   };
 }();
 },{"axios":"../../node_modules/axios/index.js","./alert":"alert.js"}],"index.js":[function(require,module,exports) {
@@ -13020,15 +13066,16 @@ if (addEmployeePayGroup) {
   addEmployeePayGroup.addEventListener('submit', function (event) {
     event.preventDefault();
     var employeeId = document.getElementById('docid').value;
-    var payGroupId = document.getElementById('addPayGroupSelection').value;
-    (0, _processData.addEmployeeToPayGroup)(employeeId, payGroupId);
+    var payGroupSelected = document.getElementById('addPayGroupSelection').value;
+    (0, _processData.addEmployeeToPayGroup)(employeeId, payGroupSelected);
   });
 }
 if (updatedEmployeePayGroup) {
   updatedEmployeePayGroup.addEventListener('submit', function (event) {
     event.preventDefault();
     var employeeId = document.getElementById('docid').value;
-    var payGroupId = document.getElementById('updatePayGroupSelection').value;
+    var payGroupSelected = document.getElementById('updatePayGroupSelection').value;
+    (0, _processData.ProcessUpdatedEmployeePayGroup)(employeeId, payGroupSelected);
   });
 }
 ;
@@ -13039,7 +13086,7 @@ if (payGroupPopUp) {
   var payGroupPopUpForUpdate = document.querySelector('.payGroupSelectUpdate');
   if (payGroupPopUpForUpdate) {
     var noneElement = document.createElement("option");
-    noneElement.value = 'delete';
+    noneElement.value = -1;
     noneElement.text = 'none';
     payGroupPopUpForUpdate.add(noneElement);
   }
@@ -13082,7 +13129,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58567" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64791" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

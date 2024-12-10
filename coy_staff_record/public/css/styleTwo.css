@@ -213,9 +213,9 @@ div a {
 }
 
 .box-title{
- font-size: small !important;
- color: #777777 !important;
- text-transform: uppercase !important;
+ font-size: small;
+ color: #777777;
+ text-transform: uppercase;
 }
 
 .input-style-one{

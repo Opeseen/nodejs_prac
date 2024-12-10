@@ -59,6 +59,28 @@ export const sendUpdatedEmployeeRecord = async(id,firstname,lastname,phone,email
   }
 };
 
+export const ProcessUpdatedEmployeePayGroup = async(employeeId,payGroupId) => {
+  if(payGroupId === 'undefined') return showAlert('error', 'Invalid Selection');
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: 'http://localhost:3000/employee/paygroup/update',
+      data: {
+        employeeId,
+        payGroupId
+      }
+    });
+    if(response.data.success){
+      showAlert('success',response.data.message);
+      window.setTimeout(() => {
+        location.reload();
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message || "Error Occurred Updating Employee PayGroup");
+  }
+};
+
 // payGroup Section
 export const fetchAllPayGroup = async() =>{
   try {
@@ -93,3 +115,5 @@ export const addEmployeeToPayGroup = async(employeeId,payGroupId) => {
     showAlert('error',error.response.data.message || "Error Occurred Adding Employee To PayGroup");
   }
 };
+
+

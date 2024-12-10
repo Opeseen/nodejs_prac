@@ -1,5 +1,5 @@
 import '@babel/polyfill';
-import {sendCreateNewEmployeeRecord ,sendUpdatedEmployeeRecord, fetchAllPayGroup, addEmployeeToPayGroup} 
+import {sendCreateNewEmployeeRecord ,sendUpdatedEmployeeRecord, fetchAllPayGroup, addEmployeeToPayGroup, ProcessUpdatedEmployeePayGroup} 
 from './processData';
 
 // Employee Query Selector
@@ -49,9 +49,9 @@ if(addEmployeePayGroup){
   addEmployeePayGroup.addEventListener('submit', event =>{
     event.preventDefault();
     const employeeId = document.getElementById('docid').value;
-    const payGroupId = document.getElementById('addPayGroupSelection').value;
+    const payGroupSelected = document.getElementById('addPayGroupSelection').value; 
 
-    addEmployeeToPayGroup(employeeId, payGroupId);
+    addEmployeeToPayGroup(employeeId,payGroupSelected);
   });
 }
 
@@ -59,8 +59,9 @@ if(updatedEmployeePayGroup){
   updatedEmployeePayGroup.addEventListener('submit', event => {
     event.preventDefault();
     const employeeId = document.getElementById('docid').value; 
-    const payGroupId = document.getElementById('updatePayGroupSelection').value;
+    const payGroupSelected = document.getElementById('updatePayGroupSelection').value;
 
+    ProcessUpdatedEmployeePayGroup(employeeId,payGroupSelected);
   });
 };
 
@@ -70,7 +71,7 @@ if(payGroupPopUp){
   const payGroupPopUpForUpdate = document.querySelector('.payGroupSelectUpdate');
   if(payGroupPopUpForUpdate){
     const noneElement = document.createElement("option");
-    noneElement.value = 'delete';
+    noneElement.value = -1;
     noneElement.text = 'none';
     payGroupPopUpForUpdate.add(noneElement);
   }

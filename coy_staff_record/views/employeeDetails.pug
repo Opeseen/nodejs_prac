@@ -77,6 +77,8 @@ block content
                 div(class='box-text-cell')
                   p.box-title netPay
                   input.input-style-one(type='text' step='any' name='thousand-convert' value=`${employeePayGroupDetails.netPay}` readonly)
+                div(class='box-text-cell')
+                  input#pgroupid.input-style-one(type='hidden' value=`${employeePayGroupDetails.id}`)
             .form__cta
               button.btn--cta--save(onclick='openForm()') update payGroup
             .line &nbsp;
