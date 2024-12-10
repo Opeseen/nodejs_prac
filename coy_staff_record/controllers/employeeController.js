@@ -3,10 +3,50 @@ const catchAsyncError = require('../utils/catchAsyncError');
 const ApiError = require('../utils/ApiError');
 const { default: axios } = require('axios');
 
-const createEmployee = catchAsyncError(async(req, res, next) => {
+const createEmployeeForm = catchAsyncError(async(req, res) => {
 	res.status(httpStatus.OK).render('createEmployee', {
     title: 'Create Employee',
   });
+});
+
+const createEmployee = catchAsyncError(async(req, res, next) => {
+	const firstname = req.body.firstname;
+	const lastname = req.body.lastname;
+	const phone = req.body.phone;
+	const email = req.body.email;
+	const address = req.body.address;
+	const state = req.body.state;
+	const city = req.body.city;
+	const nationality = req.body.nationality;
+	// Check if PayLoad Data Exists
+	if(!(firstname && lastname && phone && email && address && 
+    state && city && nationality)) return next(new ApiError("Incomplete Payload Data in request", httpStatus.BAD_REQUEST));
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: `http://localhost:8080/api/mun/v1/employee`,
+      data: {
+        firstname,
+        lastname,
+        phone,
+        email,
+        address,
+        state,
+        city,
+        nationality
+      }
+    });
+    if(response.data.success){
+      res.status(httpStatus.OK).json({
+        success: true
+      });
+    }
+  } catch (error) {
+    console.log(error.response.data);
+    if(error.code === 'ECONNREFUSED') return next(new ApiError(`CONNECTION ERROR AT ${URL}`, httpStatus.BAD_REQUEST));
+    if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
+    return next(new ApiError("Error Occurred While Creating Employee Data", httpStatus.INTERNAL_SERVER_ERROR));
+  }
 });
 
 const getAllEmployees = catchAsyncError(async(req, res, next) => {
@@ -63,7 +103,7 @@ const getEmployee = catchAsyncError(async(req, res, next) => {
 	} catch (error) {
 		console.log(error.response.data)
 		if(error.code === 'ECONNREFUSED') return next(new ApiError(`CONNECTION ERROR AT ${URL}`, httpStatus.BAD_REQUEST));
-		if(error.response.data.message) return next(new ApiError(error.response.data.message,httpStatus.BAD_REQUEST));
+		if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
 		return next(new ApiError("AN ERROR HAS OCCURRED", httpStatus.INTERNAL_SERVER_ERROR));
 	}
 
@@ -84,7 +124,8 @@ const updateEmployee = catchAsyncError(async(req, res, next) => {
 	const city = req.body.city;
 	const nationality = req.body.nationality;
 	// Check if PayLoad Data Exists
-	if(!(id && firstname && lastname && phone && email && address && state && city && nationality)) return next(new ApiError("Incomplete Payload Data in request", httpStatus.BAD_REQUEST));
+	if(!(id && firstname && lastname && phone && email && address && state
+     && city && nationality)) return next(new ApiError("Incomplete Payload Data in request", httpStatus.BAD_REQUEST));
 	try {
 		const response = await axios({
       method: 'PUT',
@@ -108,14 +149,15 @@ const updateEmployee = catchAsyncError(async(req, res, next) => {
 	} catch (error) {
 		console.log(error.response.data);
 		if(error.code === 'ECONNREFUSED') return next(new ApiError(`CONNECTION ERROR AT ${URL}`, httpStatus.BAD_REQUEST));
-		if(error.response.data.message) return next(new ApiError(error.response.data.message,httpStatus.BAD_REQUEST));
+		if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
 		return next(new ApiError("Error Occurred While Updating Employee Data", httpStatus.INTERNAL_SERVER_ERROR));
 	}
 });
 
 
 module.exports = {
-	createEmployee,
+	createEmployeeForm,
+  createEmployee,
 	getAllEmployees,
 	getEmployee,
 	updateEmployee

@@ -2,8 +2,36 @@ import axios from 'axios';
 import {showAlert} from './alert';
 
 // Employees Section
-export const sendUpdatedEmployeeRecord = async(id, firstname, lastname, phone, email,
-  address, state, city, nationality) => {
+export const sendCreateNewEmployeeRecord = async(firstname,lastname,email,phone,
+  state,city,address,nationality)=> {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: 'http://localhost:3000/employee/create/new',
+      data: {
+        firstname,
+        lastname,
+        phone,
+        email,
+        address,
+        state,
+        city,
+        nationality
+      }
+    });
+    if(response.data.success){
+      showAlert('success','Employee Details Successfully Created');
+      window.setTimeout(() => {
+        location.reload();
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message || "Error creating new employee");
+  }
+};
+
+export const sendUpdatedEmployeeRecord = async(id,firstname,lastname,phone,email,
+  address,state,city,nationality) => {
   try {
     const response = await axios({
       method: 'POST',
@@ -27,10 +55,9 @@ export const sendUpdatedEmployeeRecord = async(id, firstname, lastname, phone, e
       },2000);
     }
   } catch (error) {
-    showAlert('error',error.response.data.message);
+    showAlert('error',error.response.data.message || "Error updating Employee Record");
   }
 };
-
 
 // payGroup Section
 export const fetchAllPayGroup = async() =>{
@@ -41,6 +68,28 @@ export const fetchAllPayGroup = async() =>{
     });
     if(response.data.count > 0){ return response.data };
   } catch (error) {
-    return showAlert('error',error.response.data.message);
+    return showAlert('error',error.response.data.message || "Error Fetching PayGroup");
+  }
+};
+
+export const addEmployeeToPayGroup = async(employeeId,payGroupId) => {
+  if(payGroupId === 'undefined') return showAlert('error', 'Invalid Selection');
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: 'http://localhost:3000/paygroup/employee/add',
+      data: {
+        employeeId,
+        payGroupId
+      }
+    });
+    if(response.data.success){
+      showAlert('success',response.data.message);
+      window.setTimeout(() => {
+        location.reload();
+      },2000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message || "Error Occurred Adding Employee To PayGroup");
   }
 };

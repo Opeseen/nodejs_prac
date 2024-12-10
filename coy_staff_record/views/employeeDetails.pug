@@ -80,7 +80,7 @@ block content
             .form__cta
               button.btn--cta--save(onclick='openForm()') update payGroup
             .line &nbsp;
-        // Popup this section when an onClick event is emitted 
+        // Popup this section when an onClick event is emitted for an employee attached to a payGroup
         section#ModifyEmployeePayGroupInfo.PopupPayGroupSelection
           .resource-details.modify-employeePayGroup
             .heading__title update employee payGroup
@@ -88,7 +88,7 @@ block content
                 .popup-form 
                   div(class='box-text-cell')
                   p.box-title payGroup category
-                  select.select-style-one#payGroupSelection(class='payGroupSelect payGroupSelectUpdate')
+                  select.select-style-one#updatePayGroupSelection(class='payGroupSelect payGroupSelectUpdate')
                     option(value= 'undefined') Please select
                 .popup-form-cta
                   button.popup--cta--save Save
@@ -110,7 +110,7 @@ block content
                 .popup-form
                   div(class='box-text-cell')
                   p.box-title payGroup category
-                  select.select-style-one#payGroupSelection(class='payGroupSelect')
+                  select.select-style-one#addPayGroupSelection(class='payGroupSelect')
                     option(value= 'undefined') Please select
                 .popup-form-cta
                   button.popup--cta--save Save

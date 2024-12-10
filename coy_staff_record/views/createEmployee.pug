@@ -8,3 +8,31 @@ block content
           .heading__title New Employee Info
           form
             .form__div
+              div(class='box-text-cell')
+                p.box-title firstName
+                input#fname.input-style-one(type='text' required)
+              div(class='box-text-cell')
+                p.box-title lastName
+                input#lname.input-style-one(type='text' required)
+              div(class='box-text-cell')
+                p.box-title email
+                textarea#email(rows='2' cols='32' required)
+              div(class='box-text-cell')
+                p.box-title Phone
+                input#phone.input-style-one(type='text' required)
+              div(class='box-text-cell')
+                p.box-title state
+                input#state.input-style-one(type='text' required)
+              div(class='box-text-cell')
+                p.box-title address
+                textarea#address(rows='2' cols='30') required
+              div(class='box-text-cell')
+                p.box-title city
+                input#city.input-style-one(type='text' required)
+              div(class='box-text-cell')
+                p.box-title nationality
+                input#nationality.input-style-one(type='text' required)
+                
+            .form__cta--create
+              button.btn--cta--save create record
+            .line &nbsp;

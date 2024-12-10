@@ -29,7 +29,30 @@ const getAllPayGroup = catchAsyncError(async(req, res) => {
   return res.status(httpStatus.OK).send("serverRequest")
 });
 
+const addEmployeeToPayGroup = catchAsyncError(async(req, res, next) => {
+  const employeeId = Number(req.body.employeeId);
+  const payGroupId = Number(req.body.payGroupId);
+  const URL = `http://localhost:8080/api/mun/v1/paygroup/${payGroupId}/employee/${employeeId}`;
+
+  try {
+    const response = await axios({
+      method:	'PUT',
+      url:	URL
+    });
+    if(response.data.success){
+      return res.status(httpStatus.OK).json({
+        success: true,
+        message: response.data.details
+      });
+    }
+  } catch (error) {
+    console.log(error.response)
+    if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
+		return next(new ApiError("AN ERROR HAS OCCURRED", httpStatus.INTERNAL_SERVER_ERROR));
+  }
+});
 
 module.exports = {
-  getAllPayGroup
+  getAllPayGroup,
+  addEmployeeToPayGroup
 }
