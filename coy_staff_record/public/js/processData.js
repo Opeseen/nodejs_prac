@@ -23,7 +23,7 @@ export const sendCreateNewEmployeeRecord = async(firstname,lastname,email,phone,
       showAlert('success','Employee Details Successfully Created');
       window.setTimeout(() => {
         location.reload();
-      },2000);
+      },3000);
     }
   } catch (error) {
     showAlert('error',error.response.data.message || "Error creating new employee");
@@ -52,10 +52,10 @@ export const sendUpdatedEmployeeRecord = async(id,firstname,lastname,phone,email
       showAlert('success','Employee Details Successfully Updated');
       window.setTimeout(() => {
         location.reload();
-      },2000);
+      },3000);
     }
   } catch (error) {
-    showAlert('error',error.response.data.message || "Error updating Employee Record");
+    return showAlert('error',error.response.data.message || "Error Updating Employee Record");
   }
 };
 
@@ -65,19 +65,34 @@ export const ProcessUpdatedEmployeePayGroup = async(employeeId,payGroupId) => {
     const response = await axios({
       method: 'POST',
       url: 'http://localhost:3000/employee/paygroup/update',
-      data: {
-        employeeId,
-        payGroupId
-      }
+      data: { employeeId,payGroupId }
     });
     if(response.data.success){
       showAlert('success',response.data.message);
       window.setTimeout(() => {
         location.reload();
-      },2000);
+      },3000);
     }
   } catch (error) {
-    showAlert('error',error.response.data.message || "Error Occurred Updating Employee PayGroup");
+    return showAlert('error',error.response.data.message || "Error Occurred Updating Employee PayGroup");
+  }
+};
+
+export const deleteEmployeeData = async(eid) => {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: 'http://localhost:3000/employee/delete',
+      data: {eid}
+    });
+    if(response.data.success){
+      showAlert('success',response.data.message);
+      window.setTimeout(() => {
+        location.assign('/employee/view/all');
+      },3000);
+    }
+  } catch (error) {
+    return showAlert('error',error.response.data.message || "Error Occurred Deleting Employee");
   }
 };
 
@@ -100,19 +115,16 @@ export const addEmployeeToPayGroup = async(employeeId,payGroupId) => {
     const response = await axios({
       method: 'POST',
       url: 'http://localhost:3000/paygroup/employee/add',
-      data: {
-        employeeId,
-        payGroupId
-      }
+      data: { employeeId,payGroupId }
     });
     if(response.data.success){
       showAlert('success',response.data.message);
       window.setTimeout(() => {
         location.reload();
-      },2000);
+      },3000);
     }
   } catch (error) {
-    showAlert('error',error.response.data.message || "Error Occurred Adding Employee To PayGroup");
+    return showAlert('error',error.response.data.message || "Error Occurred Adding Employee To PayGroup");
   }
 };
 

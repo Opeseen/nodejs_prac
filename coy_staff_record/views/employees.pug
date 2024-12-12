@@ -18,11 +18,11 @@ block content
 
             each employee in allEmployees
               tr
-                td= employee.firstname.toUpperCase()
-                td= employee.lastname.toUpperCase()
-                td= employee.email.toUpperCase()
-                td= employee.state.toUpperCase()
-                td= employee.nationality.toUpperCase()
+                td= employee.firstname
+                td= employee.lastname
+                td= employee.email
+                td= employee.state
+                td= employee.nationality
                 td
                   .btn--green
                     a(href=`/employee/view?eid=${employee.id}`) Details

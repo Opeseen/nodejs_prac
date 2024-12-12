@@ -9,5 +9,6 @@ router.get('/view', employeeController.getEmployee);
 router.post('/create/new', employeeController.createEmployee);
 router.post('/update', employeeController.updateEmployee);
 router.post('/paygroup/update', employeeController.updatedEmployeePayGroup);
+router.post('/delete', employeeController.deleteEmployee);
 
 module.exports = router;

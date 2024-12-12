@@ -8,7 +8,7 @@ block content
       section#employeeInfo
         .resource-details.modify-employee
           .heading__title Personal Info
-          form
+          form.modify-employee-update
             .form__div
               div(class='box-text-cell')
                 p.box-title firstName
@@ -36,11 +36,13 @@ block content
                 input#nationality.input-style-one(type='text' value=`${employeeDetails.nationality}`)
               div(class='box-text-cell')
                 input#docid.input-style-one(type='hidden' value=`${employeeDetails.id}`)
-            br
             .form__cta
-              button.btn--cta--save Save record
+              button.btn--cta--save Save Record
+          form.modify-employee-delete
+            .form__cta
+              button#deleteEmployee.btn--cta--red Delete Employee Details
             .line &nbsp;
-      
+               
       if employeePayGroupDetails
         // Show this section when an employee is attached to a payGroup
         section#EmployeePayGroupInfo
