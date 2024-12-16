@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 import {sendCreateNewEmployeeRecord ,sendUpdatedEmployeeRecord, fetchAllPayGroup, addEmployeeToPayGroup, ProcessUpdatedEmployeePayGroup,
-  deleteEmployeeData
+  deleteEmployeeData, sendCreateNewPayGroupRecord
 } 
 from './processData';
 // GLOBAL VARIABLE
@@ -14,6 +14,7 @@ const addEmployeePayGroup = document.querySelector('.addEmployeeToPayGroup');
 const updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup');
 
 // PayGroup Query Selector
+const createNewPayGroupRecord = document.querySelector('.create-paygroup')
 const payGroupPopUp = document.querySelector('.PopupPayGroupSelection');
 
 // Employee Section
@@ -31,7 +32,7 @@ if(createNewEmployeeRecord){
     const nationality = document.getElementById('nationality').value;
 
     await sendCreateNewEmployeeRecord(firstname,lastname,email,phone,state,city,address,nationality );
-    document.querySelector('.btn--cta--save').textContent = 'create record'
+    document.querySelector('.btn--cta--save').textContent = 'create employee'
   });
 };
 
@@ -112,6 +113,22 @@ if(deletedEmployeeRecord){
 };
 
 // PayGroup Section
+if(createNewPayGroupRecord){
+  createNewPayGroupRecord.addEventListener('submit', async event => {
+    event.preventDefault();
+    document.querySelector('.btn--cta--save').textContent = 'Saving..'
+    const category = document.getElementById('category').value;
+    const basic = document.getElementById('basic').value;
+    const housing = document.getElementById('housing').value;
+    const transport = document.getElementById('transport').value;
+    const utility = document.getElementById('utility').value;
+    const tax = document.getElementById('tax').value;
+
+    await sendCreateNewPayGroupRecord(category,basic,housing,transport,utility,tax);
+    document.querySelector('.btn--cta--save').textContent = 'create paygroup'
+  });
+};
+
 if(payGroupPopUp){
   const payGroupSelect = document.querySelector('.payGroupSelect');
   const payGroupPopUpForUpdate = document.querySelector('.payGroupSelectUpdate');

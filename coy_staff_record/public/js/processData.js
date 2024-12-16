@@ -97,6 +97,32 @@ export const deleteEmployeeData = async(eid) => {
 };
 
 // payGroup Section
+export const sendCreateNewPayGroupRecord = async(category,basic,housing,transport,
+  utility,tax)=> {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: 'http://localhost:3000/paygroup/create/new',
+      data: {
+        category,
+        basic,
+        housing,
+        transport,
+        utility,
+        tax
+      }
+    });
+    if(response.data.success){
+      showAlert('success','PayGroup Details Successfully Created');
+      window.setTimeout(() => {
+        location.reload();
+      },3000);
+    }
+  } catch (error) {
+    showAlert('error',error.response.data.message || "Error creating new PayGroup");
+  }
+};
+
 export const fetchAllPayGroup = async() =>{
   try {
     const response = await axios({

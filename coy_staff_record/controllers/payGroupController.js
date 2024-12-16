@@ -3,6 +3,48 @@ const catchAsyncError = require('../utils/catchAsyncError');
 const ApiError = require('../utils/ApiError');
 const { default: axios } = require('axios');
 
+const createPayGroupForm = catchAsyncError(async(req, res) => {
+	res.status(httpStatus.OK).render('createPayGroup', {
+    title: 'Create Paygroup',
+  });
+});
+
+const createPayGroup = catchAsyncError(async(req, res, next) => {
+	const category = req.body.category;
+	const basic = req.body.basic;
+	const housing = req.body.housing;
+	const transport = req.body.transport;
+	const utility = req.body.utility;
+	const tax = req.body.tax;
+	// Check if PayLoad Data Exists
+	if(!(category && basic && housing && transport && utility && 
+    tax)) return next(new ApiError("Incomplete Payload Data in request", httpStatus.BAD_REQUEST));
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: `http://localhost:8080/api/mun/v1/paygroup`,
+      data: {
+        category,
+        basic,
+        housing,
+        transport,
+        utility,
+        tax
+      }
+    });
+    if(response.data.success){
+      res.status(httpStatus.OK).json({
+        success: true
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    if(error.code === 'ECONNREFUSED') return next(new ApiError(`CONNECTION ERROR AT ${URL}`, httpStatus.BAD_REQUEST));
+    if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
+    return next(new ApiError("Error Occurred While Creating PayGroup Data", httpStatus.INTERNAL_SERVER_ERROR));
+  }
+});
+
 const getAllPayGroup = catchAsyncError(async(req, res) => {
   const requestType = req.query.reqType;
   const URL = 'http://localhost:8080/api/mun/v1/paygroup/all'
@@ -53,6 +95,8 @@ const addEmployeeToPayGroup = catchAsyncError(async(req, res, next) => {
 });
 
 module.exports = {
+  createPayGroupForm,
+  createPayGroup,
   getAllPayGroup,
   addEmployeeToPayGroup
 }

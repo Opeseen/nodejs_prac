@@ -9,30 +9,24 @@ block content
           form
             .form__div
               div(class='box-text-cell')
-                p.box-title firstName
-                input#fname.input-style-one(type='text' required)
+                p.box-title category
+                input#category.input-style-one(type='text' required)
               div(class='box-text-cell')
-                p.box-title lastName
-                input#lname.input-style-one(type='text' required)
+                p.box-title basic
+                input#basic.input-style-one(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)' required)
               div(class='box-text-cell')
-                p.box-title email
-                input#email.input-style-one(type='email', placeholder='you@example.com', required)
+                p.box-title housing
+                input#housing.input-style-one(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)' required)
               div(class='box-text-cell')
-                p.box-title Phone
-                input#phone.input-style-one(type='text' required)
+                p.box-title transport
+                input#transport.input-style-one(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)' required)
               div(class='box-text-cell')
-                p.box-title state
-                input#state.input-style-one(type='text' required)
+                p.box-title utility
+                input#utility.input-style-one(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)' required)
               div(class='box-text-cell')
-                p.box-title address
-                textarea#address(rows='2' cols='32' required)
-              div(class='box-text-cell')
-                p.box-title city
-                input#city.input-style-one(type='text' required)
-              div(class='box-text-cell')
-                p.box-title nationality
-                input#nationality.input-style-one(type='text' required)
+                p.box-title tax
+                input#tax.input-style-one(type='number' step='any' onfocus='use_number(this)' onblur='use_text(this)' required)
                 
             .form__cta--create
-              button.btn--cta--save create record
+              button.btn--cta--save create paygroup
             .line &nbsp;

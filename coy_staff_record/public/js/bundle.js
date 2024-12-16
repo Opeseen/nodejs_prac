@@ -12653,7 +12653,7 @@ var showAlert = exports.showAlert = function showAlert(type, msg) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.sendUpdatedEmployeeRecord = exports.sendCreateNewEmployeeRecord = exports.fetchAllPayGroup = exports.deleteEmployeeData = exports.addEmployeeToPayGroup = exports.ProcessUpdatedEmployeePayGroup = void 0;
+exports.sendUpdatedEmployeeRecord = exports.sendCreateNewPayGroupRecord = exports.sendCreateNewEmployeeRecord = exports.fetchAllPayGroup = exports.deleteEmployeeData = exports.addEmployeeToPayGroup = exports.ProcessUpdatedEmployeePayGroup = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 var _alert = require("./alert");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -12842,8 +12842,8 @@ var deleteEmployeeData = exports.deleteEmployeeData = /*#__PURE__*/function () {
 }();
 
 // payGroup Section
-var fetchAllPayGroup = exports.fetchAllPayGroup = /*#__PURE__*/function () {
-  var _ref5 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+var sendCreateNewPayGroupRecord = exports.sendCreateNewPayGroupRecord = /*#__PURE__*/function () {
+  var _ref5 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5(category, basic, housing, transport, utility, tax) {
     var response;
     return _regeneratorRuntime().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
@@ -12851,48 +12851,92 @@ var fetchAllPayGroup = exports.fetchAllPayGroup = /*#__PURE__*/function () {
           _context5.prev = 0;
           _context5.next = 3;
           return (0, _axios.default)({
-            method: 'GET',
-            url: 'http://localhost:3000/paygroup/view/all?reqType=clientRequest'
+            method: 'POST',
+            url: 'http://localhost:3000/paygroup/create/new',
+            data: {
+              category: category,
+              basic: basic,
+              housing: housing,
+              transport: transport,
+              utility: utility,
+              tax: tax
+            }
           });
         case 3:
           response = _context5.sent;
-          if (!(response.data.count > 0)) {
-            _context5.next = 6;
-            break;
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', 'PayGroup Details Successfully Created');
+            window.setTimeout(function () {
+              location.reload();
+            }, 3000);
           }
-          return _context5.abrupt("return", response.data);
-        case 6:
-          ;
-          _context5.next = 12;
+          _context5.next = 10;
           break;
-        case 9:
-          _context5.prev = 9;
+        case 7:
+          _context5.prev = 7;
           _context5.t0 = _context5["catch"](0);
-          return _context5.abrupt("return", (0, _alert.showAlert)('error', _context5.t0.response.data.message || "Error Fetching PayGroup"));
-        case 12:
+          (0, _alert.showAlert)('error', _context5.t0.response.data.message || "Error creating new PayGroup");
+        case 10:
         case "end":
           return _context5.stop();
       }
-    }, _callee5, null, [[0, 9]]);
+    }, _callee5, null, [[0, 7]]);
   }));
-  return function fetchAllPayGroup() {
+  return function sendCreateNewPayGroupRecord(_x21, _x22, _x23, _x24, _x25, _x26) {
     return _ref5.apply(this, arguments);
   };
 }();
-var addEmployeeToPayGroup = exports.addEmployeeToPayGroup = /*#__PURE__*/function () {
-  var _ref6 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee6(employeeId, payGroupId) {
+var fetchAllPayGroup = exports.fetchAllPayGroup = /*#__PURE__*/function () {
+  var _ref6 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
     var response;
     return _regeneratorRuntime().wrap(function _callee6$(_context6) {
       while (1) switch (_context6.prev = _context6.next) {
         case 0:
-          if (!(payGroupId === 'undefined')) {
-            _context6.next = 2;
+          _context6.prev = 0;
+          _context6.next = 3;
+          return (0, _axios.default)({
+            method: 'GET',
+            url: 'http://localhost:3000/paygroup/view/all?reqType=clientRequest'
+          });
+        case 3:
+          response = _context6.sent;
+          if (!(response.data.count > 0)) {
+            _context6.next = 6;
             break;
           }
-          return _context6.abrupt("return", (0, _alert.showAlert)('error', 'Invalid Selection'));
+          return _context6.abrupt("return", response.data);
+        case 6:
+          ;
+          _context6.next = 12;
+          break;
+        case 9:
+          _context6.prev = 9;
+          _context6.t0 = _context6["catch"](0);
+          return _context6.abrupt("return", (0, _alert.showAlert)('error', _context6.t0.response.data.message || "Error Fetching PayGroup"));
+        case 12:
+        case "end":
+          return _context6.stop();
+      }
+    }, _callee6, null, [[0, 9]]);
+  }));
+  return function fetchAllPayGroup() {
+    return _ref6.apply(this, arguments);
+  };
+}();
+var addEmployeeToPayGroup = exports.addEmployeeToPayGroup = /*#__PURE__*/function () {
+  var _ref7 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee7(employeeId, payGroupId) {
+    var response;
+    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
+        case 0:
+          if (!(payGroupId === 'undefined')) {
+            _context7.next = 2;
+            break;
+          }
+          return _context7.abrupt("return", (0, _alert.showAlert)('error', 'Invalid Selection'));
         case 2:
-          _context6.prev = 2;
-          _context6.next = 5;
+          _context7.prev = 2;
+          _context7.next = 5;
           return (0, _axios.default)({
             method: 'POST',
             url: 'http://localhost:3000/paygroup/employee/add',
@@ -12902,27 +12946,27 @@ var addEmployeeToPayGroup = exports.addEmployeeToPayGroup = /*#__PURE__*/functio
             }
           });
         case 5:
-          response = _context6.sent;
+          response = _context7.sent;
           if (response.data.success) {
             (0, _alert.showAlert)('success', response.data.message);
             window.setTimeout(function () {
               location.reload();
             }, 3000);
           }
-          _context6.next = 12;
+          _context7.next = 12;
           break;
         case 9:
-          _context6.prev = 9;
-          _context6.t0 = _context6["catch"](2);
-          return _context6.abrupt("return", (0, _alert.showAlert)('error', _context6.t0.response.data.message || "Error Occurred Adding Employee To PayGroup"));
+          _context7.prev = 9;
+          _context7.t0 = _context7["catch"](2);
+          return _context7.abrupt("return", (0, _alert.showAlert)('error', _context7.t0.response.data.message || "Error Occurred Adding Employee To PayGroup"));
         case 12:
         case "end":
-          return _context6.stop();
+          return _context7.stop();
       }
-    }, _callee6, null, [[2, 9]]);
+    }, _callee7, null, [[2, 9]]);
   }));
-  return function addEmployeeToPayGroup(_x21, _x22) {
-    return _ref6.apply(this, arguments);
+  return function addEmployeeToPayGroup(_x27, _x28) {
+    return _ref7.apply(this, arguments);
   };
 }();
 },{"axios":"../../node_modules/axios/index.js","./alert":"alert.js"}],"index.js":[function(require,module,exports) {
@@ -13075,6 +13119,7 @@ var addEmployeePayGroup = document.querySelector('.addEmployeeToPayGroup');
 var updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup');
 
 // PayGroup Query Selector
+var createNewPayGroupRecord = document.querySelector('.create-paygroup');
 var payGroupPopUp = document.querySelector('.PopupPayGroupSelection');
 
 // Employee Section
@@ -13098,7 +13143,7 @@ if (createNewEmployeeRecord) {
             _context.next = 12;
             return (0, _processData.sendCreateNewEmployeeRecord)(firstname, lastname, email, phone, state, city, address, nationality);
           case 12:
-            document.querySelector('.btn--cta--save').textContent = 'create record';
+            document.querySelector('.btn--cta--save').textContent = 'create employee';
           case 13:
           case "end":
             return _context.stop();
@@ -13263,6 +13308,37 @@ if (deletedEmployeeRecord) {
 ;
 
 // PayGroup Section
+if (createNewPayGroupRecord) {
+  createNewPayGroupRecord.addEventListener('submit', /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee7(event) {
+      var category, basic, housing, transport, utility, tax;
+      return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+        while (1) switch (_context7.prev = _context7.next) {
+          case 0:
+            event.preventDefault();
+            document.querySelector('.btn--cta--save').textContent = 'Saving..';
+            category = document.getElementById('category').value;
+            basic = document.getElementById('basic').value;
+            housing = document.getElementById('housing').value;
+            transport = document.getElementById('transport').value;
+            utility = document.getElementById('utility').value;
+            tax = document.getElementById('tax').value;
+            _context7.next = 10;
+            return (0, _processData.sendCreateNewPayGroupRecord)(category, basic, housing, transport, utility, tax);
+          case 10:
+            document.querySelector('.btn--cta--save').textContent = 'create paygroup';
+          case 11:
+          case "end":
+            return _context7.stop();
+        }
+      }, _callee7);
+    }));
+    return function (_x7) {
+      return _ref6.apply(this, arguments);
+    };
+  }());
+}
+;
 if (payGroupPopUp) {
   var payGroupSelect = document.querySelector('.payGroupSelect');
   var payGroupPopUpForUpdate = document.querySelector('.payGroupSelectUpdate');
@@ -13311,7 +13387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53881" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56246" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
