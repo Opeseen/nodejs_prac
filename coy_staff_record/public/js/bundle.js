@@ -13318,11 +13318,11 @@ if (createNewPayGroupRecord) {
             event.preventDefault();
             document.querySelector('.btn--cta--save').textContent = 'Saving..';
             category = document.getElementById('category').value;
-            basic = document.getElementById('basic').value;
-            housing = document.getElementById('housing').value;
-            transport = document.getElementById('transport').value;
-            utility = document.getElementById('utility').value;
-            tax = document.getElementById('tax').value;
+            basic = document.getElementById('basic').value.replace(/,/g, '');
+            housing = document.getElementById('housing').value.replace(/,/g, '');
+            transport = document.getElementById('transport').value.replace(/,/g, '');
+            utility = document.getElementById('utility').value.replace(/,/g, '');
+            tax = document.getElementById('tax').value.replace(/,/g, '');
             _context7.next = 10;
             return (0, _processData.sendCreateNewPayGroupRecord)(category, basic, housing, transport, utility, tax);
           case 10:
@@ -13387,7 +13387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56246" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49524" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

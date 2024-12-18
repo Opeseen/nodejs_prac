@@ -1,0 +1,32 @@
+extends base
+
+block content
+  main
+    h2.body-title PayGroup Overview
+    if allPayGroup
+      section.PayGroupTableSection
+        .table-wrapper
+          .heading__title PayGroup Info
+          table.table-data
+            tr
+              th.th__size-small Category
+              th.th__size-small GrossPay
+              th.th__size-small Tax
+              th.th__size-small Pension
+              th.th__size-small NetPay
+              th.th__size-small Option
+              
+            each payGroup in allPayGroup
+              tr
+                td= payGroup.category
+                td= payGroup.grossPay.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+                td= payGroup.tax.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+                td= payGroup.employeePensionContribution.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+                td= payGroup.netPay.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
+                td
+                  .btn--green
+                    a(href=`/paygroup/view?eid=${payGroup.id}`) Details
+
+    else
+      section.emptyPayGroupRecord
+        p.empty__record no PayGroup record found in this organization

@@ -118,11 +118,11 @@ if(createNewPayGroupRecord){
     event.preventDefault();
     document.querySelector('.btn--cta--save').textContent = 'Saving..'
     const category = document.getElementById('category').value;
-    const basic = document.getElementById('basic').value;
-    const housing = document.getElementById('housing').value;
-    const transport = document.getElementById('transport').value;
-    const utility = document.getElementById('utility').value;
-    const tax = document.getElementById('tax').value;
+    const basic = document.getElementById('basic').value.replace(/,/g, '');
+    const housing = document.getElementById('housing').value.replace(/,/g, '');
+    const transport = document.getElementById('transport').value.replace(/,/g, '');
+    const utility = document.getElementById('utility').value.replace(/,/g, '');
+    const tax = document.getElementById('tax').value.replace(/,/g, '');
 
     await sendCreateNewPayGroupRecord(category,basic,housing,transport,utility,tax);
     document.querySelector('.btn--cta--save').textContent = 'create paygroup'
