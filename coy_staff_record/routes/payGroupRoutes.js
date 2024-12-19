@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/create',payGroupController.createPayGroupForm);
 router.get('/view/all', payGroupController.getAllPayGroup);
+router.get('/view', payGroupController.getPayGroup);
 router.post('/create/new', payGroupController.createPayGroup);
 router.post('/employee/add', payGroupController.addEmployeeToPayGroup);
 

@@ -76,6 +76,35 @@ const getAllPayGroup = catchAsyncError(async(req, res) => {
   }
 });
 
+const getPayGroup = catchAsyncError(async(req, res, next) => {
+  let payGroupDetails = false;
+  const payGroupId = req.query.eid;
+  const URL = `http://localhost:8080/api/mun/v1/paygroup/${payGroupId}`;
+
+  try {
+    const response = await axios({
+      method: 'GET',
+      url: URL
+    });
+    if(response.data.success){
+      payGroupDetails = response.data.details;
+      return res.status(httpStatus.OK).render('payGroupDetails',{
+        title: 'PayGroup Information',
+        payGroupDetails
+      });
+    }
+  } catch (error) {
+    console.log(error.response.data);
+		if(error.code === 'ECONNREFUSED') return next(new ApiError(`CONNECTION ERROR AT ${URL}`, httpStatus.BAD_REQUEST));
+		if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
+		return next(new ApiError("AN ERROR HAS OCCURRED", httpStatus.INTERNAL_SERVER_ERROR));
+  }
+  // Default response if no record is present in the database
+  return res.status(httpStatus.OK).render({
+    title: 'PayGroup Information'
+  });
+});
+
 const addEmployeeToPayGroup = catchAsyncError(async(req, res, next) => {
   const employeeId = Number(req.body.employeeId);
   const payGroupId = Number(req.body.payGroupId);
@@ -103,5 +132,6 @@ module.exports = {
   createPayGroupForm,
   createPayGroup,
   getAllPayGroup,
+  getPayGroup,
   addEmployeeToPayGroup
 }

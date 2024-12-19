@@ -1,0 +1,48 @@
+extends base
+
+block content
+  main
+    h2.body-title PayGroup Details
+    if payGroupDetails
+      // Show this section when a PayGroup record exist
+      section#payGroupInfo
+        .resource-details.modify-payGroup
+          .heading__title Personal Info
+          form.modify-payGroup-update
+            .form__div
+              div(class='box-text-cell')
+                p.box-title category
+                input#category.input-style-one(type='text' value=`${payGroupDetails.category}` required)
+              div(class='box-text-cell')
+                p.box-title basic
+                input#basic.input-style-one(type='text' name='thousand-convert' step='any' onfocus='use_number(this)' onblur='use_text(this)' value=`${payGroupDetails.basic}` required)
+              div(class='box-text-cell')
+                p.box-title housing
+                input#housing.input-style-one(type='text' name='thousand-convert' step='any' onfocus='use_number(this)' onblur='use_text(this)' value=`${payGroupDetails.housing}` required)
+              div(class='box-text-cell')
+                p.box-title transport
+                input#transport.input-style-one(type='text' name='thousand-convert' step='any' onfocus='use_number(this)' onblur='use_text(this)' value=`${payGroupDetails.transport}` required)
+              div(class='box-text-cell')
+                p.box-title utility
+                input#utility.input-style-one(type='text' name='thousand-convert' step='any' onfocus='use_number(this)' onblur='use_text(this)' value=`${payGroupDetails.utility}` required)
+              div(class='box-text-cell')
+                p.box-title tax
+                input#tax.input-style-one(type='text' name='thousand-convert' step='any' onfocus='use_number(this)' onblur='use_text(this)' value=`${payGroupDetails.tax}` required)
+              div(class='box-text-cell')
+                p.box-title grossPay
+                input.input-style-one(type='text' name='thousand-convert' step='any' value=`${payGroupDetails.grossPay}` readonly)
+              div(class='box-text-cell')
+                p.box-title employee pension
+                input.input-style-one(type='text' name='thousand-convert' step='any' value=`${payGroupDetails.employeePensionContribution}` readonly)
+              div(class='box-text-cell')
+                p.box-title employer pension
+                input.input-style-one(type='text' name='thousand-convert' step='any' value=`${payGroupDetails.employerPensionContribution}` readonly)
+              div(class='box-text-cell')
+                p.box-title net pay
+                input.input-style-one(type='text' name='thousand-convert' step='any' value=`${payGroupDetails.netPay}` readonly)
+            .form__cta
+              button.btn--cta--save Save Record
+    else
+      // Show this when a payGroup record doesn't 
+      section.noPayGroupRecordFound
+        p.empty__record error fetching payGroup details

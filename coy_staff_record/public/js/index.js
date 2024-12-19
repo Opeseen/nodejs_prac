@@ -105,10 +105,7 @@ if(deletedEmployeeRecord){
           }
         });
       });
-  
-    });
-
-    
+    });   
   });
 };
 
