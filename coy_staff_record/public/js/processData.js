@@ -123,6 +123,33 @@ export const sendCreateNewPayGroupRecord = async(category,basic,housing,transpor
   }
 };
 
+export const sendUpdatedPayGroupRecord = async(id,category,basic,housing,transport,
+  utility,tax) => {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: 'http://localhost:3000/paygroup/update',
+      data: {
+        id,
+        category,
+        basic,
+        housing,
+        transport,
+        utility,
+        tax
+      }
+    });
+    if(response.data.success){
+      showAlert('success','PayGroup Details Successfully Updated');
+      window.setTimeout(() => {
+        location.reload();
+      },3000);
+    }
+  } catch (error) {
+    return showAlert('error',error.response.data.message || "Error Updating PayGroup Record");
+  }
+};
+
 export const fetchAllPayGroup = async() =>{
   try {
     const response = await axios({
@@ -153,5 +180,6 @@ export const addEmployeeToPayGroup = async(employeeId,payGroupId) => {
     return showAlert('error',error.response.data.message || "Error Occurred Adding Employee To PayGroup");
   }
 };
+
 
 

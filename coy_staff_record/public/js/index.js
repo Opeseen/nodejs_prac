@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 import {sendCreateNewEmployeeRecord ,sendUpdatedEmployeeRecord, fetchAllPayGroup, addEmployeeToPayGroup, ProcessUpdatedEmployeePayGroup,
-  deleteEmployeeData, sendCreateNewPayGroupRecord
+  deleteEmployeeData, sendCreateNewPayGroupRecord, sendUpdatedPayGroupRecord
 } 
 from './processData';
 // GLOBAL VARIABLE
@@ -15,7 +15,8 @@ const updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup
 
 // PayGroup Query Selector
 const createNewPayGroupRecord = document.querySelector('.create-paygroup')
-const payGroupPopUp = document.querySelector('.PopupPayGroupSelection');
+const payGroupPopUp = document.querySelector('.PopupPayGroupSelection'); 
+const updatedPayGroupRecord = document.querySelector('.modify-payGroup-update');
 
 // Employee Section
 if(createNewEmployeeRecord){
@@ -123,6 +124,23 @@ if(createNewPayGroupRecord){
 
     await sendCreateNewPayGroupRecord(category,basic,housing,transport,utility,tax);
     document.querySelector('.btn--cta--save').textContent = 'create paygroup'
+  });
+};
+
+if(updatedPayGroupRecord){
+  updatedPayGroupRecord.addEventListener('submit',  async event => {
+    event.preventDefault();
+    document.querySelector('.btn--cta--save').textContent = 'Updating..'
+    const category = document.getElementById('category').value;
+    const basic = document.getElementById('basic').value.replace(/,/g, '');
+    const housing = document.getElementById('housing').value.replace(/,/g, '');
+    const transport = document.getElementById('transport').value.replace(/,/g, '');
+    const utility = document.getElementById('utility').value.replace(/,/g, '');
+    const tax = document.getElementById('tax').value.replace(/,/g, '');
+    const id = document.getElementById('docid').value;
+
+    await sendUpdatedPayGroupRecord(id, category, basic, housing, transport, utility, tax);
+    document.querySelector('.btn--cta--save').textContent = 'Save Record';
   });
 };
 

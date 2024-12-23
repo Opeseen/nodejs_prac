@@ -22,7 +22,7 @@ const createPayGroup = catchAsyncError(async(req, res, next) => {
   try {
     const response = await axios({
       method: 'POST',
-      url: `http://localhost:8080/api/mun/v1/paygroup`,
+      url: 'http://localhost:8080/api/mun/v1/paygroup',
       data: {
         category,
         basic,
@@ -78,7 +78,7 @@ const getAllPayGroup = catchAsyncError(async(req, res) => {
 
 const getPayGroup = catchAsyncError(async(req, res, next) => {
   let payGroupDetails = false;
-  const payGroupId = req.query.eid;
+  const payGroupId = req.query.pid;
   const URL = `http://localhost:8080/api/mun/v1/paygroup/${payGroupId}`;
 
   try {
@@ -128,9 +128,47 @@ const addEmployeeToPayGroup = catchAsyncError(async(req, res, next) => {
   }
 });
 
+const updatePayGroup = catchAsyncError(async(req, res, next) => {
+	const id = req.body.id;
+	const category = req.body.category;
+	const basic = Number(req.body.basic);
+	const housing = Number(req.body.housing);
+	const transport = Number(req.body.transport);
+	const utility = Number(req.body.utility);
+	const tax = Number(req.body.tax);
+	// Check if PayLoad Data Exists
+	if(!(id && category && basic && housing && transport && utility && 
+    tax)) return next(new ApiError("Incomplete Payload Data in request", httpStatus.BAD_REQUEST));
+	try {
+		const response = await axios({
+      method: 'PUT',
+      url: `http://localhost:8080/api/mun/v1/paygroup/${id}`,
+      data: {
+        category,
+        basic,
+        housing,
+        transport,
+        utility,
+        tax
+      }
+    });
+    if(response.data.success){
+      res.status(httpStatus.OK).json({
+				success: true
+			});
+		}
+	} catch (error) {
+		console.log(error.response.data);
+		if(error.code === 'ECONNREFUSED') return next(new ApiError(`CONNECTION ERROR AT ${URL}`, httpStatus.BAD_REQUEST));
+		if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
+		return next(new ApiError("Error Occurred While Updating PayGroup Data", httpStatus.INTERNAL_SERVER_ERROR));
+	}
+});
+
 module.exports = {
   createPayGroupForm,
   createPayGroup,
+  updatePayGroup,
   getAllPayGroup,
   getPayGroup,
   addEmployeeToPayGroup

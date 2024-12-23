@@ -40,8 +40,25 @@ block content
               div(class='box-text-cell')
                 p.box-title net pay
                 input.input-style-one(type='text' name='thousand-convert' step='any' value=`${payGroupDetails.netPay}` readonly)
+              div(class='box-text-cell')
+                input#docid.input-style-one(type='hidden' value=`${payGroupDetails.id}`)
             .form__cta
               button.btn--cta--save Save Record
+
+      section#PayGroupEmployeesSection
+        .resource-details.delete-payGroup
+            .heading__title View PayGroup Employees
+              <br><br>
+              .action-form-cta
+                a(href='#').action--cta--click click here 
+                  
+
+      section#deletePayGroupSection
+        .resource-details.delete-payGroup
+            .heading__title Delete PayGroup
+              .action-form-cta
+                button.action--cta--red Delete
+
     else
       // Show this when a payGroup record doesn't 
       section.noPayGroupRecordFound

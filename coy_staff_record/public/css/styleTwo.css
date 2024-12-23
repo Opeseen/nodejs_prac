@@ -104,7 +104,8 @@ div .btn--red{
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: bold;
+
 }
 .btn--cta--red{
   padding: 1.25rem 3rem !important;
@@ -115,7 +116,7 @@ div .btn--red{
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .btn--cta--save:hover, .btn--cta--red:hover, .btn--red:hover {
@@ -166,12 +167,12 @@ div a {
   border-radius: 5px;
 }
 
-.popup-form-cta{
+.popup-form-cta, .action-form-cta{
   margin-top: 1.0rem;
   margin-left: 1.0em;
 }
 
-.popup--cta--save{
+.popup--cta--save, .action--cta--click{
   padding: 1.25rem 3rem !important;
   font-size: 1.4rem !important;
   width: 30%;
@@ -180,16 +181,17 @@ div a {
   border-radius: 1rem;
   text-transform: uppercase;
 }
-.popup--cta--red{
+.popup--cta--red, .action--cta--red{
   padding: 1.25rem 3rem !important;
   font-size: 1.4rem !important;
   width: 30%;
   background-color: rgb(255, 51, 0);
-  color: #fff;
+  color: white !important;
   border-radius: 1rem;
   text-transform: uppercase;
   cursor: pointer;
   text-align: center;
+  font-weight: bold;
 }
 
 .form__div{

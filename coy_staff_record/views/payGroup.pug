@@ -25,7 +25,7 @@ block content
                 td= payGroup.netPay.toLocaleString(en-us, { style: 'currency', currency: 'USD' })
                 td
                   .btn--green
-                    a(href=`/paygroup/view?eid=${payGroup.id}`) Details
+                    a(href=`/paygroup/view?pid=${payGroup.id}`) Details
 
     else
       section.emptyPayGroupRecord
