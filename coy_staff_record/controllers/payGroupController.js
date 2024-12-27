@@ -165,11 +165,34 @@ const updatePayGroup = catchAsyncError(async(req, res, next) => {
 	}
 });
 
+const deletePayGroup = catchAsyncError(async(req, res, next) => {
+	const payGroupId = req.body.pid;
+	const URL = `http://localhost:8080/api/mun/v1/paygroup/${payGroupId}`;
+
+	try {
+		const response = await axios({
+      method:	'DELETE',
+      url:	URL
+    });
+		if(response.status === 204){
+      return res.status(httpStatus.OK).json({
+        success: true,
+        message: "PayGroup Successfully Deleted"
+      });
+    }
+	} catch (error) {
+		console.log(error.response.data)
+    if(error.response.data.message) return next(new ApiError(error.response.data.message,error.response.status));
+		return next(new ApiError("Error Occurred Deleting PayGroup Data", httpStatus.INTERNAL_SERVER_ERROR));
+	}
+});
+
 module.exports = {
   createPayGroupForm,
   createPayGroup,
   updatePayGroup,
   getAllPayGroup,
   getPayGroup,
-  addEmployeeToPayGroup
+  addEmployeeToPayGroup,
+  deletePayGroup
 }

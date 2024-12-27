@@ -17,6 +17,7 @@ const updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup
 const createNewPayGroupRecord = document.querySelector('.create-paygroup')
 const payGroupPopUp = document.querySelector('.PopupPayGroupSelection'); 
 const updatedPayGroupRecord = document.querySelector('.modify-payGroup-update');
+const deletePayGroup = document.querySelector('.delete-payGroup');
 
 // Employee Section
 if(createNewEmployeeRecord){
@@ -141,6 +142,31 @@ if(updatedPayGroupRecord){
 
     await sendUpdatedPayGroupRecord(id, category, basic, housing, transport, utility, tax);
     document.querySelector('.btn--cta--save').textContent = 'Save Record';
+  });
+};
+
+if(deletePayGroup){
+  const id = document.getElementById('docid').value;
+  document.getElementById('deletePayGroup').addEventListener('click', async function(){
+    bootbox.confirm({
+      title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+      message: '<h4>Do you wish to continue?</h4>',
+      buttons: {
+      confirm: {
+      label: 'Yes',
+      className: `btn-success ${bootbox_cta_fsize}`
+      },
+      cancel: {
+      label: 'No',
+      className: `btn-danger ${bootbox_cta_fsize}`
+      }
+      },
+      callback: async function (result) {
+        if(result){
+          console.log("spotted", id)
+        };
+      }
+    });  
   });
 };
 

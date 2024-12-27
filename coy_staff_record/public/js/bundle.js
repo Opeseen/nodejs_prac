@@ -13167,6 +13167,7 @@ var updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup')
 var createNewPayGroupRecord = document.querySelector('.create-paygroup');
 var payGroupPopUp = document.querySelector('.PopupPayGroupSelection');
 var updatedPayGroupRecord = document.querySelector('.modify-payGroup-update');
+var deletePayGroup = document.querySelector('.delete-payGroup');
 
 // Employee Section
 if (createNewEmployeeRecord) {
@@ -13417,6 +13418,54 @@ if (updatedPayGroupRecord) {
   }());
 }
 ;
+if (deletePayGroup) {
+  var id = document.getElementById('docid').value;
+  document.getElementById('deletePayGroup').addEventListener('click', /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
+    return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+      while (1) switch (_context10.prev = _context10.next) {
+        case 0:
+          bootbox.confirm({
+            title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+            message: '<h4>Do you wish to continue?</h4>',
+            buttons: {
+              confirm: {
+                label: 'Yes',
+                className: "btn-success ".concat(bootbox_cta_fsize)
+              },
+              cancel: {
+                label: 'No',
+                className: "btn-danger ".concat(bootbox_cta_fsize)
+              }
+            },
+            callback: function () {
+              var _callback2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee9(result) {
+                return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+                  while (1) switch (_context9.prev = _context9.next) {
+                    case 0:
+                      if (result) {
+                        console.log("spotted", id);
+                      }
+                      ;
+                    case 2:
+                    case "end":
+                      return _context9.stop();
+                  }
+                }, _callee9);
+              }));
+              function callback(_x9) {
+                return _callback2.apply(this, arguments);
+              }
+              return callback;
+            }()
+          });
+        case 1:
+        case "end":
+          return _context10.stop();
+      }
+    }, _callee10);
+  })));
+}
+;
 if (payGroupPopUp) {
   var payGroupSelect = document.querySelector('.payGroupSelect');
   var payGroupPopUpForUpdate = document.querySelector('.payGroupSelectUpdate');
@@ -13465,7 +13514,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51496" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58653" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
