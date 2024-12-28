@@ -9,5 +9,6 @@ router.get('/view', payGroupController.getPayGroup);
 router.post('/create/new', payGroupController.createPayGroup);
 router.post('/update', payGroupController.updatePayGroup);
 router.post('/employee/add', payGroupController.addEmployeeToPayGroup);
+router.post('/delete', payGroupController.deletePayGroup);
 
 module.exports = router;

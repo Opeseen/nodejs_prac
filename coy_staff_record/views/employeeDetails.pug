@@ -38,11 +38,11 @@ block content
                 input#docid.input-style-one(type='hidden' value=`${employeeDetails.id}`)
             .form__cta
               button.btn--cta--save Save Record
-          form.modify-employee-delete
+          .modify-employee-delete
             .form__cta
               button#deleteEmployee.btn--cta--red Delete Employee Details
             .line &nbsp;
-               
+                
       if employeePayGroupDetails
         // Show this section when an employee is attached to a payGroup
         section#EmployeePayGroupInfo

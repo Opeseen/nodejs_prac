@@ -1,6 +1,6 @@
 import '@babel/polyfill';
 import {sendCreateNewEmployeeRecord ,sendUpdatedEmployeeRecord, fetchAllPayGroup, addEmployeeToPayGroup, ProcessUpdatedEmployeePayGroup,
-  deleteEmployeeData, sendCreateNewPayGroupRecord, sendUpdatedPayGroupRecord
+  deleteEmployeeData, sendCreateNewPayGroupRecord, sendUpdatedPayGroupRecord, deletePayGroupData
 } 
 from './processData';
 // GLOBAL VARIABLE
@@ -9,7 +9,7 @@ const bootbox_cta_fsize = 'fs-4'
 // Employee Query Selector
 const createNewEmployeeRecord = document.querySelector('.create-employee')
 const updatedEmployeeRecord = document.querySelector('.modify-employee-update');
-const deletedEmployeeRecord = document.querySelector('.modify-employee-delete');
+const deleteEmployeeRecord = document.querySelector('.modify-employee-delete');
 const addEmployeePayGroup = document.querySelector('.addEmployeeToPayGroup');
 const updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup');
 
@@ -81,34 +81,31 @@ if(updatedEmployeePayGroup){
   });
 };
 
-if(deletedEmployeeRecord){
-  deletedEmployeeRecord.addEventListener('submit', async event => {
-    event.preventDefault();
-    const id = document.getElementById('docid').value;
-    $(function(){
-      $("#deleteEmployee").click(function () {
-        bootbox.confirm({
-          title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
-          message: '<h4>Do you wish to continue?</h4>',
-          buttons: {
-          confirm: {
-          label: 'Yes',
-          className: `btn-success ${bootbox_cta_fsize}`
-          },
-          cancel: {
-          label: 'No',
-          className: `btn-danger ${bootbox_cta_fsize}`
-          }
-          },
-          callback: async function (result) {
-            if(result){
-              await deleteEmployeeData(id);
-            };
-          }
-        });
-      });
-    });   
-  });
+if(deleteEmployeeRecord){
+  const id = document.getElementById('docid').value;
+  if(id){
+    document.getElementById('deleteEmployee').addEventListener('click', async function(){
+      bootbox.confirm({
+        title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+        message: '<h4>Do you wish to continue?</h4>',
+        buttons: {
+        confirm: {
+        label: 'Yes',
+        className: `btn-success ${bootbox_cta_fsize}`
+        },
+        cancel: {
+        label: 'No',
+        className: `btn-danger ${bootbox_cta_fsize}`
+        }
+        },
+        callback: async function (result) {
+          if(result){
+            await deleteEmployeeData(id);
+          };
+        }
+      }); 
+    });
+  }
 };
 
 // PayGroup Section
@@ -147,27 +144,29 @@ if(updatedPayGroupRecord){
 
 if(deletePayGroup){
   const id = document.getElementById('docid').value;
-  document.getElementById('deletePayGroup').addEventListener('click', async function(){
-    bootbox.confirm({
-      title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
-      message: '<h4>Do you wish to continue?</h4>',
-      buttons: {
-      confirm: {
-      label: 'Yes',
-      className: `btn-success ${bootbox_cta_fsize}`
-      },
-      cancel: {
-      label: 'No',
-      className: `btn-danger ${bootbox_cta_fsize}`
-      }
-      },
-      callback: async function (result) {
-        if(result){
-          console.log("spotted", id)
-        };
-      }
-    });  
-  });
+  if(id){
+    document.getElementById('deletePayGroup').addEventListener('click', async function(){
+      bootbox.confirm({
+        title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+        message: '<h4>Do you wish to continue?</h4>',
+        buttons: {
+        confirm: {
+        label: 'Yes',
+        className: `btn-success ${bootbox_cta_fsize}`
+        },
+        cancel: {
+        label: 'No',
+        className: `btn-danger ${bootbox_cta_fsize}`
+        }
+        },
+        callback: async function (result) {
+          if(result){
+            await deletePayGroupData(id);
+          };
+        }
+      });  
+    });
+  }  
 };
 
 if(payGroupPopUp){

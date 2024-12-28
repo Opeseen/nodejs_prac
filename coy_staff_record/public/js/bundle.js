@@ -12653,7 +12653,7 @@ var showAlert = exports.showAlert = function showAlert(type, msg) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.sendUpdatedPayGroupRecord = exports.sendUpdatedEmployeeRecord = exports.sendCreateNewPayGroupRecord = exports.sendCreateNewEmployeeRecord = exports.fetchAllPayGroup = exports.deleteEmployeeData = exports.addEmployeeToPayGroup = exports.ProcessUpdatedEmployeePayGroup = void 0;
+exports.sendUpdatedPayGroupRecord = exports.sendUpdatedEmployeeRecord = exports.sendCreateNewPayGroupRecord = exports.sendCreateNewEmployeeRecord = exports.fetchAllPayGroup = exports.deletePayGroupData = exports.deleteEmployeeData = exports.addEmployeeToPayGroup = exports.ProcessUpdatedEmployeePayGroup = void 0;
 var _axios = _interopRequireDefault(require("axios"));
 var _alert = require("./alert");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -13014,6 +13014,45 @@ var addEmployeeToPayGroup = exports.addEmployeeToPayGroup = /*#__PURE__*/functio
     return _ref8.apply(this, arguments);
   };
 }();
+var deletePayGroupData = exports.deletePayGroupData = /*#__PURE__*/function () {
+  var _ref9 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee9(pid) {
+    var response;
+    return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+      while (1) switch (_context9.prev = _context9.next) {
+        case 0:
+          _context9.prev = 0;
+          _context9.next = 3;
+          return (0, _axios.default)({
+            method: 'POST',
+            url: 'http://localhost:3000/paygroup/delete',
+            data: {
+              pid: pid
+            }
+          });
+        case 3:
+          response = _context9.sent;
+          if (response.data.success) {
+            (0, _alert.showAlert)('success', response.data.message);
+            window.setTimeout(function () {
+              location.assign('/paygroup/view/all');
+            }, 3000);
+          }
+          _context9.next = 10;
+          break;
+        case 7:
+          _context9.prev = 7;
+          _context9.t0 = _context9["catch"](0);
+          return _context9.abrupt("return", (0, _alert.showAlert)('error', _context9.t0.response.data.message || "Error Occurred Deleting PayGroup"));
+        case 10:
+        case "end":
+          return _context9.stop();
+      }
+    }, _callee9, null, [[0, 7]]);
+  }));
+  return function deletePayGroupData(_x36) {
+    return _ref9.apply(this, arguments);
+  };
+}();
 },{"axios":"../../node_modules/axios/index.js","./alert":"alert.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -13159,7 +13198,7 @@ var bootbox_cta_fsize = 'fs-4';
 // Employee Query Selector
 var createNewEmployeeRecord = document.querySelector('.create-employee');
 var updatedEmployeeRecord = document.querySelector('.modify-employee-update');
-var deletedEmployeeRecord = document.querySelector('.modify-employee-delete');
+var deleteEmployeeRecord = document.querySelector('.modify-employee-delete');
 var addEmployeePayGroup = document.querySelector('.addEmployeeToPayGroup');
 var updatedEmployeePayGroup = document.querySelector('.modify-employeePayGroup');
 
@@ -13290,67 +13329,58 @@ if (updatedEmployeePayGroup) {
   }());
 }
 ;
-if (deletedEmployeeRecord) {
-  deletedEmployeeRecord.addEventListener('submit', /*#__PURE__*/function () {
-    var _ref5 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee6(event) {
-      var id;
+if (deleteEmployeeRecord) {
+  var id = document.getElementById('docid').value;
+  if (id) {
+    document.getElementById('deleteEmployee').addEventListener('click', /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
       return _regeneratorRuntime().wrap(function _callee6$(_context6) {
         while (1) switch (_context6.prev = _context6.next) {
           case 0:
-            event.preventDefault();
-            id = document.getElementById('docid').value;
-            $(function () {
-              $("#deleteEmployee").click(function () {
-                bootbox.confirm({
-                  title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
-                  message: '<h4>Do you wish to continue?</h4>',
-                  buttons: {
-                    confirm: {
-                      label: 'Yes',
-                      className: "btn-success ".concat(bootbox_cta_fsize)
-                    },
-                    cancel: {
-                      label: 'No',
-                      className: "btn-danger ".concat(bootbox_cta_fsize)
-                    }
-                  },
-                  callback: function () {
-                    var _callback = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5(result) {
-                      return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-                        while (1) switch (_context5.prev = _context5.next) {
-                          case 0:
-                            if (!result) {
-                              _context5.next = 3;
-                              break;
-                            }
-                            _context5.next = 3;
-                            return (0, _processData.deleteEmployeeData)(id);
-                          case 3:
-                            ;
-                          case 4:
-                          case "end":
-                            return _context5.stop();
+            bootbox.confirm({
+              title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+              message: '<h4>Do you wish to continue?</h4>',
+              buttons: {
+                confirm: {
+                  label: 'Yes',
+                  className: "btn-success ".concat(bootbox_cta_fsize)
+                },
+                cancel: {
+                  label: 'No',
+                  className: "btn-danger ".concat(bootbox_cta_fsize)
+                }
+              },
+              callback: function () {
+                var _callback = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5(result) {
+                  return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+                    while (1) switch (_context5.prev = _context5.next) {
+                      case 0:
+                        if (!result) {
+                          _context5.next = 3;
+                          break;
                         }
-                      }, _callee5);
-                    }));
-                    function callback(_x6) {
-                      return _callback.apply(this, arguments);
+                        _context5.next = 3;
+                        return (0, _processData.deleteEmployeeData)(id);
+                      case 3:
+                        ;
+                      case 4:
+                      case "end":
+                        return _context5.stop();
                     }
-                    return callback;
-                  }()
-                });
-              });
+                  }, _callee5);
+                }));
+                function callback(_x5) {
+                  return _callback.apply(this, arguments);
+                }
+                return callback;
+              }()
             });
-          case 3:
+          case 1:
           case "end":
             return _context6.stop();
         }
       }, _callee6);
-    }));
-    return function (_x5) {
-      return _ref5.apply(this, arguments);
-    };
-  }());
+    })));
+  }
 }
 ;
 
@@ -13380,7 +13410,7 @@ if (createNewPayGroupRecord) {
         }
       }, _callee7);
     }));
-    return function (_x7) {
+    return function (_x6) {
       return _ref6.apply(this, arguments);
     };
   }());
@@ -13412,58 +13442,64 @@ if (updatedPayGroupRecord) {
         }
       }, _callee8);
     }));
-    return function (_x8) {
+    return function (_x7) {
       return _ref7.apply(this, arguments);
     };
   }());
 }
 ;
 if (deletePayGroup) {
-  var id = document.getElementById('docid').value;
-  document.getElementById('deletePayGroup').addEventListener('click', /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
-    return _regeneratorRuntime().wrap(function _callee10$(_context10) {
-      while (1) switch (_context10.prev = _context10.next) {
-        case 0:
-          bootbox.confirm({
-            title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
-            message: '<h4>Do you wish to continue?</h4>',
-            buttons: {
-              confirm: {
-                label: 'Yes',
-                className: "btn-success ".concat(bootbox_cta_fsize)
+  var _id = document.getElementById('docid').value;
+  if (_id) {
+    document.getElementById('deletePayGroup').addEventListener('click', /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
+      return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+        while (1) switch (_context10.prev = _context10.next) {
+          case 0:
+            bootbox.confirm({
+              title: '<h5 class="text-danger text-uppercase">This will delete permanently</h5>',
+              message: '<h4>Do you wish to continue?</h4>',
+              buttons: {
+                confirm: {
+                  label: 'Yes',
+                  className: "btn-success ".concat(bootbox_cta_fsize)
+                },
+                cancel: {
+                  label: 'No',
+                  className: "btn-danger ".concat(bootbox_cta_fsize)
+                }
               },
-              cancel: {
-                label: 'No',
-                className: "btn-danger ".concat(bootbox_cta_fsize)
-              }
-            },
-            callback: function () {
-              var _callback2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee9(result) {
-                return _regeneratorRuntime().wrap(function _callee9$(_context9) {
-                  while (1) switch (_context9.prev = _context9.next) {
-                    case 0:
-                      if (result) {
-                        console.log("spotted", id);
-                      }
-                      ;
-                    case 2:
-                    case "end":
-                      return _context9.stop();
-                  }
-                }, _callee9);
-              }));
-              function callback(_x9) {
-                return _callback2.apply(this, arguments);
-              }
-              return callback;
-            }()
-          });
-        case 1:
-        case "end":
-          return _context10.stop();
-      }
-    }, _callee10);
-  })));
+              callback: function () {
+                var _callback2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee9(result) {
+                  return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+                    while (1) switch (_context9.prev = _context9.next) {
+                      case 0:
+                        if (!result) {
+                          _context9.next = 3;
+                          break;
+                        }
+                        _context9.next = 3;
+                        return (0, _processData.deletePayGroupData)(_id);
+                      case 3:
+                        ;
+                      case 4:
+                      case "end":
+                        return _context9.stop();
+                    }
+                  }, _callee9);
+                }));
+                function callback(_x8) {
+                  return _callback2.apply(this, arguments);
+                }
+                return callback;
+              }()
+            });
+          case 1:
+          case "end":
+            return _context10.stop();
+        }
+      }, _callee10);
+    })));
+  }
 }
 ;
 if (payGroupPopUp) {
@@ -13514,7 +13550,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58653" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54659" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

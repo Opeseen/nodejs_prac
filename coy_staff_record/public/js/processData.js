@@ -181,5 +181,23 @@ export const addEmployeeToPayGroup = async(employeeId,payGroupId) => {
   }
 };
 
+export const deletePayGroupData = async(pid) => {
+  try {
+    const response = await axios({
+      method: 'POST',
+      url: 'http://localhost:3000/paygroup/delete',
+      data: {pid}
+    });
+    if(response.data.success){
+      showAlert('success',response.data.message);
+      window.setTimeout(() => {
+        location.assign('/paygroup/view/all');
+      },3000);
+    }
+  } catch (error) {
+    return showAlert('error',error.response.data.message || "Error Occurred Deleting PayGroup");
+  }
+};
+
 
 
